@@ -38,6 +38,7 @@ env/
 
 # ============================================================
 # MACHINE LEARNING OUTPUTS
+# (Except active models in models/text_final_v2_improved & models/video)
 # ============================================================
 
 *.pth
@@ -46,6 +47,10 @@ env/
 *.joblib
 *.h5
 *.hdf5
+
+!models/text_final_v2_improved/*.pkl
+!models/video/*.pth
+!models/video/*.pkl
 
 
 # ============================================================

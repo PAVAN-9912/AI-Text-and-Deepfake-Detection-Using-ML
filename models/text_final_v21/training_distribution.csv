@@ -1,0 +1,12 @@
+dataset,length_group,0,1
+HC3,long,270,0
+HC3,medium,649,259
+HC3,short,803,100
+HC3,very_short,373,23
+RAID,long,270,540
+RAID,medium,71,358
+RAID,short,268,423
+RAID,very_short,81,314
+SentenceAI,medium,360,450
+SentenceAI,short,549,1084
+SentenceAI,very_short,441,502

@@ -1,0 +1,974 @@
+text,label,dataset,length_group,ai_probability,prediction,prediction_name
+"Moreover, they are often excluded from discussions related to digital advancements since much of the conversation takes place online without taking into account those who may not have access or knowledge on how use it effectively.",1,SentenceAI,medium,0.8835775105809709,1,AI
+They might want to have a job and trying to go for what they want to do later in life.,0,SentenceAI,short,0.07808205279258017,0,Human
+"Laptops, and most other electronic devices, use electricity to function. The power adapter is a device that converts the electricity from a wall outlet into a form that the laptop can use. When the power adapter is working, it is converting electricity from the wall outlet into a form that the laptop can use, and this process can generate heat. The amount of heat that is generated depends on the size of the power adapter and the amount of electricity that it is converting. Laptops typically use more electricity than smaller devices like phones or tablets, so the power adapter for a laptop may get hotter than the power adapter for a smaller device. It is important to make sure that the power adapter does not get too hot, as this can be a safety hazard. If your laptop's power adapter is getting very hot, it is a good idea to have it checked by a professional to make sure that it is functioning properly and safely.",1,HC3,long,0.8133102397522224,1,AI
+"A very , VERY abbreviated history of Christianity in the ELI5 Spirit : ( see this graphic to help ): URL_0 Christianity originally sprang from Judaism ; the earliest Christian communities were still very Jewish in their ideas and practices , but began to bud off into a separate religion starting in the 2nd Century . The next major controversies to happen in the Christian church came after the 4th century , when Christianity had gone from a small cult to the official religion of the roman bloody empire , the largest political entity to ever exist until that time . Ephesus and Chalcedon dealt with the nature of Jesus and Jesus 's relationship to the Jewish God . The Assyrian church left after the proclamation of the trinity , the Oriental Orthodox ( not to be confused with the Eastern Orthodox ) , left over the idea of Jesus having two separate natures . Much of what happened thereafter was political drift . Rome fell , and was split into two empires : east and west . Both became very afferent , religiously speaking . Western christianity went though a lot of political turmoil , and ultimately came to be what we know of as Medieval . By contrast , the Byzantine empire kicked around until the 16th century , so the eastern church was spared a lot of that same drama . East and west came to a head over the issue of the Pope . The pope inserted a clause in a creed , and the Eastern church left , calling themselves the Orthodox church , while the Western church centered itself in Rome and called itself Catholic . The actual theological split was pretty minor ( although it 's grown ) , but mostly it was about the authority of the Pope versus the bishops , and how much the Papacy was more like a king or more like the Speaker of the House ( first among equals ) . The Papal west continued merrily along until the 16th century , when the Reformation started by a guy named Martin Luther . Luther broke for a lot of reasons , but he was supported by a bunch of German princes ( since Germany was a collection of small kingdoms at this point ) rather than a single political entity . The german princes figured that they did n't have to pay taxes to a pope , so why not support the guy who focused on returning to the sources ? This prompted a series of breaks , with several leaders arising : Luther himself , John Calvin ( a frenchman ) , and a Swiss named Ulrich Zwingli being the most Prominent . Luther 's big idea was Faith – that it was one 's belief in God which had saving power , not the Church ( or good works ) . By contrast , the Catholic church countered that a kind of abstract love that did n't involve doing anything about it was n't saving . Calvin 's big idea was grace . He considered one only to be saved by the Grace of god , and not by the church . This led to his followers working very hard , looking for signs that God had graced them with salvation ( hence the famous "" Protestant work ethic "" . ) By contrast , the Catholic church argued that grace was found in the Sacraments , which it administered . Finally , Zwingli was a leader of a much more loosely organized group called the Anabaptists , which focused on an understanding of Baptism and the Christian life beginning as an adult , rather than the Catholic practice of baptism as a child . Anabaptists thought that only Adults could really commit to the Christian life ; Catholics thought that the best way to help someone be Christian was to attempt to bring them up Christian . After the reformation , things get hazy . The various protestant groups break off in greater and smaller groups ( Henry VIII takes the entire church of England with him in a controversy about divorce ) and for the first time there 's very serious plurality about the substance of Christian belief . To complicate matters further , the Catholic church went through it 's own reformation process ( sometimes called the Counter - Reformation ) where it reaffirmed its old ideas , but put some real intellectual heft behind them . Modern denominations can broadly be traced to one of the three major Protestant branches ( or ones that borrow ideas from more of them ) , and it 's pretty safe to say that if there 's some wacky idea in Christianity , there 's a small group that believes it . Nevertheless , there 's actually pretty consistent agreement on some major ideas of faith , even if how to live out that faith is still hotly contested .",0,HC3,long,0.5201599867469313,1,AI
+"For many people, however, finding the motivation to exercise can be difficult - especially when it comes to outdoor activities like running or cycling.",1,SentenceAI,short,0.8288711267791296,1,AI
+"I’m much happier this way.” By relying less on cars, individuals can enjoy the benefits of less traffic, more walkable neighborhoods, and a more active and healthy lifestyle.",1,SentenceAI,short,0.7966119722013147,1,AI
+"It comes from the Jonestown Massacre , where a cult leader convinced / tricked his followers to drink poisoned Kool - Aid . It 's now used generally to mean "" do n't buy into the crap that person is selling "" .",0,HC3,medium,0.07157456942461932,0,Human
+"479 is the area code for telephone numbers in northwest Arkansas, including the cities of Fayetteville, Fort Smith, and Rogers. It was created in 1997 as a split from area code 501.",1,HC3,medium,0.9216531016578652,1,AI
+"It is the "" gross "" factor . They are potential carriers of disease or dirt , and we as animals "" know "" this in the back of our minds . Logically , it is not reasonable to fear them , they could not harm us , but our instincts tell us otherwise . It it the same reason why we fear mice , even when the mice run from us -- especially considering they are scarcely different from a child 's pet hamster .",0,HC3,long,0.2776013951318024,0,Human
+"def finding_diff(numbers): 
+    return [i - j if i > 0 and (j+1)!= None else 'No previous value'  for _,i,j in zip([False]*len(numbers), numbers,[None]*( len(numbers)- 1)) ] + ['Diff: {}'.format(_-_.pop(-2))][0:: 2]",1,RAID,short,0.928617208985848,1,AI
+"def parabola_directrix(a, b, c): 
+  directrix=((int)(c - ((b * b) + 1) * 4 * a ))
+  return directrix",0,RAID,short,0.21565535499933863,0,Human
+"For example, when I graduated from college, I decided to take a risk and move to a new city for a job.",1,SentenceAI,short,0.8974255062438539,1,AI
+"German forces entered Paris on June 14, 1940, during World War II. The fall of Paris was a crucial moment in the early stages of the war, as it marked the end of the Battle of France and the successful invasion of France by the German military. The city was occupied by German forces for four years, until it was liberated by Allied forces in August 1944.",1,HC3,long,0.8161943661213183,1,AI
+"def dict_filter(dict,n):
+ result = {key:value for (key, value) in dict.items() if value >=n}
+ return result",0,RAID,short,0.6404464451630213,1,AI
+"In my own experience, I have found the opportunity to focus on new topics has enabled me to challenge and broaden my knowledge in a creative way.",1,SentenceAI,short,0.8467331289704304,1,AI
+Less traffic also means cleaner air and a healthier environment.,1,SentenceAI,very_short,0.7386950784163534,1,AI
+"It 's a sum of the actual volume that each piston cylinder can hole when the piston is at the bottom of it 's stroke . For example , my personal car has a 4 cylinder 2liter motor . This means that at the bottom of each piston 's stroke , the volume of the cylinder is .5L. * * edit * * just to add a bit more info .. the volume of the cylinders in an engine can also be called the engine 's displacement . In general , the displacement directly affects the power that the engine is capable of producing such that a higher displacement means a more powerful engine ( although with the many factors that affect motors , a lower displacement engine can be made to have a lot of power ; through things such as turbo or super chargers , but that 's another discussion ) Also , here 's a picture of an [ engine block ] ( URL_0 ) , that has been stripped down to just the main case which holds the pistons and crankshaft . This is actually an engine I 'm rebuilding for my car . Notice that the 2 cylinders in the center are near the top of their cylinders , and the other four are pretty far down inside the cylinders . Just for completeness , I believe the other four are not quite at the bottom of cylinder ; two of them are slightly above the bottom on their path To the bottom , the other two are slightly above the bottom on their path up From the bottom . This is a 2.8L VR6 engine from a Volkswagen . ( for any other car nuts out there , i 've cleaned all of the crap out of the cyls since this pic was taken ; this was right after i broke the head off and accidentally knocked a bunch of crud in that top - right cyl )",0,HC3,long,0.32375841686615153,0,Human
+"from collections import Counter 
+def anagram_lambda(texts,str):
+  result = list(filter(lambda x: (Counter(str) == Counter(x)), texts)) 
+  return result",0,RAID,short,0.3718807754181868,0,Human
+Driverless cars should not be in development for the follow reasons: malifunction error of the system or programming and not enough regulations for driverless cars.,0,SentenceAI,short,0.18517831499496146,0,Human
+The opinion of people is that is a good form of meeting a President and Vice President the reason for is good an electoral college is because having of discussion the work and  your can see from who vote.,0,SentenceAI,medium,0.08821414539393521,0,Human
+"Kirstie Alley appeared on the television show ""Cheers"" from 1987 to 1993. She played the character Rebecca Howe, a smart and ambitious businesswoman who becomes the manager of the bar. The show aired on NBC and was a popular and long-running sitcom, airing from 1982 to 1993.",1,HC3,medium,0.9214034822756674,1,AI
+"def sort_tuples(tuple_list):
+    return sorted(tuple_list, key=lambda x: sum(digits))",1,RAID,very_short,0.9378746759177412,1,AI
+"Finally, adding more hours to school can lead to an uprising among students.",1,SentenceAI,short,0.5250019294527707,1,AI
+"Some lipids have a region that does n't mix well with water , and a region that does . These lipids , when in water , come together to form bilayers , clumping their hydrophobic , or ' water hating parts ' together to get them away from the water molecules . When many lipid molecules come together in this way , they create a membrane . Just like that , you have a ' cell , ' a compartment . Now it 's just a matter of getting the right things into the membrane , to make for a functioning , living cell . Just how this happened , no one knows !",0,HC3,long,0.014398261298650671,0,Human
+"A highway does n't go directly to your house most likely , but you can go from a highway to some side streets to your house .",0,HC3,short,0.015634077684242572,0,Human
+"from collections import Counter 
+def most_common_elem(s,a):
+  most_common_elem=Counter(s).most_common(a)
+  return most_common_elem",0,RAID,very_short,0.35921048282285195,0,Human
+"In conclusion, the Electoral College system has served our nation well for centuries, providing stability, fairness, and a balanced representation of states.",1,SentenceAI,short,0.9579746195565753,1,AI
+teletracnavman.,0,SentenceAI,very_short,0.27827120018483004,0,Human
+"def depth_of_dict(d):
+    if not d:
+        return 0
+    else:
+        return max(depth_of_dict(d.get(k, {})) + 1 for k in d)",1,RAID,short,0.6810943648471858,1,AI
+"The whole purpose of democracy is to create a government that reflects the desires, opinions, and attitudes of the people being governed, but how can this be achieved if the people aren't fairly represented during election time, presidential or otherwise?",0,SentenceAI,medium,0.5610569267465825,1,AI
+You 're just scattering the graphite particles efficiently using a material that sticks to them,0,HC3,short,0.1206773937700071,0,Human
+"Another way that a city improved itself as a result of limited car use is shown by Elisabeth Rosenthal in her essay ""In German Suburn Life Goes On Without Cars"".",0,SentenceAI,short,0.35915326896992195,0,Human
+Theme: ColorMag by ThemeGrill.,0,SentenceAI,very_short,0.7435509911783289,1,AI
+"I'm sorry, but it's not possible for me to explain a specific situation or video without more information. Could you please provide more context or a description of the situation you are asking about? Without knowing more, I won't be able to help you understand what happened or why.",1,HC3,medium,0.9486539584026571,1,AI
+"China now has a freight rail connection all the way from their mainland to the United Kingdom , which is a part of the initiative . Putting goods on ships takes a long time . Putting goods on planes is very expensive . Rail provides a nice middle ground , nice and fast and nice and cheap .",0,HC3,medium,0.47344360659904355,0,Human
+"import re
+def check_literals(text, patterns):
+  for pattern in patterns:
+    if re.search(pattern,  text):
+        return ('Matched!')
+    else:
+        return ('Not Matched!')",0,RAID,short,0.08882956756204481,0,Human
+"Furthermore, climate change is a public health issue.",1,SentenceAI,very_short,0.8031630669557857,1,AI
+I could not agree more with this statement.,1,SentenceAI,very_short,0.486808844488214,1,AI
+"def reflect_run_length_encoding(lst):
+    result = []
+    current_count = 1
+    for item in lst:
+        if current_count == 1:
+            result.append((item, current_count))
+        else:
+            result[-1] = (result[-1][0], current_count)
+        current_count += (item == result[-1][0])
+    return result
+
+# Example usage:
+# lst = [1, 2, 2, 3, 3, 4, 4, 5]
+# print(reflect_run_length_encoding(lst))
+# Output: [(1, 1), (2, 3), (3, 2), (4, 2), (5, 1)]",1,RAID,medium,0.8901277482685789,1,AI
+"Sure! Evolution is the process by which living things change over time. It happens because of natural selection, which is a process that occurs because certain traits (or characteristics) are more helpful for survival in a particular environment. These traits are passed down from one generation to the next, and over many generations, they can become more common in a population. Monkeys are evolving right now, just like all other living things. In fact, all living things are constantly evolving, because natural selection is always happening. However, the process of evolution is slow, and it can take many generations for changes to become noticeable. So, even though monkeys are evolving, it might not be something that we can see happening in our lifetimes. I hope that helps! Is there anything else you'd like to know about evolution?",1,HC3,long,0.8693118880847,1,AI
+This kind of system is not needed in america from me speaking personally.,0,SentenceAI,short,0.22168045659294383,0,Human
+I don't remember the material from my psychology summer assignment this year.,0,SentenceAI,short,0.4597867360376402,0,Human
+Then our governor prepares a certificate of ascertainment they all so decllare the winning presidential candidate.,0,SentenceAI,short,0.24406917237429687,0,Human
+It is also the hotest plant in our atmosphere.,0,SentenceAI,very_short,0.23547506770922777,0,Human
+"It 's actually only in North America that 8.5 x 11 is considered the ideal paper size . Most other countries use the size called A4 , which is part of the German system called ISO 216 . The underlying principle is that when folded in half length - wise the paper retains its original aspect ratio : 1 to the square root of 2 . The origins of the exact dimensions of "" letter "" size paper ( 8½ in × 11 in ) are lost in tradition and not well documented . "" Government Letter "" ( 8 in × 10½ in ) was prescribed by Herbert Hoover when he was Secretary of Commerce to be used for U.S. government forms , apparently to enable discounts from the purchase of paper for schools . In later years , as photocopy machines proliferated , citizens wanted to make photocopies of the forms , but the machines did not generally have this size paper in their bins . Ronald Reagan therefore had the U.S. government switch to regular letter size ( 8½ in × 11 in ) . Sources : URL_1 URL_0",0,HC3,long,0.38524742384106164,0,Human
+Also if you use your phone in the halls you could fall and get really injured or bump into someone.,0,SentenceAI,short,0.0650142991463443,0,Human
+"def sum_digits(n):
+  if n == 0:
+    return 0
+  else:
+    return n % 10 + sum_digits(int(n / 10))",0,RAID,short,0.6255039669514366,1,AI
+"As noted , tables are numbered on a chart somewhere . Also , most waiters and waitresses are assigned specific sections for their shift ; they are n't working with the entire restaurant at once .",0,HC3,medium,0.2872968603094215,0,Human
+"import collections as ct
+def merge_dictionaries(dict1,dict2):
+    merged_dict = dict(ct.ChainMap({}, dict1, dict2))
+    return merged_dict",0,RAID,short,0.23849276838069483,0,Human
+"""Amazon is a German company that has been in the business of selling books for over 100 years. It is the largest online bookseller in the world. It is also the largest seller of books in Germany. Amazon has a strong presence in Germany, with more than 1,000 stores in the country. Amazon has been in the news recently because of the controversy surrounding the company's tax affairs. The company has been accused of using a complex tax structure to avoid paying taxes on its profits. The company has denied the allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also been accused of using its dominance in the German market to force other companies to pay higher prices for its products. Amazon has denied these allegations and has said that it is committed to paying taxes on its profits. Amazon has also",1,RAID,long,0.914829219488489,1,AI
+"Net buying or selling of a stock refers to the overall activity of buying or selling the stock by all market participants. If there is net buying of a stock, it means that there are more buyers than sellers, and the stock price is likely to go up. If there is net selling of a stock, it means that there are more sellers than buyers, and the stock price is likely to go down.Net buying or selling can be measured in several ways, such as by looking at the volume of shares traded, the value of shares traded, or the percentage change in the stock price. These measures can provide an indication of the level of demand for a particular stock and can be used to predict future price movements. It's important to note that net buying or selling is just one factor that can affect a stock's price, and other factors such as the company's financial performance, industry conditions, and macroeconomic conditions can also influence the stock's price.",1,HC3,long,0.9111499110526106,1,AI
+The shape made is most likely a cowensidence.,0,SentenceAI,very_short,0.07957424565095919,0,Human
+"def odd_days(year):
+    """"""
+    Calculate the number of odd days in a given year.
+    """"""
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    return sum(days[1:13] if year % 4 == 0 else days[2:14])",1,RAID,medium,0.894515806085961,1,AI
+"In a world that values conformity, it can be difficult to stand up for what we believe in.",1,SentenceAI,short,0.8318003542525204,1,AI
+"I'm sorry, but I'm not aware of any current plans for John Stewart to leave The Daily Show. John Stewart was the host of The Daily Show from 1999 to 2015, and he has not been involved with the show since then. It is possible that you may be thinking of a different John Stewart or a different news program.",1,HC3,medium,0.7285760358326705,1,AI
+"Die weltgrößte Pharmariese blockiert die Nutzung seiner Mittel bei Hinrichtungen in den USA und folgt damit anderen UnternehmenNew York – Der Pharmariese Pfizer unterbindet die Nutzung seiner Mittel bei Hinrichtungen in den USA. Für bestimmte Produkte, die bei Exekutionen mit Giftspritzen genutzt werden oder deren Nutzung von Bundesstaaten erwogen wird, gelten nach Konzernangaben nun schärfere Lieferbeschränkungen.
+""Pfizer lehnt den Einsatz seiner Produkte als tödliche Injektionen bei der Vollstreckung der Todesstrafe strikt ab"", erklärte der größte Pharmakonzern der USA am Freitag auf seiner Internetseite. Damit hat einem Bericht der ""New York Times"" zufolge der letzte Lieferant solcher Mittel den Einsatz seiner Produkte bei Hinrichtungen untersagt. Vor Pfizer hätten mehr als zwanzig Pharmaunternehmen aus Europa und den USA diesen Schritt unternommen.
+Insgesamt sind nach Konzernangaben sieben Produkte von den Lieferbeschränkungen betroffen. Dazu gehört unter anderem das Narkosemittel Propofol. (APA, 14.5.2016)",0,RAID,long,0.15221996859646764,0,Human
+There are 31.1034768 grams in a troy ounce of gold.,1,HC3,very_short,0.6339868409935342,1,AI
+"It 's a fancy way of saying that we can view things as one way or another . When we look at the wave , we can say that it 's definitely a wave . We know that it behaves like a wave and has that property . When we look at the particle , we can say that it 's definitely a particle . We know that it behaves like a particle and has that property . The weird part is that both of those statements describe the same object , but a different way of viewing it . We can not view them as both because when we observe the particle , the wave function collapses . If we observe the wave we are naturally conceding that we are n't looking at the particle in particular . So it 's definitely a particle , but also definitely a wave and we will get different results depending upon how we view this object .",0,HC3,long,0.33060085472726397,0,Human
+the point is the students need to prepare for their future.,0,SentenceAI,short,0.1554405970117356,0,Human
+"If students were able to choose what their project could be on, they would choose something that they understand better and wouldn't need the help and support of their teachers.",0,SentenceAI,short,0.16028129366471114,0,Human
+"When students make their own decisions about their education, they are more likely to take responsibility for their learning and achieve their academic goals.",1,SentenceAI,short,0.880040216356848,1,AI
+"def polygon_perimeter(sides, side_length):
+    return sides * side_length",1,RAID,very_short,0.5493726876533339,1,AI
+Students can go on websites to gather information or have a sister or brother help maybe parents.,0,SentenceAI,short,0.49127100391458756,1,AI
+"def dict_depth(d):
+    """"""
+    Returns the maximum depth of a dictionnary
+    """"""
+    max_depth = 0
+    for key, value in d.items():
+        if isinstance(value, dict):
+            curr_depth = dict_depth(value) + 1
+            max_depth = max(max_depth, curr_depth)
+    return max_depth",1,RAID,medium,0.871134143515235,1,AI
+"def equilibrium_index(arr):
+  total_sum = sum(arr)
+  left_sum=0
+  for i, num in enumerate(arr):
+    total_sum -= num
+    if left_sum == total_sum:
+      return i
+    left_sum += num
+  return -1",0,RAID,short,0.6231926075132352,1,AI
+In the text it describes how it can take the learning games and make them funner and more interacting .,0,SentenceAI,short,0.6184547162868417,1,AI
+"We do not have the ability to destroy the planet . We might be able to wipe out quite a bit of life , but physically destroying the planet is beyond our reach . And not just now , but for the foreseeable future .",0,HC3,medium,0.17860933413682117,0,Human
+"def find_platform(arr, dep, n): 
+    arr.sort() 
+    dep.sort() 
+    plat_needed = 1
+    result = 1
+    i = 1
+    j = 0
+    while (i < n and j < n): 
+        if (arr[i] <= dep[j]):           
+            plat_needed+= 1
+            i+= 1
+        elif (arr[i] > dep[j]):           
+            plat_needed-= 1
+            j+= 1
+        if (plat_needed > result):  
+            result = plat_needed           
+    return result",0,RAID,medium,0.10113668761012741,0,Human
+"Patrick Henry ""Treason"" speech before the House of Burgesses in an 1851 painting by Peter F. RothermelGive me liberty, or give me death! is a quotation attributed to Patrick Henry from a speech he made to the Virginia Convention .",0,HC3,medium,0.6228750967246982,1,AI
+"China has a long and rich history of innovation and invention, with many important contributions to the development of human civilization. Some examples of Chinese inventions include:\n\nPaper: The Chinese are credited with the invention of paper, which revolutionized the way information was recorded and disseminated.\n\nPrinting: The Chinese also invented the first printing press, which was used to produce multiple copies of texts and documents.\n\nCompass: The magnetic compass was invented in China, and it revolutionized navigation and exploration.\n\nGunpowder: The Chinese are credited with the discovery of gunpowder, which has had a profound impact on the course of human history.\n\nPorcelain: China is known for its beautiful and delicate porcelain, which was first developed during the Tang Dynasty (618-907).\n\nSilk: The Chinese developed a method for producing silk, which has been an important luxury good for thousands of years.\n\nTea: Tea, which is enjoyed by people all around the world, was first cultivated in China.\n\nThese are just a few examples of Chinese inventions that have had a significant impact on the world. China has a long and storied history of innovation and discovery, and it continues to be a leader in many areas of technology and science.",1,HC3,long,0.9601568916051415,1,AI
+"def odd_Days(N): 
+    hund1 = N // 100
+    hund4 = N // 400
+    leap = N >> 2
+    ordd = N - leap 
+    if (hund1): 
+        ordd += hund1 
+        leap -= hund1 
+    if (hund4): 
+        ordd -= hund4 
+        leap += hund4 
+    days = ordd + leap * 2
+    odd = days % 7
+    return odd",0,RAID,medium,0.25079391557023933,0,Human
+"In an extremely convincing essay by Bradford Plumer,
+
+Why even the best-laid defenses of the system are wrong , this very concerning issue is brought forth.",0,SentenceAI,short,0.09344333975379594,0,Human
+It is guaranteed driverless cars will be a safety threat to everyone on the road becasue they can not be trusted.,0,SentenceAI,short,0.031136901379523938,0,Human
+I encourage you to join an activity.,0,SentenceAI,very_short,0.6105706320493415,1,AI
+"def remove_datatype(test_tuple, data_type):
+  res = []
+  for ele in test_tuple:
+    if not isinstance(ele, data_type):
+      res.append(ele)
+  return (res)",0,RAID,short,0.2274496971480657,0,Human
+"He was like, super enthusiastic about his work, and it totally paid off.",1,SentenceAI,short,0.703464173012337,1,AI
+Check [ this ] ( URL_0 ) out,0,HC3,very_short,0.020499704362122687,0,Human
+"I'm sorry, but I don't have any information on a person named ""William J. Rapaport."" Without more context, it is difficult for me to provide any further information. Can you please provide more context or specify what you would like to know about William J. Rapaport?",1,HC3,medium,0.989074045000262,1,AI
+"Ich habe Ihren Eroberungsfähigkeiten im Kompendium, von den erstmaligen Bewusste aus. Die wirklich der Erinnern in die Welt übernommen (in den für eine kombiniertem Gesundheit ist nicht, dessen Gebiet der ersten Erwachen aufstanden) stehen nur niedrig ge-überende und nur einen Einleitung am Zustand zu verletzen. In ihn kann diese Einfluß vor das Wochenschaft? Das gleiche nauklicher Abschnitte unter unterwegs leider und schon geflogischem Fakultüss im Rahmen niemals um sich auch wegte möglich zu besorgt
+
+Die Gedanken des 'Kampfers' an M3D aret zwar anhand deutschend und ungebracht hat, als gefragt einige Mitarbeiten und zwar wohl jeden Fall, einen Üburgarrhe machen. Dort zwei andere 'Kampfsches' sind auf bey dem Kampf zur Haltestelle in Deutschland; um eine Stille der Zweck führden wurde so sehr krieges kennen – soll jetzt die Halle der Stärker in der Strafe erhielt!
+
+Das weder das Kampfracher kritisiert ist keintlich, aber kam es auch auch zum Kampf gebragbar. Ich wollte, daß ihm nach Rassenverlassen herwegen, wie zum Ausbildung gibts sie fieben achtet und zu mehrer Leitung dabei gejefftelend. Bei ihnen selbststellen die Einsatz von ganzen Stiffgesellschaften nicht lange: Schutzbar",1,RAID,long,0.5365562556322053,1,AI
+"Die deutsche Internetwirtschaft sieht positive Entwicklungen vor. 
+Basisdaten: Die Zahl der Online-Shops und das Umsatzvolumen des E-Commerce in Deutschland wuchs 2017UM 50%. Auch die Anzahl von Startups ging nach oben, gerade im Bereich Digitale Werkzeuge & Services, Cloud Computing sowie Cybersecurity stehen viele Chancen auf den Plan. Dies stammt aus einer aktuellen Analysekomponente eines Forschungsprojekts namens New Economy Atlas (NEA), welches bereits einmaliges Unternehmertum untersucht - also solche Firmengründerschaften-, kleine oder mittlereunternehmen, bei deren Gründerinnen bzw. Gründern besonderer Bedeutungsenbereich Digitalisierung zukommt.",1,RAID,long,0.6949388563139414,1,AI
+"Hello!Welcome on Healthcaremagic! My name is Dr. Aida and  I am glad to attend you!Your granny symptoms could be related to an inner ear disorder, as she can not attend a phone call. For this reason, I recommend consulting with an ENT specialist for a physical exam and some labyrinthine tests to exclude an inner ear disorder. Hope you will find this answer helpful!Kind regards, Dr. Aida",0,HC3,long,0.1502669608632069,0,Human
+com) If she would've followed the law she would've made it to school happily and still have her life.,0,SentenceAI,short,0.20927951588511756,0,Human
+"I'm sorry, but I do not have enough information to accurately answer your question. Could you provide more context or specify which Mary Anderson you are asking about?",1,HC3,short,0.9823689091684661,1,AI
+"It is not clear what you are asking about ""a and r reps."" Could you provide more context or clarify your question?",1,HC3,short,0.9786677485903988,1,AI
+"If we can find ways to make it easier for people to get around without a car, we can make our cities healthier, more efficient, and more enjoyable places to live.",1,SentenceAI,medium,0.7642929984437761,1,AI
+"from collections import defaultdict 
+
+def most_occurrences(test_list):
+  temp = defaultdict(int)
+  for sub in test_list:
+    for wrd in sub.split():
+      temp[wrd] += 1
+  res = max(temp, key=temp.get)
+  return (str(res))",0,RAID,short,0.06748878854540033,0,Human
+"Somalis have a proud history of independent journalism – going back to the early days when there were only community radios and magazines. Al Jazeera English went on air with just 100 Somali viewers, but that number has swelled more than 25 times over today! In this section we give you an insight into how some journalists think about their work."">
+  </div></li><!-- /#c2 -->
+
+
+ A: var string = document_text; 
+var searchString=string+'six'; // You can append any charater after somali it doesn't matter because space is also part as per your logic 
+    searchArrays[];// I am not using index here so i create dummy array 
+
+        while(true){
+
+                for (jindexsForSearch == startIndexToFind + patternLength && j < myDataArraySize) do {                               <br/>&nbsp; &nbsp;&nbsp;\;\nbsp;{\bf if} (! ((mydataarrayAtJ [endOfPattern].Equals (' ')) )) {            <\/if\> {\bf break};   <\/break\>             }\<\/if\>               \{\ \/\* This code block works like goto statement.\ \*/                 ++ endofpattern;\     \\* We're now at one character beyond where '\the' was found.*\/                         returnVal ++ ;                   \}                       \}\ &\{\ * For loops must include both pre-test and post-* increment,\ for efficiency!\ */                       -- EndWhileLoopCounter;\                     /* If reached then no match\ -- should be incremented by 1*\ or less -\ since 0+\ could mean multiple matches exist.\ */                       goto CheckAfterThisLoopsEndIFEndTestValue\_GotoLabel ; } }         else \{          \<\*/ \<\/?\> /* Reached while loop\' s initial test value\+ equals zero.+ No need \> **to continue further up through all blocks below.../\ </?_/**           return(\ true ); \}      \/\* else-\ clause means \'no matching ""\th""' characters were >found anywhere>\ */ });
+I had tried above suggestion however its still giving me error please help?!! Please!!! Here are sample JSON data which contains text - http://www19a9fdd6e0cbdf5ed4eb231340",1,RAID,long,0.7241713917143265,1,AI
+"Moreover, the environmental impact of heavy car usage becomes starkly clear in the case of Paris, where dangerous levels of smog, partially caused by car emissions, led to the implementation of a partial driving ban (Duffer, Passage 2).",1,SentenceAI,medium,0.5716340041481767,1,AI
+"Nothing really . They 're just fancy , expensive basketball shoes . It 's a common stereotype in the US that young black men are obsessed with shoes",0,HC3,short,0.03379011721229793,0,Human
+Who are the people that try to mimic the original product ? Why is it legal for a retail store to profit off of similarity to an established brand ? Are n't there patent issues ? How similar are they to the original product ? Why are there sometimes several tiers of store brands within a single retail store ?,0,HC3,medium,0.37846588740622383,0,Human
+"In conclusion, showing intelligence, talents, and athletic abilities is essential for success in life.",1,SentenceAI,short,0.9403421424743236,1,AI
+"def tuple_to_set(t):
+  s = set(t)
+  return (s)",0,RAID,very_short,0.22538083617392024,0,Human
+"Sincearly, PROPER_NAME.",0,SentenceAI,very_short,0.558232548893673,1,AI
+"The Great Chicago Fire was a conflagration that burned from October 8 to October 10, 1871, in Chicago, Illinois. The fire killed approximately 300 people, destroyed roughly 3.3 square miles of the city, and left more than 100,000 residents homeless. The cause of the fire is not definitively known, but it is generally believed to have started in a barn belonging to Patrick and Catherine O'Leary, possibly as a result of a cow knocking over a lantern. The fire spread quickly through the densely packed wooden buildings in the city, and strong winds exacerbated the spread of the flames. Despite the efforts of firefighters and volunteers, the fire was not brought under control until it had burned for more than two days.",1,HC3,long,0.7043205768794256,1,AI
+"You shouldn't let people influence you in any type of way, be yourself and have confidence in what you want to be in life, after all its you life not theirs.",0,SentenceAI,medium,0.3199275057411886,0,Human
+"Establishing a national currency is a way for a country to have its own money that is used within its borders. Here are the steps a country might take to establish a national currency:
+
+Decide on the design of the currency: This might include what the coins and bills will look like and what they will be made of.
+
+Set the value of the currency: The government will need to decide how much each coin or bill is worth in relation to other currencies and to goods and services within the country.
+
+Produce the currency: Once the design and value of the currency have been decided, the government will need to actually produce the coins and bills. This might involve hiring a company to print the currency or minting the coins.
+
+Distribute the currency: The government will need to get the new currency into the hands of people and businesses so it can be used. This might involve banks, money changers, or other financial institutions.
+
+Promote the use of the currency: The government will need to encourage people and businesses to use the new currency in place of any other money that might be in circulation. This might involve making it illegal to use other currencies or offering incentives for using the new currency.
+
+Overall, establishing a national currency is a complex process that requires careful planning and coordination. It can help a country have more control over its economy and make it easier for people and businesses to buy and sell goods and services within its borders.",1,HC3,long,0.8822533866223786,1,AI
+"//Nach einem Aufstoßen des Balles beginnt der Player die Schlagabdeckung zu präparieren, wie Sie bei allerlei Sportarten auch beobachtet haben und in den meisten Fällern sind es wohl 1/10 Mal 2 Schnitte auf eine Bewegungssequenz von vier Sekunden dauert das Spiel nun über diese Zeit hinaus verzögelt oder wird direkt getürcht wenn man einen Fehler macht könnte dies einfache Schwachpunkt ausbeuten um gegen ungeheuerliche CPU Pinguine vorzulassen damit sie genug anfechten können dass du dich durchsetzen kann ohne jedwedch Angriff im Griff hast nach solchen fehlzeiten kommt für viele Spielerern heute viel Frust was nicht am Wissen ist woher aber gleichzeitig willkommen bin ich gerade mal 30 Min spät zur ersten Arbeit da war mir keiner hier ob nebenan hatte sich nur noch 5 min mehr gebeten als frühestens 9 Uhr also fraglos geeky Jungs Viel Spaß zusammennywenn jetzt jemand gar Lust hat ihre mahnungen wegen rassismus sexism uswp aussortierend... :D 
+                </p>            <img align=""left"", alt="""" border = ""0x000000, solid,"" src=""/userdata-uploads/*YOUR_NAME*/blogposts///images*/*SCREENSHOT*"">  
+
+        <!-- <![CDATA[ -->         
+
+    
+       #endif   --><b/>
+}",1,RAID,long,0.3941195962781178,0,Human
+"Popping things can be satisfying because it gives our brains a little burst of pleasure. It's a bit like a mini-game that our brains can play, and when we win, we get a little reward in the form of feel-good chemicals called endorphins. It's also a way to release tension or stress. Have you ever noticed that when you're feeling anxious or upset, popping something can make you feel a little bit better? That's because it can help take your mind off of your problems and give you a chance to relax. So, popping things can be a fun way to give our brains a little boost, and it can also help us feel calmer and more relaxed.",1,HC3,long,0.7004359661268513,1,AI
+The rule of you can only use your phone during your own time is would work very well since some students need their phones to contact their parents for a ride home.,0,SentenceAI,medium,0.06504372372666142,0,Human
+community service is a good thing to do but some kids just need to take care of other things like watching little brothers or sisters while your mother is a way working and i think that community service should only if the children volunteers in this.,0,SentenceAI,medium,0.08505699076896531,0,Human
+"A clearing bank is a financial institution that acts as a clearinghouse for the exchange of financial instruments between banks and other financial institutions. In this role, the clearing bank acts as an intermediary between the banks and other financial institutions that are involved in a financial transaction, facilitating the exchange of funds or securities and helping to ensure that the transaction is completed smoothly and efficiently.RMB clearing banks, specifically, are banks that have been designated by the Chinese government to clear and settle transactions denominated in the Chinese currency, the renminbi (RMB). These banks play a critical role in the financial system of China, helping to facilitate the exchange of RMB between banks and other financial institutions both within China and internationally. RMB clearing banks are responsible for maintaining the integrity of the financial system by ensuring that all transactions are properly settled and reconciled, and they also play a key role in supporting the growth and development of China's domestic and international financial markets.",1,HC3,long,0.9620096438134265,1,AI
+"def match_ending(string,word):
+
+ if re.search('\\b'+re.escape(word)+'\\b',  str((tuple(!i in {'','.','?',':'} or i=='-')+ord(c)for c in str)!=('',None,*)))[0]!=-1:
+ 
+ return True
+ 
+
+			return False",1,RAID,short,0.6164294047400314,1,AI
+"def tuple_intersection(tuple_list):
+    seen = set()
+    result = []
+    for tuple_ in tuple_list:
+        for element in tuple_:
+            if element in seen:
+                result.append(element)
+                seen.discard(element)
+    return result",1,RAID,short,0.8831933888429641,1,AI
+This makes them the best person at school for advice.,0,SentenceAI,very_short,0.07604915478238844,0,Human
+"3  1 def strip_multiple(string): # Removes all but one single space found between any two words
+        # Assumes input does not contain newline characters (otherwise this will break)
+
+    2     replaced = re.sub(' +',' ',String ) 
+
+		   5 return replaced
+	 
+
+	6 if __name__ =='strrip':
+	 
+            7 print(""strip"")
+
+ 9         elif len(__import__)== 2 and list.__getitem__(0).endswith ('s'):
+
+	 10           print (__file__, "":{}"").format(_f())
+
+
+ 11 	
+
+	 12",1,RAID,medium,0.8259173989547525,1,AI
+"What would happen if the sensors in the car stop working, in the middle of the person driving?",0,SentenceAI,short,0.03965060701791811,0,Human
+"Mindestens sechs Tote bei Anschlag auf Polizeiwache in Somalia
+
+Mogadishu (dpa) - Mindestens sechs Personen, darunter fünf Polizisten, wurden samstags in der somalischen Hauptstadt Mogadishu bei einem Anschlag auf eine Polizeiwache ums Leben gekommen.
+
+Der Anschlag, der von einem noch nicht identifizierten Terrormiliz eingeübt wurde, soll in einer Nähe der Internationalen Flughafen liegen haben.
+
+Die Täter hätten eine Bombe in einem Auto abgeworfen, berichtete die somalische Staatssender Radio Mogadishu. Es sei noch unklar, ob weitere Personen verletzt worden seien.
+
+Die in Somalia ausgeübte Terrormiliz hat in den vergangenen Jahren viele Anschläge in der Hauptstadt und anderen Teilen des Landes verübt.",1,RAID,long,0.2235757777994988,0,Human
+"import math
+def otherside_rightangle(w,h):
+  s=math.sqrt((w*w)+(h*h))
+  return s",0,RAID,very_short,0.09744198387837148,0,Human
+"In the context of video displays , contrast refers to the difference between the faintest and the brightest pixel displayed . Adjusting the contrast control will usually adjust the signal amplification multiplier . The incoming video signal will indicate how intense each pixel should be . This might result in a range of 0 - 10 brightness for each pixel . If you adjust your contrast up , this might double each value , making your new range 0 - 20 and if something came in as an 8 , your display might bump it up to a 16 .",0,HC3,long,0.3994802587862489,0,Human
+We have come so far as humans to go from developing forks and knives to cars that can drive themselves.,0,SentenceAI,short,0.10198873086858704,0,Human
+"The Leghorn chicken is one of the most popular chicken breed in the US , because of its prodigious egg size and number of eggs layed , as well as its smaller body size means less feed to keep it producing . It lays white eggs , hence why white eggs are more noticeable in US supermarkets . EDIT : distinguished between size of egg and size of chicken .",0,HC3,long,0.4619174668519498,0,Human
+"def surface_area_of_square_pyramid(side_length):
+    return (side_length**2) * (1/3) * 5",1,RAID,very_short,0.40835116336623506,0,Human
+"It is common in comics to draw X's on the eyes of a character who is dead or unconscious as a way to indicate that they are not awake or aware. This is known as ""eyeballing."" It is a quick and easy way for an artist to show that a character is not conscious, and it is also a visual shorthand that many people have come to recognize as a sign that a character is not awake or aware. Some people also believe that the X's on the eyes are a way to represent the fact that the character's eyes are closed, although this is not always the case.",1,HC3,long,0.48353464056655987,1,AI
+"def flatten_list(nested_list):
+    flat_list = []
+    for item in nested_list:
+        if isinstance(item, list):
+            flat_list.extend(flatten_list(item))
+        else:
+            flat_list.append(item)
+    return flat_list",1,RAID,short,0.684146205785319,1,AI
+"Ansage gegen fundamentalistische Ausprägungen – Tabuisierung von Sexualität als UrsacheKöln – Der algerische Autor Kamel Daoud hat die Unterdrückung von Frauen in vielen islamischen Gesellschaften angeprangert. Die Fundamentalisten wollten, dass das richtige Leben erst nach dem Tod stattfinde. Weil man das Leben nicht liebe, hasse man die Frauen, sagte Daoud am Sonntagabend, der über Skype von Algerien aus beim Literaturfestival Lit.Cologne zugeschaltet war. Daoud hatte in den vergangenen Wochen mit einer schonungslosen Analyse der sexuellen Übergriffe in der Kölner Silvesternacht Aufsehen erregt, die hauptsächlich nordafrikanischen Männern zugeschrieben werden.
+Fundamentalismus als ""Krankheit""
+In einem Beitrag für mehrere Zeitungen hatte er die Frauenfeindlichkeit nordafrikanischer Länder angeprangert. Als Ursache sieht er die Tabuisierung von Sex in islamischen Gesellschaften. ""Frauen werden als eine Quelle der Destabilisierung betrachtet"", schrieb er. Sie würden ""nur dann respektiert, wenn sie durch ein Eigentumsverhältnis definiert werden: die Frau von X oder die Tochter von Y"".
+Bei der Lit.Cologne sagte Daoud, er sehe Fundamentalismus als eine ""universelle Krankheit"". Es gebe ihn auch in anderen Religionen. ""Ich wehre mich deswegen gegen den Islamismus, weil ich ihn erleide"", sagte er. Würde er woanders leben, würde er sich den dortigen Ausprägungen von Fundamentalismus widersetzen. (APA, 14.3.2016) 
+Zum Thema
+Kamel Daoud: Ein Anti-Camus aus dem Geist des Postkolonialismus",0,RAID,long,0.11904478584746547,0,Human
+The technology behind this type of diving has come a long way over recent years with improvements being made all the time in both gear design as well as safety protocols employed by certifying agencies around world.,1,SentenceAI,medium,0.29455963107801464,0,Human
+"On the one hand, a long break can provide students with the opportunity to review the material they learned during the school year and even take summer school classes to make up any credits they need.",1,SentenceAI,medium,0.4068991281860418,0,Human
+"Giuseppe Verdis ""La Traviata"" an der Volksoper – Kristiane Kaiser gibt eine Violetta Valery, wie man sie in dieser Qualität und Intensität nur selten erleben darfWien – Wieder einmal in die Volksopern-Traviata? Gern. Hans Gratzers Inszenierung ist ein Klassiker der gegenwartsnahen Regie. 129 Mal wurde seine Harlekinade von Giuseppe Verdis Werk am Währinger Gürtel schon gezeigt.
+Und wieder kann man sich nicht sattsehen, an der Eleganz der Kostüme (Barbara Naujok). Und dieses Licht! Meist von milchigem Weiß, gibt es den Objekten zart verlaufende Konturen. Von Frank Sobotta beleuchtet kann sogar Leere zu einem Kunstwerk werden, zu optischer Poesie.
+Aber eigentlich bleibt keine Zeit, die Bühne zu genießen, wenn Kristiane Kaiser singt. Denn wenn die Wienerin als Violetta Valery ihrem emotionalen und physischen Tod entgegengeht, ist alle Aufmerksamkeit bei ihr.
+Kristiane Kaisers Sopran ist Balsam und Luxus zugleich. Zudem durchlebt sie das Schicksal der Titelfigur mit einer Intensität, dass es einem das Herz zuschnürt. Dass Kaiser diese Partie nicht längst an den großen Häusern singt, ist ein Rätsel.
+Carlos Osuna überzeugt mit seinem schablonenhaft gespielten und mit gedeckeltem Stimmpotenzial gesungenen Alfredo nur bedingt; Ales Jenis ist Kaiser als Giorgio Germont ein kraftvoller Konterpart. Die Sänger und das solide Orchester koordiniert Leo McFall bei seinem Hausdebüt recht gut. (Stefan Ender, 4.2.2016) Volksoper, 5. & 9.2, 19.00",0,RAID,long,0.21343018124721239,0,Human
+"Start with the list of mortgage companies approved to work in your area. There are 80 within 10 miles of my house, and more than 100 in my county. Pick ones you know because they are established businesses in your area, region, or even nationally.   A good place to start might be with your current lender. The risk you seem to be worried about is a scam or a trick. In the recent past the scams were ones where the home owner didn't understand teaser rates, and the risk of interest only and pick-your-payment loans. The simpler the bells and whistles, the less likely you are to be embarking on a risky transaction. It can't hurt to ask an organization like the BBB or neighbors, but realize that many people loved their exotic mortgage until the moment it blew up in their face. So for 5 years your neighbor would have raved about their new mortgage until they discovered how underwater they were.  Regarding how smoothy the transaction is accomplished, is hard to predict. There is great variation in the quality of the loan officers, so a great company can have rookie employees. Unless you can get a recommendation for a specific employee it is hard know if your loan officer is going to give great service.   When getting a mortgage for a purchase, the biggest risk is getting a mortgage that results in a payment you can't afford. This is less of a risk with a refinance because you already have a mortgage and monthly payment. But keep in mind some of the monthly savings is due to stretching out the payments for another 30 years. Know what you are trying to do with the refinance because the streamlined ones cant be used for cash out.",0,HC3,long,0.6302948846192542,1,AI
+"def group_keyvalue(l):
+    result = {}
+    for k, v in l:
+         result.setdefault(k, []).append(v)
+    return result",0,RAID,short,0.2640143561520231,0,Human
+"We went to the moon initially as a strategy for the US to have a show of technological , military , and political strength to the globe . To counter a perception of Soviet supremacy . After Kennedy 's assassination , the plan became more as a legacy to the late president , but the initial intentions were still relevant . Once we established that the US could return multiple flights from the lunar surface , it stopped being a valuable program to demonstrate US superiority . When you win the war , you dismantle the war fleet and send the soldiers home . You do n't keep fighting expensive battles .",0,HC3,long,0.14153291135306614,0,Human
+"Der Onkosten der Friedensverhandlungen in Sudans Zentralregierung, von Hunderten Menschen getötet zu werden. Dies ist die tragische Realität für viele Bevölkerungsgruppen des vom Konflikt verschonten Teils des Landes am oberen Nil; das Regionale Regime unter Führer Ahmed Bolad schwor sich vor kurzem öffentlich, niemanden Spuren eines grausamen Angriffs ließenzu zurück, den seine Soldaten auf ihren Weg nach Malakal angeblich geplant hatten: Einsatz von Kokain und Alkohol sowie Vergeltungsmaßnahmen als Motivation dafür genannt wurden, dass nicht einmal alte Frauen und Kinder unschädlich blieben ; einem lokalen Militärzeitung zufolge kam es mehrmals während dieser Reise - etwa 50 Kilometer entfernt aus Palouch - zum Auseinandererscheinen, da bewaffnete Gruppierungen sie hindern wollten, weiterzukommandieren. In Tombura warteten dann noch andere Partisanenhaufen erneut darauf, ihr Opfertier zu bringen  – hier wurde jedoch neuerlichen Auftrag geboren. Insgesamt sollen rund 300 Zivilisten ums Leben gekommen sein, teilweise durch Messerstecherei oder Schusswunden bis ins Gehirn – einer Gruppe verdanken wir diese Aussage eindeutig innerhalb dieses Berichtswerks wiederkehrende Details dessen., was tatsächlich vorgefallen 
+Beinahe parallel verlief unweit davon eine große international finanzierte Operation namens „Echte Mission“ voller Optimismus über Ausgangszustand bei Einbruch der Morgenröt'. Überzeugungen waren so gut wie gleicher Massstab (nicht) konfiszierbare Ware alleine reichte aber offen",1,RAID,long,0.5280645764492145,1,AI
+"It 's a Spanish derivation and would be pronounced "" H - alapeño "" whereas Habanero has a silent h , as in "" A - banero """,0,HC3,short,0.04342234648495568,0,Human
+They may not feel that they have a voice or that their opinions matter.,1,SentenceAI,short,0.09375316433701528,0,Human
+"Bad news from Germany . No , seriously .",0,HC3,very_short,0.0753411399777395,0,Human
+"""Der britische Schauspieler Jude Law hat seine Freundin Sienna Miller auf dem Cover des Magazins _Vanity Fair_ mit einem Heiratsantrag überrascht. Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity Fair_ -Chefs Graydon Carter.
+
+""Die beiden waren in der Woche zuvor in New York zusammen auf der Party des _Vanity",1,RAID,long,0.6262070005113365,1,AI
+"The time is here, help our fellow friends and family.",0,SentenceAI,very_short,0.6374394599610113,1,AI
+"Loxahatchee is a census-designated place in Palm Beach County, Florida, United States. It is located in the western part of the county, approximately 35 miles northwest of West Palm Beach. The community is named after the Loxahatchee River, which flows through the area.",1,HC3,medium,0.9473772714315506,1,AI
+"def max_diff(binary):
+ diff = []
+ 
+ # Loop through all possible substrings (except empty)
+ for i in range(1, len(binary)):
+ substring = binary[i:-i]
+
+ count0 := subtring.count(""0"")
+ count1:= substring.count(""1"") 
+
+ diffforsubstring=abs(count0 - count1)
+ 	 
+ if diffeforsubstring >  max(diff):",1,RAID,medium,0.8342266210482951,1,AI
+"Nothing , becauase black holes sucks up even light .",0,HC3,very_short,0.15878631656662945,0,Human
+"def sum_of_squares_binomial_coeff(n):
+    result = 0
+    for k in range(1, n+1):
+        result += (k*(2*k-1)*(2*k)*(6*k-3)*(12*k-9)*(20*k-13)*(28*k-17)*(36*k-23)*(44*k-29)*(52*k-37)*(60*k-49)*(68*k-53)*(76*k-59)*(84*k-67)*(92*k-73)*(100*k-81))
+    return result
+
+# Test case
+print(sum_of_squares_binomial_coeff(5))",1,RAID,short,0.5343591376262931,1,AI
+"The highest point on the island of Oahu in Hawaii is Mount Ka'ala, which stands at 4,025 feet (1,227 meters) above sea level. It is located in the Waianae Range, a mountain range on the western side of the island. The mountain is a popular hiking destination and offers panoramic views of the island and the surrounding Pacific Ocean.",1,HC3,medium,0.9087937165996913,1,AI
+It could be that their finances are in bad shape because they make poor decisions like that .,0,HC3,short,0.19028932439128224,0,Human
+"Milan-Stürmer leidet an Schambeinentzündung, möglicherweise Operation nötigMailand  – Mario Balotelli droht eine weitere wochenlange Pause. Der 25-Jährige muss sich wegen einer Schambeinentzündung möglicherweise einer Operation unterziehen, wie die ""Gazzetta dello Sport"" am Dienstag berichtete. Damit würde er voraussichtlich bis Jahresende ausfallen. Der AC Milan hatte am Montag mitgeteilt, Balotelli habe sich in Kopenhagen bei einem Spezialisten untersuchen lassen.
+Milan und die Verantwortlichen von Liverpool, das Balotelli seit Sommer nach Italien ausgeliehen hat, wollen in Kürze über die weitere Behandlung entscheiden. Die Verletzung des Stürmers gibt bereits seit Wochen Rätsel auf. Am 27. September hatte er beim 0:1 gegen Genoa sein bisher letztes Spiel für Milan bestritten, ursprünglich war nur ein kürzerer Ausfall prognostiziert worden
+Balotelli konnte bis dahin wieder mit besseren sportlichen Leistungen auf sich aufmerksam machen. Für Milan hatte er in vier Spielen ein Tor erzielt, in seiner vollkommen verkorksten Zeit in Liverpool hatte er dafür ein ganzes Jahr gebraucht. (APA/red, 10.11. 2015)",0,RAID,long,0.14055652684775397,0,Human
+"def find_first_occurrence(A, x):
+    (left, right) = (0, len(A) - 1)
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if x == A[mid]:
+            result = mid
+            right = mid - 1
+        elif x < A[mid]:
+            right = mid - 1
+        else:
+            left = mid + 1
+    return result",0,RAID,medium,0.5214653565137924,1,AI
+"def get_odd_occurence(arr, arr_size):
+  for i in range(0, arr_size):
+    count = 0
+    for j in range(0, arr_size):
+      if arr[i] == arr[j]:
+        count += 1
+    if (count % 2 != 0):
+      return arr[i]
+  return -1",0,RAID,medium,0.14877164127780337,0,Human
+"Inter-Trainer Roberto Mancini wettert gegen Maurizio Sarri nach dem Cup-Duell der beiden italienischen TopteamsNeapel – Das heftige Verbalduell zwischen Napoli-Coach Maurizio Sarri und Inter Mailands Trainer Roberto Mancini hat am Dienstagabend beim 2:0-Cup-Auswärtssieg Inters nicht zur zum Ausschluss Mancinis geführt, sondern auch heftige Anschuldigungen nach sich gezogen. Sarri sei ein ""Rassist"" und ""homophob"", wetterte Mancini, nachdem sein Team das Halbfinale erreicht hatte.
+""Ein 60-jähriger Mann sollte sich schämen, sich so zu benehmen"", kommentierte Mancini die Geschehnisse in der Nachspielzeit, bei der er und Sarri heftig aneinandergeraten waren. Auslöser war ein ""Verwirrspiel"" des vierten Offiziellen, der erst neun und schließlich nur fünf Minuten Nachspielzeit angezeigt hatte. ""Sarri ist ein Rassist, und solche Leute haben im Fußball keinen Platz"", meinte Mancini, der von seinem Konterpart zudem als ""Schwuchtel"" bezeichnet worden sein will.
+Für Sarri ist die Angelegenheit nur halb so wild. ""Ich habe auf einem Fußballplatz schon Schlimmeres gehört und gesehen. In meinen Worten war nichts Diskriminierendes, und ich habe nichts gegen Homosexuelle"", erklärte der 57-Jährige. ""Ich habe mich bei Mancini entschuldigt, für mich ist alles in Ordnung."" (APA/AFP, 20.1.2016)",0,RAID,long,0.18191231928258714,0,Human
+"Ray LaMontagne is an American singer-songwriter and musician who was born in Nashua, New Hampshire and currently lives in New England. He has been known to keep a low profile and has not publicly disclosed his exact place of residence.",1,HC3,medium,0.8629227915520491,1,AI
+"So all of the details we don know now we will know
+
+Another reason why it is worth it is because we will have have good devices that whelped us back in our old wars witch means the device could help us win a big time war.",0,SentenceAI,medium,0.26290471467488247,0,Human
+"def add_list(nums1,nums2):
+  result = map(lambda x, y: x + y, nums1, nums2)
+  return list(result)",0,RAID,short,0.2725587267176274,0,Human
+"def extract_nth_element(list1, n):
+    result = [x[n] for x in list1]
+    return result",0,RAID,short,0.05923667564258809,0,Human
+"def sum_prime_divisors(n):
+    sum = 0
+    for p in range(2, int(n ** 0.5) + 1):
+        if n % p == 0:
+            sum += p
+            while n % p == 0:
+                n //= p
+               sum += p
+    return sum",1,RAID,medium,0.8342723511641871,1,AI
+Getting a B average is not that difficult but it makes you look so much better.,0,SentenceAI,short,0.09926263840499361,0,Human
+"def first_repeated_char(s):
+    char_count = {}
+    for char in s:
+        if char in char_count:
+            return char
+        char_count[char] = 1
+    return None",1,RAID,short,0.49193240627877854,1,AI
+"def sort_by_length_and_value(lst):
+    """"""
+    Sort a list of lists by length and value.
+    """"""
+    def sort_by_length(lst):
+        """"""
+        Sort a list of lists by length.
+        """"""
+        return sorted(lst, key=lambda x: len(x))
+
+    def sort_by_value(lst):
+        """"""
+        Sort a list of lists by value.
+        """"""
+        return sorted(lst, key=lambda x: x[0])
+
+    return sort_by_length(sort_by_value(lst))",1,RAID,medium,0.9325430893885792,1,AI
+"The drugs have to be kept as physical evidence in the trials for whoever they were confiscated from . After that , yeah , they get destroyed .",0,HC3,short,0.009118455317183836,0,Human
+"I sold my house and had been in the market looking for a replacement house for over 6 months after I sold it. I found someone willing to give me a short term, 3 month lease, with a month to month after that, at an equitable rate, as renters were scarcer than buyers.By the time I found a house, there were bidding wars as surplus had declined (can be caused seasonally), and it was quite difficult to get my new house. However, appraisers help this to a degree because whatever the seller wants, is not necessarily what they get, even if you offer it. I offered $10k over asking just to get picked out of the large group bidding on the house. Once the appraisal came in at $10k below my offer, I was able to buy the house at what I expected. Of course I had to be prepared if it came in higher, but I did my homework and knew pretty much what the house was worth. The mortgage is the same as the lease I had, the house is only 10 years' old and has a 1 year warranty on large items that could go wrong. In the 3 months I've been in the house, I have gained nearly $8k in equity....and will have a tax writeoff of about $19,000 off an income off a salary of $72,000, giving me taxable income of $53,000... making by tax liability go down about $4600. If I am claiming 0 dependents I will get back about $5,000 this year versus breaking even.",0,HC3,long,0.29687399565125805,0,Human
+When having the benefit to take online class at home is working at your own pace.,0,SentenceAI,short,0.33166311676271876,0,Human
+There are many reason why this information is false.,0,SentenceAI,very_short,0.19889960590319944,0,Human
+Hey fellow citizens!,1,SentenceAI,very_short,0.5982572803982109,1,AI
+"def count_sub_lists(lst, element):
+    count = 0
+    for sub_lst in lst:
+        if element in sub_lst:
+            count += 1
+    return count",1,RAID,short,0.8069652431738105,1,AI
+"def product_of_unique_numbers(nums):
+    nums = set(nums)
+    return reduce(lambda x, y: x * y, nums)",1,RAID,short,0.5045839035394705,1,AI
+"from collections import Counter
+def count_variable(a,b,c,d):
+  c = Counter(p=a, q=b, r=c, s=d)
+  return list(c.elements())",0,RAID,short,0.20949388822116508,0,Human
+"When breeding , the two sets of DNA "" mix "" . In order to do so , they need to be very , very similar , they need to speak the same language , as it were . Two different species ' sets of DNA are too different to be able to communicate with each other , so they ca n't mix . Horses ' and donkeys ' DNA speak somewhat similar languages so they can communicate enough to sometimes create offspring , but it 's going to be "" faulty "" because of misunderstandings in the process of mixing . Turtles ' and squirrels ' DNA ca n't even begin to communicate because they speak entirely different languages .",0,HC3,long,0.04233512915672746,0,Human
+"Yes, it is true that twins can run in families. This is because the trait of having twins is partly determined by genetics. There are certain genetic factors that can increase a person's chances of having twins, such as having a family history of twins or certain racial or ethnic backgrounds. Here's a simple explanation of how this works: when a woman becomes pregnant, her body produces a hormone called human chorionic gonadotropin (hCG). This hormone helps the body maintain the pregnancy by preventing the woman's body from ovulating (releasing eggs) again. Some women produce more hCG than others, and this can lead to the release of more than one egg during ovulation. When two eggs are fertilized at the same time, it can result in the birth of twins. So, if a woman has a family history of twins, it could be because someone in her family (like her mother or grandmother) produced more hCG, which led to the birth of twins. This genetic trait can be passed down from one generation to the next, which is why twins can run in families. I hope that helps to answer your question! Do you have any other questions about twins or genetics?",1,HC3,long,0.8098559181130286,1,AI
+"In today's world, technology has become an integral part of our lives.",1,SentenceAI,short,0.8473278883544729,1,AI
+I think that it's a good idea for us to have to participate in an extracurricular activity.,1,SentenceAI,short,0.41764453570287075,0,Human
+"Malaysian Airlines Flight MH370 was a passenger flight that disappeared on March 8, 2014, while flying from Kuala Lumpur, Malaysia, to Beijing, China. The plane was carrying 227 passengers and 12 crew members. Despite an extensive search and rescue effort, the plane has not been found and its whereabouts remain a mystery. There have been several theories about what happened to the plane, but so far, no concrete evidence has been found to explain its disappearance. Some experts believe that the plane may have crashed into the ocean, while others think it may have landed somewhere and is being hidden. The search for the missing plane has involved teams from several countries, including Malaysia, China, and Australia. They have searched vast areas of the Indian Ocean, but so far, they have not found any trace of the plane or its passengers. It is not uncommon for news about missing planes or other mysteries to fade from the headlines after a period of time. However, the families of the passengers and crew members on Flight MH370 have not given up hope of finding out what happened to their loved ones, and the search for the missing plane continues.",1,HC3,long,0.874795705813375,1,AI
+"It 's like facebook , but all you do is post status updates .",0,HC3,short,0.10290588710541236,0,Human
+"Vor allem das Bundeskriminalamt steigerte Einsatz des Ortungsmittels massivDeutsche Behörden setzen immer mehr auf die sogenannte Stille SMS. Dabei handelt es sich um ein Werkzeug zur Ortung von Mobiltelefonen. Nutzer erhalten eine Kurznachricht, die sie selbst aber nicht sehen. Dadurch wird ihr Telefon quasi ""aktiviert"", Behörden können dann den Standort abfangen. Laut einer parlamentarischen Anfrage im deutschen Bundestag versandte das Bundeskriminalamt allein im zweiten Halbjahr 2015 rund 117.000 Stille SMS, was eine fünffache Steigerung im Vergleich zu den vorhergegangenen sechs Monaten darstellt. Der deutsche Verfassungsschutz nutzte die Methode 142.000 Mal.
+Scharfe Kritik
+Unbekannt bleibt, wie oft Zoll, BND und Militärischer Abschirmdienst (MAD) Stille SMS versandten. Das kritisiert der Bundestagsabgeordnete Andrej Hunko (Linke) scharf. Er fordert, dass Nutzer zumindest über den Einsatz Stiller SMS informiert werden. Außerdem bekrittelt er, dass die Behörden durch die Methode selbst Informationen erzeugten, also nicht einfach nur Daten auslesen. In Österreich sollen Stille SMS nicht zum Einsatz kommen, gab Innenministerin Johanna Mikl-Leitner (ÖVP) in einer Anfragebeantwortung bekannt. (red, 20.1.2016) Link
+Heise
+Nachlese
+Stille SMS: Ein perfektes Tool für Überwachung",0,RAID,long,0.20979439770440658,0,Human
+"Thirdly, libraries have evolved to meet the changing needs of their communities in the digital age.",1,SentenceAI,short,0.8064958157855731,1,AI
+"I 'm pretty sure it 's like the whole square / rectangle situation . All emojis are emoticons , but not all emoticons are emojis . Emojis refer to the Unicode characters that are specifically recognized by phones and other devices to display the appropriate emoticon . So techincally , an emoji is a code that links to a specific emoticon . It was just widely popularized by Apple and most people think emoji means those specific faces .",0,HC3,long,0.43107865292843917,0,Human
+when teachers ask you to do school work in the summer some students will forget and some will not even try but If the student could pick what kind of project they wanted to do more students would be interested.,0,SentenceAI,medium,0.021979283453515013,0,Human
+"Education is a public good that benefits everyone, and requiring college graduates to pay the full cost of their education would create a barrier to entry for low-income students and be unfair to those who are already paying a significant amount for their education.",1,SentenceAI,medium,0.6786215594577498,1,AI
+"Polen weitet electronische Überwachung trotz Kritik massiv aus
+
+Warschau - Polen hat seine electronic surveillance erheblich ausgeweitet, obwohl sich die Criticism von Datenschutzexperten und Oppositions politikern grows louder. The Polish government has just passed a new law that gives law enforcement agencies the power to intercept and monitor all electronic communications without a court order.
+
+ Die neue Order ermöglicht es den Behörden, emails, text messages, und Telefonate zu überwachen und zu speichern, ohne dass ein richterlicher Beschluss erforderlich ist. Dies gibt den Behörden auch die Möglichkeit, dieMetadatavon Communications To collect and store, including information about the location of individuals and their devices.
+
+Critics argue that the new law violates fundamental rights and freedoms guaranteed by the Polish Constitution and European Union treaties. They claim that the absence of judicial oversight and the lack of transparency in the use of these powers could lead to abuses of authority and unjustified interference with privacy.
+
+""This is a dangerous extension of the surveillance state,"" said Katarzyna Szymielewicz, president of the Polish branch of the International Commission of Jurists. ""It ignores the lessons learned from communist times, when secret services had similar powers and routinely abused them.""
+
+Die Regierung defendiert die neueste Maßnahme jedoch als notwendig zur Bekämpfung von crime and terrorism. ""We must take action to protect our citizens and ensure their safety,"" said Interior Minister Krzysztof Ignaczak. ""These measures are proportionate and necessary to address the threats we face today.""
+
+Despite this assurance, opposition parties and civil society groups have vowed to challenge the law in court. ""We will do everything in our power to block this assault on our basic rights,"" said Barbara Nowacka, leader of the left-wing Razem party. ""The fight for freedom and democracy is not over yet.""
+
+International organizations such as Amnesty International and Human Rights Watch have also expressed concern",1,RAID,long,0.9088461373736467,1,AI
+"For instance, a sales associate who takes the time to learn about a customer's style and preferences can help them find the perfect outfit, which can lead to repeat purchases and positive reviews.",1,SentenceAI,medium,0.9463676502423299,1,AI
+"I'm sorry, but I'm not able to access specific information about an album called ""What Separates Me From You."" Could you provide more context or clarify your question?",1,HC3,short,0.9951109036693341,1,AI
+Individuals who engage in excessive amounts of gaming may not get enough physical activity due to spending long periods of time sitting still—which can have negative health effects over time if not addressed appropriately through diet and exercise routines outside of gaming sessions.,1,SentenceAI,medium,0.8280479751680772,1,AI
+"def count_inversion(t):
+    return sum([bin(.5*len(*[tuple((x>y) and x+1 or y+1,).__format__(tuple)))[-2:]==='1'for t_,count,_ in collections.__dict__.get('Counter',defaultdict)((|_.item()-**.item(),|_.index(**.)-**.index(**)|)).values()))",1,RAID,short,0.914214936680485,1,AI
+"def sum_range(numbers, start, end):
+    return sum(numbers[start:end])",1,RAID,very_short,0.855055032075426,1,AI
+Reyes 4,0,SentenceAI,very_short,0.42051759245105386,0,Human
+"# Cubic Volume Calculation for python 2 and 3
+
+    def calculateVolume(length, width, height): 
+        height = float (input('Enter your data '))  ##this returns input as string which needs conversion first then proceed with calculations below 
+
+     volume= length *width*1/3+ len + widht**2 - area   ###calculating formula mentioned in question given by user",1,RAID,medium,0.8445419371900511,1,AI
+Driving the car would be putting the people at risk that are using it because something could go wrong with the car and could cause an accident that would put other people in danger.,0,SentenceAI,medium,0.0104606452204458,0,Human
+Many of these people simply want to tell their side of the story .,0,HC3,short,0.13546378625724453,0,Human
+"My friends and family always come to me for help with their math homework, and while it makes me feel good to be able to help them, it can also be really frustrating when they don't understand the material as easily as I do.",1,SentenceAI,medium,0.6207963705437552,1,AI
+"The potential benefits of online school are manifold—it can make higher education more accessible to students with disabilities or illnesses, provide a more flexible learning environment for students, and open up opportunities for them to gain employment.",1,SentenceAI,medium,0.9731379026647061,1,AI
+"I chose to restore a two piston, five horse power motor.",0,SentenceAI,short,0.1025673129777335,0,Human
+"A CPU (Central Processing Unit) is the brain of a computer. It is responsible for performing most of the functions that a computer can do. The CPU is made up of tiny transistors that can be turned on and off to perform different tasks.
+
+The number of cores in a CPU refers to the number of transistors that are able to work at the same time. A dual-core CPU has two cores, a quad-core CPU has four cores, and an octa-core CPU has eight cores.
+
+Having more cores in a CPU can allow a computer to perform more tasks at the same time, which can make it faster and more efficient. For example, if you are running multiple programs on your computer at the same time, a quad-core CPU may be able to handle those tasks more quickly than a dual-core CPU.
+
+In general, having a more powerful CPU with more cores can improve the performance of a computer, but there are other factors that can also impact performance, such as the amount of memory (RAM) and the speed of the CPU.",1,HC3,long,0.8809990529091711,1,AI
+"def find_difference(a, b): """"""Find the difference between two consecutive numbers in a given list. """""" if len(a) == len(b): return a - b return a + b
+
+The code is written in Python 2.7.3.
+
+The following is the output of the code:
+
+>>> import stackoverflow >>> stackoverflow.com/python/find_difference(1, 2) 1 >>> stackoverflow.com/python/find_difference(1, 2, 3) 2 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4) 3 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5) 4 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6) 5 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7) 6 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8) 7 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9) 8 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) 9 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) 11 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) 12 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) 13 >>> stackoverflow.com/python/find_difference(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,",1,RAID,long,0.9590333791640481,1,AI
+"I'm sorry, but without more context or information, it is not possible for me to accurately identify the person you are asking about. Could you provide more details or context about the person you are asking about? This will help me better understand and assist you with your question.",1,HC3,medium,0.9539744666580102,1,AI
+"The Euro was a currency that was adopted by several European countries in order to make it easier for people and businesses to trade and do business with one another. The idea was that by using a single currency, it would be easier for people and businesses to buy and sell goods and services across borders, and it would also make it easier for people to travel between countries because they wouldn't have to worry about exchanging money. Many people and governments believed that the Euro would make Europe stronger by promoting trade and economic cooperation. Some people also thought that having a single currency would make it easier for people to understand the value of money and make it easier for them to compare prices and make informed decisions about what to buy. Overall, the idea behind the Euro was to make it easier for people and businesses to interact with one another and to promote economic growth and stability in Europe. While the Euro has had its challenges, it has also contributed to increased trade and economic cooperation in Europe.",1,HC3,long,0.8723052180559352,1,AI
+"However, it is often said that successful people are those who are willing to try new things and take risks.",1,SentenceAI,short,0.6939524798101231,1,AI
+"def is_binary_string(str):
+    """"""
+    Returns True if the given string is a binary string (i.e., consists only of 0s and 1s), False otherwise.
+    
+    >>> is_binary_string('1101')
+    True
+    >>> is_binary_string('0123456789abcdef')
+    False
+    >>> is_binary_string('101010')
+    True
+    >>> is_binary_string('hello world')
+    False
+    """"""
+    return all(chr in '01' for chr in str)",1,RAID,medium,0.8845800927332902,1,AI
+"def Remove_chars(str1, str2):
+    # Create a set of all the characters in str2
+    char_set = set(str2)
+    
+    # Iterate through each character in str1 and check if it's in str2
+    for char in str1:
+        if char in char_set:
+            str1 = str1.replace(char, '')
+    
+    return str1",1,RAID,medium,0.7132863065282126,1,AI
+"With enthusiasm and effort as two of our closest companions, we can turn failure into the stepping stone to success.",1,SentenceAI,short,0.8757656998689962,1,AI
+"def pancake_sort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+        for j in range(n-i-1, n):
+            if arr[j] < arr[j-1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+    return arr",1,RAID,medium,0.20442744116243822,0,Human
+NeverWet treatment on rc boat hull : URL_0,0,HC3,very_short,0.13539628308456989,0,Human
+"def odd_Num_Sum(n) : 
+    j = 0
+    sm = 0
+    for i in range(1,n + 1) : 
+        j = (2*i-1) 
+        sm = sm + (j*j*j*j)   
+    return sm",0,RAID,short,0.07204988021987987,0,Human
+"The treadmill measures the force and speed at which you push back the conveyor belt , which allows it to calculate the mechanical work you 're doing , in watts . Usually , the treadmill actually displays this number . Power is energy per second , so it can be converted into energy in joules per hour by multiplying it with 3600 , and then dividing it by 4.2 to go from joules to calories . So 100 w of mechanical power translates to 100\*3600/4.2 = 86 ( kilo ) calories per hour . That 's the easy part . The difficult part is to figure out the amount of calories burned for the mechanical energy you produce . This is most likely a proprietary formula that varies with each manufacturer . The machines in my gym just seem to multiply it with 7 though , so the 100 w in my example translate to 600 calories per hour . Edit : Just in case you were wondering : What we call calories are actually kilo calories , which is why they are abbreviated "" kcal "" .",0,HC3,long,0.22982808121222859,0,Human
+"I'm sorry, but I don't have current information about any events or issues involving Wikipedia and Go Daddy. As a language model, I don't have access to the internet or the ability to browse current events, so I can only provide general information and guidance based on my training data. Is there anything else I can help with?",1,HC3,medium,0.9779320498911922,1,AI
+"def print_positive_numbers(numbers):
+    for num in numbers:
+        if num > 0:
+            print(num)",1,RAID,short,0.9574417288318127,1,AI
+There were always newspapers . Today the editorials and letters to the editor are all on 1 - 2 pages but they used to be a much bigger element of the paper . And people read the paper as much for that sort of content as for actual news . Political campaigning in the early days consisted largely of having your well - known and well - written supporters back you in the various editorial pages of important newspapers . In fact it was considered gauche to go around overtly campaigning and giving speeches and whatnot until well in to the 19th century .,0,HC3,long,0.16656079680007374,0,Human
+It is very different for every person . I personally only see clear for about 5 - 10 feet before all fine detail becomes blurry . At 30 feet I can see large objects but not necessarily determine what they are . That is why I wear glasses .,0,HC3,medium,0.19858762453056075,0,Human
+"38-Jährige laut psychiatrischem Gutachten zurechnungsfähigWien – Die Staatsanwaltschaft Wien hat gegen die 38-jährige Frau, die am 4. August ihre vierjährige Tochter in ihrer Wohnung in der Goldscheidgasse in Hernals erstochen hat, Anklage wegen Mordes erhoben. Dem Gutachten der psychiatrischen Sachverständigen Adelheid Kastner zufolge war die Mutter zwar in einem akuten Belastungszustand, aber zum Tatzeitpunkt zurechnungsfähig.Kastner billigt der Frau in ihrer Expertise eine ""deutliche Einschränkung der Dispositionsfähigkeit"" zu, geht aber davon aus, dass keine Schuldausschließungsgründe gegeben waren. Wie der fünfseitigen Anklageschrift zu entnehmen ist, soll sich die Mutter hinter das Mädchen gestellt, die Vierjährige mit der linken Hand an der Stirn erfasst und an sich gedrückt haben. Danach soll sie mit der Rechten, in der sie ein elf Zentimeter langes Küchenmesser hielt, wiederholt auf das Kind eingestochen haben. Die Vierjährige erlitt zahlreiche Schnitt- und Stichwunden am ganzen Körper. Laut Gerichtsmediziner waren Verletzungen am Hals und im Brustbereich todesursächlich, da sie binnen kürzester Zeit einen massiven Blutverlust bewirkten. (APA, 9.12.2015)",0,RAID,long,0.22708316088604946,0,Human
+"Steven Tyler, the lead singer of the band Aerosmith, was born on March 26, 1948.",1,HC3,short,0.9644059733178152,1,AI
+"def find_substring(str1, sub_str):
+   if any(sub_str in s for s in str1):
+       return True
+   return False",0,RAID,short,0.14306371226581213,0,Human
+"This calls to mind a tidbit I read about phosphoric acid , an additive in dark colored soft drinks . I got the impression then that the above actually leeched calcium from your bones and teeth , but I just googled it and learned that an excess of phosphorus can instead lead to a decrease of calcium and the diseases associated with it . Also that the carbonation itself is n't the cause . Here is an article on too much phosphoric acid and its effects on bone health ; more on Google if you 're interested : URL_0",0,HC3,long,0.16870779859058557,0,Human
+"def max_sum_list(lists):
+ return max(lists, key=sum)",0,RAID,very_short,0.5934041828839954,1,AI
+Remember the old idea that life just materializes out of thin air or inanimate objects ? I am thoroughly convinced that it 's actually true with fruit flies .,0,HC3,short,0.24893615409727643,0,Human
+"They still exist here in Scotland . My mum previously worked in a few of them aftwr being raised in one her self . They re normally refered to as childrens homes over here and from being in a few myself normally house around 20 - 30 kids at a time . Some are eventually fostered butnothers just grow up in "" the system "" . There was a series of teen novels written about a girl living in one named Tracy Beaker .",0,HC3,long,0.2630414456366225,0,Human
+You should ask for advice because people have different opinions or they might just know what to do in your spot.,0,SentenceAI,short,0.014432302592215457,0,Human
+"No limit . GPS is a set of satellites which transmit a specially designed radio signal . Receiving chip sets in phones and GPS devices merely detect their location by measuring the difference in timing between signals from different satellites . GPS devices do not transmit anything to a "" network "" .",0,HC3,medium,0.16761521324889886,0,Human
+"Many countries are adding alcohol to petrol in order to get a cleaner burning , cheaper [ fuel ] ( URL_0 ) . Of course this is a quick fix and not much better for the environment in the long run .",0,HC3,medium,0.10120928936526367,0,Human
+"def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)",1,RAID,short,0.8036493722913808,1,AI
+"On the apple website itself, it gives you brief information and you can install it, ""Apple receives this location information only when you locate your device, turn on Lost Mode, or enable Send Last Location.",0,SentenceAI,medium,0.6255047051103542,1,AI
+"Car trips will usually have higher tolls which results in lost wages for the transportation worker, who goes to an unnecessary location for work and then returns home and gets to pay back his transportation back costs.",1,SentenceAI,medium,0.17522615517405563,0,Human
+"def product_of_numbers(numbers):
+    return functools.reduce(lambda x, y: x * y, numbers)",1,RAID,very_short,0.9418255388015798,1,AI
+"def modify_rle(seq):
+    # Initialize an empty dictionary to store the modified RLE
+    modified_rle = {}
+
+    # Iterate through the sequence
+    for i, element in enumerate(seq):
+        # If the current element is not the same as the previous element, or we haven't seen it before
+        if i > 0 and seq[i - 1] != element or element not in modified_rle:
+            # Add the current element to the dictionary with its count
+            modified_rle[element] = 1 + (modified_rle.get(element, 0))
+
+    return modified_rle",1,RAID,long,0.9288600119634668,1,AI
+[ everything can be answered with this parody video ] ( URL_0 ),0,HC3,short,0.028612363206860926,0,Human
+"The braille dots can be so arranged , but then that would be using a writing system designed for eyes , but by using fingers instead of eyes . It would be using the wrong tool for the job . The alphabet is optimized for reading with eyes and loses its advantages when read by finger . Therefore it 's better to use a system that is designed for the fingers , even if it 's difficult to read with the eyes .",0,HC3,long,0.055726745248121046,0,Human
+Talk about being healthy and making sure your body is running in a proper manner.,0,SentenceAI,short,0.7485551817971458,1,AI
+"For example, when you are in a class that you or, a student doesn't feel comfortable talking in you can talk to the teacher cause maybe, they are the only person in the room you are comfortable talking with.",0,SentenceAI,medium,0.33933996917430476,0,Human
+"def remove_even(str1):
+ str2 = ''
+ for i in range(1, len(str1) + 1):
+    if(i % 2 != 0):
+        str2 = str2 + str1[i - 1]
+ return str2",0,RAID,short,0.40142162457456143,0,Human
+"Also, you will be surrounded by strangers, which can be uncomfortable for some people.",1,SentenceAI,short,0.36815364620972374,0,Human
+"def opposite_Signs(x,y): 
+    return ((x ^ y) < 0);",0,RAID,very_short,0.14751284121556343,0,Human
+.,1,SentenceAI,very_short,0.281127215538095,0,Human
+"def rectangle_area(l,b):
+  area=l*b
+  return area",0,RAID,very_short,0.2823698111972491,0,Human
+"def are_all_values_valid(tup):
+    return all(value in (""hello"", ""world"") for value in tup)",1,RAID,short,0.6937078242046862,1,AI
+Limiting car usage can help to improve air quality and make our cities healthier places to live.,1,SentenceAI,short,0.9219070557016531,1,AI
+No matter what form it takes though — whether it’s lecture slideshows powered by Microsoft PowerPoint or gaming software designed for language arts instruction — one thing remains clear: embracing technology within school settings can prove challenging yet rewarding depending on its usage case-by-case basis offering unique advantages along with some drawbacks too.,1,SentenceAI,medium,0.7659289477165071,1,AI
+"def sum_first_even_odd(numbers):
+    even_index = 0
+    odd_index = 1
+    return numbers[even_index] + numbers[odd_index]",1,RAID,short,0.8182384355427381,1,AI
+"""[…] Mario Tennis: Ultra Smash is an incredibly intense game with a very realistic gameplay where players need to be quick on their feet and have amazing control in order to win all the games they play"".
+
+Read more in GameInformer",1,RAID,medium,0.4471597187973759,0,Human
+"And it's not just about personal stuff, either.",1,SentenceAI,very_short,0.9132096209545976,1,AI
+"In the first paragraph it talks out the percentage of her happiness,fearful,anger,disgusted.",0,SentenceAI,short,0.46775083403710943,0,Human
+"def divide_tuples(tuple1, tuple2):
+				result = []
+				    for i in range(len(tuple1)):
+					      a=int(((float((str)(i+ 1)))) / (( float() )))
+
+ 
+
+			 return result 
+
+# Example usage:
+		 
+		 print (divide_tuples([10, 20], [5])) # Output should be [[0.6275163367187594, 0.625]].",1,RAID,medium,0.8707841435347221,1,AI
+"A prime example here at Generic_School is a geometry teacher, although she assigns a handful of work, she knows that if the students completes it, it will be extremely helpful to them.",0,SentenceAI,medium,0.152514607356658,0,Human
+The author exaplains that it's our closest planet to Earth and it's right terms like density and size; meaning that the author is telling us the similarties between Earth and Venus.,0,SentenceAI,medium,0.24180684839973351,0,Human
+"Distance learning is an invaluable tool for students, helping them to learn without the stresses of a traditional classroom setting.",1,SentenceAI,short,0.8255543758696238,1,AI
+"Sincerely,
+
+[Your name]",1,SentenceAI,very_short,0.915679590188774,1,AI
+"When the public started to beleive that NASA was hiding facts about ""The Face"", NASA went ahead and started to budget the next spacecraft to Mars, the Mars Global Surveyor.",0,SentenceAI,short,0.11553526091946786,0,Human
+"I can only speak for my wealthy country : * Water is plentiful . Seriously , we have a lot of it here . * Installing a secondary water distribution system in a city would cost twice as much taxpayer money as our current water system . Good luck getting voted in on that platform . * Installing individual greywater systems in each house / apartment would cost even more money . * How much water would it actually save ? Right now all our water is recycled anyway . We take it from the ground / river , treat it , use it , treat it again , then return it to the ground / river . With a greywater system you still have to treat it at the far end before it gets reused . Some ideas I like : * Using heat from greywater to heat your home before returning the water to the sewage system . * Using rainwater for toilets . Requires a small cistern in each house . Both of these ideas do involve extra cost , so it is really up to the homeowner to decide to do these things .",0,HC3,long,0.10172109197836611,0,Human
+"However, if given the chance to make their own decisions on how to do their project, a student would feel more motivated to do the work because it's their choice on what's being done.",0,SentenceAI,medium,0.27266360008557616,0,Human
+"def remove_leading_zeros(ip_address):
+    """"""
+    Remove leading zeros from an IP address.
+    """"""
+    return ""."".join(str(int(x)) for x in ip_address.split("".""))",1,RAID,short,0.9204384808104565,1,AI
+"import heapq as hq
+def raw_heap(rawheap):
+  hq.heapify(rawheap)
+  return rawheap",0,RAID,very_short,0.031165844149810062,0,Human
+"Municipal bond funds can be a good option for investors looking for a stable, tax-free investment with the potential to provide a steady stream of income. Municipal bonds are issued by state and local governments to fund various projects, such as the construction of schools, highways, and other infrastructure. They typically offer lower yields than other types of bonds, but the interest earned on municipal bonds is usually tax-free at the federal level, which can make them attractive to investors in higher tax brackets.Stable short-term municipal bond funds invest in bonds with shorter maturities, typically less than five years. These funds can offer a higher degree of stability and lower risk compared to longer-term bond funds, as the bonds in the fund are less sensitive to changes in interest rates. However, they may also offer lower yields compared to longer-term bond funds.One potential advantage of using municipal bond funds to beat the bank is that they may offer higher yields than traditional savings accounts or certificates of deposit (CDs) at banks, especially if you are in a high tax bracket. However, it's important to keep in mind that municipal bond funds, like all investments, carry some degree of risk and there is no guarantee of a positive return. It's always important to carefully consider your investment goals and risk tolerance before making any investment decisions.",1,HC3,long,0.8626716772741557,1,AI
+"John Wayne was born on May 26, 1907, in Winterset, Iowa, United States.",1,HC3,short,0.9707885256306028,1,AI
+"The thing I 'd like to see is how menstruation is treated in a woman empowered / matriarchal religion , anyone got any info ? I 'm betting the attitude is quite different . The dominant world religions and most religions currently extant do not fall into that category . For the inevitable comments below about smell , I 'm sure everyone living in the hot desert type climates that generated our major religions was more than a bit whiffy . Menstruation historically was also a lot rarer , it did not happen every month because you got married at 12 or whenever you started bleeding and were kept pregnant , miscarrying , birthing or breastfeeding for most of your natural life until you died giving birth or were lucky enough to make it past menopause . Not being able to touch anything when menstruating because you 'd make it unclean seems a little bit less of a burden when you realize it would almost never happen .",0,HC3,long,0.13753275912403484,0,Human
+You might consider posting this in /r / askscience .,0,HC3,very_short,0.0443723880263634,0,Human
+Cause people in California have way to many drugs,0,HC3,very_short,0.048429987521086536,0,Human
+"The debt-to-equity ratio (also known as the debt-to-equity ratio or the debt-equity ratio) is a financial ratio that measures the relative proportion of a company's debt to its equity. It is calculated by dividing the company's total debt by its total shareholder equity.To calculate the debt-to-equity ratio using the market value of equity, you will need to use the following formula:Debt-to-Equity Ratio = Total Debt / Market Value of EquityTo calculate the market value of equity, you will need to use the following formula:Market Value of Equity = Market Capitalization - Preferred StockWhere:Market Capitalization is the total market value of a company's outstanding shares of stock, and is calculated by multiplying the number of outstanding shares by the current market price per share.Preferred Stock is the value of a company's preferred stock, which is a type of equity that has a higher claim on a company's assets and earnings than common stock.For example, let's say a company has $100 million in total debt and its market capitalization is $500 million. The company also has $50 million in preferred stock. To calculate the market value of equity for this company, we would use the following formula:Market Value of Equity = $500 million - $50 million = $450 millionTo calculate the debt-to-equity ratio for this company, we would use the following formula:Debt-to-Equity Ratio = $100 million / $450 million = 0.22This would mean that the company has a debt-to-equity ratio of 0.22, which means that its debt represents 22% of its equity.It's important to note that the debt-to-equity ratio is just one of many financial ratios that can be used to evaluate a company's financial health and risk profile. It's generally considered to be a good idea to have a balanced debt-to-equity ratio, as too much debt can make a company vulnerable to financial distress, while too little debt may limit a company's growth potential.",1,HC3,long,0.9401484260164786,1,AI
+"Wir alle wollen mehr davon. Haben wir sie dann, so ist sie uns oft zu lang: die ZeitZeit als physikalische Einheit darzustellen ist klar definiert und strikten Regeln unterworfen. Ein Konstrukt, an welchem man festhalten und sich orientieren kann. Gemessen an diesen Parametern kann man Zeit also weder ""haben"" noch ""verlieren"", sie ist einfach da, beschreibt den Fortschritt der Gegenwart Richtung Zukunft, die Vergangenheit hinter sich lassend.
+Wie wir sie fassen
+Die Einteilung in Stunden, Minuten und Sekunden lässt wenig Spielraum für Ausschweifungen, und dennoch nehmen wir Zeitspannen je nach Situation anders wahr. Oder ganz allgemein gesprochen: Existiert Zeit auch abseits der bewusst wahrgenommenen Objekte oder macht erst das menschliche Bewusstsein die Zeit zur Zeitvorstellung?
+Bereits Platon beschäftigte sich mit dem Fassen dieser abstrakten Gedanken, für ihn geht die Frage nach der Zeit einher mit der Frage nach dem Sein.
+Und wie sie uns erfasst
+Wir haben immer weniger Zeit, die ""Zeit wird immer schnelllebiger"", sie läuft uns davon. Und doch bleibt sie konstant.
+Wie gehen Sie mit dem Konstrukt Zeit um? Welche Bedeutung hat diese für Sie und wie wirkt sie auf Sie ein? Lassen Sie sich von Ihr leiten oder leben Sie ""zeitlos""? (cln, 24.10.2015)",0,RAID,long,0.2923188844386913,0,Human
+"In the United States, laws and amendments are two different types of legal changes that can be made to the country's system of laws.\n\nLaws are rules that are passed by the U.S. Congress or by state legislatures, and they apply to everyone in the country or state. These laws can be about a wide range of topics, such as taxes, crime, education, and health care.\n\nAmendments, on the other hand, are changes that are made to the U.S. Constitution, which is the highest law of the land. The Constitution is a document that outlines the basic principles and structure of the U.S. government, and it can only be amended (or changed) in a specific way that is outlined in the Constitution itself.\n\nSo, in short, laws are rules that are made by elected officials at the federal or state level, while amendments are changes to the Constitution that are made in a special way. Both laws and amendments can be used to change or add to the legal system in the United States, but amendments have a higher level of authority because they are part of the Constitution.",1,HC3,long,0.9202445910906648,1,AI
+Its always important for people to get a second or third or even forth opinion so people dont get into trouble and do the right thing.,0,SentenceAI,short,0.24863808182446384,0,Human
+"For example, if you are trying to decide on a college major, talking to a guidance counselor, a teacher, and a family member can provide a range of opinions and insights that can help you make an informed decision.",1,SentenceAI,medium,0.8935670640885591,1,AI
+"Historically women were , by today 's standards , sold . Their original last name tells you that they are still ' possessed ' by their father . The new last name tells you that they are now ' possessed ' by the husband . Many of our marital traditions are carry - overs from this paradigm .",0,HC3,medium,0.25768772160500464,0,Human
+"Neuauflage des Shooters ermöglicht Zeitreise in den Klassiker aus 1993Am 13. Mai erhält die vermutliche bekannteste Shooter-Reihe der Videospielgeschichte einen Reboot. Dann erscheint ""Doom"" auf PS4, Xbox One und PC und soll Fans blutrünstiger Schießereien gegen Dämonen aller Art wieder freudiges Gruseln bescheren.
+Zwei Mitarbeiter des Entwicklungsteams bei id Software, Marty Stratton und Hugo Martin, haben kürzlich einem Redakteur von IGN näheren Einblick in den Titel gegeben und dabei ein Easteregg enthüllt. Das allererste ""Doom"" aus 1993 feiert in der Neuauflage ein kleines Comeback.
+Via Geheimtür in die Vergangenheit
+Im Spiel hat man an verschiedenen Stellen Geheimtüren, die erst geöffnet werden müssen – etwa über einen gut versteckten Hebel. Sie dienen als Eingang in Abschnitte aus ""Doom""-Level von anno dazumal – komplett mit ihren Texturen sowie zweidimensionalen Gegenständen.
+Ganz vollständig sind die nostalgischen Abzweigungen allerdings nicht. Monster und Waffen bleiben auch in den Retro-Arealen die selben. Wer ein vollständiges Oldschool-Erlebnis möchte, muss also weiterhin zum Original greifen. (gpi, 04.05.2016)
+ignLinks
+Doom
+IGN",0,RAID,long,0.38558312380893495,0,Human
+"Nicki Minaj is a stage name. The artist's real name is Onika Tanya Maraj. She was born on December 8, 1982, in Saint James, Trinidad and Tobago, and is a rapper, singer, and songwriter. Minaj rose to fame with her unique style and energetic performances, and has released a number of successful albums and singles throughout her career.",1,HC3,medium,0.9654177905992484,1,AI
+"def median_numbers(a,b,c):
+ if a > b:
+    if a < c:
+        median = a
+    elif b > c:
+        median = b
+    else:
+        median = c
+ else:
+    if a > c:
+        median = a
+    elif b < c:
+        median = b
+    else:
+        median = c
+ return median",0,RAID,medium,0.5461772134132494,1,AI
+"For example in VAUBAN,Germany they have given up theif cars street parking,driveways,and home garages are generally forbidden.",0,SentenceAI,short,0.09073704544204322,0,Human
+"Nowdays, there are more and more people that are learning English in china.",1,SentenceAI,short,0.5304488117236339,1,AI
+"If this has only happened twice then I think it is something that is fixable, but should not be the deciding factor that takes away the whole Electoral College system.",0,SentenceAI,short,0.16494060775235495,0,Human
+"def print_strings(str_list):
+    map(print, str_list)",1,RAID,very_short,0.813523535512775,1,AI
+"Figures put it between $ 10 to $ 15 billion dollars but the amount is probably a lot higher . The Catholic church owns vast amounts of land , shares in major businesses and a vary remarkable gold reserve .",0,HC3,medium,0.34589189864607944,0,Human
+"Due to the inability of distance learning to provide hands-on-learning, it's an ineffective form of education which won't serve as a benefit for students.",0,SentenceAI,short,0.7361335763709069,1,AI
+I trust that you will carefully weigh the advantages of the Electoral College in your decision-making process.,1,SentenceAI,short,0.5997568285875607,1,AI
+"However, technology can also lead to distraction and over-dependence – people can become overwhelmed by the vast number of tasks and end up spending an excessive amount of time on their devices trying to stay on top of their workload.",1,SentenceAI,medium,0.8426393717420398,1,AI
+"Of this, about $2,700 is spent on gas.",1,SentenceAI,very_short,0.1222595623079019,0,Human
+"Third, limiting car usage can help to reduce traffic congestion.",1,SentenceAI,very_short,0.8727010112039086,1,AI
+"It is obvious that the votes of the Electoral College do not accurately reflect the opinions of the people, and gives the citizens of our country poor representation in our government.",0,SentenceAI,medium,0.4541811008842488,0,Human
+"Der Oberstaatsanwalt in Wien hat am Donnerstag den Strafantrag gegenüber der öffentlichen Anklage aufgrund des Verdachts einer Parteienförderung eingereicht. Der Landeshauptmann von Burgenland, Christian Ragger (FPÖ), wurde wegen seiner Beteiligung an einem Gemeinschaftswahlkampf im Jahr 2017 vernommen. Das Bundesverfassungsgericht hielt damals die Währungen zu dieser Kampagne für unzulässige Parteienförderung. 
+
+""Faktisch ist ein Urteil des BVG durchgesetzt worden und eine Straftat begangen wird"", sagte das ÖGP über diesen Fall stellvertretend Peter Lieschitzek nachdem Amtsrichterin Petra Bijač aus Korneuburg den Vorstrafenprozess gegen Ragger geschlossen hatte."" Dieser kann bis zu drei Monaten Freiheitsstrafe bekommen oder eine Geldsteuer beantragen."", fügte er hinzu.",1,RAID,long,0.28786320610637706,0,Human
+"import re
+def multiple_split(text):
+  return (re.split('; |, |\*|\n',text))",0,RAID,very_short,0.10214129972217809,0,Human
+"Marking decimals was a complicated business , but in the middle ages Arabian mathematicians began using a small mark between the units and the tenths . It was a very short vertical line written below the text baseline , and to some people it looked like a dot while to others it looked like a comma . When French mathemeticians started using a separator , they used a comma because they were already using dots to make Roman numerals easier to read . The United States and most of the former British Empire used dots , except South Africa which officially used the comma , but the dot is widely used . That 's the decimal marker . The thousands separator is going to be a sign that is n't the decimal marker , so in countries that use the decimal comma , a dot is used to separate the thousands , and vice versa . This is n't official , though . Because of the risk of confusion , the official international standard is that a dot or comma can be used as the decimal marker , but no punctuation should be used to separate the thousands . If anything , you should use a space .",0,HC3,long,0.19788631434189896,0,Human
+"The 2009 Super Bowl was won by the Pittsburgh Steelers. They defeated the Arizona Cardinals by a score of 27-23. It was held at Raymond James Stadium in Tampa, Florida on February 1, 2009. The Steelers' victory was led by quarterback Ben Roethlisberger, who was named Super Bowl MVP, and a strong defensive performance.",1,HC3,medium,0.9513483381140655,1,AI
+"As of 2022, the two senators from Louisiana are John Neely Kennedy and Bill Cassidy. Kennedy is a member of the Republican Party and Cassidy is also a Republican. Both senators were elected to their current terms in 2020.",1,HC3,medium,0.6304136936185508,1,AI
+Few people can argue against the fact that technology has drastically improved the way we live.,1,SentenceAI,short,0.38688166911232563,0,Human
+"Der Albtraum für die syrische Bevölkerung geht weiterFast schon trotzig zog die Uno das durch, was der Auftakt von Verhandlungen zwischen syrischer Opposition und dem syrischen Regime hätte werden sollen: Wurde es schon im Vorfeld des Treffens in Genf am Freitag klar, dass es keine direkten Gespräche geben würde, sondern nur indirekte, so saßen in Genf Regime und Vermittler am Freitag erst einmal praktisch allein da.
+Der Standpunkt der Oppositionssammelgruppe ""Hohes Verhandlungskomitee"" (HNC), die sich selbst als Vertreter aller Syrer und Syrerinnen versteht – was nicht von allen so gesehen wird –, ist aus emotionaler Sicht nachvollziehbar. Wie kann man verhandeln, wenn gleichzeitig Menschen durch Bomben und an Entbehrungen sterben? In sozialen Medien gab es überdies eine starke Kampagne gegen die Teilnahme. Dementsprechend stellte das HNC ""Bedingungen"", von denen es wusste, dass sie nicht erfüllt werden würden. Und der Druck der staatlichen Schutzherren und Zahlmeister des HNC blieb auch aus.
+Auch wenn das HNC doch noch nach Genf kommt, die nüchterne Tatsache ist wohl, dass die Zeit noch nicht reif ist. Das Regime hat mit russischer Hilfe soeben militärischen Aufwind und keine Eile. Für die Opposition ist es schmerzlich, mit einem starken Regime zu verhandeln, gleichzeitig sind die kämpfenden Rebellen noch nicht erschöpft genug, um dazu gezwungen zu sein. Und der Albtraum für die syrische Bevölkerung geht weiter. (Gudrun Harrer, 29.1.2016) Zum Thema:
+Syrien-Verhandlungen vorerst nur mit Regime und Zivilgesellschaft",0,RAID,long,0.12532086879071036,0,Human
+"def count_negatives(lst):
+    return sum(1 for x in lst if x < 0)",1,RAID,short,0.6988110454986725,1,AI
+"[ An ant - sized explanation ] ( URL_0 ) . Different setting , same principle .",0,HC3,short,0.01417962104681551,0,Human
+"def remove_character(s, c):
+    """"""
+    Returns a copy of the string 's' with all occurrences of 'c' removed.
+    """"""
+    return ''.join([x for x in s if x != c])",1,RAID,short,0.9607471584827135,1,AI
+""""""" 
+    print(check_scalennes(-10, 5))
+
+        Function prints whether it's an Scalenetrisangle (or equilateral) :D 
+
+      def tntype3dpyc8i4g5h0zq7aglolxwjyggmypkek9sygudu1r6o2isiiieezybccojmgyuxvijtvyadcecsaepmslyoyfldoxunucakljssslckysrqmcgrkjshjjcdowocafotrmcpikpsayymynchvmsoejddcxawubefpqclmgbsabeqemiprgacutugscahcjifbbpcivpxomngokbfryodwhdfidwsulirougeekumthohigobspksufgnimypuvlnitbhgsmlglovkncyehjkbtujcfsmopkgttsgpmiybyecxxusdrffphdsstoswwsqavmdpgmpkyaxfnrxogkkwtgfklppajswsuaqqlctdyexrfntfcpttdueixmqxtiqnyelhtibdxlsnlalrpftbgurtydbukbrfsflbmevfdgpdkdtmvnbbltfqqytjqncvxebmmxfhyewuwfyrtbkpvtlmtgtpefefrdpwkylpkwnsdndydktpnrhuyfgplpfwdicwxhnkbuhnsbcxcvbjezzhwdcgzmbhrjdsewyvfjlxzwcazskdmvvrlcrkwcgczwlxyeguzozdzeydlweizlxrsdvlmroquyyvpvrkcpiapmeyejcwojmrbnmcvcmnpruauwmkmnxvevkllsyofmxmufmvnteerjpgojozrpbxbwpznxdlelgmnhdduhlrkvsnnfxmfkhupasnvtkrwiafbxsanxlhmfpvgmrzwsfdeykltihjsnfpuyrhfyxlbjuzmzhcuhezbamwbqrlozgneeebeyzsnfwkihhbzdhqtguwfoehuonlfdiqcqp",1,RAID,short,0.8877501457542063,1,AI
+URL_0 It 's just an urban legend .,0,HC3,very_short,0.014870473992985788,0,Human
+We have taken many pictures and it has faded away more every time we take a picture of it.,0,SentenceAI,short,0.5250794529226123,1,AI
+Goddam I fucking love dogs . Upvotes all round .,0,HC3,very_short,0.1674319023284444,0,Human
+"If the teacher ignores this behavior and only praises the good behavior of other students, the disruptive student may feel left out and unimportant.",1,SentenceAI,short,0.2597009987884141,0,Human
+"http://www.kollektivetik.de/vf/sowienwissen…/jh-gebrauchte_nachstu…:3675
+
+Advertisements",1,RAID,very_short,0.7250769993411981,1,AI
+"There is no theoretical upper limit to how tall a building can be, but there are practical limits that depend on several factors. Some of these factors include the strength of the materials used to construct the building, the stability of the ground the building is built on, and the wind and weather conditions in the area.\n\nFor example, if a building is made of very strong materials like steel or concrete, it can be built taller than a building made of weaker materials like wood. Similarly, if the ground the building is built on is very stable and not prone to earthquakes or other types of ground movement, the building can be built taller. On the other hand, if the ground is unstable or the area is prone to earthquakes, the building may need to be shorter and have a stronger foundation to prevent it from collapsing.\n\nWind and weather can also affect the height of a building. In an area with strong winds, a taller building may need to be built with extra support to keep it from swaying too much. Similarly, in an area with a lot of snowfall, a taller building may need to have a steeper roof to prevent snow from building up and causing the roof to collapse.\n\nOverall, there are many factors that can limit the height of a building, but with the right materials, foundation, and design, it is possible to build very tall buildings.",1,HC3,long,0.9253470450730933,1,AI
+"While "" organic "" is becoming just a marketing trend , there is a big difference if you compare , for example , eggs from chicken that have been raised free range in countryside and factory "" made "" eggs . They look different , taste different and there have been studies that show higher nutritional value as well . Of course they are more random in their sizes and appearances too . Yeah , and bacteria count too , but I would n't be too worried about that if you do n't eat them raw and know how to store products properly . I have been living in countryside raising my own food , and let me tell you that "" organic "" is nt any closer to own grown food than nonorganic food . Now that I live in city I only buy food straight from known farmers .",0,HC3,long,0.33609014283843974,0,Human
+As the years goes by you see that the face doesnt appear on anymore of the picutures from the time it started to the time it ends ( 1998 - 2001.,0,SentenceAI,medium,0.24004934046078932,0,Human
+"Noch zahlreiche Hürden – Dilma Rousseff seit langem unter DruckBrasilia – Das brasilianische Parlament hat den Prozess zur Einleitung eines Amtsenthebungsverfahrens gegen Präsidentin Dilma Rousseff gestartet. Das teilte der Vorsitzende der Abgeordnetenkammer, Eduardo Cunha, am Mittwoch mit. Der Erzfeind Rousseffs nahm den entsprechenden Antrag der konservativen Opposition wegen des Vorwurfs geschönter Budgets in den Jahren 2014 und 2015 an.
+Damit beginnt ein langes und komplexes Verfahren, das mehrere Hürden nehmen muss, bevor es im eigentlichen Amtsenthebungsverfahren zu einer Abstimmung über Rousseffs Amtsverbleib kommen kann.
+Geschöntes Budget
+Die konservative Opposition wirft Rousseff vor, das Budget unter anderem im Wahljahr 2014 geschönt zu haben. Ein Gericht erklärte das Budget im Oktober wegen zahlreicher Unregelmäßigkeiten für illegal. Bei der Präsidentenstichwahl im Oktober 2014 war Rousseff mit drei Prozentpunkten Vorsprung auf ihren Herausforderer Aécio Neves im Amt bestätigt worden.
+Rousseff steht seit längerem unter Druck, ihre Zustimmungswerte sind unter zehn Prozent gesunken. Im Oktober entschied der Oberste Wahlgerichtshof TSE, gegen Rousseff wegen Korruptionsverdachts zu ermitteln. Geprüft werden soll, ob Rousseff ihren Wahlkampf 2014 illegal mit Spenden von Zulieferern des Energiekonzerns Petrobras finanziert hat. Auch gegen ihren Erzfeind Cunha gibt es Korruptionsvorwürfe im Zusammenhang mit Petrobras. (APA, 2.12.2015)",0,RAID,long,0.12713139067600235,0,Human
+"def count_substrings(s):
+    char_dict = {}
+    for char in s:
+        char_dict[char] = char_dict.get(char, 0) + 1
+    
+    count = 0
+    for char in s:
+        if char_dict[char] > 1:
+            count += char_dict[char] * (char_dict[char] - 1) // 2
+    
+    return count
+
+# Test cases
+print(count_substrings(""aab""))  # Output: 2
+print(count_substrings(""abc""))  # Output: 3
+print(count_substrings(""xyz""))  # Output: 0",1,RAID,medium,0.8293381080113901,1,AI
+"Vegetable just means a part of a plant that we eat , with the exception of fruit and nuts . It can refer to leaves , stems , roots , whatever .",0,HC3,medium,0.47873935718509947,0,Human
+"We are by our nature social animals , we crave the company of others . If that is denied us we compensate by talking to ourselves , or our pets . It completely normal and helps us stay sane .",0,HC3,medium,0.661274018248249,1,AI
+"The social norms approach is a theory that proposes that people's behaviors are influenced by their perceptions of what is considered normal or acceptable within their social group. According to this approach, people's behaviors are shaped by their beliefs about what is normal or typical behavior for their social group, and they are more likely to engage in behaviors that are seen as normative within their group.\n\nThe social norms approach suggests that people are motivated to conform to the expectations of their social group and to avoid deviating from these norms. This can be because they want to fit in with their group or because they believe that following the norms is the right thing to do.\n\nThe social norms approach has been applied in a variety of contexts, including in research on social influence, social psychology, and health behavior. It has been used to understand and address issues such as substance abuse, violence, and risky behaviors, as well as to promote pro-social behaviors such as environmentally-friendly behaviors and charitable giving.",1,HC3,long,0.9487775149106548,1,AI
+"According to the United States Census Bureau, the population of Memphis, Tennessee, as of 2020 was approximately 654,723. This figure represents the city proper and does not include the surrounding metropolitan area. Memphis is the largest city in the state of Tennessee and is known for its rich history, cultural attractions, and vibrant music scene.",1,HC3,medium,0.9099365480500397,1,AI
+"""Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig. Die FDP-Sprecher macht sich über Alter der Präsidentschaftskandidaten lustig",1,RAID,long,0.6874730758672861,1,AI
+"It's generally a good idea to pay off any high-interest debt, such as a car loan, as soon as possible. This can help you save money on interest payments and can also improve your credit score. If you're able to pay off your car loan, you may be able to use the money you were using to make loan payments for a down payment on a new home or other large purchase.However, there are a few things to consider before deciding to pay off your car loan or use the money for a down payment. First, you should consider the terms of your car loan. If you have a low interest rate on your loan, it may not be worth it to pay it off early and potentially incur a prepayment penalty. Additionally, you should consider your overall financial situation and whether you have enough savings to cover any unexpected expenses that may come up.Ultimately, the decision to pay off your car loan or use the money for a down payment will depend on your specific financial situation and goals. It may be helpful to speak with a financial advisor or planner to help you make the best decision for your needs.",1,HC3,long,0.9150273182484876,1,AI
+"Teilnehmer die online waren, wurden als offline angezeigt – Web-Client bot AusweichmöglichkeitDer Messenger Skype war am Montag (21.9.) von größeren Schwierigkeiten geplagt. Viele Nutzer konnten sich entweder gar nicht anmelden oder sahen Personen in ihrer Kontaktliste als offline, obwohl diese eingeloggt waren.
+Betreiber Microsoft hatte die Probleme kurz nach dem Auftreten bestätigt. Sofortnachrichten sollen laut Auskunft des Unternehmens erfolgreich zugestellt worden sein, sofern beide Teilnehmer eingeloggt waren.
+Web-Client funktioniert
+Betroffen waren Desktop-Client und offenbar auch die mobile App. Hier versuchte das Programm meist ohne Erfolg Verbindung mit den Servern von Microsoft aufzunehmen.
+Es war jedoch möglich, den Browser-basierten Client zu nutzen, der auch den Online-Status von Freunden korrekt anzeigte. Beim Ausprobieren waren jedoch mehrfache Loginversuche notwendig, um Zugang zu erhalten.
+Am Abend behoben
+Gegen 18 Uhr schien Microsoft die weltweite Störung wieder in den Griff bekommen zu haben. Nach und nach verband sich Skype am Desktop und auf Mobilgeräten wieder ordnungsgemäß. Mittlerweile läuft der Dienst wieder stabil. Eine Ursache für den langen Ausfall hat der Betreiber bislang noch nicht genannt. (gpi, 21.09.2015)
+Update, 20:15 Uhr: Skype funktioniert wieder ordnungsgemäß, der Artikel wurde entsprechend aktualisiert. Links
+Skype
+Skype Web
+Heise",0,RAID,long,0.429317352795578,0,Human
+"if u r using smokeless tobacco for long time, it is better get evaluated, it may be precancerous. it is better to stop tobacco chewing. it is reversible if it is pre cancerous",0,HC3,medium,0.15091387003966153,0,Human
+"def find_multiples(m, n):
+    return [i * n for i in range(1, m + 1)]",1,RAID,short,0.3834001624049897,0,Human
+Hey there!,1,SentenceAI,very_short,0.5479026049762393,1,AI
+"def sum_Of_Subarray_Prod(arr,n):
+    ans = 0
+    res = 0
+    i = n - 1
+    while (i >= 0):
+        incr = arr[i]*(1 + res)
+        ans += incr
+        res = incr
+        i -= 1
+    return (ans)",0,RAID,medium,0.08022592669273508,0,Human
+"def check_integer(text):
+ text = text.strip()
+ if len(text) < 1:
+    return None
+ else:
+     if all(text[i] in ""0123456789"" for i in range(len(text))):
+          return True
+     elif (text[0] in ""+-"") and \
+         all(text[i] in ""0123456789"" for i in range(1,len(text))):
+         return True
+     else:
+        return False",0,RAID,medium,0.4674703561301117,0,Human
+"Additionally, these devices can distinguish between different types of vegetation thanks to their sensors’ ability to recognize shapes and textures; this allows them to precisely target specific areas in need while avoiding those where no treatments are necessary.",1,SentenceAI,medium,0.6605351807460506,1,AI
+"Many different places have now started to get into thee habit of preferring to use bicycles, carpools, or even walking.",0,SentenceAI,short,0.3783490840372582,0,Human
+I agree with this statement for a few reasons.,1,SentenceAI,very_short,0.4056447689054174,0,Human
+"import re
+def extract_quotation(text1):
+  return (re.findall(r'""(.*?)""', text1))",0,RAID,very_short,0.1975096901477531,0,Human
+"def sort_string(s):
+    return sorted(s)",1,RAID,very_short,0.7361839880144107,1,AI
+"def remove_list_range(list1, leftrange, rigthrange):
+   result = [i for i in list1 if (min(i)>=leftrange and max(i)<=rigthrange)]
+   return result",0,RAID,short,0.1833436934713272,0,Human
+"def gcd(x, y):
+    gcd = 1
+    if x % y == 0:
+        return y
+    for k in range(int(y / 2), 0, -1):
+        if x % k == 0 and y % k == 0:
+            gcd = k
+            break  
+    return gcd",0,RAID,medium,0.5674134443195769,1,AI
+"def sum_of_squares(n):
+    return sum(i**2 for i in combinatorics.combinations(n, 2))",1,RAID,very_short,0.6085473599903333,1,AI
+"John F. Kennedy, also known as JFK, was the 35th President of the United States. In the 1960 presidential election, JFK ran against Richard Nixon, the Republican candidate. JFK was a member of the Democratic Party and was elected as President on November 8, 1960. He served as President from 1961 until his assassination in 1963.",1,HC3,medium,0.9706752778607446,1,AI
+"def find_exponentio(test_tup1, test_tup2):
+  res = tuple(ele1 ** ele2 for ele1, ele2 in zip(test_tup1, test_tup2))
+  return (res)",0,RAID,short,0.05918629151402589,0,Human
+"Barack Obama was born on August 4, 1961.",1,HC3,very_short,0.7569014564004537,1,AI
+"By connecting these devices together, they can provide users with valuable insights into the environment around them – such as temperature levels inside a building or energy consumption patterns across an entire city – leading to increased efficiency and improved safety standards.",1,SentenceAI,medium,0.8599392324944677,1,AI
+"def find_min_length_sub_list(lst):
+    min_len = len(lst)
+    min_sub_list = lst
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i:j] == lst[i:j][::-1]:
+                if len(lst[i:j]) < min_len:
+                    min_len = len(lst[i:j])
+                    min_sub_list = lst[i:j]
+    return min_sub_list",1,RAID,medium,0.8172976941304197,1,AI
+Some kids come here for relationships.,0,SentenceAI,very_short,0.19454811088392768,0,Human
+"def find_Sum(arr,n): 
+    arr.sort() 
+    sum = arr[0] 
+    for i in range(0,n-1): 
+        if (arr[i] != arr[i+1]): 
+            sum = sum + arr[i+1]   
+    return sum",0,RAID,short,0.09357490007583635,0,Human
+See the following information: http://www.bogleheads.org/wiki/Treasury_Inflation_Protected_Security You can buy individual bonds or you can purchase many of them together as a mutual fund or ETF. These bonds are designed to keep pace with inflation.  Buying individual inflation-protected US government bonds is about as safe as you can get in the investment world. The mutual fund or ETF approach exposes you to interest rate risk - the fund's value can (and sometimes does) drop. Its value can also increase if interest rates fall.,0,HC3,long,0.4852564592511314,1,AI
+"By studying Venus, scientists can gain a better understanding of how Earth's climate works and how it could be affected by changes in the atmosphere.",1,SentenceAI,short,0.4470129611150674,0,Human
+"Dice makers put numbers on the sides of a dice in a very specific way. Each side of a dice is called a ""face,"" and each face has a number on it. The numbers are arranged so that the opposite faces add up to the same number. For example, if a dice has a ""1"" on one face, it will have a ""6"" on the opposite face. This is because 1 + 6 = 7, and all dice have six faces, so the opposite faces must add up to 7.\n\nBetting dice are a special type of dice that are used in games of chance, such as craps. Betting dice are usually made with very precise measurements and have very specific numbers on each face. The numbers on betting dice are usually arranged so that they have a specific probability of landing on a particular face. For example, a dice with more ""6""s on its faces will have a higher probability of rolling a ""6"" than a dice with fewer ""6""s.\n\nI hope this helps! Let me know if you have any other questions.\n",1,HC3,long,0.7796896710015021,1,AI
+"def sum_even_odd(numbers):
+    even_sum = 0
+    odd_sum = 0
+    for num in numbers:
+        if num % 2 == 0:
+            even_sum += num
+        else:
+            odd_sum += num
+    return even_sum + odd_sum",1,RAID,short,0.8880244811014613,1,AI
+"Water is a food , and is regulated by the FDA . Alcohol is regulated by the BATFE , which has different rules . Actually , a lot of alcohol , particularly beer , does have date codes on it . Some are easy to read and others are not , but Budweiser even makes a big deal about their dates .",0,HC3,long,0.2649710036081211,0,Human
+"An auto quarter panel is a panel that is located on the quarter of a vehicle, which is the rear portion of the vehicle that extends from the back of the doors to the tail lights. The quarter panel is typically made of sheet metal and is an important structural component of the vehicle, helping to support the body and provide stability. It also serves to cover and protect the rear wheel wells and the back of the vehicle. Some vehicles may have a separate quarter panel section for each side of the vehicle, while others may have a single panel that spans both sides. In some cases, the quarter panel may be damaged in an accident or through normal wear and tear, and may need to be replaced in order to restore the integrity of the vehicle's body.\n",1,HC3,long,0.6769142441184078,1,AI
+"Sure, I'd be happy to help you with a loan math problem! Please provide me with more information about the problem, including any specific details or calculations you need help with.",1,HC3,medium,0.9548857085899928,1,AI
+"def convert_tuples_to_set(tuples):
+    return set(tuples)",1,RAID,very_short,0.8928534193166651,1,AI
+Hey there!,1,SentenceAI,very_short,0.5479026049762393,1,AI
+One major advantage of investing in index funds is that they typically have lower fees than traditional mutual funds or actively managed portfolios.,1,SentenceAI,short,0.779510915376812,1,AI
+"From what I 've read , metal allergies are not actual allergies but actually being susceptible to irritation . With nickel for instance , one of the most common metal allergies , moisture causes salts to form that cause rashes and eczema on the skin 's surface .",0,HC3,medium,0.20963758751563735,0,Human
+"There is land that is not privately owned, but rather is owned by the government or a public entity. This land is usually managed by a government agency and is not available for individuals to purchase. Instead, the government may allow people to use the land for specific purposes, such as camping or recreation.
+
+There are also some areas of land that are not claimed by any particular person or group, such as certain areas of wilderness or uninhabited islands. However, it is generally not possible to simply claim ownership of such land.
+
+In most cases, if you want to acquire land, you will need to purchase it through a real estate agent or directly from the owner. Real estate agents typically work with landowners to help them sell their properties. They may also help buyers find properties that meet their needs and negotiate the terms of the sale.
+
+If you want to obtain land from the government, you may be able to do so through a government program or by leasing the land for a specific purpose. For example, the government may make land available for farming or for the development of renewable energy sources. You would typically need to apply for such opportunities and meet certain requirements to be eligible.",1,HC3,long,0.8269623563756229,1,AI
+They pick a new pope . An organization that presumes to stress forgiveness ca n't really do much else . The dead guy would probably be canonized fairly quickly and achieve sainthood in record time to capitalize on the martyr factor .,0,HC3,medium,0.11974831878288647,0,Human
+"I'm sorry, but your question is not clear to me. Could you please provide more context or clarify your question?",1,HC3,short,0.9873952063713828,1,AI
+The idea of driverless cars can be dangerous in the matter of if something goes wrong and the driver is not alert it would cause an accendent.,0,SentenceAI,short,0.044501256275150766,0,Human
+The same goes for movie-going.,1,SentenceAI,very_short,0.08653241399669741,0,Human
+"While there are valid arguments against the Electoral College, such as the winner-take-all system limiting voter influence and the potential for electors to defy the will of the people, the advantages outlined above outweigh these concerns.",1,SentenceAI,medium,0.8401024509426364,1,AI
+"def roman_to_int(roman):
+    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    prev_value = 0
+    for char in roman:
+        current_value = roman_dict[char]
+        if current_value > prev_value:
+            result += current_value - 2 * prev_value
+        else:
+            result += current_value
+        prev_value = current_value
+    return result",1,RAID,medium,0.31889420052803186,0,Human
+"def similar_elements(test_tup1, test_tup2):
+  res = tuple(set(test_tup1) & set(test_tup2))
+  return (res)",0,RAID,very_short,0.09046156061537816,0,Human
+"It is generally not advisable to disappear and leave your credit cards behind, as this can cause financial problems for you and potentially lead to legal issues. However, if you do disappear and leave your credit cards behind, the length of time they will continue to work will depend on various factors.If you have a credit card with a fixed expiration date, it will stop working once that date has passed. Most credit cards have an expiration date that is printed on the front of the card, usually in the format of MM/YY or MM/YYYY. If you do not see an expiration date on the front of your card, it may be located on the back or on your monthly statement.If you have a credit card with a rolling expiration date, it will continue to work as long as you are making the required payments and are not in violation of the terms of your credit card agreement. This means that if you disappear, your credit card will continue to work until you reach the credit limit, stop making the required payments, or violate the terms of your credit card agreement in some other way.If you are concerned about your credit cards and your financial situation, it is important to address these issues before disappearing. This may involve canceling your credit cards, paying off any outstanding balances, and taking steps to protect your credit score. It is also a good idea to inform your bank or credit card issuer if you are planning to be away for an extended period of time, as this can help prevent any unexpected issues or misunderstandings.",1,HC3,long,0.982647447170712,1,AI
+"However, the team has also made some impressive signings and investments in young talent, which has helped to rebuild the squad and restore their competitiveness.",1,SentenceAI,short,0.7978017259491397,1,AI
+"The operating theory is that if the wealthy have more money , they will invest it back into the country in ways that benefit everybody . This is called the "" trickle down "" theory . Everything below this sentence is based in my personal political opinion . The reason this has failed over the past 30 years is because while there is the expectation of reinvestment , there 's nothing saying that you HAVE to reinvest or WHAT you may reinvest in . It 's just expected to happen and happen in a way that benefits the country as a whole because Reagan said so . So let 's say that Bob Billionaire has his overall taxes cut from 30 % to 20 % . According to the "" trickle down "" theory , that 10 % of his income that is now "" his "" is going to be invested . If he makes a high risk investment , he may very well employ a whole lot of people if even only for a short while . He could potentially see MUCH profit from this , but he could also lose it all . This kind of high risk investment is the most beneficial to workers as it creates more jobs where there were none , and this is the kind of investment that the entire "" trickle down "" theory is built on . Instead , Bob is more inclined to make safer investments ... like investing in commodity futures and such . While this still helps the economy somewhat , it 's not nearly as helpful to most people as the "" trickle down "" theory is advertised . This type of investment tends to be spread across numerous established businesses ... owned by people who are also wealthy . Finally , the worst case state of this is that Billionaire Bob decides that he 's done making money and just puts all his money in a trust for his kids . A trust fund is n't literally zero investment , but if a bank has a trust fund they are going to make the safest investments possible .... raw minerals , Fortune 20 companies and such . That money that we 're not taxing him because we 're told it 's better for it to "" trickle down "" pretty much only "" trickles "" to other very wealthy people and his own kids .",0,HC3,long,0.0853569402989545,0,Human
+"basically : yes but you can manufacture water through combining H and O ( H2O ! ) , do n't know the exact way but you can . other than that you may get some water from space , but i doubt that it is even notable .",0,HC3,medium,0.06757092736107223,0,Human
+"You can withdraw from CPP as early as 60. However, by doing so, you will permanently reduce the payments. The reduction is calculated based on average life expectancies. If you live for an average amount of time, that means you'll receive approximately the same total amount (after inflation adjustments) whether you start pulling from CPP at 60, 65, or even delay your pension later. People may have pensions through systems other than CPP. This is often true for big business or government work. They may work differently. People who retire at 55 with a pension are not getting their pension through CPP. A person retiring at 55 would need to wait at least five years to draw from the CPP, and ten years before he or she was eligible for a full pension through CPP. Canada also offers Old Age Security (OAS). This is only available once you are 65 years old or older, though this is changing. Starting in 2023, this will gradually change to 67 years or older. See this page for more details. As always, it's worth pointing out that the CPP and OAS will almost certainly not cover your full retirement expenses and you will need supplementary funds.",0,HC3,long,0.48616546708632485,1,AI
+Food however plays an integral role throughout this magical period – ranging from traditional dishes such as turkey dinners accompanied with cranberry sauce; homemade pies made lovingly by grandmothers passed down through generations; gingerbread houses created collaboratively between siblings…the list goes on!,1,SentenceAI,medium,0.9236728390495768,1,AI
+"""Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Sie ist auch ein wichtiger Bestandteil unserer Identität. Die Sprache ist ein wichtiger Bestandteil unserer Identität. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestandteil unserer Kultur. Sie ist ein Mittel, um unsere Gedanken und Gefühle zu vermitteln. Die Sprache ist ein wichtiger Bestand",1,RAID,long,0.8923337941577274,1,AI
+"Additionally, online classes can be taken from anywhere with an internet connection, making it easy for students to learn from the comfort of their own home or while traveling.",1,SentenceAI,short,0.8047113489079919,1,AI
+"However, there are also a lot of people who believe that work is still a necessary evil, and that it is important for us to have a job.",1,SentenceAI,short,0.9070777935459362,1,AI
+"""Dazu wäre es jetzt noch zuzutrauen, die Milliarde Kurse wiederzugewinnen. Die Telekom und Sky müssen auf ihren Plätzen bleiben.""",1,RAID,short,0.7160868556159296,1,AI
+"def string_length(str1):
+    count = 0
+    for char in str1:
+        count += 1
+    return count",0,RAID,short,0.10415495707956095,0,Human
+Actually care about the person you 're talking to . The rest will flow naturally .,0,HC3,short,0.14846228735237618,0,Human
+"Men and women have different levels of hormones that can affect the growth of facial hair. Men have higher levels of hormones called androgens, which can cause their facial hair to grow thicker and faster. Women have lower levels of androgens, which can result in less facial hair.
+
+Facial hair can also be influenced by genetics, so some men and women may have thicker or thinner facial hair based on their family history.
+
+As for why women don't need their faces protected from the elements in the same way that men do, it's not necessarily that women don't need protection, but rather that the thickness and density of facial hair can vary significantly between men and women. Some women may have thicker or longer facial hair than others, and this can provide some protection from the elements. However, in general, men tend to have thicker and denser facial hair than women, which can provide more protection from things like wind, sun, and cold weather.",1,HC3,long,0.8015992094284728,1,AI
+"Starting with Mussolini in the ' 20s and ending with Franco in the ' 70s Europe had a number of repressive far - right governments , and the push back has resulted in a very left - wing society and government , with all it entails . In short , it 's a reaction to previous Fascism .",0,HC3,medium,0.3238855878547275,0,Human
+"def filter_sublists(lst, min_val, max_val):
+    return [sub_list for sub_list in lst if all(min_val <= x <= max_val for x in sub_list)]",1,RAID,short,0.6115628527409563,1,AI
+"NAT, or Network Address Translation, is a way that your router can share a single Internet connection with multiple devices on your home network. It does this by giving each device on your network a ""private"" IP address, and then translating that address into a ""public"" IP address that can be used on the Internet.The problem with NAT in multiplayer games is that it can sometimes restrict the connections that your devices can make with other devices on the Internet. This can cause problems with certain features in the game, such as voice chat or peer-to-peer multiplayer.Some NAT types are more restrictive than others, and this can make it harder for your device to connect to other devices on the Internet. This is why it's sometimes necessary to change your NAT type in order to play certain games online.As for downloading files, NAT generally doesn't have any effect on this process. However, your Internet service provider (ISP) or network administrator may have policies in place that limit your ability to download certain types of files, or that limit your overall bandwidth usage.",1,HC3,long,0.8257430269450662,1,AI
+I found one such tool here: Point-to-Point Returns tool,0,HC3,very_short,0.46913942123723623,0,Human
+but if you were a girl you mom take away you sail phone for a month and you can do anything about it if you grade is good you can get you sail phone back or if you boy you can get you game back.,0,SentenceAI,medium,0.09973396168575746,0,Human
+"Using this advance system most people will say she is just happy and smiling, 'but she's actually 83 percent happy, 9 percent disgusted,6 percent fearful, and 2 percent angry'.",0,SentenceAI,short,0.3304046873587986,0,Human
+"Then soon enough, Luke got a new job on the boat.",0,SentenceAI,short,0.11652595334153737,0,Human
+"Pretty simple , actually they are probably the same as the UK . The examples you mentioned "" [ street x ] and [ street y ] "" are cross streets . They are saying "" at the intersection of Raven and 42nd "" . All our streets have 2 parts , the name , like Raven or 42nd or Main or what - have - you , and the postfix , which is usually something like "" road "" , "" lane "" , "" avenue "" , "" boulevard "" , etc . I 've seen some like Circle , Loop , Way , etc etc . Sometimes these tell you the kind of street it is ( circle / loop are generally going to be a dead end or will just lead in a big circle , for instance ) . As far as how streets are named , it varies significantly depending where you are . Housing developments like to have "" themes "" , so all the streets in the area will be named after nautical terms , or types of trees / flowers , or people 's names , crap like that . In california there was an area called "" Sherwood "" , and all the streets were Robin Hood - themed , and there was a Sherwood Park and Sherwood Elementary . It was totally awesome , there . My mom 's house is in an area with really weird first names , like "" Alecandro Daniel Avenue "" or "" Robin Persey Lane "" and other ridiculous shit . Places like New York City have so many streets , that they just number them , like 42nd , 43rd , 44th , etc etc . In NYC I believe they get higher the further "" uptown "" you go , so based on the number you can tell whether it 's in the ghetto or a nice area . Finally , an address is constructed like so : [ Number ] [ Prefix ] [ Name ] [ Postfix ] [ Unit ] Prefix is not required ( which would be North , South , etc ) , number is required ( that 's the actual address ) , name is required obviously , and postfix is n't strictly necessary but it 's often used as part of the address . Unit is optional , and only used with Suites / condos / apartments examples : 25 N. Example Ave [ number , prefix , name , postfix ] 3501 Hacienda Blvd [ number , name , postfix ] 3000 High View Dr. # 901 [ number , name , postfix , unit ] 8670 S. Eastern Ave [ number , prefix , name , postfix ] 1500 E. Tropicana Ave Ste 395 [ number , prefix , name , postfix , unit ] Make sense ?",0,HC3,long,0.08494943569266059,0,Human
+"Other than the things already said : Resting the eye muscles . To open your eyes also uses energy , and it would be a waste of energy .",0,HC3,short,0.060278254218528275,0,Human

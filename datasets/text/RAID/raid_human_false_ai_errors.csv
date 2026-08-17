@@ -1,0 +1,17 @@
+sample_id,text,label,label_name,model,domain,attack,decoding,repetition_penalty,title,prompt,source_id,raid_id,word_count,length_group,prediction,prediction_name,ai_probability,human_probability,correct,ai_missed,human_false_ai
+350,"def find_length(string, n): 
+	current_sum = 0
+	max_sum = 0
+	for i in range(n): 
+		current_sum += (1 if string[i] == '0' else -1) 
+		if current_sum < 0: 
+			current_sum = 0
+		max_sum = max(current_sum, max_sum) 
+	return max_sum if max_sum else 0",0,Human,human,code,none,,,Write a function to find the maximum difference between the number of 0s and number of 1s in any sub-string of the given binary string.,,fbae02d2-f22e-4bc4-8940-962b3af6dd5c,fbae02d2-f22e-4bc4-8940-962b3af6dd5c,39,medium,1,AI,0.5175680835729426,0.4824319164270574,False,False,True
+516,"def divisible_by_digits(startnum, endnum):
+    return [n for n in range(startnum, endnum+1) \
+                if not any(map(lambda x: int(x) == 0 or n%int(x) != 0, str(n)))]",0,Human,human,code,none,,,Write a function to find numbers within a given range where every number is divisible by every digit it contains.,,bdfc8bb1-01d7-458e-811c-bcd78c766777,bdfc8bb1-01d7-458e-811c-bcd78c766777,23,short,1,AI,0.6551384596151193,0.3448615403848807,False,False,True
+969,"def Extract(lst): 
+    return [item[-1] for item in lst]",0,Human,human,code,none,,,Write a python function to get the last element of each sublist.,,17522f1e-bf3d-4708-97f7-d2eeb9e2eb43,17522f1e-bf3d-4708-97f7-d2eeb9e2eb43,8,very_short,1,AI,0.6246558100089854,0.3753441899910146,False,False,True
+1210,"def count(lst):   
+    return sum(lst)",0,Human,human,code,none,,,Write a python function to count true booleans in the given list.,,f7aaac4d-8517-42cc-9383-2e5085329bd1,f7aaac4d-8517-42cc-9383-2e5085329bd1,4,very_short,1,AI,0.7168275772406466,0.2831724227593534,False,False,True

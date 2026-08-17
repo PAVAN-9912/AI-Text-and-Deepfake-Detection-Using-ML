@@ -1,0 +1,871 @@
+sample_id,text,label,label_name,model,domain,attack,decoding,repetition_penalty,title,prompt,source_id,raid_id,word_count,length_group,prediction,prediction_name,ai_probability,human_probability,correct,ai_missed,human_false_ai
+0,"def intersection(arr1, arr2):
+    return list(set(arr1) & set(arr2))",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the intersection of two arrays using lambda function.,"Write just the Python code solution for the problem ""Write a function to find the intersection of two arrays using lambda function."".",e9d62859-a36d-4905-a73e-ba614aa88de6,226df2d6-1c5e-455e-98c6-71f7f230daf3,7,very_short,0,Human,0.2012015771245559,0.798798422875444,False,True,False
+7,"def avg_odds(n):
+    sum = 0
+    i = 1
+    while i <= n:
+        sum += i
+        i += 2
+    return sum / (i - 1)",1,AI,llama-chat,code,none,sampling,yes,Write a python function to find the average of odd numbers till a given odd number.,"Write just the Python code solution for the problem ""Write a python function to find the average of odd numbers till a given odd number."".",8304ba90-8b35-40ef-8581-2c3575079e5e,71b3bd97-e123-44bc-850b-21081de8e5a8,24,short,0,Human,0.1910818061306109,0.808918193869389,False,True,False
+22,"def element_in_tuple(element, tuple_list):
+    for t in tuple_list:
+        if element in t:
+            return True
+    return False",1,AI,mpt-chat,code,none,greedy,no,Write a function to check whether an element exists within a tuple.,"Write just the Python code solution for the problem ""Write a function to check whether an element exists within a tuple."".",42333025-edf9-4ab1-978e-d23480b4ffa1,3cc815b9-5aa0-458e-8620-f99e73555578,15,short,0,Human,0.3640548392178289,0.6359451607821711,False,True,False
+33,"def merge_tuples(tuple1, tuple2):
+    return (*tuple1, *tuple2)",1,AI,mpt-chat,code,none,sampling,yes,Write a function to zip the two given tuples.,"Write just the Python code solution for the problem ""Write a function to zip the two given tuples."".",5cfb5d36-1e92-4ab1-ad04-29ba471ab154,2bb5b5b8-4bc5-4ba8-9f13-2e6785c88ffb,6,very_short,0,Human,0.4817319469713031,0.5182680530286969,False,True,False
+43,"def max_sum_bi_tonic_sub_seq(arr):
+    n = len(arr)
+    dp = [[0 for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        dp[i][i] = arr[i]
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if arr[i] > arr[j]:
+                dp[i][j] = max(dp[i][j], dp[i][j-1] + arr[j])
+            else:
+                dp[i][j] = max(dp[i][j], dp[i+1][j] + arr[i])
+    return max(dp[0][-1], dp[-1][-1])",1,AI,mpt,code,none,greedy,no,Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the maximum sum of bi-tonic sub-sequence for the given array."" from stackoverflow.com:",e4f6922e-67d7-4e78-91c0-aa389d4efa89,b75f7fab-60d8-402f-8ab7-5eb6e8bb1453,52,medium,0,Human,0.0805308049326124,0.9194691950673876,False,True,False
+48,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a",1,AI,llama-chat,code,none,greedy,no,Write a python function to find common divisor between two numbers in a given pair.,"Write just the Python code solution for the problem ""Write a python function to find common divisor between two numbers in a given pair."".",8d704019-9c57-4a56-8af9-7a71df22b284,e60356d2-34ca-4363-8f0f-e5f09ad513e1,16,short,0,Human,0.4801322275408952,0.5198677724591048,False,True,False
+52,"def depth_of_dict(d):
+    if not d:
+        return 0
+    else:
+        return max(depth_of_dict(d.get(k, {})) + 1 for k in d)",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the depth of a dictionary.,"Write just the Python code solution for the problem ""Write a function to find the depth of a dictionary."".",0eff4e9d-979c-44fd-9997-6d2eb7ab970c,3e3578c4-098a-49e8-8def-181f6966927a,17,short,0,Human,0.1529086005563332,0.8470913994436668,False,True,False
+64,"'''Iterative approach, O(nlogn)?  I use three indexes for simplicity's sake; this problem can probably be solved more efficiently as well.'''
+
+    for i in range((len (nums) / 3)): 
+        x = num[i] *3 
+
+       # x must match one index pair! we might have duplicates so there are n^2 matches - keep track only if greater than zero   - also it should fall within that slice not exceed at either end.... then you need all other two remaining items and make sure they add up... check after each iteration or something?",1,AI,mpt,code,none,sampling,yes,Write a function to find the triplet with sum of the given array,"The following is the full text of a Python code solution to the exercise ""Write a function to find the triplet with sum of the given array"" from stackoverflow.com:",5935e9ef-a102-4ed1-9a66-79091612b503,2e009512-1d8e-480f-a5e0-0dbfe6733f33,88,long,0,Human,0.3116490959391799,0.68835090406082,False,True,False
+79,"def perrin(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return perrin(n-1) + perrin(n-2)",1,AI,mpt,code,none,greedy,no,Write a function to find the n'th perrin number using recursion.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the n'th perrin number using recursion."" from stackoverflow.com:",19e7a71a-d111-4deb-8cf0-fad51018c02f,6dcffc57-229d-4c54-a75d-1b69e400c320,19,short,0,Human,0.189861763462893,0.810138236537107,False,True,False
+80,"def contains_sublist(superlist, sublist):
+    for i in range(len(superlist)):
+        if superlist[i:i+len(sublist)] == sublist:
+            return True
+    return False",1,AI,mpt-chat,code,none,greedy,no,Write a function to check whether a list contains the given sublist or not.,"Write just the Python code solution for the problem ""Write a function to check whether a list contains the given sublist or not."".",c73db6c0-aad8-46c4-9a12-ed59a93cd18a,ebc48417-3a18-421d-a8fb-3e116ae47492,15,short,0,Human,0.2556492359000946,0.7443507640999054,False,True,False
+119,"def find_focus(a, h, k):
+    return (-h / 2) / a",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the focus of a parabola.,"Write just the Python code solution for the problem ""Write a function to find the focus of a parabola."".",a046cea6-cd45-4a27-9dde-a33a72f57188,ae940938-50f3-429e-8e44-5753f5ba8525,10,very_short,0,Human,0.1482430659494011,0.8517569340505988,False,True,False
+120,"def common_divisor(a, b):
+    if a == 0 or b == 0:
+        return 0
+    else:
+        return common_divisor(b, a % b)",1,AI,mpt,code,none,greedy,no,Write a python function to find common divisor between two numbers in a given pair.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find common divisor between two numbers in a given pair."" from stackoverflow.com:",8d704019-9c57-4a56-8af9-7a71df22b284,368bebc9-2ef6-488e-aac0-6c33e9127fd6,19,short,0,Human,0.2255429350249835,0.7744570649750164,False,True,False
+128,"def surface_area_of_cube(side_length):
+    return 6 * side_length ** 2",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the surface area of a cube.,"Write just the Python code solution for the problem ""Write a function to find the surface area of a cube."".",1788489f-b0ef-432b-89b8-7cf5b9ccdd84,a360b5e8-9cd1-4007-83e8-211b21743fea,8,very_short,0,Human,0.3704020289279635,0.6295979710720365,False,True,False
+147,"def min_cost(matrix):
+
+    # Initialize variables required according to Dynamic Programming approach: 
+    n = len(matrix[1])   
+ 
+           prevCosts  = [[0] * 16384 + [float('inf')]; 4*16383+2 ] # store costs of reaching each cell's previous row/col indices or diagonal predecessor when entering current cells; index corresponds same as prevRowIndices & prevColIndices but with more room at beginning due space efficiency optimizations later performed via list slicing            
+
+
+      minPrevPairs     = [(None, float(""infinity"") ); 8192                ][ :8191               ].extend([ (-1,-99999); 256 ]).append(( None)) 
+
+                 currReverseDistancesToTargetPair        =[ 90000       ]+list('<{}>'.format('. ').join(['{:5d} '.format(-i) if i>= 1 else ('.'if ord'(ram'<={}) else '{:.*f} {:02.*.*f}' format x-floor(((x-(y//32000000000)+3)*(log64bitspercell)/ log 2 ),52))).strip()for y in range(*pyspeed test optimized target search loop over pairs within 64 kiB blockaround pair m ny nz nw sw ne corner targets startingwith reverse distances first so that larger ones canbe removed fasteras part of dynamic programming strategythat avoids unnecessary calculationsin O(sqrt n \* ln sqrt n) worst caselogarithmic grid complexity).)
+
+
+
+              # Preprocess input data (optional step aimed at reducingfloors division by powers of two operations inthe subsequent core algorithm iterationsthat perform multiplications whichcan be quite costly regardinginstruction pipelining throughput bottlenecks under some cpuarchitecture conditions particularly met by recent intelcore architectures hence whythis variant ispreferred even though it introducesadditional memory allocatio overhead which might seem counterintuitiveat fist glance yet doesnot actually matter since thisfunction typically runsonly once on fixed sizeproblem inputs anyways plus we are stillwithin acceptable bounds regardingspace allocated here comparedto typical malloc patterns observedinside binaries compiledfrom various mainstreamproprietary software products",1,AI,mpt-chat,code,none,sampling,yes,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].","Write just the Python code solution for the problem ""Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][]."".",525a4452-faa9-4c02-a63e-926c1050a313,da75c787-8d7e-4978-9085-a91df6dcf9b0,238,long,0,Human,0.381411754171559,0.618588245828441,False,True,False
+152,"def max_profit(prices, k):
+    if k == 0:
+        return 0
+    if k == 1:
+        return max(prices) - min(prices)
+    max_profit = 0
+    for i in range(k):
+        max_profit = max(max_profit, prices[i] - prices[i - 1])
+    for i in range(k, len(prices)):
+        max_profit = max(max_profit, prices[i] - prices[i - k])
+    return max_profit",1,AI,mpt,code,none,greedy,no,Write a function to find the maximum profit earned from a maximum of k stock transactions,"The following is the full text of a Python code solution to the exercise ""Write a function to find the maximum profit earned from a maximum of k stock transactions"" from stackoverflow.com:",3a29b12e-f46a-443a-be44-027ceaf85850,a016d970-b31b-423e-9647-e15a2090e060,47,medium,0,Human,0.1819865374148594,0.8180134625851405,False,True,False
+156,"def remove_empty_lists(lists):
+    return [list for list in lists if list]",1,AI,mpt-chat,code,none,greedy,no,Write a function to remove empty lists from a given list of lists.,"Write just the Python code solution for the problem ""Write a function to remove empty lists from a given list of lists."".",fd018b3b-a338-4903-a570-6137c22cd52f,4ef181b1-382e-483d-a9ca-27b972412f8b,10,very_short,0,Human,0.3892159067978811,0.6107840932021189,False,True,False
+162,"def check_first_last_char(s):
+    return s[0] == s[-1]",1,AI,mpt-chat,code,none,greedy,no,Write a python function to check whether the first and last characters of a given string are equal or not.,"Write just the Python code solution for the problem ""Write a python function to check whether the first and last characters of a given string are equal or not."".",a0866645-8214-4463-b025-7d2f269790f0,2e928ce9-784f-4820-aa54-0153df9d3675,6,very_short,0,Human,0.3492782594941379,0.6507217405058621,False,True,False
+172,"def min_cost_path(cost, m, n):
+    # Initialize a 2D array to store the minimum cost from (0, 0) to (m, n)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Base case: (0, 0) has a cost of 0
+    dp[0][0] = 0
+
+    # Iterate over each row of the cost matrix
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            # Calculate the minimum cost from (0, 0) to (i, j)
+            # using the dynamic programming principle
+            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + cost[i - 1][j - 1]
+
+    # Return the minimum cost from (0, 0) to (m, n)
+    return dp[m][n]",1,AI,llama-chat,code,none,greedy,no,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].","Write just the Python code solution for the problem ""Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][]."".",525a4452-faa9-4c02-a63e-926c1050a313,ee569fdb-5760-4fa1-8bb7-ccb487909ea2,118,long,0,Human,0.0669327445633933,0.9330672554366068,False,True,False
+176,"def find_bi_tonic_subsequence(arr):
+    n = len(arr)
+    dp = [[0 for _ in range(n)] for _ in range(n)]
+    max_sum = 0
+
+    for i in range(1, n):
+        for j in range(i):
+            dp[i][j] = max(arr[i] + dp[i - 1][j], arr[j] + dp[i][j - 1])
+
+    max_sum = max(dp[n - 1][n - 2] + dp[n - 2][n - 1], dp[n - 1][n - 1])
+
+    return max_sum",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.,"Write just the Python code solution for the problem ""Write a function to find the maximum sum of bi-tonic sub-sequence for the given array."".",e4f6922e-67d7-4e78-91c0-aa389d4efa89,cd5e0bd7-7aee-417f-940b-038436a96df8,60,medium,0,Human,0.1993374696609298,0.8006625303390702,False,True,False
+177,"def lucas_number(n):
+    if n == 0:
+        return 2
+    elif n == 1:
+        return 1
+    else:
+        return lucas_number(n-1) + lucas_number(n-2)",1,AI,llama-chat,code,none,greedy,no,Write a function to find the n'th lucas number.,"Write just the Python code solution for the problem ""Write a function to find the n'th lucas number."".",7a453ba3-e140-4518-97ba-3d0434fd5096,bb83db55-ce4c-427b-940a-b3d26f99a0e5,19,short,0,Human,0.3542031639099533,0.6457968360900467,False,True,False
+216,"def max_profit(prices, k):
+    if k == 0:
+        return 0
+    max_profit_so_far = 0
+    current_profit = 0
+    for i in range(k, len(prices)):
+        current_profit = prices[i] - prices[i - k]
+        max_profit_so_far = max(max_profit_so_far, current_profit)
+    return max_profit_so_far
+
+prices = [1, 2, 3, 0, 2]
+k = 2
+print(max_profit(prices, k))  # Output: 3",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the maximum profit earned from a maximum of k stock transactions,"Write just the Python code solution for the problem ""Write a function to find the maximum profit earned from a maximum of k stock transactions"".",3a29b12e-f46a-443a-be44-027ceaf85850,8567d086-3d0e-41e2-8452-308a0fe49d66,48,medium,0,Human,0.3882398233875274,0.6117601766124725,False,True,False
+229,"def oddday(year_days): """"""Calculate the number of odd days in a given year (or year and month) Arguments yr The date for calculating (0-365). It can also be None Returns an integer that represents the number of even days in the given year, or the year without some day, if the year was 0 (if no year argument passed) """""" # create the calendar's values cal_value = get_calendar() Cal = Cal[""Calendar""] cal_date = getattr(""cal"", cal_value).strftime('%H'%).split('/')[1] cal_month=get_calendar() cal_day=$cal_date$(cal_month%) Day=Day[cal_day] return Day print ""How many even days do we have?"", oddday(""2015"") oddday year end This does roughly what was intended. For clarity, I'll repeat the lines and add some comments to fill out the details, but it should make sense once you read it. And while I will not go into further detail about the implementation above, it isn't very complicated. So let me give those commenting on how to make change the code to work here: Change just the last line at the top of the script (line 5) as this changes what gets printed on each new run through. Add these three lines before fileinput=False after line 44: import sys import random from os.path import join class Calendar(object): def __init__(self, year, month, day): self.yrweekday = calendar['yearsSince1970MonthName'] self.monday = calendar['DaysInYrSince1970WeekNum'] self.friday = cal_type == 'january', 0 # do nothing but increment monday every time it changes - same as the strftime method self.sat = 0 self.sunday = 1 self.tuesday = 2 self.wednesday = 3 self.thursday = 4 def get_year(longdate): u=dateformonth( longdate ) i=u[ 1 ] + 3600 j=( int (i)*3600 ) - 3600 d=fibonacci(( j+d*37 )+j ), 32 d4=crossover(j",1,AI,gpt2,code,none,sampling,yes,Write a python function to calculate the number of odd days in a given year.,"The following is the full text of a Python code solution to the exercise ""Write a python function to calculate the number of odd days in a given year."" from stackoverflow.com:",f20cf878-4504-440e-8942-4eeb7606cff0,2ee3dc35-5acb-4e86-a686-15b3be45ee61,267,long,0,Human,0.4876136084360802,0.5123863915639197,False,True,False
+237,"def common_divisor(a, b):
+    if a % b == 0:
+        return b
+    else:
+        return common_divisor(b, a % b)",1,AI,mpt-chat,code,none,greedy,no,Write a python function to find common divisor between two numbers in a given pair.,"Write just the Python code solution for the problem ""Write a python function to find common divisor between two numbers in a given pair."".",8d704019-9c57-4a56-8af9-7a71df22b284,2b982dbb-7a1c-4ce5-a036-e7e422f300b3,17,short,0,Human,0.1174037985969861,0.8825962014030138,False,True,False
+248,"def remove_char(string, char_to_remove):
+    return string.replace(char_to_remove, '')",1,AI,mpt-chat,code,none,greedy,no,Write a python function to remove all occurrences of a character in a given string.,"Write just the Python code solution for the problem ""Write a python function to remove all occurrences of a character in a given string."".",eab1e4f1-dbfc-4419-8d4b-837efcbd69d7,71d49ea9-6927-4def-98e8-b7786d92f170,6,very_short,0,Human,0.2755279736455386,0.7244720263544614,False,True,False
+250,"def check_first_last(s):
+    return s[0] == s[-1]",1,AI,mpt-chat,code,none,sampling,yes,Write a python function to check whether the first and last characters of a given string are equal or not.,"Write just the Python code solution for the problem ""Write a python function to check whether the first and last characters of a given string are equal or not."".",a0866645-8214-4463-b025-7d2f269790f0,98db1c64-baf5-4a8c-8725-573e8fe7c8a9,6,very_short,0,Human,0.4562103453409296,0.5437896546590704,False,True,False
+253,"def ascii_value(char):
+    return ord(char)",1,AI,llama-chat,code,none,greedy,no,Write a function to find the ascii value of a character.,"Write just the Python code solution for the problem ""Write a function to find the ascii value of a character."".",e638251f-609f-48ee-a116-5d2369819332,3ac37109-01bd-4ec0-bb41-49cbc8da5483,4,very_short,0,Human,0.2111601920214846,0.7888398079785154,False,True,False
+255,"def subset_sum(set, sum):
+    if sum == 0:
+        return True
+    if sum < 0:
+        return False
+    for i in set:
+        if subset_sum(set, sum - i):
+            return True
+    return False",1,AI,mpt,code,none,greedy,no,Write a function to determine if there is a subset of the given set with sum equal to the given sum.,"The following is the full text of a Python code solution to the exercise ""Write a function to determine if there is a subset of the given set with sum equal to the given sum."" from stackoverflow.com:",a37346a9-12fc-41ba-9bb5-23af11d91ff8,2d989764-a297-4d9f-a706-abb3731652c5,28,short,0,Human,0.3828355733200864,0.6171644266799136,False,True,False
+268,"def vertex_of_parabola(coefficient, constant):
+    return (-constant / coefficient, 0)",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the vertex of a parabola.,"Write just the Python code solution for the problem ""Write a function to find the vertex of a parabola."".",948b3468-2d86-4815-bf34-99ad01bd9025,3e19ce55-6e8a-40e1-9fa5-71f881e0ea33,8,very_short,0,Human,0.3748734446910343,0.6251265553089658,False,True,False
+282,"import math
+
+def hexagon_grid(rows, cols):
+    grid = []
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            angle = math.pi * (2 * j / cols)
+            x = 75 * (math.cos(angle) + math.cos(angle + math.pi / 3)) / 2
+            y = 50 * (math.sin(angle) + math.sin(angle + math.pi / 3)) / 2
+            row.append((x, y))
+        grid.append(row)
+    return grid",1,AI,mpt-chat,code,none,greedy,no,"Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.","Write just the Python code solution for the problem ""Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates."".",d2f4859d-76f6-4dd7-b394-8c660a459764,db596f80-5ea3-4c05-a5d9-78bccac94352,59,medium,0,Human,0.3508930494910997,0.6491069505089003,False,True,False
+295,"from skimage import geometry as gm
+
+    def get_hexagonal(nx=None): # if nx not provided -> return (13n-11)/4 columns [e^(-1/2*pi) ~ 3]  ""Eulerian numbers"". If N > 50 use np and vectorize eps == 5/(z*(3+np)*(5)) for better accuracy --> can be replaced with lambda or inline map in python - https://stackabuse com /howto computeexponentialdecayinpython/, def p6gv(*coordsys=[int,(0., 0.), (.75,)]): """""" Hex Coordinate Value System"""""" points = set () colsys   [('',''), ('a', (-18./33.).symmetry()), (""b"", int), 
+                                       (""c"") ] ## coords sys are given per row; last item will add value after column index & coordinate tuple! ### first create lookup table before iterating over rows iycoltab     {iy * ny + jh : ((i ** 2 − 1.) % 30 × kij ∗ cj )}, lstrow          [(idx := idx)]              for idxcoor      range len (*colsix)):       if typeid        == 'tuple':         valindexes |> extend [(ord(_).value ^ _% 16._)+8//16]+ valcoord[:len(__arg__[*ids][:-l])]; del __dict__.update            [[r,_[-w:(d**k)-(dy // w)],_*[_]- dy*((f)**lx);del dymap_.values()]] }                 break else                     lstlistitem += sorted([],## NOTE here we generate one element too much because range stops at number < 100 which generates exactly 99 elements             # FIXME there should really exist smarter ways!!! I am open 4 contributions on this task... TODO find more elegant way!!!)                 ''.join ([ f'\t\t({}, {})'.format (_sepchar. join                ((["""",""px""] \+ mapper [*str _(elem)[::−|end][:]]), elem )) \                       forall _, coor ⌃ zip (__iterable_, itervalues_(",1,AI,mpt,code,none,sampling,yes,"Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.","The following is the full text of a Python code solution to the exercise ""Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates."" from stackoverflow.com:",d2f4859d-76f6-4dd7-b394-8c660a459764,490c6431-05a5-4bbc-b1d7-372d2a1b3231,215,long,0,Human,0.4350355123139745,0.5649644876860255,False,True,False
+298,"def demo_number(n):
+    return n * (n + 1) // 2",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the demlo number for the given number.,"Write just the Python code solution for the problem ""Write a function to find the demlo number for the given number."".",62f1d7f1-d5ec-4f63-b467-34cde3835dd2,1275034e-cfe2-441d-b1ac-037a96a7281d,10,very_short,0,Human,0.3248615981371192,0.6751384018628808,False,True,False
+308,"def surface_area(side):
+    return 6 * side ** 2",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the surface area of a cube.,"Write just the Python code solution for the problem ""Write a function to find the surface area of a cube."".",1788489f-b0ef-432b-89b8-7cf5b9ccdd84,d21eef6d-a02c-43f7-93ac-ddf151e826ba,8,very_short,0,Human,0.3929182948167964,0.6070817051832036,False,True,False
+313,"def filter_dict(dct, func):
+    """"""
+    Returns a new dictionary with the same keys as dct, but only containing the values that
+    pass the test implemented by the function func.
+    """"""
+    return {key: value for key, value in dct.items() if func(value)}",1,AI,llama-chat,code,none,greedy,no,Write a function to filter a dictionary based on values.,"Write just the Python code solution for the problem ""Write a function to filter a dictionary based on values."".",e66e69f0-f2bc-4606-b2df-444af9743ef0,956ade3f-a4d7-4e08-aab9-ccc1de3ddbe5,39,medium,0,Human,0.469784058554941,0.530215941445059,False,True,False
+319,"def exponentiation(base, exponent):
+    result = (1, 1)
+    for i in range(len(exponent)):
+        result = (result[0]*base[i], result[1]*base[i])
+        if exponent[i] > 0:
+            result = (result[0]*result[0], result[1]*result[1])
+    return result",1,AI,mpt-chat,code,none,greedy,no,Write a function to perform the exponentiation of the given two tuples.,"Write just the Python code solution for the problem ""Write a function to perform the exponentiation of the given two tuples."".",ea8fe0a1-0ebe-49d6-8455-74f64e08e8e1,fac5c87f-fe44-4ac8-a845-14f36f05d99c,25,short,0,Human,0.1539785018604376,0.8460214981395624,False,True,False
+324,"def is_integer(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False",1,AI,mpt,code,none,greedy,no,Write a function to check if a string represents an integer or not.,"The following is the full text of a Python code solution to the exercise ""Write a function to check if a string represents an integer or not."" from stackoverflow.com:",5d8094f6-b4ba-4a7a-9c38-941ea48b3012,20c0cc75-b841-4be1-a7db-1dc1935ecccb,10,very_short,0,Human,0.4030647899527923,0.5969352100472076,False,True,False
+335,"def min_cost_path(cost, m, n):
+    # Initialize the minimum cost value and the parent node for each cell
+    min_cost = [[float('inf')] * (n + 1) for _ in range(m + 1)]
+    parent = [[None] * (n + 1) for _ in range(m + 1)]
+
+    # Fill the min_cost and parent arrays using Dijkstra's algorithm
+    def dijkstra(i, j):
+        if min_cost[i][j] == float('inf'):
+            min_cost[i][j] = 0
+            for k in range(1, n + 1):
+                new_cost = cost[i][j] + cost[i][k]
+                if new_cost < min_cost[i][k]:
+                    min_cost[i][k] = new_cost
+                    parent[i][k] = (i, j)
+                dijkstra(i, k)
+        else:
+            for k in range(1, n + 1):
+                new_cost = cost[i][j] + cost[k][n]
+                if new_cost < min_cost[k][n]:
+                    min_cost[k][n] = new_cost
+                    parent[k][n] = (i, j)
+                    dijkstra(k, n)
+
+    # Call the dijkstra function for the starting position (0, 0)
+    dijkstra(0, 0)
+
+    # Trace back the parent nodes to find the minimum cost path
+    path = []
+    i, j = m, n
+    while i!= 0 or j!= 0:
+        path.append((i, j))
+        i, j = parent[i][j]
+
+    # Reverse the path and return the minimum cost and the path
+    return min_cost[m][n], path[::-1]",1,AI,mpt-chat,code,none,greedy,no,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].","Write just the Python code solution for the problem ""Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][]."".",525a4452-faa9-4c02-a63e-926c1050a313,637a65b6-a81f-4e50-b96c-c330adff21c8,174,long,0,Human,0.1302133258653927,0.8697866741346073,False,True,False
+351,"def get_kth(arr, k):
+    return arr[k - 1]",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the kth element in the given array.,"Write just the Python code solution for the problem ""Write a function to find the kth element in the given array."".",37019ec3-e121-4960-ac42-3f137a693c81,4035015b-fc84-4fe8-8edb-3491a3917e2c,7,very_short,0,Human,0.4713096641646627,0.5286903358353372,False,True,False
+353,"def power(a, b):
+    return a ** b",1,AI,mpt-chat,code,none,greedy,no,Write a function to calculate the value of 'a' to the power 'b'.,"Write just the Python code solution for the problem ""Write a function to calculate the value of 'a' to the power 'b'."".",46082fb7-de3e-488e-96f1-4d67bf31d2d9,b336dd48-6dd5-4b6e-919c-2d4f36ab8250,7,very_short,0,Human,0.4209320630989059,0.579067936901094,False,True,False
+354,"**Question:** Write a php         class HelloWorld{ }to display on screen 'Hello World'           and accept an input string as command line argument during execution time.?                           
+       Expected output when I execute this program should be something like                     hello world,john,etc..
+
+             if(argc=2)echo $argv[0].$1;else echo hello,$NAME...
+
+
+ 
+
+
+          class myClass extends java/langObject implements Cloneable {}; // extend                  from Object here if we want it public static void main (String[] args){                System*p = new System();        }      // instantiation                      System * sptrnew MyNewTest(""John"");                    spsystem->setName (""Sam"") println ();               system>toString () system=> sam >           MyClasses::myStaticMethod<>(string& n);            delete p                 private String strname;                   public SetAge() {}                       void setStr(){    strage = agename     getStrangeSetAger ageof   ~MYNEWOBJECTSETTER getSrtreturn              this -> name };           };",1,AI,mpt,code,none,sampling,yes,Write a python function to count the number of digits of a given number.,"The following is the full text of a Python code solution to the exercise ""Write a python function to count the number of digits of a given number."" from stackoverflow.com:",feb07b51-63f2-4cbb-8484-78164f73af83,9c82f394-2e28-4ccc-9efb-75990aa721ed,107,long,0,Human,0.1346395580130754,0.8653604419869245,False,True,False
+389,"def find_multiples(m, n):
+    return [i * n for i in range(1, m + 1)]",1,AI,mpt-chat,code,none,greedy,no,Write a function to find m number of multiples of n.,"Write just the Python code solution for the problem ""Write a function to find m number of multiples of n."".",4d1ba893-7e48-4b26-9d4c-0c4d7cdbcda0,e1ad338f-d032-4649-8a19-9383f542f3b9,14,short,0,Human,0.3572639927860746,0.6427360072139254,False,True,False
+403,"def str_to_lower(inputstr):
+    return inputstr.lower()",1,AI,mpt-chat,code,none,sampling,yes,Write a python function to convert the given string to lower case.,"Write just the Python code solution for the problem ""Write a python function to convert the given string to lower case."".",60313267-17fa-4c59-bc11-74302e23d52f,1ceaa2bd-6903-4309-9f6f-7810113c622b,4,very_short,0,Human,0.2341990720058928,0.7658009279941072,False,True,False
+410,"def lucas_number(n):
+    if n == 0:
+        return 2
+    elif n == 1:
+        return 1
+    else:
+        return lucas_number(n-1) + lucas_number(n-2)",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the n'th lucas number.,"Write just the Python code solution for the problem ""Write a function to find the n'th lucas number."".",7a453ba3-e140-4518-97ba-3d0434fd5096,b41d2103-4a33-4b11-ac46-87ed895412e0,19,short,0,Human,0.3542031639099533,0.6457968360900467,False,True,False
+417,"def split_list(lst, n):
+    return [lst[:i] for i in range(0, len(lst), n)]",1,AI,mpt-chat,code,none,sampling,yes,Write a function to split a list for every nth element.,"Write just the Python code solution for the problem ""Write a function to split a list for every nth element."".",da195cc2-01c9-4045-b524-3af7e2945c25,f0419fa3-4cc5-4f40-895f-666c527b19d3,11,short,0,Human,0.4375795383508105,0.5624204616491895,False,True,False
+421,"def remove_char(str, char):
+    return str.translate(str.maketrans(char, """"))",1,AI,llama-chat,code,none,greedy,no,Write a python function to remove all occurrences of a character in a given string.,"Write just the Python code solution for the problem ""Write a python function to remove all occurrences of a character in a given string."".",eab1e4f1-dbfc-4419-8d4b-837efcbd69d7,8ac8a352-8ed7-4f98-86f5-26527959c1c0,6,very_short,0,Human,0.3200678962664632,0.6799321037335369,False,True,False
+426,"def count_sub_lists(lst, elem):
+    count = 0
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i:j] == [elem]:
+                count += 1
+    return count",1,AI,mpt,code,none,greedy,no,Write a function to count the number of sublists containing a particular element.,"The following is the full text of a Python code solution to the exercise ""Write a function to count the number of sublists containing a particular element."" from stackoverflow.com:",672dde64-18bf-4a91-a40d-92a75cf8c402,77b99f92-f617-497b-8e12-e496a0f9fa1a,24,short,0,Human,0.4629864480445997,0.5370135519554002,False,True,False
+430,"def largest_value_frequency(arr):
+    max_val = max(arr)
+    return arr.count(max_val)",1,AI,llama-chat,code,none,greedy,no,Write a python function to find the frequency of the largest value in a given array.,"Write just the Python code solution for the problem ""Write a python function to find the frequency of the largest value in a given array."".",9195fb9a-eac7-43dc-8c43-5f85a19e2e6a,7432eac0-0c47-4c08-b92e-2ddf17013bbb,7,very_short,0,Human,0.2710094774569793,0.7289905225430207,False,True,False
+446,"def average_of_odd_numbers(n):
+    sum = 0
+    for i in range(1, n+1):
+        if i % 2 == 1:
+            sum += i
+    return sum / n",1,AI,mpt,code,none,greedy,no,Write a python function to find the average of odd numbers till a given odd number.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find the average of odd numbers till a given odd number."" from stackoverflow.com:",8304ba90-8b35-40ef-8581-2c3575079e5e,21fed7c9-9488-49c0-a7f9-0324082540f0,23,short,0,Human,0.1139273503980626,0.8860726496019373,False,True,False
+449,"def parallel_check(a, b): if a == b: return True else: return False def check_parallel(a, b): if a == b: return True else: return False def check_parallel_with_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if a == b: return True else: return False def check_parallel_with_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker_with_parallel_checker(a, b): if",1,AI,gpt2,code,none,greedy,no,Write a python function to check whether two given lines are parallel or not.,"The following is the full text of a Python code solution to the exercise ""Write a python function to check whether two given lines are parallel or not."" from stackoverflow.com:",2e57e5ac-053d-4fa6-9161-4b08c5e8c2d6,c01c60ed-ea73-4815-87d4-37d10e661c41,124,long,0,Human,0.4501264775367051,0.5498735224632949,False,True,False
+468,"def count_true_booleans(booleans):
+    return sum(bool_value for bool_value in booleans)",1,AI,llama-chat,code,none,greedy,no,Write a python function to count true booleans in the given list.,"Write just the Python code solution for the problem ""Write a python function to count true booleans in the given list."".",f7aaac4d-8517-42cc-9383-2e5085329bd1,e9c06187-7d32-425e-afcd-b96bce3443f7,8,very_short,0,Human,0.4152421726702282,0.5847578273297718,False,True,False
+474,"def perrin(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return perrin(n-1) + perrin(n-2)",1,AI,llama-chat,code,none,greedy,no,Write a function to find the n'th perrin number using recursion.,"Write just the Python code solution for the problem ""Write a function to find the n'th perrin number using recursion."".",19e7a71a-d111-4deb-8cf0-fad51018c02f,04ba4a11-4d76-4c3c-8c3d-cda95b49a273,17,short,0,Human,0.2864503612658619,0.7135496387341381,False,True,False
+498,"def average_of_odd_numbers(n):
+    sum_of_odds = 0
+    count_of_odds = 0
+    i = 1
+    while i <= n:
+        if i % 2!= 0:
+            sum_of_odds += i
+            count_of_odds += 1
+        i += 2
+    return sum_of_odds / count_of_odds",1,AI,mpt-chat,code,none,greedy,no,Write a python function to find the average of odd numbers till a given odd number.,"Write just the Python code solution for the problem ""Write a python function to find the average of odd numbers till a given odd number."".",8304ba90-8b35-40ef-8581-2c3575079e5e,cbb6b852-a750-455f-86a4-2ed5774c28a1,33,medium,0,Human,0.4169936982223198,0.5830063017776801,False,True,False
+499,"def frequency_count(data):
+    result = {}
+    for item in data:
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
+    return result",1,AI,mpt-chat,code,none,greedy,no,Write a function to find frequency count of list of lists.,"Write just the Python code solution for the problem ""Write a function to find frequency count of list of lists."".",643a95d9-9651-49c2-ba68-e0f2ba16a514,6451b236-ac76-4df0-a6dc-21531fe5065a,22,short,0,Human,0.2702618413584781,0.7297381586415219,False,True,False
+509,"def tuple_intersection(tuple_list):
+    return set(tuple_list).intersection()",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the tuple intersection of elements in the given tuple list irrespective of their order.,"Write just the Python code solution for the problem ""Write a function to find the tuple intersection of elements in the given tuple list irrespective of their order."".",786a1b74-24ba-4351-ac62-233a6f56aae0,4e235f5a-5da0-46dc-b1c5-7fa96189d715,4,very_short,0,Human,0.4482899974500713,0.5517100025499286,False,True,False
+521,"def pow(a, b):
+    return a ** b",1,AI,mpt-chat,code,none,sampling,yes,Write a function to calculate the value of 'a' to the power 'b'.,"Write just the Python code solution for the problem ""Write a function to calculate the value of 'a' to the power 'b'."".",46082fb7-de3e-488e-96f1-4d67bf31d2d9,14abdf37-f9a7-405f-9443-239a07e52963,7,very_short,0,Human,0.4028966960684345,0.5971033039315655,False,True,False
+524,"def get_bintonic(array):
+
+    if not len (set([x < y, x >y]for idx,(xi,yi) in enumerate ((ai[0], ai [1])  and i range 	1)) ): 
+                  return int((abs + abs)/2 ) 
+
+   index = max ([maxidx if minval >= middata else 0 <= mid data and 1+i==len 
+	     sum[(bi - au)*(-midsign or (+mid sign),min=lvalue; value<= rvale,sign=-
+				 index=[idxsig].count () == idxeigsiga]]
+		       else -(sumpairingsum/(abdindpairingnumber+(aunpairednum)),
+			      nposibledatasets[:3]))
+		
+	 return None/None",1,AI,mpt,code,none,sampling,yes,Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the maximum sum of bi-tonic sub-sequence for the given array."" from stackoverflow.com:",e4f6922e-67d7-4e78-91c0-aa389d4efa89,66d2fdad-8678-4f90-967f-cb37c1a2daf6,58,medium,0,Human,0.3857867481456136,0.6142132518543864,False,True,False
+536,"function * FindThirdSideTriangle ( s, n, t ) { if( 2 == 3 || n!= 1 || n > 3 && n < 6 ) return - 2 ; else if((t-1) % 6 <= 0 && (n%2)(s+1)/6 ==0 && (covariate('f')) ==0) return - 2; var d = 4 ; for(p=1; p<4; p++) { var lhs=(s>>i&3)*2+((h^a)/h>1/8)+(sqrt(*a)); h*=2 ; cw=-bk+((lhs<<2)|(cx=r+(1/7)+sqrtf(s<<5)-((lhs<9?1:-2*sqrt((h+(q-y)-h))+sqrta-(4*y+(q<<7))))|(cx&(-b*x)>4&&(sqrt_max_x(10/17)-z^e/(sqrt(9-e),5)*2))+d)*1))**4+h; h*+=((q<16)?v:x); x=t*~x; p+=1 ; } return- 1 ; } from mathopencv import abssq if __name__ == '__main__' : test = [ ( 16, 24 ), - 36 ]; while True : cursq = FindThirdSideTriangle ([ 1., 1 ], 8, 4 ); assert ((cursq!= -2 and cursq >= 6 )) # Now compute two additional numbers with a common conversion factor >>> r= 10 ; # The side with the most significant digit >>> m= 20 ; # Two sides that are adjacent >>> n=( 15 + r / 14 )[: 15 ] print ""Evaluting:"". join ([ str (r) + "", "" +str(m])) print abssq([ 5 ], 2, len ([]), 42, 30, 10, 0, 30, 2.952518072685298746, ""left_triangle"", 2, len ([]), 4 ]) # Computes the square root with some help from stdlib's Math namespace. (The result",1,AI,gpt2,code,none,sampling,yes,Write a function to find the third side of a right angled triangle.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the third side of a right angled triangle."" from stackoverflow.com:",c46cf7ce-6995-4d78-a13c-549fddac5faa,e854e6e3-fe73-4167-bfe3-4e2af36dea1d,193,long,0,Human,0.4898174240939467,0.5101825759060533,False,True,False
+538,"I've not attempted this one yet, but here's where I'd start anyway after getting through 'for' loops and lists are your friends... :) ### Given three 8-bit unsigned integers A = 0010 1101, B= 0111 1010  and C 0010 1001. Which integer value(s) could be assigned as D such that (A *D +B)*(C*d+E)=F 000 1  ? 111 1000 # Answer would need more info if question needs me using only 2 int values at once for each pair in input array....but these questions tend either way it looks! Cheers -Chris",1,AI,mpt,code,none,sampling,yes,Write a function to find the minimum product from the pairs of tuples within a given list.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the minimum product from the pairs of tuples within a given list."" from stackoverflow.com:",e1fe8525-a857-40a2-81df-7bad1e22bdf9,e88f54de-5d22-4f2b-a1bb-7c3202b0898f,90,long,0,Human,0.494631462282025,0.5053685377179751,False,True,False
+546,"def modify_heap(heap, new_item):
+    # Get the smallest item from the heap
+    smallest = heapq.heappop(heap)
+    
+    # Insert the new item into the heap
+    heapq.heappush(heap, new_item)
+    
+    return smallest",1,AI,llama-chat,code,none,sampling,yes,Write a function to delete the smallest element from the given heap and then insert a new item.,"Write just the Python code solution for the problem ""Write a function to delete the smallest element from the given heap and then insert a new item."".",11eded20-050d-466e-80ea-424e2599e811,76b5dcc7-0bb3-456c-b9d8-10dd18ecb126,26,short,0,Human,0.4646234729288934,0.5353765270711066,False,True,False
+558,"def is_greater(num, arr):
+    for i in arr:
+        if num > i:
+            return True
+    return False",1,AI,mpt,code,none,greedy,no,Write a function to check whether the entered number is greater than the elements of the given array.,"The following is the full text of a Python code solution to the exercise ""Write a function to check whether the entered number is greater than the elements of the given array."" from stackoverflow.com:",8696d113-82c4-46f2-a635-1279c2dbb499,d782453c-5cf5-4f76-873e-d5bddce316be,15,short,0,Human,0.4549132935135325,0.5450867064864675,False,True,False
+564,"def power(a, b):
+    if b == 0:
+        return 1
+    elif b == 1:
+        return a
+    elif b % 2 == 0:
+        return power(a * a, b // 2)
+    else:
+        return a * power(a * a, b // 2)",1,AI,mpt,code,none,greedy,no,Write a function to calculate the value of 'a' to the power 'b'.,"The following is the full text of a Python code solution to the exercise ""Write a function to calculate the value of 'a' to the power 'b'."" from stackoverflow.com:",46082fb7-de3e-488e-96f1-4d67bf31d2d9,c1eee8f5-fba7-4ce1-ad9a-43ea27884565,38,medium,0,Human,0.3546681048323256,0.6453318951676743,False,True,False
+581,"def remove_empty_lists(lists):
+    return [list for list in lists if list]",1,AI,llama-chat,code,none,greedy,no,Write a function to remove empty lists from a given list of lists.,"Write just the Python code solution for the problem ""Write a function to remove empty lists from a given list of lists."".",fd018b3b-a338-4903-a570-6137c22cd52f,6b52e7f0-c834-48a8-a89d-613a2675d44c,10,very_short,0,Human,0.3892159067978811,0.6107840932021189,False,True,False
+587,"def multi_split(string, delimiter): 
+    return re.split(delimiter, string)",1,AI,mpt-chat,code,none,sampling,yes,Write a function to split the given string with multiple delimiters by using regex.,"Write just the Python code solution for the problem ""Write a function to split the given string with multiple delimiters by using regex."".",e72471d0-af7e-4a38-b57a-3c8d5eff7ddb,38ba3f93-f1b8-49cc-816a-17cc42f8e958,6,very_short,0,Human,0.3666508155690973,0.6333491844309027,False,True,False
+594,"def pow(a, b):
+    return a ** b",1,AI,llama-chat,code,none,sampling,yes,Write a function to calculate the value of 'a' to the power 'b'.,"Write just the Python code solution for the problem ""Write a function to calculate the value of 'a' to the power 'b'."".",46082fb7-de3e-488e-96f1-4d67bf31d2d9,62e2f946-9106-48a8-9526-196cde4adcd8,7,very_short,0,Human,0.4028966960684345,0.5971033039315655,False,True,False
+601,"def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+def gcd_of_array(arr):
+    if len(arr) == 1:
+        return arr[0]
+    else:
+        return gcd(arr[0], gcd_of_array(arr[1:]))",1,AI,mpt,code,none,greedy,no,Write a function to find the gcd of the given array elements.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the gcd of the given array elements."" from stackoverflow.com:",107fc71c-246d-4fcb-b063-6cbb0bfe1596,2c7c2403-a68a-45d6-888f-4c4580ffe8f9,27,short,0,Human,0.4567305657560186,0.5432694342439813,False,True,False
+614,"''' Write an efficient algorithm that finds 
+the exact answer for 
+      -a 3D Sphere (without approximation)
+
+    # Input format : radius(float or double precision value). 
+
+     This question has no relation with programming, so I didn't spend too much time on it! '''from math import piimport sysradius=input('Enter input')print round((4*pi/3)*pow(((int)(5*((double[precision]value)+0))*10),2)) + '\r\n' * 2 ;if __name__ =='main':sys. stdin = open (__ file, mode='rtu ') if len (_ arguments ): exit () print ('I am not meant \ r / nto be ran individually.' )  else:-i _ interactive _( eval (** globals (), locals() ) i d :) This program solves both part problems in under 10 lines and using less than 25 Kb RAM memory; this gives you something about how simple python solutions often can become.*** It's very easy though as we are dealing here only wilt spheres geometry which don\'t require complex operations & long calculations*** Also there will usually many approch ways but they should meet at least one condition -simple understandable way--->>>>>> If u like my script then plz hit Accepted Solution button Thanks<<<---'''",1,AI,mpt,code,none,sampling,yes,Write a function to find the surface area of a sphere.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the surface area of a sphere."" from stackoverflow.com:",0606ff8b-6037-4c71-9652-a0ad7463c15d,45c93be0-f149-4565-8605-ca9610981836,176,long,0,Human,0.448993689168416,0.551006310831584,False,True,False
+633,"def match_ending(string,word):
+
+ if re.search('\\b'+re.escape(word)+'\\b',  str((tuple(!i in {'','.','?',':'} or i=='-')+ord(c)for c in str)!=('',None,*)))[0]!=-1:
+ 
+ return True
+ 
+
+			return False",1,AI,mpt-chat,code,none,sampling,yes,"Write a function that matches a word at the end of a string, with optional punctuation.","Write just the Python code solution for the problem ""Write a function that matches a word at the end of a string, with optional punctuation."".",a6b393c9-b3fc-4802-ad2a-d8d8936dafed,bb65d6b7-e077-41b0-b440-6685af5f324d,16,short,0,Human,0.4577553451201735,0.5422446548798265,False,True,False
+640,"def count_upper_case(string):
+    return string.upper().count('A')",1,AI,mpt-chat,code,none,greedy,no,Write a python function to count the upper case characters in a given string.,"Write just the Python code solution for the problem ""Write a python function to count the upper case characters in a given string."".",cdff51d0-f373-4369-bd49-fd82c938d0dd,18f1034a-bc92-4905-a566-9a7782056b13,4,very_short,0,Human,0.4205192965291466,0.5794807034708533,False,True,False
+651,"def divide_tuples(tuples):
+    result = []
+    for tuple in tuples:
+        a, b = tuple
+        result.append((a // b) if b != 0 else 0)
+    return result",1,AI,llama-chat,code,none,greedy,no,Write a function to perform mathematical division operation across the given tuples.,"Write just the Python code solution for the problem ""Write a function to perform mathematical division operation across the given tuples."".",081d97ae-3e4f-42ce-b08e-19fbf5ab3445,cd6e4d9e-c641-4b4f-9dd8-ea29b81b8498,24,short,0,Human,0.4062111995914634,0.5937888004085365,False,True,False
+655,"def delete_column(nested_list, col):    return [row[:col] + row[col+1:] for row in nested_list if not isinstance(row, (str,bytes))]",1,AI,mpt-chat,code,none,sampling,yes,Write a function to remove a specified column from a given nested list.,"Write just the Python code solution for the problem ""Write a function to remove a specified column from a given nested list."".",ee1e6f60-7cf5-4a6a-b17d-b8df6efb942a,6e261997-3694-47a2-8f57-560fbe7ddc34,15,short,0,Human,0.444507638315584,0.5554923616844161,False,True,False
+667,"def split_list(lst, n):
+    return [lst[i:i+n] for i in range(0, len(lst), n)]",1,AI,llama-chat,code,none,greedy,no,Write a function to split a list for every nth element.,"Write just the Python code solution for the problem ""Write a function to split a list for every nth element."".",da195cc2-01c9-4045-b524-3af7e2945c25,c9d1cbbd-1ae3-40fb-b2a2-dde702d7b985,11,short,0,Human,0.4695221277067122,0.5304778722932877,False,True,False
+668,"# The idea behind this algorithm was adapted form 
+(and slightly modified) an article by Vivek Rao posted on www-db, Volume 36 (2006), No 10 
+    http://www8dfsg05s1bak5pst2hjy0ar9z4shqvpsn6t7a3w67ljgrxcsffydcrtdtfxbacu@publicftp/pub//databases?Subject=Heaps+in++Python&Volume =36%20No.%2010
+
+  This implements Fibonacci heaps in python for use with integer keys only",1,AI,mpt,code,none,sampling,yes,Write a function to delete the smallest element from the given heap and then insert a new item.,"The following is the full text of a Python code solution to the exercise ""Write a function to delete the smallest element from the given heap and then insert a new item."" from stackoverflow.com:",11eded20-050d-466e-80ea-424e2599e811,fc0bd754-633e-458a-8f51-5acd5617feaf,39,medium,0,Human,0.3911650494300592,0.6088349505699409,False,True,False
+680,intCount = 0,1,AI,mpt,code,none,sampling,yes,Write a python function to count integers from a given list.,"The following is the full text of a Python code solution to the exercise ""Write a python function to count integers from a given list."" from stackoverflow.com:",d9449039-d525-47e4-aa88-fa91dedd7e61,0e3dd11d-b9a8-4dd8-be96-6a2b7d4a6c90,3,very_short,0,Human,0.1378736382256456,0.8621263617743544,False,True,False
+688,"def count_ints(nums):
+    count = 0
+    for num in nums:
+        if num.isnumeric():
+            count += 1
+    return count",1,AI,mpt,code,none,greedy,no,Write a python function to count integers from a given list.,"The following is the full text of a Python code solution to the exercise ""Write a python function to count integers from a given list."" from stackoverflow.com:",d9449039-d525-47e4-aa88-fa91dedd7e61,d7ceb6ef-1f7f-4ee5-af12-1f03a36948c5,16,short,0,Human,0.11377787028049,0.88622212971951,False,True,False
+691,"def count_true_bools(l):
+    return sum(1 for x in l if x)",1,AI,mpt,code,none,greedy,no,Write a python function to count true booleans in the given list.,"The following is the full text of a Python code solution to the exercise ""Write a python function to count true booleans in the given list."" from stackoverflow.com:",f7aaac4d-8517-42cc-9383-2e5085329bd1,6d8812e6-d443-4517-aad2-d7781cf963ce,10,very_short,0,Human,0.2689052658987107,0.7310947341012892,False,True,False
+697,"def uniq(string): return match(str, pattern) if (UnicodeString(""abcd"", ""a"") [::-1] && UnicodeString(""aba"", ""b"")) == unicode(unicode((""aa""), ""b""))
+
+This is a fun code challenge and I will have some notes about it on my website. It would be nice to see what you come up with!",1,AI,gpt2,code,none,sampling,yes,Write a python function to check whether the first and last characters of a given string are equal or not.,"The following is the full text of a Python code solution to the exercise ""Write a python function to check whether the first and last characters of a given string are equal or not."" from stackoverflow.com:",a0866645-8214-4463-b025-7d2f269790f0,1c1c5b64-8312-43b3-bbb5-7eea90a20533,43,medium,0,Human,0.4174477073341751,0.5825522926658249,False,True,False
+699,"def move_zeroes(nums):
+    """"""
+    If there are no zeroes in the array, return the array as is.
+    Otherwise, move all zeroes to the end of the array.
+    """"""
+    if not nums:
+        return nums
+    i = 0
+    while i < len(nums):
+        if nums[i]!= 0:
+            nums[i], nums[len(nums) - 1] = nums[len(nums) - 1], nums[i]
+            nums.pop()
+        i += 1
+    return nums",1,AI,mpt,code,none,greedy,no,Write a function to move all zeroes to the end of the given array.,"The following is the full text of a Python code solution to the exercise ""Write a function to move all zeroes to the end of the given array."" from stackoverflow.com:",94e2409e-77bb-493d-803c-d04374528fc5,d553121c-86e8-4007-82d5-195d4f0345ed,57,medium,0,Human,0.2267616567750495,0.7732383432249504,False,True,False
+701,""""""" def compute_odd(year): # Assume it has 365...
+Jan 29, 2014 · I just want something simple that computes how many seconds there are between today and now + n (that's easy). The second part doesn't seem too bad either; you can check if x % y == 0 or not easily enough so long as both numbers share roughly an order-of magnitude difference because checking for this property requires fewer operations than dividing … Continue reading Convert dates... Feb 20 2005 - Dec 31 2016 equals 7 years 4 months 23 hours 57 minutes 59/365 = ~0 3 /2? 2n~20% 1 week=5days+4hours Jan 05 2018 – 6 Days 22 Hours 36 Minutes 56 Seconds Mar 17 2004 — 16 Years 11 Months 40 Weeks 912 WorkingDays 1040 Weekends In total 1592 CalendarWee Sep 24 2015 09 43 GMT Re Calculate working day count Hi Marius R Thanks your response helps me understand DayCount Convention It actually does help with some clarification For example based on my understanding currently DBCONV will assume 360M 5D which works perfectly fine until December 30 2020 when we start getting into leap February situations What do current calendar calculations say about Friday June 28 2019 How did they come up wih those formulas Also according t… Read more »",1,AI,mpt,code,none,sampling,yes,Write a python function to calculate the number of odd days in a given year.,"The following is the full text of a Python code solution to the exercise ""Write a python function to calculate the number of odd days in a given year."" from stackoverflow.com:",f20cf878-4504-440e-8942-4eeb7606cff0,30c84c38-fa9b-4581-81df-6810b4d8a3a5,215,long,0,Human,0.0244087779722408,0.9755912220277592,False,True,False
+716,"from collections import Counter
+
+def most_common_words(dictionary):
+    return Counter(dictionary).most_common()",1,AI,mpt-chat,code,none,greedy,no,Write a function to count the most common words in a dictionary.,"Write just the Python code solution for the problem ""Write a function to count the most common words in a dictionary."".",bd793d97-9023-41c8-94ba-4a38a1aa70e8,c6b287f4-a010-4775-b9dd-5408a8ac7591,8,very_short,0,Human,0.0921829866799978,0.9078170133200022,False,True,False
+724,"def set_to_tuple(set_obj):
+    return tuple(sorted(set_obj))",1,AI,mpt,code,none,greedy,no,Write a function to convert the given set into ordered tuples.,"The following is the full text of a Python code solution to the exercise ""Write a function to convert the given set into ordered tuples."" from stackoverflow.com:",8a168a57-83fb-4346-9ca5-5f35acad83f2,534f2305-5f03-43d7-b72b-cc22ee21f29f,4,very_short,0,Human,0.2945986998062749,0.705401300193725,False,True,False
+729,"def sum_even_factors(num):
+    even_factors = [i for i in range(1, num+1) if num % i == 0 and i % 2 == 0]
+    return sum(even_factors)",1,AI,mpt-chat,code,none,greedy,no,Write a python function to find the sum of even factors of a number.,"Write just the Python code solution for the problem ""Write a python function to find the sum of even factors of a number."".",b6043858-ae5d-4fbe-87ec-8b5e1c727bc0,cd61179f-5df3-47c9-a144-f91809627543,24,short,0,Human,0.4846255311396791,0.5153744688603209,False,True,False
+741,"def get_perimeter(side): 
+    return 4 * side 
+print(""Call #1"")  # Call your calculator with arguments 2 and 3 for an answer in this range, but don't just take my word - run it yourself!   getPerimiter = 9;     calculatorInputsOneAndTwoAreEvenNumbersIfSoMultiplyTheirValuesTogetherTakeSquareRootOfThatToDoAllThisIHaveDefinedAByteArrayWhichALongAsYourComputerCanCalcuateFastBeUsedInMyImpelementationBelowByPackingThreeFloatsSideLengthFrontHeightRearWidthIntoASingleWordWhereISimpleDivideOutAGettingAnIntegerValueYouNeedNam""A String For Sides"", Side);          Get Perimeter Square Rooted If You'Re Following Me And Not Using A Language With Bigger Ints Or Uses Fixed Point That Will Be Necessary To Prevent Overflow Errors Get The Actual Area Of This Rectangle By Multiplying Four Times Your Answer From Before Subtract It Off So We Only Have What Is On Top Counting Downwards Start At Integer Three Until I Reach One Then Divide Into How Many There Are Dont Just Print Out Numbers Do Math But Also Return Results Don T Copy Any Code Yet Though Unless Its MRE Take Care While Typing Check Spelling After Pasting Avoid Caps Lock Key Hold Backspace Button Press Ctrl Z Too Hard Some More Advice Look Good Sleep Often Wash Hands Try Yoga Breathe Relax Meditate Read About Everything Even Things Which Sound Unrelated Like Engineering Physics Calculus Biology History Geography Chess Gardening Et Al Keep Trying Improving Revising Learning Practice Patience Persistence Dedication Determination Hope Optimism Faith Love Giving Thankfulness Gratitude Help Sharing Selflessness Charactesr Virtues Morality Consciences Motives Honesty Humility Responsiveness Kindness Respect Generosity Emotion Empathy Compassion Understanding Sensitivity Appreciation Grace Happiness Fun Excitement Passions Enjoyment Amusement Adventure Ecstasy Adrenaline Challengel Enthusiastic Energized Invigorated Restless Curious Lively Active Positive Negative Angry Sad Depressed Melancholy Fearful Hate Dislike Pain Guilt Suffering Anxiety Panic Worry Stress Fears Worries",1,AI,mpt,code,none,sampling,yes,Write a function to find the perimeter of a square.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the perimeter of a square."" from stackoverflow.com:",f800a5e8-ee78-420b-9285-b3fd8ab9c319,55f9a113-303a-45ac-a995-4f3f951234c7,259,long,0,Human,0.3726002237603856,0.6273997762396144,False,True,False
+749,"def split_list(lst, n):
+    return [lst[i:i + n] for i in range(0, len(lst), n)]",1,AI,mpt-chat,code,none,greedy,no,Write a function to split a list for every nth element.,"Write just the Python code solution for the problem ""Write a function to split a list for every nth element."".",da195cc2-01c9-4045-b524-3af7e2945c25,2fdf3d70-3d08-4092-8e53-ffc081060ccd,13,short,0,Human,0.459974476664473,0.540025523335527,False,True,False
+770,"def concatenate_string_tuples(tuple1, tuple2):
+    result = []
+    for t in [tuple1, tuple2]:
+        for s in t:
+            result.append(s)
+    return result",1,AI,mpt-chat,code,none,greedy,no,Write a function to perform the concatenation of two string tuples.,"Write just the Python code solution for the problem ""Write a function to perform the concatenation of two string tuples."".",a2dc9fa6-c47f-411f-8331-f6b3c9a88666,d0b1109b-d6fd-4d91-8c91-7c216143a852,18,short,0,Human,0.4446389289436902,0.5553610710563097,False,True,False
+774,"def count_uppercase(str):
+    return sum(c.isupper() for c in str)",1,AI,llama-chat,code,none,greedy,no,Write a python function to count the upper case characters in a given string.,"Write just the Python code solution for the problem ""Write a python function to count the upper case characters in a given string."".",cdff51d0-f373-4369-bd49-fd82c938d0dd,d37f83d4-953a-4e99-8056-2a003c679c97,8,very_short,0,Human,0.3230271149985708,0.6769728850014292,False,True,False
+778,"def contains_sublist(superlist, sublist): 
+    for i in range(len(superlist)):   
+        if superlist[i:i+len(sublist)] == sublist:  # slice syntax used here!          
+            return True                             
+ 
+ return False",1,AI,mpt-chat,code,none,sampling,yes,Write a function to check whether a list contains the given sublist or not.,"Write just the Python code solution for the problem ""Write a function to check whether a list contains the given sublist or not."".",c73db6c0-aad8-46c4-9a12-ed59a93cd18a,64355b51-966c-4fdc-869a-e4520a8c3673,20,short,0,Human,0.3979661618029472,0.6020338381970528,False,True,False
+800,"def clean_segments(sv): len = len/2 for i in range(0,len -1,16): for s in sv: if index(s)!= 0 and index(s+n)!= n: newn = 1 csv.writerow(newn).upper() return newn def isodd(sv): for i in range(0,len-1,9): if sv[i] > 1 + len(sv)-3: return False else: return True (If this exercise gives you a headache you can skip it.)
+
+Solving the problem solved the exercises and my questions below. All comments welcome 🙂 Also check out the source, it does some more advanced stuff on the last line compared to my previous python solution… If you want to learn more about using StackOverflow just visit their website here.",1,AI,gpt2,code,none,sampling,yes,Write a function to remove odd characters in a string.,"The following is the full text of a Python code solution to the exercise ""Write a function to remove odd characters in a string."" from stackoverflow.com:",6e1f988c-17dd-4f93-b07f-248ca197bf34,6029f433-e894-4a98-8889-d433d0a8440d,103,long,0,Human,0.3125287211877391,0.6874712788122608,False,True,False
+815,"def remove_column(nested_list, column_index):
+    return [row[:column_index] + row[column_index+1:] for row in nested_list]",1,AI,mpt-chat,code,none,greedy,no,Write a function to remove a specified column from a given nested list.,"Write just the Python code solution for the problem ""Write a function to remove a specified column from a given nested list."".",ee1e6f60-7cf5-4a6a-b17d-b8df6efb942a,cefa1766-c7fe-4760-874c-8b9ddb82984f,11,short,0,Human,0.4204599550147005,0.5795400449852994,False,True,False
+821,"def match_string(string):
+    if string.startswith('a') and string.endswith('bb'):
+        return True
+    else:
+        return False",1,AI,mpt,code,none,greedy,no,Write a function that matches a string that has an a followed by two to three 'b'.,"The following is the full text of a Python code solution to the exercise ""Write a function that matches a string that has an a followed by two to three 'b'."" from stackoverflow.com:",d2e022cd-fdaa-4c66-b20d-f401e5bcf5d7,4a9e2483-fca6-438f-8cf4-bdcc40c64d09,11,short,0,Human,0.3439661864891309,0.6560338135108691,False,True,False
+827,"def count_sub_lists(lst, element):
+    count = 0
+    for sub_lst in lst:
+        if element in sub_lst:
+            count += 1
+    return count",1,AI,mpt-chat,code,none,greedy,no,Write a function to count the number of sublists containing a particular element.,"Write just the Python code solution for the problem ""Write a function to count the number of sublists containing a particular element."".",672dde64-18bf-4a91-a40d-92a75cf8c402,65c4156b-47c9-4013-ad72-f20f89223aa8,19,short,0,Human,0.4243518506281913,0.5756481493718086,False,True,False
+830,"# Write an input parameterized  function that computes/returns 'focus' for given values x (real) and y(integer). Also, make sure all cases are covered during execution or testing? If it works only in case when both real numbers have same sign you miss one test!
+
+    def get_foci1(_x = 0,_y=0): 
+
+        p2locusLength   =[[], [(3)**-4]] 
+            for iValueParm     in range(-20,+100,.5 ): pz[i+50]=mathsTrigModulus((float)_sqrt ((-8*pow(((6-(int)(abs (_t)))*24),16)+15*((7*(cbrtg ((9+(64*-12)-(11)/13)**(10)))))))       ; # [Math formula]              ## NOTE *** DO NOT COPY ALL THESE LINE BELOW TO YOUR FILE AS THIS IS A CODE SOLUTION IN CONTEXT FROM ANOTHER WEB PAGE ONLINE ##                 __ZERO OR NULL FOCUS ONLY IF ZEROS OF QUADRATIC ARE REAL! ELSE 2 DISTINCT AND REPEATING FOR MOST PARTS ####                                       if _m == 4.:                  aCoefFocX += + (- pow ((( 6 - mathssqrtRealIdealLenNrmValOfNum(__b,-_,_+_); )) / 3 ), 8 ) * 2048. __power__( 9);                       elif b!= c.__minus__. 1 :                print ('No Solution');
+
+
+         return str('{}_'.format("" "") );                      ############## END LOOP OVER PARAMETERS LISTED BY USING SCRIPT(); SEE HERE TOO http://stackoverlowQandAcodeExampleQuestionsAnswersOnlineResourcesProblemsListWikiHelpOnLineForumsStackExchangeUsersNetworkDevelopersCodeExamplesDevelopmentProgrammersWebDiscussionBoardsPythonSoftwareFoundationSupportLearnTeachHowToBooksWebsiteTutorialsTrainingConferencesLinksAndMaterialsFromSourcesInMySQLJavaScriptJQueryHTMLjQueryPlusCSSDotNetCSharpLAMPWindowsAzureLinuxUbuntuApacheEclipsePHPWordPressDrupalFacebookTwitterGithubInstagramDeviantArtRedditWeeblyGoogledocsMozillaLinkedinBitcoinAlibabaAmazonAppleGoogleYou",1,AI,mpt,code,none,sampling,yes,Write a function to find the focus of a parabola.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the focus of a parabola."" from stackoverflow.com:",a046cea6-cd45-4a27-9dde-a33a72f57188,b25a0181-6b7b-4cc2-834f-35bfe07dc7da,159,long,0,Human,0.2967804827626051,0.7032195172373948,False,True,False
+846,"def count_digits(n):
+    if n == 0:
+        return 1
+    else:
+        return 1 + count_digits(n // 10)",1,AI,mpt,code,none,greedy,no,Write a python function to count the number of digits of a given number.,"The following is the full text of a Python code solution to the exercise ""Write a python function to count the number of digits of a given number."" from stackoverflow.com:",feb07b51-63f2-4cbb-8484-78164f73af83,73454874-f52c-4d7e-bc8a-493aa215ddad,15,short,0,Human,0.127502795791347,0.872497204208653,False,True,False
+851,"def remove_column(nested_list, column):
+    return [[row[:column] + row[column+1:] for row in inner_list] for inner_list in nested_list]",1,AI,llama-chat,code,none,sampling,yes,Write a function to remove a specified column from a given nested list.,"Write just the Python code solution for the problem ""Write a function to remove a specified column from a given nested list."".",ee1e6f60-7cf5-4a6a-b17d-b8df6efb942a,4902bfca-f6db-4f25-bbd3-041e8cfb221e,15,short,0,Human,0.2884814710621676,0.7115185289378324,False,True,False
+852,"def set_to_ordered_tuples(set_data):
+    return tuple(tuple(set_data))",1,AI,mpt-chat,code,none,greedy,no,Write a function to convert the given set into ordered tuples.,"Write just the Python code solution for the problem ""Write a function to convert the given set into ordered tuples."".",8a168a57-83fb-4346-9ca5-5f35acad83f2,f2d2cae6-643f-41bf-8442-ab19eac1afc8,4,very_short,0,Human,0.3356958756695473,0.6643041243304527,False,True,False
+875,"def split_string(input_string, delimiters):
+    import re
+    return re.split(f'[{delimiters}]', input_string)",1,AI,mpt-chat,code,none,greedy,no,Write a function to split the given string with multiple delimiters by using regex.,"Write just the Python code solution for the problem ""Write a function to split the given string with multiple delimiters by using regex."".",e72471d0-af7e-4a38-b57a-3c8d5eff7ddb,2f40466d-f6a5-4075-b271-1870a6589790,8,very_short,0,Human,0.091011442610177,0.9089885573898228,False,True,False
+885,"def remove_empty_lists(list_of_lists):
+    return [sublist for sublist in list_of_lists if sublist]",1,AI,llama-chat,code,none,sampling,yes,Write a function to remove empty lists from a given list of lists.,"Write just the Python code solution for the problem ""Write a function to remove empty lists from a given list of lists."".",fd018b3b-a338-4903-a570-6137c22cd52f,20aca028-da73-404a-b875-de2f73cd8788,10,very_short,0,Human,0.3697121038945032,0.6302878961054967,False,True,False
+902,"def max_of_two(a, b):
+    if a > b:
+        return a
+    else:
+        return b",1,AI,mpt,code,none,greedy,no,Write a python function to find the maximum of two numbers.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find the maximum of two numbers."" from stackoverflow.com:",ccb255c0-46a7-446c-8776-efcad03f07f3,73df1ef5-c60d-4c90-83b3-ffa9b80e4a83,12,short,0,Human,0.1611613642328248,0.8388386357671752,False,True,False
+915,"def remove_char(s, char):
+    return s.replace(char,"""")",1,AI,mpt-chat,code,none,sampling,yes,Write a python function to remove all occurrences of a character in a given string.,"Write just the Python code solution for the problem ""Write a python function to remove all occurrences of a character in a given string."".",eab1e4f1-dbfc-4419-8d4b-837efcbd69d7,c192aa9a-181b-46e8-87c5-a2504c701e69,5,very_short,0,Human,0.2842591097812794,0.7157408902187206,False,True,False
+931,"The purpose of this challenge is to write a piece of software that will scan an input file, and delete all instances of the following characters to check whether or not they were in any input records. As an example we'll use an email-injection test record from GMAIL at http://localhost/test.txt which contains several examples in HTML/CSS for testing web application functionality; you can find one more sample here (all characters are uppercase only). Here's the challenge section: Write a piece of python code that checks whether or not each instance of each character it finds matches a rule found on StackOverflow. For ease of understanding all variables used outside the program should be documented so it is clear where they came from; I wrote these out with comments to add some clarity. This should work for most programming languages although if your question doesn't ask ""should"" you may need additional help. Please make sure your code doesn't return nothing since this will mean no results will have been returned by the time your program ends and those pesky sys.exit() calls happen :D def removes_case(input, rules): count = 0 cntr.append((char)==rules[0].upper()) while len(ctrs) < limits[0]: for char in ctrs: if character == rules[0][ 1 ]: count += 1 continue def main(): charsToSearch = [] ctrsToFind = {} input.append(""Test input"") for row in open(open('test.txt'))[1:] rules = [""All"", ""-Alphanumeric"", ""-Base10"", ""AaBbCc"", ""-Capital"", ""Carat"", ""CaseSignorModifier"",""Checked"",""CodePoint"",""ControlCharsPerChar=', ',"",'DigitSeparator"",""DataBrace"",""Delimiter"",""EndOfStream"",""Equals"",""ExclamationMark"", ""_""] try: count = int(str(row[3])) while counts[count] > 1: cur = cts.get(count)[0] if len(cur) <= limit: prevlen = str(str(row[3]) + len(cur)+1) for ctr, char in zip(cur,prevlen,1+index): if ctr!= char",1,AI,gpt2,code,none,sampling,yes,Write a python function to remove all occurrences of a character in a given string.,"The following is the full text of a Python code solution to the exercise ""Write a python function to remove all occurrences of a character in a given string."" from stackoverflow.com:",eab1e4f1-dbfc-4419-8d4b-837efcbd69d7,01c6a7cc-f488-4470-a865-69a62c89c94d,260,long,0,Human,0.4617183754035453,0.5382816245964547,False,True,False
+964,"```python
+def min_cost_path(cost, m, n):
+    if m < 0 or n < 0:
+        return -1
+    if m == 0 and n == 0:
+        return 0
+    if cost[m][n] == -1:
+        return -1
+    if cost[m][n] == 0:
+        return 0
+    if cost[m][n] == 1:
+        return 1
+    if cost[m][n] == 2:
+        return 2
+    if cost[m][n] == 3:
+        return 3
+    if cost[m][n] == 4:
+        return 4
+    if cost[m][n] == 5:
+        return 5
+    if cost[m][n] == 6:
+        return 6
+    if cost[m][n] == 7:
+        return 7
+    if cost[m][n] == 8:
+        return 8
+    if cost[m][n] == 9:
+        return 9
+    if cost[m][n] == 10:
+        return 10
+    if cost[m][n] == 11:
+        return 11
+    if cost[m][n] == 12:
+        return 12
+    if cost[m][n] == 13:
+        return 13
+    if cost[m][n] == 14:
+        return 14
+    if cost[m][n] == 15:
+        return 15
+    if cost[m][n] == 16:
+        return 16
+    if cost[m][n] == 17:
+        return 17
+    if cost[m][n] == 18:
+        return 18
+    if cost[m][n] == 19:
+        return 19
+    if cost[m][n] == 20:
+        return 20
+    if cost[m][n] == 21:
+        return 21
+    if cost[m][n] == 22:
+        return 22
+    if cost[m][n] == 23:",1,AI,mpt,code,none,greedy,no,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].","The following is the full text of a Python code solution to the exercise ""Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][]."" from stackoverflow.com:",525a4452-faa9-4c02-a63e-926c1050a313,de4316fa-f9d9-49e1-9d14-725bd581e321,173,long,0,Human,0.2613018069518881,0.7386981930481118,False,True,False
+968,"def hexagon_grid(size):
+    grid = []
+    for i in range(size):
+        row = []
+        for j in range(6):
+            x = i * 2 + j % 2 * 2 - 1
+            y = i * 3 - j // 2 * 3
+            row.append((x, y))
+        grid.append(row)
+    return grid",1,AI,llama-chat,code,none,greedy,no,"Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.","Write just the Python code solution for the problem ""Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates."".",d2f4859d-76f6-4dd7-b394-8c660a459764,8e935c5a-ebbe-4317-ba85-6c53006af598,45,medium,0,Human,0.4373342730468977,0.5626657269531022,False,True,False
+981,"def pancake_sort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+        for j in range(n-i-1, n):
+            if arr[j] < arr[j-1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+    return arr",1,AI,llama-chat,code,none,greedy,no,Write a function to sort a list of elements using pancake sort.,"Write just the Python code solution for the problem ""Write a function to sort a list of elements using pancake sort."".",5acb5328-6daf-45cd-9de8-ec0ad1f115b1,e5ce879c-35f5-4563-9776-695ac954b8be,39,medium,0,Human,0.291673090610327,0.7083269093896729,False,True,False
+987,"def get_depth(d):
+    if not d:
+        return 0
+    return max(get_depth(d.get(k, {})) + 1 for k in d)",1,AI,mpt,code,none,greedy,no,Write a function to find the depth of a dictionary.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the depth of a dictionary."" from stackoverflow.com:",0eff4e9d-979c-44fd-9997-6d2eb7ab970c,ffc1322e-261f-4141-ad7b-8201dc84a323,16,short,0,Human,0.2436301003494567,0.7563698996505432,False,True,False
+1001,"def count_uppercase(str):
+    return str.lower().count(str.upper())",1,AI,llama-chat,code,none,sampling,yes,Write a python function to count the upper case characters in a given string.,"Write just the Python code solution for the problem ""Write a python function to count the upper case characters in a given string."".",cdff51d0-f373-4369-bd49-fd82c938d0dd,ab23df73-028a-4864-9026-8092d2b2709d,4,very_short,0,Human,0.4175329710531437,0.5824670289468563,False,True,False
+1030,"def parabolic_focus(a, b):
+
+    import math 
+     
+      if (b == 0 and type((math).sqrt(-4*a))=='float'):  #Checks if it is horizontal or vertical using discriminant formula (-b/(2*(1+root))) = x^3 + an/f => f=-an   return ('Infinity','-'+str('%.5fn'%n)),['This equation represents ax^'^par],where n=-(a>0)*(math)-1+(n<0)*6,'The sign has changed since there are complex roots', None:None] else : 
+
+          x,c,_='['.join([' %.8e'% s       for _ in ['-bx'], ['%(i)d/%s'         %t for t_, iin range(int max([7])),(9)]] )][           len(_)>40]:'.';leng=(_.count('.000')_+2);__={};v=[];k=lambda e:'rnd';o=bool(re.search(r'd?[-+.]/ d?'.* $.', k())and len(__)<50);N=set();h=False;while not h:{try:$o=$`!rnd()&31;$:$`!rnd()&63._''()[__.__getitem__(ord(""'"")+)];$`.replace($o,$`\033[[38; 5; $%d m'     % ($`randrange(32,127') ^ ('$`randrange(128,160')))[      1:]``');q=$?.groupdict().values();w=list(map(lambda l:*$$l,filter(*operator.methodcaller(`isdigit`,**$$))))if                   not w:u=io.StringIO(""%s""%%(\$,.expandtabs(**{**\:"" "";**.tab_width**:8}).format\*\*______.items()));___.$$$$$$ $$)=tuple(            map(complex,$$.__find_cycles__)**$$$$$$ **));__.*****$.****$=eval(""%s""               **$$***.***,**$**,$**,**$$,**,\*\*_\_\_,_);                                          ###|    ##:. # |#########.####",1,AI,mpt-chat,code,none,sampling,yes,Write a function to find the focus of a parabola.,"Write just the Python code solution for the problem ""Write a function to find the focus of a parabola."".",a046cea6-cd45-4a27-9dde-a33a72f57188,f765c3c7-dfc5-4a43-b719-af1248a17446,88,long,0,Human,0.491377510605312,0.508622489394688,False,True,False
+1059,"def largest_value_frequency(arr):
+    largest = max(arr)
+    count = arr.count(largest)
+    return count",1,AI,mpt-chat,code,none,greedy,no,Write a python function to find the frequency of the largest value in a given array.,"Write just the Python code solution for the problem ""Write a python function to find the frequency of the largest value in a given array."".",9195fb9a-eac7-43dc-8c43-5f85a19e2e6a,ddad7500-1c1c-4b1e-9145-686fa0fda922,10,very_short,0,Human,0.2406456407806984,0.7593543592193016,False,True,False
+1089,"def perimeter_of_square(side_length):
+    return 4 * side_length",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the perimeter of a square.,"Write just the Python code solution for the problem ""Write a function to find the perimeter of a square."".",f800a5e8-ee78-420b-9285-b3fd8ab9c319,f4cfc868-c91e-4c08-843a-372a76746f50,6,very_short,0,Human,0.3012868070417695,0.6987131929582304,False,True,False
+1092,"def is_scalene(a, b, c):
+    if a > b and a > c:
+        return True
+    elif b > a and b > c:
+        return True
+    elif c > a and c > b:
+        return True
+    else:
+        return False",1,AI,mpt,code,none,greedy,no,Write a function to print check if the triangle is scalene or not.,"The following is the full text of a Python code solution to the exercise ""Write a function to print check if the triangle is scalene or not."" from stackoverflow.com:",df186e59-c896-4716-b308-565a202bb259,6d44cf46-f4f1-406a-9d6f-30af50fc0e10,37,medium,0,Human,0.1888207868897057,0.8111792131102943,False,True,False
+1097,"def pell(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return pell(n-1) + pell(n-2)",1,AI,llama-chat,code,none,greedy,no,Write a function to calculate the nth pell number.,"Write just the Python code solution for the problem ""Write a function to calculate the nth pell number."".",e9bbf9c7-d661-48b2-9fdc-6183cb387673,f530a921-88e4-4c7e-8f15-9068d3c728dc,19,short,0,Human,0.19281392598153,0.80718607401847,False,True,False
+1109,"def average_of_odd_numbers(n):
+    sum = 0
+    for i in range(1, n + 1, 2):
+        sum += i
+    return sum / (n // 2)",1,AI,llama-chat,code,none,greedy,no,Write a python function to find the average of odd numbers till a given odd number.,"Write just the Python code solution for the problem ""Write a python function to find the average of odd numbers till a given odd number."".",8304ba90-8b35-40ef-8581-2c3575079e5e,80c47785-ed6b-4027-a95e-b49c2928a3fa,22,short,0,Human,0.0985259755219683,0.9014740244780316,False,True,False
+1110,"def pel_number(n):
+
+    p = 1 # First Pell Number is1
+     i=2  # i-th term of sequence starts from 2
+ 
+ while True: 
+         if (IsPrimeCheckerFunction)(((3*max)//20))**0<=k<=(len(list)-19):
+			 
+
+
+             if ((9 * max // 20)) % 4 == 0 and\
+                    8 < k <= 19 and not any([np[6]>=(((12-(j*(4/5)))%7)+42)*10**(-math.log10('10000'))+(40+80*(-(-23/(54/29))))%(26**14)for j in range(__floor__(89./25.)),__ceil__(97.*31./63.+119.-85.:-.0015)/(-27.**125)+67.]): 
+
+                 s = list()
+				
+ 
+
+ 
+									 s+=lst
+							
+						
+						else :
+
+							 break
+								   x += len(_str_)
+
+
+
+                         if sum!= -999999999999999:
+	
+	
+                       yield x[::3]+'hello'+': '+ str(*map(+lambda m: ('world')[:m],range(**arg[-33:-16]))[11])
+			`       break",1,AI,mpt-chat,code,none,sampling,yes,Write a function to calculate the nth pell number.,"Write just the Python code solution for the problem ""Write a function to calculate the nth pell number."".",e9bbf9c7-d661-48b2-9fdc-6183cb387673,c6f25127-3422-488a-b837-51fffa540666,66,long,0,Human,0.3821105414607482,0.6178894585392518,False,True,False
+1120,"def intersection(a, b):
+    return list(set(a) & set(b))",1,AI,mpt,code,none,greedy,no,Write a function to find the intersection of two arrays using lambda function.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the intersection of two arrays using lambda function."" from stackoverflow.com:",e9d62859-a36d-4905-a73e-ba614aa88de6,10351128-94d6-442f-a443-23f295d5b8ee,7,very_short,0,Human,0.2665566821195611,0.7334433178804389,False,True,False
+1124,"def ascii_value(char):
+    return ord(char)",1,AI,mpt,code,none,greedy,no,Write a function to find the ascii value of a character.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the ascii value of a character."" from stackoverflow.com:",e638251f-609f-48ee-a116-5d2369819332,9710e27c-5cc7-4d8a-9932-337fa5c8a7ac,4,very_short,0,Human,0.2111601920214846,0.7888398079785154,False,True,False
+1137,""""""" This code allows you to draw a vertical line on your screen which has only one value, 'focus'. If the user pushes their mouse pointer over this point (or leaves it there briefly), focus will change to the new horizontal position (as shown in the picture below). The idea behind this was introduced by Matthew D. Coyle who had a challenge with an exercise in an Intro-to-Mathematics class he took.",1,AI,gpt2,code,none,sampling,yes,Write a function to find the focus of a parabola.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the focus of a parabola."" from stackoverflow.com:",a046cea6-cd45-4a27-9dde-a33a72f57188,4416a5ce-f1bc-4828-b3fc-7cdf4cec96b3,71,long,0,Human,0.1858460681312811,0.8141539318687189,False,True,False
+1149,"# Given n and K, where 1 < =K <=n : how many ways are there for buying stocks among `k` companies (stocks) with N as initial capital so that each company’s share price always increases? If you buy shares in every transaction then your total money should be at least equal or greater than first day i -e $ 100  And if one buys Xth numbershare on j th days prices must not fall below previous purchase else it leads into loss  If its rise by Y amount over last purchasing date.For Example,if we have 5 Stocosks A B C D E but our max noofpurchasable stcks=5   So here 4 would do too since now all profits(A-B)(C+D)andE increasedby100 unitsfrom what they were purchased means more returnforinvestmentbutit depends uponhow muchmoneywe startedwith$!It willreturn 0 because only when bought4csharesoftwostherestockssellingwereprofit makingelseidontknowthewaytomakedatestoutwhatareallpossiblewayswhichcanbewritteninpython3 using some logic tricks 
+
+ 
+    def invest_profits():
+
+        count1=[i*2**10*(0)**(9)-202535761706391555509669672637015938752349707819162984217079063105808565338834642818142432990860778965935595]+(8)**(6)*(((-403074389861294682766132229727947350570535743)-(543294441012569583307808367946034548114665))-(72995209041794982356974582999778147388185)+1209973750000000000000))   
+
+        ##InitialInvestments ##To Find which combination can give us most
+
+
+            bestCombination=(count[::]+' '.join([str(((x)[:-7]) +'', x[-int:(len('Stock No.')]], len()))[: int()]))[(1106240220103)*(1125869880225/9700809277265)+5623241891109][62996]:min",1,AI,mpt,code,none,sampling,yes,Write a function to find the maximum profit earned from a maximum of k stock transactions,"The following is the full text of a Python code solution to the exercise ""Write a function to find the maximum profit earned from a maximum of k stock transactions"" from stackoverflow.com:",3a29b12e-f46a-443a-be44-027ceaf85850,a4d8dd33-453a-4d29-9056-9567d8106614,161,long,0,Human,0.1586844514562883,0.8413155485437116,False,True,False
+1152,"def find_multiples(n, m):
+    return [x * n for x in range(1, m + 1)]",1,AI,llama-chat,code,none,sampling,yes,Write a function to find m number of multiples of n.,"Write just the Python code solution for the problem ""Write a function to find m number of multiples of n."".",4d1ba893-7e48-4b26-9d4c-0c4d7cdbcda0,64e8cde7-e963-41cc-8c76-4a8c48994dff,14,short,0,Human,0.3498879877561219,0.650112012243878,False,True,False
+1163,"def perimeter(side):
+    return 4 * side",1,AI,mpt,code,none,greedy,no,Write a function to find the perimeter of a square.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the perimeter of a square."" from stackoverflow.com:",f800a5e8-ee78-420b-9285-b3fd8ab9c319,f67b92e5-4aee-49df-8713-4d768a4164df,6,very_short,0,Human,0.1517863691404684,0.8482136308595316,False,True,False
+1166,"def get_ascii(char):
+    return ord(char)",1,AI,mpt-chat,code,none,sampling,yes,Write a function to find the ascii value of a character.,"Write just the Python code solution for the problem ""Write a function to find the ascii value of a character."".",e638251f-609f-48ee-a116-5d2369819332,0bf677ff-e2a2-4efa-8d8c-1043630713eb,4,very_short,0,Human,0.2564938343425872,0.7435061656574128,False,True,False
+1167,"def contains_sublist(lst, sub):
+    for i in range(len(lst)):
+        if lst[i:i+len(sub)] == sub:
+            return True
+    return False",1,AI,mpt,code,none,greedy,no,Write a function to check whether a list contains the given sublist or not.,"The following is the full text of a Python code solution to the exercise ""Write a function to check whether a list contains the given sublist or not."" from stackoverflow.com:",c73db6c0-aad8-46c4-9a12-ed59a93cd18a,323990cf-678e-46d4-a5a3-d9e2198f0273,15,short,0,Human,0.3518351016532544,0.6481648983467456,False,True,False
+1172,"def split_list(lst, n):
+    return [lst[i:i+n] for i in range(0, len(lst), n)]",1,AI,llama-chat,code,none,sampling,yes,Write a function to split a list for every nth element.,"Write just the Python code solution for the problem ""Write a function to split a list for every nth element."".",da195cc2-01c9-4045-b524-3af7e2945c25,b159b278-94dc-4be1-8470-7bc3810904f3,11,short,0,Human,0.4695221277067122,0.5304778722932877,False,True,False
+1179,"def largest_freq(arr):
+    freq = {}
+    for i in arr:
+        if i in freq:
+            freq[i] += 1
+        else:
+            freq[i] = 1
+    return max(freq, key=freq.get)",1,AI,mpt,code,none,greedy,no,Write a python function to find the frequency of the largest value in a given array.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find the frequency of the largest value in a given array."" from stackoverflow.com:",9195fb9a-eac7-43dc-8c43-5f85a19e2e6a,f0a802f5-9b50-47e2-b5bd-ce90b4023cbb,23,short,0,Human,0.3777384910411792,0.6222615089588208,False,True,False
+1180,"from collections import OrderedDict class Drops(OrderedDict): def __init__(self, keys=None): self._keys = keys self.sort() def sort(self): return dict([(""A"", -1) for i in reversed(len(t))]) @dropsdef (key, key, [], dropped_items=""empty"" ) def droplist(): items = set() n = len(dropped_items) k = 0 count = 0 entries = 0 while not self._next(n + 1, 2, _True): d = drops[k] if keys(_id, keys(_item, keys(_d), k) + c.finditer(c,""""))!= None: entry_item = items(entries) snd = OrderedDict().keys(entry_item).items(srs_to_pickle()) n += 1 break if n > Count: count = n del droplist[0].key while count < Count: currpos = self._last_index _removekey = d.clear() tb_append(currpos.pop(), _RemoveKey(CurrPos()) * count*count+1) currpos = self._last_index - currpos last_position = currpos return item_from_dict(items, droplist, key._id) if key == ""_"": print(""Dropping {} at position {:}."", item().index(), item().lower()) else: raise KeyError(KeyError(""No value provided for given id"") * 100) _RemoveKey(CurrPos()) * count+1 To do one specific item and its associated DropList : 'drop' the item, with an optional key containing its corresponding value If you've read this far, I'd be very happy if you answered the question. You'll need an interpreter installed on your system's local computer or VM so that stackOverflow can give you credit. It will just prompt you via user@host : stackoverflow.com/questions/11184870/python-exercise-write-a-function-to-drop-empty-items There are two options: Either use PyCharm (there's always some free time when working on projects :) ) to write the code",1,AI,gpt2,code,none,sampling,yes,Write a function to drop empty items from a given dictionary.,"The following is the full text of a Python code solution to the exercise ""Write a function to drop empty items from a given dictionary."" from stackoverflow.com:",3b99356f-51fc-451f-8d23-df4e8d0e1fc4,ca3a93db-843b-4ba7-8426-59c15fbabd8b,217,long,0,Human,0.4913429654829128,0.5086570345170871,False,True,False
+1185,"You will write some functions to compute minima over two matrices to maximize a binary search tree in N-dimensional space. The first part assumes you have: import pandas as pd from scipy.stats import log_binomial as log2, log_decimal as ldg1 m=pandas.DataFrame([10,1], index=['x']) n=len(m).axis().count #number of columns = 100 (i.e., first few rows in 'cost') + 1 logit_possibles=log2.log(log2((i+3)*log2(n/2)[:,:]/(1 - i * n) * m)) #log it (using ldg1 functions) min = 1 for j in range(0,n): max,minval dlr=-1 df = pd.Mdivide(mtz=ldg1(:,j,4),range=(6,-5,5))) minval=max*ldc(df); if ((min < 797)&&((minval > min))&lt>1496) { f = [ffor i in range(2)][0]; xstr_best_paths = df+f; #get best paths return (min,f(),minval)*llr / 6 def best_path(A, B): k=kth[np.round(A)/k] A.ix=tolow(100)-1 B.[x]=k+(A[k]-B[k],B[k]+-B[k],(D[d].ix=tolog(A[-k],B[-k]), D[s].ix=toloc(xstr_best_paths,1)),(D[d].iv=[toloc(D[0].ix[0],L*d[1]),D[1].ix[0]-L*d[2]).ix[1]},c=0) L^=K-b[((N*D[d])(N",1,AI,gpt2,code,none,sampling,yes,"Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].","The following is the full text of a Python code solution to the exercise ""Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][]."" from stackoverflow.com:",525a4452-faa9-4c02-a63e-926c1050a313,b59d2d25-ce4c-4c20-bdff-5040870df8d5,111,long,0,Human,0.0699467640415448,0.9300532359584552,False,True,False
+1200,"def pow(a, b):
+    return a ** b",1,AI,llama-chat,code,none,greedy,no,Write a function to calculate the value of 'a' to the power 'b'.,"Write just the Python code solution for the problem ""Write a function to calculate the value of 'a' to the power 'b'."".",46082fb7-de3e-488e-96f1-4d67bf31d2d9,b183dd5f-b572-4397-8a0c-ded7bde8961d,7,very_short,0,Human,0.4028966960684345,0.5971033039315655,False,True,False
+1216,"def nearest_smaller(n): 
+    return max((i,abs(i-n))for i in range(1,11) if abs(i-n)<=10-min([j+2*(8//5)-4*3/7-16*z/12**3+(64//12)**(13/(pythagorean_rootof 5)))if (not ((88%pow(-100,**0.0000000001)+(((35%-78%)/**9)*98)**tan((15-(74/17))))/sqrt('a')*(log97>=(94<55)=<81)>pow(c,-d))*sin((93-68))))**0.0001",1,AI,mpt-chat,code,none,sampling,yes,Write a function to find the closest smaller number than n.,"Write just the Python code solution for the problem ""Write a function to find the closest smaller number than n."".",e187d989-c28d-4114-b8ac-a41cad7cbec5,7c141e1c-41d4-4a33-901e-59e5a26e4324,12,short,0,Human,0.3542985732420758,0.6457014267579242,False,True,False
+1220,"def median(a, b, c):
+    return (a + b + c) / 3",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the median of three specific numbers.,"Write just the Python code solution for the problem ""Write a function to find the median of three specific numbers."".",ee38fac5-c830-486c-ae58-3509f0dd304c,6398e275-e888-465a-a142-82530ac21fbb,12,short,0,Human,0.3295134627381652,0.6704865372618348,False,True,False
+1230,"def surface_area(side):
+    return 6 * side**2",1,AI,mpt,code,none,greedy,no,Write a function to find the surface area of a cube.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the surface area of a cube."" from stackoverflow.com:",1788489f-b0ef-432b-89b8-7cf5b9ccdd84,c024a698-fe8b-4663-9248-cef5a1d12eeb,6,very_short,0,Human,0.3175120873329181,0.682487912667082,False,True,False
+1231,"def find_median(a, b, c):
+    sorted_numbers = sorted([a, b, c])
+    middle_index = len(sorted_numbers) // 2
+    if len(sorted_numbers) % 2 == 0:
+        return (sorted_numbers[middle_index - 1] + sorted_numbers[middle_index]) / 2
+    else:
+        return sorted_numbers[middle_index]",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the median of three specific numbers.,"Write just the Python code solution for the problem ""Write a function to find the median of three specific numbers."".",ee38fac5-c830-486c-ae58-3509f0dd304c,9a9318ea-ca31-4062-99f5-5f06c9ed7936,31,medium,0,Human,0.3871503224754954,0.6128496775245046,False,True,False
+1238,"def square_perimeter(side):
+    return 4 * side",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the perimeter of a square.,"Write just the Python code solution for the problem ""Write a function to find the perimeter of a square."".",f800a5e8-ee78-420b-9285-b3fd8ab9c319,b5eee20e-302b-455c-814e-e13621039cfd,6,very_short,0,Human,0.368906213334326,0.6310937866656741,False,True,False
+1239,"def count_odd_days(year):
+    total = 0
+
+    # loop through each day and check if it is an odd or even date, adding 1 on every leap yearday 
+  for i from range[1][366]if(((i%4 ==0)and (i % 100!= 0))or ((i%%400==   0)): total += +1 # add only 366 as base 365 would make non-leap years have 67 odd dates which they don't return total
+
+  return total",1,AI,mpt-chat,code,none,sampling,yes,Write a python function to calculate the number of odd days in a given year.,"Write just the Python code solution for the problem ""Write a python function to calculate the number of odd days in a given year."".",f20cf878-4504-440e-8942-4eeb7606cff0,42712870-9da4-4f49-a68a-c3e67368d951,62,long,0,Human,0.1546522784419674,0.8453477215580325,False,True,False
+1254,"def duplicate_removal(list): while True: if list[-1] == list[2:] and not count('a') == 1: return False else: for i in range(len(list) - count('b')) + count('c'): if list[i] > list[0]: list[-1][i] = list[(i+1)/count('a',))%3 print '' for index, val in enumerate(list): result = duplicate_removal([val]) return result return duplicate_removal",1,AI,gpt2,code,none,sampling,yes,Write a function to remove the duplicates from the given tuple.,"The following is the full text of a Python code solution to the exercise ""Write a function to remove the duplicates from the given tuple."" from stackoverflow.com:",8f9d9ad4-d0e2-4ee8-a510-d454cbbf62c7,bbb9bc18-be74-4f42-81d1-134b13f47184,45,medium,0,Human,0.3964710751479682,0.6035289248520318,False,True,False
+1275,"def remove_empty_lists(lists):
+    return [list for list in lists if list]",1,AI,mpt-chat,code,none,sampling,yes,Write a function to remove empty lists from a given list of lists.,"Write just the Python code solution for the problem ""Write a function to remove empty lists from a given list of lists."".",fd018b3b-a338-4903-a570-6137c22cd52f,174f1209-b621-44d8-ac49-6455d26ccfb6,10,very_short,0,Human,0.3892159067978811,0.6107840932021189,False,True,False
+1284,"def to_lower_case(s):
+    return s.lower()",1,AI,mpt-chat,code,none,greedy,no,Write a python function to convert the given string to lower case.,"Write just the Python code solution for the problem ""Write a python function to convert the given string to lower case."".",60313267-17fa-4c59-bc11-74302e23d52f,a9264663-b602-461b-b14e-1d78255b5d05,4,very_short,0,Human,0.4765568738702355,0.5234431261297645,False,True,False
+1296,"def calculate_surface(side):
+    return 6 * side**2",1,AI,mpt-chat,code,none,sampling,yes,Write a function to find the surface area of a cube.,"Write just the Python code solution for the problem ""Write a function to find the surface area of a cube."".",1788489f-b0ef-432b-89b8-7cf5b9ccdd84,1324ecdd-2d95-4143-ba34-5eb2acc42c7c,6,very_short,0,Human,0.3070011116158041,0.6929988883841959,False,True,False
+1317,"def find_third_side(side1, side2):
+ return (side1**2 + side2**2)**0.5",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the third side of a right angled triangle.,"Write just the Python code solution for the problem ""Write a function to find the third side of a right angled triangle."".",c46cf7ce-6995-4d78-a13c-549fddac5faa,786f4a95-4904-4851-b44b-f1acfd2cc652,7,very_short,0,Human,0.4728986728971533,0.5271013271028466,False,True,False
+1321,"def countWordsInDict(dict): total = 0 for word in dict where word not in list(""a"", ""b"", ""c"", ""d"", ""e"") : total += 1 return total Count(countWordsInDiciton) Prints out 1, 3 and 7 (which are numbers) - but counts all six. Try it
+
+4 Exercises 1. Calculate the time needed for a web server with 200 web pages rendered at a rate of 500,000 requests per second. For example with this solution on my laptop it took me three minutes, twenty seconds. 2. Write a method that calculates percentage of a word that occurs in a given language based only on capitalization. In your implementation use the method strlen() (you can also make an application call these). I am using Python 3.3.1 3. A Java library would require that you pass in dictionaries of all sorts into the constructor so as you don't have to bother specifying their contents - but this would work too. My Python code does this by passing in the data directly. And if you do something like this it works perfectly Well done
+
+5 Source code 1. https://github.com/mfhansdorf/stack-test-suite 2. stackoverflow: Stack Overflow: http://www.stackoverflow.com 5. This test suite includes several features: it has two different methods for finding all nonwhitespace characters; and one for determining the number of possible unique words for any English language. These tests represent two real world scenarios and are suitable to be run via JVM or C99 interpreter. They are currently set up in such a way that they can be found on most recent versions of various Unix systems. The current setup uses Python 2.7 on HP-UX 10 r43+ 64bit machine or Python 2.6 on Mac OS X 10.5.9 32 bit machines 4. You will need to compile source which means you need an editor and compiler for Python 2.x. 6. In addition to python2_getopt.pl, you should install the latest version of lxml and pydoc. To do this on Windows open a command prompt, navigate to the folder containing the source files and type: pip install pydoc Then change the current directory",1,AI,gpt2,code,none,sampling,yes,Write a function to count the most common words in a dictionary.,"The following is the full text of a Python code solution to the exercise ""Write a function to count the most common words in a dictionary."" from stackoverflow.com:",bd793d97-9023-41c8-94ba-4a38a1aa70e8,b2278e49-85ef-4b66-8071-7a983226b982,340,long,0,Human,0.440275845650576,0.559724154349424,False,True,False
+1328,"def get_ascii_value(char):
+    return ord(char)",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the ascii value of a character.,"Write just the Python code solution for the problem ""Write a function to find the ascii value of a character."".",e638251f-609f-48ee-a116-5d2369819332,bb9230fc-3137-4e33-b968-20c389400118,4,very_short,0,Human,0.2668556299435532,0.7331443700564468,False,True,False
+1338,"def is_integer(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False",1,AI,llama-chat,code,none,greedy,no,Write a function to check if a string represents an integer or not.,"Write just the Python code solution for the problem ""Write a function to check if a string represents an integer or not."".",5d8094f6-b4ba-4a7a-9c38-941ea48b3012,3e6e7a77-6eee-44de-82b6-7ad08ba2b656,10,very_short,0,Human,0.4030647899527923,0.5969352100472076,False,True,False
+1339,"def perrin(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return perrin(n-1) + perrin(n-2)",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the n'th perrin number using recursion.,"Write just the Python code solution for the problem ""Write a function to find the n'th perrin number using recursion."".",19e7a71a-d111-4deb-8cf0-fad51018c02f,aa581a15-49b2-4114-b5da-60ee1c07c1a0,17,short,0,Human,0.2864503612658619,0.7135496387341381,False,True,False
+1365,def find_ascii_value(ch): if ch == '\x00': return '\x00' elif ch == '\x01': return '\x01' elif ch == '\x02': return '\x02' elif ch == '\x03': return '\x03' elif ch == '\x04': return '\x04' elif ch == '\x05': return '\x05' elif ch == '\x06': return '\x06' elif ch == '\x07': return '\x07' elif ch == '\x08': return '\x08' elif ch == '\x09': return '\x09' elif ch == '\x0A': return '\x0A' elif ch == '\x0B': return '\x0B' elif ch == '\x0C': return '\x0C' elif ch == '\x0D': return '\x0D' elif ch == '\x0E': return '\x0E' elif ch == '\x0F': return '\x0F' elif ch == '\x10': return '\x10' elif ch == '\x11': return '\x11' elif ch == '\x12': return '\x12' elif ch == '\x13': return '\x13' elif ch == '\x14': return '\x14' elif ch == '\x15': return '\x15' elif ch == '\x16': return '\x16' elif ch == '\x17': return '\x17' elif ch == '\x18': return '\x18' elif ch == '\x19': return '\x19' elif ch == '\x1A': return '\x1A' elif ch == '\x1B': return '\x1B' elif ch == '\x1C': return '\x1C' elif ch == '\x1D': return,1,AI,gpt2,code,none,greedy,no,Write a function to find the ascii value of a character.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the ascii value of a character."" from stackoverflow.com:",e638251f-609f-48ee-a116-5d2369819332,9c4f7644-ac0e-4c80-b6fe-aa82f423adba,181,long,0,Human,0.3270142116503091,0.6729857883496908,False,True,False
+1366,"def avg_of_odd(n):
+ 
+ sum = 0 # initialize variable 
+ count =0 
+
+ while n % 2!=  00:1; 
+sum += n
+
+ return (sum/count)",1,AI,mpt-chat,code,none,sampling,yes,Write a python function to find the average of odd numbers till a given odd number.,"Write just the Python code solution for the problem ""Write a python function to find the average of odd numbers till a given odd number."".",8304ba90-8b35-40ef-8581-2c3575079e5e,0ecf9e43-0cd0-41b4-a648-1908199de213,20,short,0,Human,0.1213954635432223,0.8786045364567777,False,True,False
+1371,"def str_to_lower(s):
+    return s.lower()",1,AI,llama-chat,code,none,sampling,yes,Write a python function to convert the given string to lower case.,"Write just the Python code solution for the problem ""Write a python function to convert the given string to lower case."".",60313267-17fa-4c59-bc11-74302e23d52f,d5a40d27-84fa-4941-a163-ef287be105d2,4,very_short,0,Human,0.3912221118787865,0.6087778881212135,False,True,False
+1372,"def lucas(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return lucas(n-1) + lucas(n-2)",1,AI,llama-chat,code,none,sampling,yes,Write a function to find the n'th lucas number.,"Write just the Python code solution for the problem ""Write a function to find the n'th lucas number."".",7a453ba3-e140-4518-97ba-3d0434fd5096,49af9eea-9010-4b0a-b814-e54e8e849028,17,short,0,Human,0.3950745897567393,0.6049254102432606,False,True,False
+1378,"def is_integer(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False",1,AI,mpt-chat,code,none,greedy,no,Write a function to check if a string represents an integer or not.,"Write just the Python code solution for the problem ""Write a function to check if a string represents an integer or not."".",5d8094f6-b4ba-4a7a-9c38-941ea48b3012,7a04ff97-7852-445f-bb5c-c4c56db98456,10,very_short,0,Human,0.4030647899527923,0.5969352100472076,False,True,False
+1383,"def find_kth(arr, n, k):
+
+    # Binary Search Algorithm 
+  1. left = 0 
+2. right = len(a) - 1 
+
+ 3. while (left <= right):
+
+
+ 4. mid = floor((right + left)/ 2 )
+
+ 
+
+ 5.. if arr[mid] == x:
+ 
+ 6.. return True
+
+ 
+ 7... elif check <x :
+ 
+
+ 8.... Right= Mid-l 
+
+ 9..... Left+ +==Right 
+
+ 10... Else:.return False 
+ 
+ 
+ 
+
+
+
+ def FindKThValueInArrayFunctionalProgrammingImperative():   
+
+
+
+
+ 11 # define recursive function using math trickery as base case on first K elements and recursion rule applying binary search thereafter until finding target index or end of list/array at which point wrap around via modulo arithmetic by length since indexing starts from zero this is imperative implementation where we keep track of indices explicitly wrapped up so that it works with numpy arrays too under hood but user sees standard python slicing notation hence easy usability similar readability etc liveness deadness maintained across all cases including edge ones like start being greater than stop because its inclusive range not exclusive one pythonic style way expressing elegance conciseness simplicity beauty mathematically grounded algorithmic technique concept known Zen Of Python here goes functional recipe inspired mostly off tutorial designed teach beginners concepts best practices tradeoffs involved choice between languages paradigms besides other motivations such speed performance memory footprint versus expressivity richness clarity flexibility modularity composability reuse extensibility scalability maintainbility adaptABILITY portability interoperatIBILITY integration disintegration isolationism segregation segrationisation selfsufficiency autonomy dependendence dependence independance indipendence bharathiar university coimbatore college ug pg computer science cseit mca dot net java html css javascript sql server plsql oracle db2 linux unix windows mac os android ios app development software engineering certification training courses colleges institutions universities academies tuitions teachers tutorials videos books guides lectures notes syllabus previous years question papers projects experiments kits equipments vendors manufacturers suppliers exporters wikipedia glossary unicode utf8 ascii iso latin1 iso8859 iso88615 encodings character sets glyphs scripts fonts iconFonts cursive handwriting italics bold obliquely roman upright sansserif serif typesetting text layout formatting manipulation transformation generation analysis",1,AI,mpt-chat,code,none,sampling,yes,Write a function to find the kth element in the given array.,"Write just the Python code solution for the problem ""Write a function to find the kth element in the given array."".",37019ec3-e121-4960-ac42-3f137a693c81,bf72dc3c-0dbf-4b51-979c-b529eaf769a3,321,long,0,Human,0.2142035593960605,0.7857964406039395,False,True,False
+1400,"def perrin_number(n):
+    if n == 1:
+        return 1
+    else:
+        return (perrin_number(n-1) + perrin_number(n-2)) % 1000000007",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the n'th perrin number using recursion.,"Write just the Python code solution for the problem ""Write a function to find the n'th perrin number using recursion."".",19e7a71a-d111-4deb-8cf0-fad51018c02f,d248a525-0e1f-4ae1-800f-90e41e7184f6,15,short,0,Human,0.1217407633318651,0.8782592366681349,False,True,False
+1419,"This question should not have been opened as it already was answered 4 years ago on another site, with an excellent answer by user102930 that can be found in this link and several other sites where answers are copied/pasted throughout Stack Exchange Network (even SO itself).
+
+     def biggest(numbers):        # Write numbers here 
+    if len([x for xin range(-999,-1) if any[i][0] == 0]): return None
+
+
+       for i inthe smallest positive integer such there exists some j which satisfies [...]. A typical algorithm has complexity O; however when only computing one entry like n2 or max then you do NOT want linear running time because even though worst case will never happen but each individual call takes exponential amount space so something more sophisticated would work better than just always searching linearly without end condition unless specifically required otherwise.). In general problem does indeed require extra-exponential computational cost every loop iteration due tqo thse two factors:(a) lack explicit formula relating size array entries 2 sum its terms 3 hence we get recursive nature b4 dcting recursion terminates must take account all previous steps taken during computation since no single data structure suffices keep track entire history necessary make sense what actually being computed c.(complexity analysis often requires considering very fine point about whether certain event occuring before next few seconds etc), also important note how these assumptions constrain possible ways algorithms could run e.,g..there might exist ones whic don't use too many resources,suppose your starting value 10^50 times greater magnitude expected output? Consider using dynamic programming instead brute force approaches becuase DP usually ends up requiring less storage although they initially look same sometimes memory usage grows exponentially larger thus may become impractical solutions problems w large input sizes f.; g It's best practice generally avoid making mistakes early stages writing program especially performance critical parts h I'm concerned ithat pytons builtn functions sort won'y able handle cases well enough imho ;-) This means need specialised method optimized either sorting integers natively inside C interpreter orderings derived somehow custom object structures eg dict class having < key :value > pairs sorted values first keys alphanumerically ascending fashion respectively see section below dedicated topic related issues #define BIGNUMBERS_MAX 999 def convertBigNumberListToStringArrayWithSep",1,AI,mpt,code,none,sampling,yes,Write a python function to find the largest postive number from the given list.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find the largest postive number from the given list."" from stackoverflow.com:",e3b9963d-63e4-45c1-8b2c-d1b0fe2f6df1,c5286bc0-e1fa-441d-b88a-4d7e0ea48c7b,367,long,0,Human,0.0916400653746448,0.9083599346253552,False,True,False
+1425,"def filter_dict(inputDict, value):    filtered = {key: input[key] for key in inputDict if inputDict[key] == value}    return filtered",1,AI,mpt-chat,code,none,sampling,yes,Write a function to filter a dictionary based on values.,"Write just the Python code solution for the problem ""Write a function to filter a dictionary based on values."".",e66e69f0-f2bc-4606-b2df-444af9743ef0,dc2a19da-03d2-442b-925b-2475ca0efd01,17,short,0,Human,0.108098818514002,0.891901181485998,False,True,False
+1435,"def square_perimeter(side):
+    return 4 * side",1,AI,llama-chat,code,none,greedy,no,Write a function to find the perimeter of a square.,"Write just the Python code solution for the problem ""Write a function to find the perimeter of a square."".",f800a5e8-ee78-420b-9285-b3fd8ab9c319,a2824120-11c7-4c82-affb-0df77736d255,6,very_short,0,Human,0.368906213334326,0.6310937866656741,False,True,False
+1443,"def check_first_last_char(string):
+    return string[0] == string[-1]",1,AI,mpt,code,none,greedy,no,Write a python function to check whether the first and last characters of a given string are equal or not.,"The following is the full text of a Python code solution to the exercise ""Write a python function to check whether the first and last characters of a given string are equal or not."" from stackoverflow.com:",a0866645-8214-4463-b025-7d2f269790f0,111c7c2d-4ad0-4c1e-842e-ec0fe0adbf7d,6,very_short,0,Human,0.2520019658318709,0.7479980341681292,False,True,False
+1449,"def f_to_pow(x): total = 0 while x > 10: r, g = 1, 1 for p in range(1000000000) : total += (g * r) / a print total This solution was posted at Stack Overflow on July 24th 2002 and has been the subject of 4 different solutions (see link below). The question asked how it could be implemented in Python. First post: http://www.stackoverflow.com/questions/17133741/quick-exam
+
+second post: http://www.stack.nl/q-203640/
+
+third post: http://www.python.org/dev/peps/peps_5_4/msg00770
+
+answer:
+
+def f_to_pow(x): sum = 0 return math.exp((-(total ** 2),total**2)) def d = f_to_pow(n) if n < 8 or n == 42: raise ValueError ('Cannot compute f_in(' + (d [9:,22] + _) * (int)(1+(n -8)))',n,d[9:]+d[22]...)
+
+How many solutions were there?
+
+There were 648 possible solutions as listed by the answer provided. What was needed would normally be an exhaustive list of all solutions but I found that this isn't always the case due to a design flaw (e.g. if every solution has multiple ways to divide x up into two parts: you may just need one way when your x goes up to 16. Not having so much detail makes implementation more difficult though as you end up with only two methods which aren't very natural from a programming perspective. You can find the same problem here: https://github.com/stefanroose/easymodit
+
+For an explanation or discussion please email me at stefan@robv.se",1,AI,gpt2,code,none,sampling,yes,Write a function to calculate the value of 'a' to the power 'b'.,"The following is the full text of a Python code solution to the exercise ""Write a function to calculate the value of 'a' to the power 'b'."" from stackoverflow.com:",46082fb7-de3e-488e-96f1-4d67bf31d2d9,ca2e2319-4b86-4c77-be10-5753ac1b5e20,218,long,0,Human,0.2935651087542174,0.7064348912457825,False,True,False
+1451,"def first_missing_positive(nums):
+    """"""
+    :type nums: List[int]
+    :rtype: int
+    """"""
+    nums.sort()
+    for i in range(len(nums)):
+        if nums[i]!= i + 1:
+            return i + 1
+    return len(nums) + 1",1,AI,mpt,code,none,greedy,no,Write a python function to find the first missing positive number.,"The following is the full text of a Python code solution to the exercise ""Write a python function to find the first missing positive number."" from stackoverflow.com:",76535ca6-2e0b-464a-84ae-0657f97abfd5,c98b5190-1214-43f0-8a74-25bfe77b3ec7,27,short,0,Human,0.4268945305355275,0.5731054694644724,False,True,False
+1459,"def median(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    elif c > a and c > b:
+        return c
+    else:
+        return (a + b + c) / 3",1,AI,llama-chat,code,none,greedy,no,Write a function to find the median of three specific numbers.,"Write just the Python code solution for the problem ""Write a function to find the median of three specific numbers."".",ee38fac5-c830-486c-ae58-3509f0dd304c,d9af0b3c-7800-4cf5-a865-fb07cee42da1,43,medium,0,Human,0.3004201210733174,0.6995798789266825,False,True,False
+1460,"def get_surface(side): """"""Get's Surface Area"""""" # Import'math' module for square root math = import(""Math"") sqrt3=2**0,5 * 2 ** 0, 5 + 1 returns 9 if number equals 3 else type ==float and (9 < x > -6) or isinstance() side /sqrt((from sys in range)(i* j)).sum/x+fabs(#[return True]) print(""%d"", ) return False class MySurface(): '''Finds Square Meterage''' def __init__(self,. init arguments here). The initializer block will be executed only once when this object instance first created by new(). From that point on it becomes an attribute shared across objects.. To avoid confusion with other types using keyword argument names as attributes I choose not use @property decorator until PEP8 clarifies naming conventions property name=""value""... 。class Solution {int __ans__=1; public int XXX(){int count(); }#define xxx myxxx==""strcmp(&amp;&quot;;void setxxxx&{ //Do something...}; }; #include &lt;cstdio>char buf []; const char pre[]={'hello',','helloworld'.%@%$%^%!);//printf (""%.17g%%\%\\n"");printf(""\r\n"");getch ();if (!fp_read (&file))continue ; do printf (_pbuf), pbuf += size _t); break while fgets ()!= NULL &&!feof ([fflsh]); fprintf(_stderr,_message_fmt,""%.42g""), v[ii])); continue ; switch(*--ptr){ case '%':case '#': case '{':.do {....}while (*++ptr = strfindchr())break;} ++ ptr;for (; i< n-size sizeof *_val_;)... free(data [--pos ] );return pos || errno; endswitchet; forj(num ){/* some codes */} /*some more*/}int main ()...return r;
+
+##### Code explanation
+
+
+    print('hello world');",1,AI,mpt,code,none,sampling,yes,Write a function to find the surface area of a cube.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the surface area of a cube."" from stackoverflow.com:",1788489f-b0ef-432b-89b8-7cf5b9ccdd84,1bc0d912-2aa7-440f-b333-228e49c266e4,197,long,0,Human,0.3102201858726762,0.6897798141273238,False,True,False
+1464,"def find_multiples(n, m):
+    multiples = []
+    for i in range(m):
+        multiples.append(n * (i + 1))
+    return multiples",1,AI,llama-chat,code,none,greedy,no,Write a function to find m number of multiples of n.,"Write just the Python code solution for the problem ""Write a function to find m number of multiples of n."".",4d1ba893-7e48-4b26-9d4c-0c4d7cdbcda0,e59975bf-fc22-4dc7-94de-103aac1111ff,17,short,0,Human,0.4896427317022254,0.5103572682977746,False,True,False
+1479,""""""" # Function that finds the median (the number right at the middle of your data set) def avg2(data, n=3): return sum(abs(x[n-1] * x[0]-x[1]+x[n/2])*x[0]), sum([(i), (j)) if n%2 == 0 else ((sum((x[vj+1], (x[j]>0)? ((x[j]-x[k])**2 + 1)*(1 - [i-j][2],4)))^2 / 6) for v in [(1..n)] else x[0]-x[1].**2 for i in range(3): for j in range(3): if (y > v[h][i]) or (y < v[l][j]::x[i]) : if h > 2*(v[k-1][j+1]|0.) and l < 5*(v[p][k-1][j+2]|0.):if p > (v[q-1],[j+1](1)) : avg2(*v[z_][y-1],[z_++],*v[zz]=z_[[i]]+zz*v[jj]=v[kk]]#[i][kk][j][l]) return zzz % c, max(min(zip(avg2(*v[hh][k+1],*v[lvm[ii],*v+3]),*v[ddn[iii]]+2),(1+(sqrt(2-(2^(-v[k-1][ii])^2)-1)/9*pi)/12))))
+Posted by Andrew Lissing at 12:30 AM",1,AI,gpt2,code,none,sampling,yes,Write a function to find the median of three specific numbers.,"The following is the full text of a Python code solution to the exercise ""Write a function to find the median of three specific numbers."" from stackoverflow.com:",ee38fac5-c830-486c-ae58-3509f0dd304c,daee3678-f955-4739-b7ac-73db3175ef3c,88,long,0,Human,0.1377837943200572,0.8622162056799428,False,True,False
+1488,"def hexagon_coordinates(x, y): return [x[0], y[0]] def hexagon_coordinates_list(x, y): return [x[0], y[0]] def hexagon_coordinates_list_with_x_and_y_points(x, y): return [x[0], y[0], x[1], y[1]] def hexagon_coordinates_list_with_x_and_y_points_with_y_points(x, y): return [x[0], y[0], x[1], y[1], x[2], y[2]] def hexagon_coordinates_list_with_x_and_y_points_with_y_points_with_y_points_with_y_points(x, y): return [x[0], y[0], x[1], y[1], x[2], y[2], x[3], y[3], x[4], y[4], x[5], y[5], x[6], y[6], x[7], y[7], x[8], y[8], x[9], y[9], x[10], y[10], x[11], y[11], x[12], y[12], x[13], y[13], x[14], y[14], x[15], y[15], x[16], y[16], x[17], y[17], x[18], y[18], x[19], y[19], x[20], y[20], x[21], y[21], x[22], y[22], x[23], y[23], x[24], y[24], x[25], y[25], x[26], y[26], x[27], y[27], x[28], y[28], x[29], y[29], x[30], y[30], x[31], y[31], x[32], y[32], x[33], y[33], x[34],",1,AI,gpt2,code,none,greedy,no,"Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.","The following is the full text of a Python code solution to the exercise ""Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates."" from stackoverflow.com:",d2f4859d-76f6-4dd7-b394-8c660a459764,416a919d-b0e0-4757-8a8b-7d90a721a114,103,long,0,Human,0.1378022096597994,0.8621977903402006,False,True,False
+1493,"def closest_smaller_number(n):
+    return (n-1) % n",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the closest smaller number than n.,"Write just the Python code solution for the problem ""Write a function to find the closest smaller number than n."".",e187d989-c28d-4114-b8ac-a41cad7cbec5,f7f78df5-2280-4e02-a4ce-930d709c4ab5,6,very_short,0,Human,0.475871639035124,0.5241283609648759,False,True,False
+1499,"def get_ascii_value(char):
+    return ord(char)",1,AI,mpt-chat,code,none,greedy,no,Write a function to find the ascii value of a character.,"Write just the Python code solution for the problem ""Write a function to find the ascii value of a character."".",e638251f-609f-48ee-a116-5d2369819332,b8559687-1953-4f33-ad21-8193772dfc75,4,very_short,0,Human,0.2668556299435532,0.7331443700564468,False,True,False

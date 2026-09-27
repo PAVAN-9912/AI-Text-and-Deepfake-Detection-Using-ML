@@ -1,0 +1,4 @@
+dataset,total_samples,human_samples,ai_samples,FP,FN,FP_rate,FN_rate,accuracy,precision,recall,f1
+HC3,216,150,66,19,4,0.1267,0.0606,0.8935,0.7654,0.9394,0.8435
+RAID,202,69,133,15,6,0.2174,0.0451,0.896,0.8944,0.9549,0.9236
+SentenceAI,580,296,284,53,31,0.1791,0.1092,0.8552,0.8268,0.8908,0.8576

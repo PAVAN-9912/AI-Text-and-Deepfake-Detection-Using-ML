@@ -1,0 +1,163 @@
+text,label,probability,length_group,applied_threshold,dataset,prediction,error_type
+"As president, Reagan implemented sweeping new political and economic initiatives.",0,0.8121751375019313,very_short,0.3,HC3,1,False Positive
+9/11 is the eleventh day in September .,0,0.3492160263885764,very_short,0.3,HC3,1,False Positive
+it is cliché . also the song is bad .,0,0.4475722901716533,very_short,0.3,HC3,1,False Positive
+A flat tax is more hurtful to lower incomes,0,0.720164240254186,very_short,0.3,HC3,1,False Positive
+"Thank you everyone who took time out to answer , but I 'm not sure if I still understand the concept of flight or fight .",0,0.5045098671864986,short,0.4,HC3,1,False Positive
+"The George Washington University (GW, GWU, or George Washington) is a comprehensive private , coeducational research university located in Washington, D.C. .",0,0.6345134467295511,short,0.4,HC3,1,False Positive
+"Beaver Stadium is an outdoor college football stadium in University Park , Pennsylvania , United States , on the campus of The Pennsylvania State University .",0,0.6222030878672439,short,0.4,HC3,1,False Positive
+"Worked in an inpatient forensic Psych hospital for about five years : electric razors , under direct supervision .",0,0.6143521692867148,short,0.4,HC3,1,False Positive
+"The acronym originally stood for Supreme Headquarters, International Espionage, Law-Enforcement Division.",0,0.5723131527283164,short,0.4,HC3,1,False Positive
+"Armando Pérez (born January 15, 1981), better known by his stage name Pitbull, is an American rapper, songwriter, and record producer.",0,0.8244999828788212,short,0.4,HC3,1,False Positive
+On the ISS and by the rovers it is measured in Earth GMT time with the standard 24 hour clock .,0,0.4327209816549489,short,0.4,HC3,1,False Positive
+Most jewish holidays are more cultural than they are biblical .,0,0.8842321294268998,short,0.4,HC3,1,False Positive
+It 's a big comfortable piece of furniture that you usually sit and relax on while watching television or entertaining guests .,0,0.4876707848317194,short,0.4,HC3,1,False Positive
+"Signal processing is an electrical engineering subfield that focuses on analyzing, modifying and synthesizing signals, such as sound, images, and scientific measurements. Signal processing techniques are used to optimize transmissions, digital storage efficiency, correcting distorted signals, subjective video quality and to also detect or pinpoint components of interest in a measured signal.",0,0.9433988824001416,medium,0.59,HC3,1,False Positive
+Cut your own typically means that the land has to be maintained and kept up and the trees taken care of and they are fresh . Pre - Cut trees come from out of the area where costs are less and they are more focused on selling quantities and not quality . Plus they are older .,0,0.715823903158958,medium,0.59,HC3,1,False Positive
+"No . We can do some pretty cool stuff with technology , and this will no doubt continue to improve in future . But ' real magic ' is not even a * tiny bit * possible according to what we know about science today .",0,0.6257307330140289,medium,0.59,HC3,1,False Positive
+"The Westphalian Treaty 1648 set up the principle that all states should be sovereign within their own right and allowed to set up a system to rule their own state . This system essentially set up for a long peace allowing for the national pride others have mentioned , thus locking us in a system of separate sovereign nations .",0,0.6902150528167849,medium,0.59,HC3,1,False Positive
+"Cortana is a virtual assistant developed by Microsoft that uses the Bing search engine to perform tasks such as setting reminders and answering questions for the user.
+Cortana is currently available in English, Portuguese, French, German, Italian, Spanish, Chinese, and Japanese language editions, depending on the software platform and region in which it is used.
+Microsoft began reducing the prevalence of Cortana and converting it from an assistant into different software integrations in 2019. It was split from the Windows 10 search bar in April 2019.[10] In January 2020, the Cortana mobile app was removed from certain markets,[11][12] and on March 31, 2021, the Cortana mobile app was shut down globally.[13]",0,0.8739342230342327,long,0.38,HC3,1,False Positive
+"Passive - aggressive behaviour is the indirect expression of hostility , such as through procrastination , sarcasm , stubbornness , sullenness , or deliberate and repeated failure to accomplish requested tasks for which one is ( often explicitly ) responsible . Example : When others make requests or demands of them , passive aggressive people will often view them as unfair or unjust . Rather than express their feelings on the subject . They will bottle them up and resent the other person for making the demands . In most cases they quickly forget that they did not have to agree to the demand , or that they could have voiced their feelings at the time that the request was made .",0,0.437172768628726,long,0.38,HC3,1,False Positive
+"def find_rect_num(n):
+  return n*(n + 1)",0,0.3617713720329129,very_short,0.3,RAID,1,False Positive
+"def Diff(li1,li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))",0,0.8231016957914535,very_short,0.3,RAID,1,False Positive
+"def max_sum_list(lists):
+ return max(lists, key=sum)",0,0.7949946572873079,very_short,0.3,RAID,1,False Positive
+"def previous_palindrome(num):
+    for x in range(num-1,0,-1):
+        if str(x) == str(x)[::-1]:
+            return x",0,0.7848570894403046,short,0.4,RAID,1,False Positive
+"def Odd_Length_Sum(arr):
+    Sum = 0
+    l = len(arr)
+    for i in range(l):
+        Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])
+    return Sum",0,0.5986673804904487,short,0.4,RAID,1,False Positive
+"def remove_empty(tuple1): #L = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+   tuple1 = [t for t in tuple1 if t]
+   return tuple1",0,0.565707920614744,short,0.4,RAID,1,False Positive
+"def count_Digit(n):
+    count = 0
+    while n != 0:
+        n //= 10
+        count += 1
+    return count",0,0.9226485171834516,short,0.4,RAID,1,False Positive
+"import re 
+regex = '''^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)$'''
+def check_IP(Ip): 
+	if(re.search(regex, Ip)): 
+		return (""Valid IP address"") 
+	else: 
+		return (""Invalid IP address"")",0,0.693548187010715,short,0.4,RAID,1,False Positive
+"import re
+def find_character(string):
+  uppercase_characters = re.findall(r""[A-Z]"", string) 
+  lowercase_characters = re.findall(r""[a-z]"", string) 
+  numerical_characters = re.findall(r""[0-9]"", string) 
+  special_characters = re.findall(r""[, .!?]"", string) 
+  return uppercase_characters, lowercase_characters, numerical_characters, special_characters",0,0.7923526768353709,short,0.4,RAID,1,False Positive
+"def is_subset_sum(set, n, sum):
+	if (sum == 0):
+		return True
+	if (n == 0):
+		return False
+	if (set[n - 1] > sum):
+		return is_subset_sum(set, n - 1, sum)
+	return is_subset_sum(set, n-1, sum) or is_subset_sum(set, n-1, sum-set[n-1])",0,0.6306315944727205,medium,0.59,RAID,1,False Positive
+"def decimal_To_Binary(N): 
+    B_Number = 0
+    cnt = 0
+    while (N != 0): 
+        rem = N % 2
+        c = pow(10,cnt)  
+        B_Number += rem*c  
+        N //= 2 
+        cnt += 1
+    return B_Number",0,0.6953603457690487,medium,0.59,RAID,1,False Positive
+"def check_triplet(A, n, sum, count):
+    if count == 3 and sum == 0:
+        return True
+    if count == 3 or n == 0 or sum < 0:
+        return False
+    return check_triplet(A, n - 1, sum - A[n - 1], count + 1) or\
+           check_triplet(A, n - 1, sum, count)",0,0.7765879415783506,medium,0.59,RAID,1,False Positive
+"Move to iOS im Play Store erhältlich, und wird prompt mit vernichtenden Kritiken bestraftZeit für die Fanfaren – eine echte Premiere steht an. Apple hat parallel zur Freigabe von iOS 9 seine allererste Android-App veröffentlicht. Auf sonderliche viel Gegenliebe scheint diese bei den Android-User bisher aber nicht zu stoßen – mit 1,8 von 5 maximalen Punkten ist die aktuelle Bewertung im Play Store gerade zu vernichtend.
+Spurensuche
+Das hat natürlich einen guten Grund: Handelt es sich dabei doch um eine App, die Android-Nutzern beim Umstieg auf ein iPhone oder iPad helfen soll. ""Move to iOS"" heißt die App, die verspricht SMS, Lesezeichen, Google-Konto, Fotos und mehr nahtlos auf die Apple-Plattform wandern zu lassen.
+Ablauf
+Um dies zu ermöglichen, baut die App eine WLAN-Verbindung zwischen den beiden Geräten auf, infolge muss nur mehr ein zehnstelliger Code bestätigt werden. Der iOS-Einrichtungsdialog hat dazu passend mit iOS 9 neben der Möglichkeit der Wiederherstellung eines iCloud-Backups auch die Android-Umstiegs-Option integriert.
+Ausblick
+Wer auf die erste richtige Apple-App für Android wartet, sollte allerdings auch nicht mehr all zu lange warten müssen. Immerhin hat der Softwarehersteller einen Android-Client für Apple Music versprochen. (red, 17.9.2015) Link
+Move to iOS",0,0.4342269114359831,long,0.38,RAID,1,False Positive
+"Auftritt auf US-Spielemesse wird auf Pressekonferenz und Meetings beschränktEin halbes Jahr vor dem Start der bedeutendsten Spielemesse E3: Electronic Arts, einer der weltweit größten Games-Konzerne und Aussteller, zieht sich weitestgehend von der Messe zurück. Stattdessen startet man eine eigene Veranstaltung mit dem Namen ""EA Play"".
+Die öffentliche Präsenz auf der Electronic Entertainment Expo in Los Angeles wird sich auf Meeting-Räume für Gespräche mit Partnern und Journalisten beschränken. Messestände, auf denen Games vorgeführt werden, wird es nicht geben.
+Fan-Event
+EA Play wiederum ist vom 12. bis zum 14. Juni angesetzt, kollidiert also mit der E3-Eröffnung und steigt ebenfalls in Los Angeles. Ausgewiesen ist der Event als ""Fanveranstaltung"", die Pressekonferenz von EA steigt am ersten Abend und wird live ins Internet gestreamt. Der gewählte Standort, Club Nokia, befindet sich in der uinmittelbaren Nachbarschaft des Convention Centers, wo die E3 beheimatet ist. Weitere Details zur neuen ""Hausmesse"" will EA erst noch bekannt geben.
+foto: ea
+Einen eintägigen Termin gibt es am 12. Juni außerdem in London. Interessenten können sich über die Homepage des Unternehmens registrieren.
+Wähend EA Play öffentlich zugänglich ist, versteht sich die E3 als Fachmesse, die nur für Besucher aus der Branche, Handel und Presse geöffnet ist. Vergangenes Jahr erhielten aber auch erstmals Spielefans Zutritt, ihr Kartenkontingent war allerdings auf 5.000 Stück limitiert. Insgesamt verzeichnete die E3 2015 etwa 50.000 Besucher. (gpi, 5.2.2016) Links
+E3
+EA Play",0,0.4217701503464353,long,0.38,RAID,1,False Positive
+"Der Fotograf Aurélien Villette teilt mit den Vertretern der Romantik das Interesse an Ruinen und Fragmentarischem als Bezug zur Gegenwart 
+In seiner 1852 erschienenen Novelle Arria Marcella lädt Théophile Gautier die Leser ein, in den Ruinen Pompeijs den Spuren Octavians zu folgen. In dem Maß, wie juvenile Nostalgiker über die Pflaster und Steinfelder der Ruine wandeln, erwachen die Mauern, Fresken und Inschriften zu neuem Leben. Die Stadt ersteht neu, Männer und Frauen in Tuniken politisieren, diskutieren, leben und bevölkern die Stufen der Amphitheater.
+Der Fotograf Aurélien Villette teilt mit Gautier, Wilhelm Jensen, E. T. A. Hoffmann und anderen Vertretern der Romantik das Interesse an Ruinen und Fragmentarischem als Bezug zur Gegenwart. Architektur als Macht, als Symbol, Synonym für Emotionen und Befindlichkeiten bestimmt den philosophischen, intellektuellen Hintergrund im OEuvre des 1982 in Chesnay bei Paris geborenen Künstlers.
+Villettes Bilder zeigen luzide die Metamorphosen unserer schwankenden Gesellschaft. Er hinterfragt angesichts architektonischer Konstrukte Sinn, Kultur und Wertschätzungen der Vergangenheit. Transkontinental, weltweit. Der Genius Loci der Bewohner bleibt Räumen, auch wenn sie verlassen sind, erhalten. Sichtbar macht dies Aurélien Villette in seinen Serien über Reminiszenz, Verlust, Vergänglichkeit und Unendlichkeit. Auf der Suche nach des Lebens Seele.  (Gregor Auenhammer, Album, 8.9.2015) Aurélien Villette, ""Spirit of Place"". € 59,- / 176 Seiten. teNeues-Verlag, Edition Yellow Korner, Kempen/Paris 2015",0,0.3835663320608662,long,0.38,RAID,1,False Positive
+Not take away activities.,0,0.4959158118872377,very_short,0.3,SentenceAI,1,False Positive
+Lets go collect our trophy guys!!!,0,0.3200320280423774,very_short,0.3,SentenceAI,1,False Positive
+"As well, creativity stems from a sense of individuality.",0,0.9291376059342404,very_short,0.3,SentenceAI,1,False Positive
+Who knows what can take place for our future.,0,0.3489968463797552,very_short,0.3,SentenceAI,1,False Positive
+So thank you in advance.,0,0.6970665341009974,very_short,0.3,SentenceAI,1,False Positive
+Due to increasing crime rates caused by the U.S. economy.,0,0.5910797898333355,very_short,0.3,SentenceAI,1,False Positive
+"Cars, the pride and joy of many people.",0,0.3215302003720837,very_short,0.3,SentenceAI,1,False Positive
+"It's outdated,unfair,and irrational.",0,0.4044785754353328,very_short,0.3,SentenceAI,1,False Positive
+This is where kids come in.,0,0.3817326309289028,very_short,0.3,SentenceAI,1,False Positive
+"If so, then popular election it is.",0,0.4304263285923969,very_short,0.3,SentenceAI,1,False Positive
+"We can go to Europe,Greece,and even Antartica!",0,0.6282977193462455,very_short,0.3,SentenceAI,1,False Positive
+It is not good at all.,0,0.3197895589730448,very_short,0.3,SentenceAI,1,False Positive
+There are many tasks you could give out each week.,0,0.4742549486372205,very_short,0.3,SentenceAI,1,False Positive
+stewartlawoffices.,0,0.6358809615738703,very_short,0.3,SentenceAI,1,False Positive
+We tend to believe in the 'juicy' filled drama.,0,0.4129953325630002,very_short,0.3,SentenceAI,1,False Positive
+Learning requires focus.,0,0.6105305861847006,very_short,0.3,SentenceAI,1,False Positive
+Have you ever done any extracurricular activities?,0,0.3224264506226819,very_short,0.3,SentenceAI,1,False Positive
+Time management is essential for a successful live.,0,0.905410294220455,very_short,0.3,SentenceAI,1,False Positive
+I don't like math.,0,0.6584750068904315,very_short,0.3,SentenceAI,1,False Positive
+Above all the Electoral College avoid problems of the elections.,0,0.3356568482469139,very_short,0.3,SentenceAI,1,False Positive
+there are many activities.,0,0.7661874736245382,very_short,0.3,SentenceAI,1,False Positive
+Why can't we?,0,0.6842332983312036,very_short,0.3,SentenceAI,1,False Positive
+Albert Einstein was a dropout and failed 3 grades.,0,0.8333523263226322,very_short,0.3,SentenceAI,1,False Positive
+"Since I was thinking harder, I began to work harder.",0,0.6683344684511762,very_short,0.3,SentenceAI,1,False Positive
+"Limiting car usage has several very influential advantages, such as increasing mental health, reducing air pollution, and eliminating problems associated with traffic.",0,0.971217425684366,short,0.4,SentenceAI,1,False Positive
+"In conclusion, I believe that this technology should not be used in schools or on people for that matter.",0,0.555151363049972,short,0.4,SentenceAI,1,False Positive
+Self-confidence is really important for people to feel good about their own selves.,0,0.980849092847816,short,0.4,SentenceAI,1,False Positive
+Technology can encourage students study and to do more to ace that English test they have.,0,0.5243425187807151,short,0.4,SentenceAI,1,False Positive
+"In the popular vote system, the head of state and or government is elected by the majority of the nation.",0,0.5814660435461576,short,0.4,SentenceAI,1,False Positive
+Even in rainy weather people participated just to help lower stress and air pollution.,0,0.5804948524869996,short,0.4,SentenceAI,1,False Positive
+"In conclusion, student designed projects have many benefits that can help them succeed in life and improve oneself.",0,0.8412818304559283,short,0.4,SentenceAI,1,False Positive
+Heidren Walker and Andrew Selsky can both support that argument that having a car is a lead to stress that a reduction of cars can elimanate.,0,0.4212055004463643,short,0.4,SentenceAI,1,False Positive
+"For example, when I use to play baseball, I could not hit the ball as far as my friends did.",0,0.6702123182028737,short,0.4,SentenceAI,1,False Positive
+I believe that the community can become better when given advice.,0,0.4102706974853067,short,0.4,SentenceAI,1,False Positive
+"During training, we are listening to music while we help each other out with the workouts we are supposed to do.",0,0.5870903809902132,short,0.4,SentenceAI,1,False Positive
+"Another issue is that sometimes in a close election, the popular vote winner could lose the presidency.",0,0.7754066078211577,short,0.4,SentenceAI,1,False Positive
+"Therefore, most of the governments, including Austria, Australia, Switzerland, Greece, Germany, and different Asian as well as African countries, have imposed restriction on using cell phones during driving.",0,0.4599415761069749,short,0.4,SentenceAI,1,False Positive
+"as of April 2013,the number of miles driven per person was nearly 9 percent below the peak and equal to where the country was in January 1995.",0,0.6245922892629315,short,0.4,SentenceAI,1,False Positive
+"If more places created regulations like these, it may drastically change the environment, for the better.",0,0.5766047583107295,short,0.4,SentenceAI,1,False Positive
+"In contrast, it can be argued that no single region can shift a campaign greatly, nonetheless a single voter`s vote.",0,0.543432131907434,short,0.4,SentenceAI,1,False Positive
+"The decrease in car commuting may find reason in the recession, and it may become a new habit.",0,0.8145908125092975,short,0.4,SentenceAI,1,False Positive
+"For example, a cook is trying to do new dishes from differents cultures.",0,0.5562102962560261,short,0.4,SentenceAI,1,False Positive
+But that tradition stopped when he got too old to play and I started to have more frequent basketball practice and training.,0,0.597948965211705,short,0.4,SentenceAI,1,False Positive
+Giving students the option to learn from home and wake up later would benefit them by allowing them to be more focus which would lead to them being more productive.,0,0.4036879603511347,short,0.4,SentenceAI,1,False Positive
+It is a fun and easy way to complete this task.,0,0.4579489910674098,short,0.4,SentenceAI,1,False Positive
+"And while it is near voting times, I believed it's best for me to send you my side on this continuous debate to change your mind on the matter.",0,0.7174435383484741,short,0.4,SentenceAI,1,False Positive
+"For nearly seventy years, cars and car products have been a cultural and economical stimulant in both developed and developing countries.",0,0.5407955034312942,short,0.4,SentenceAI,1,False Positive
+"In addition, another problem that arises due to the Electoral College is that people may feel disencouraged to vote.",0,0.8331622424521558,short,0.4,SentenceAI,1,False Positive
+"Pollution, Economy, and people's health are all a factor to limiting car usuage.",0,0.5333222457658665,short,0.4,SentenceAI,1,False Positive
+Students must feel as though they are in a calming environment in order to work efficiently.,0,0.7146183199543699,short,0.4,SentenceAI,1,False Positive
+"For example, a student-designed summer project in calculus may have the student practice and research taking a derivative.",0,0.5234531538199074,short,0.4,SentenceAI,1,False Positive
+"Also, if the student maintains a C or lower average, and they're in a tutoring session, I don't think it's fair that they're not allowed to participate in gym or other activities.",0,0.8172850519769619,medium,0.59,SentenceAI,1,False Positive
+"""It's a good oppurtunity to take away stress and lower air pollution"" said a business man with the name of Carlos Arturo Plaza, as time has gone on other cities including Cali and Valleduar have participated in the event.",0,0.643424705268546,medium,0.59,SentenceAI,1,False Positive

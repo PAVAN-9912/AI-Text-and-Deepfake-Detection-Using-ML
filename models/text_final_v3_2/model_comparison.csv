@@ -1,0 +1,8 @@
+metric,V3.1,V3.2,diff
+Accuracy,0.8717,0.8848,0.0131
+Precision,0.8355,0.868,0.0325
+Recall,0.9151,0.8986,-0.0165
+F1 Score,0.8735,0.883,0.0095
+ROC-AUC,0.9521,0.953,0.0009
+False Positives (FP),87.0,66.0,-21.0
+False Negatives (FN),41.0,49.0,8.0

@@ -1,0 +1,132 @@
+text,label,prediction,probability,applied_threshold,length_group,dataset,error_type,code_likelihood,contraction_density,pronoun_density,question_density,exclamation_density,capitalization_irregularity
+"As president, Reagan implemented sweeping new political and economic initiatives.",0,1,0.787947530976644,0.42,very_short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+A flat tax is more hurtful to lower incomes,0,1,0.6231316609858071,0.42,very_short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"The George Washington University (GW, GWU, or George Washington) is a comprehensive private , coeducational research university located in Washington, D.C. .",0,1,0.5640331896263895,0.55,short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Beaver Stadium is an outdoor college football stadium in University Park , Pennsylvania , United States , on the campus of The Pennsylvania State University .",0,1,0.5935892985586859,0.55,short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"The acronym originally stood for Supreme Headquarters, International Espionage, Law-Enforcement Division.",0,1,0.5597325187889994,0.55,short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.09090909
+"Armando Pérez (born January 15, 1981), better known by his stage name Pitbull, is an American rapper, songwriter, and record producer.",0,1,0.8493642013077195,0.55,short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Most jewish holidays are more cultural than they are biblical .,0,1,0.8441568014989796,0.55,short,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Signal processing is an electrical engineering subfield that focuses on analyzing, modifying and synthesizing signals, such as sound, images, and scientific measurements. Signal processing techniques are used to optimize transmissions, digital storage efficiency, correcting distorted signals, subjective video quality and to also detect or pinpoint components of interest in a measured signal.",0,1,0.9615832690130862,0.62,medium,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Cut your own typically means that the land has to be maintained and kept up and the trees taken care of and they are fresh . Pre - Cut trees come from out of the area where costs are less and they are more focused on selling quantities and not quality . Plus they are older .,0,1,0.7194597283587427,0.62,medium,HC3,False Positive,0.0,0.0,0.01754386,0.0,0.0,0.0
+"No . We can do some pretty cool stuff with technology , and this will no doubt continue to improve in future . But ' real magic ' is not even a * tiny bit * possible according to what we know about science today .",0,1,0.6491215030918559,0.62,medium,HC3,False Positive,0.0,0.0,0.04347826,0.0,0.0,0.0
+"The Westphalian Treaty 1648 set up the principle that all states should be sovereign within their own right and allowed to set up a system to rule their own state . This system essentially set up for a long peace allowing for the national pride others have mentioned , thus locking us in a system of separate sovereign nations .",0,1,0.6366248114498716,0.62,medium,HC3,False Positive,0.0,0.0,0.016666668,0.0,0.0,0.0
+"Cortana is a virtual assistant developed by Microsoft that uses the Bing search engine to perform tasks such as setting reminders and answering questions for the user.
+Cortana is currently available in English, Portuguese, French, German, Italian, Spanish, Chinese, and Japanese language editions, depending on the software platform and region in which it is used.
+Microsoft began reducing the prevalence of Cortana and converting it from an assistant into different software integrations in 2019. It was split from the Windows 10 search bar in April 2019.[10] In January 2020, the Cortana mobile app was removed from certain markets,[11][12] and on March 31, 2021, the Cortana mobile app was shut down globally.[13]",0,1,0.8911237646815755,0.33,long,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Passive - aggressive behaviour is the indirect expression of hostility , such as through procrastination , sarcasm , stubbornness , sullenness , or deliberate and repeated failure to accomplish requested tasks for which one is ( often explicitly ) responsible . Example : When others make requests or demands of them , passive aggressive people will often view them as unfair or unjust . Rather than express their feelings on the subject . They will bottle them up and resent the other person for making the demands . In most cases they quickly forget that they did not have to agree to the demand , or that they could have voiced their feelings at the time that the request was made .",0,1,0.3713985261467317,0.33,long,HC3,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"def Diff(li1,li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))",0,1,0.8595822988206786,0.42,very_short,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.0
+"def max_sum_list(lists):
+ return max(lists, key=sum)",0,1,0.7718187569366028,0.42,very_short,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.0
+"def previous_palindrome(num):
+    for x in range(num-1,0,-1):
+        if str(x) == str(x)[::-1]:
+            return x",0,1,0.7221518265149188,0.55,short,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.0
+"def Odd_Length_Sum(arr):
+    Sum = 0
+    l = len(arr)
+    for i in range(l):
+        Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])
+    return Sum",0,1,0.5879480327656802,0.55,short,RAID,False Positive,0.9392857,0.0,0.14285715,0.0,0.0,0.035714287
+"def remove_empty(tuple1): #L = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+   tuple1 = [t for t in tuple1 if t]
+   return tuple1",0,1,0.6665927084248288,0.55,short,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.0
+"def count_Digit(n):
+    count = 0
+    while n != 0:
+        n //= 10
+        count += 1
+    return count",0,1,0.9070226191695814,0.55,short,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.05882353
+"import re
+def find_character(string):
+  uppercase_characters = re.findall(r""[A-Z]"", string) 
+  lowercase_characters = re.findall(r""[a-z]"", string) 
+  numerical_characters = re.findall(r""[0-9]"", string) 
+  special_characters = re.findall(r""[, .!?]"", string) 
+  return uppercase_characters, lowercase_characters, numerical_characters, special_characters",0,1,0.7138272815693743,0.55,short,RAID,False Positive,1.0,0.0,0.0,0.03846154,0.03846154,0.03846154
+"def is_subset_sum(set, n, sum):
+	if (sum == 0):
+		return True
+	if (n == 0):
+		return False
+	if (set[n - 1] > sum):
+		return is_subset_sum(set, n - 1, sum)
+	return is_subset_sum(set, n-1, sum) or is_subset_sum(set, n-1, sum-set[n-1])",0,1,0.6266412446743584,0.62,medium,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.0
+"def decimal_To_Binary(N): 
+    B_Number = 0
+    cnt = 0
+    while (N != 0): 
+        rem = N % 2
+        c = pow(10,cnt)  
+        B_Number += rem*c  
+        N //= 2 
+        cnt += 1
+    return B_Number",0,1,0.668022120895975,0.62,medium,RAID,False Positive,1.0,0.0,0.0,0.0,0.0,0.12903225
+"def check_triplet(A, n, sum, count):
+    if count == 3 and sum == 0:
+        return True
+    if count == 3 or n == 0 or sum < 0:
+        return False
+    return check_triplet(A, n - 1, sum - A[n - 1], count + 1) or\
+           check_triplet(A, n - 1, sum, count)",0,1,0.7881253191504557,0.62,medium,RAID,False Positive,0.96734697,0.0,0.0,0.0,0.0,0.06122449
+"Neues iPad soll sich besonders für berufliche Zwecke eignen – außerdem neue iPhones und andere iPadsFix ist, dass Apple am neunten September zwei neue iPhone-Modelle vorstellen wird. Die sollen vor allem mit einer besseren Kamera und Force Touch-Steuerung punkten. Doch rund um den groß angekündigten Apple-Event ranken sich noch eine Vielzahl anderer Gerüchte. Nun scheint es immer wahrscheinlicher, dass auch neue iPads präsentiert werden. 9to5Mac berichtet, dass das sagenumwobene iPad Pro bereit zur Vorstellung sein soll. Schon seit Monaten wird über jenes Macbook-große, für Bürotätigkeiten ausgelegte iPad spekuliert, nun könnte es der breiten Öffentlichkeit gezeigt werden.
+Partnerschaften mit Cisco und IBM
+Ein Hinweis darauf sind Apples Partnerschaften mit Cisco und IBM, die in den vergangenen Tagen publik wurden. Neben dem iPad Pro, das über einen Stylus verfügen soll, könnte ein iPad Mini (4) präsentiert werden. Beide Geräte könnten dann auf dem neuen iOS 9.1 laufen. Zusätzlich könnte Apple auch ein neues Apple TV und Erweiterungen der Apple Watch vorstellen. Allerdings hält Apple auch im November Hof, ein derartiger zweiter Launch-Event für Macs könnte ebenfalls iPads inkludieren. Man darf also doch etwas gespannt sein. (fsc, 3.9.2015) Links:
+9to5Mac
+Nachlese:
+Apple: Kleineres iPhone 6 verspätet sich, 5c fliegt aus Portfolio",0,1,0.33201189303530765,0.33,long,RAID,False Positive,0.0,0.0,0.0,0.0,0.0,0.08585858
+"Move to iOS im Play Store erhältlich, und wird prompt mit vernichtenden Kritiken bestraftZeit für die Fanfaren – eine echte Premiere steht an. Apple hat parallel zur Freigabe von iOS 9 seine allererste Android-App veröffentlicht. Auf sonderliche viel Gegenliebe scheint diese bei den Android-User bisher aber nicht zu stoßen – mit 1,8 von 5 maximalen Punkten ist die aktuelle Bewertung im Play Store gerade zu vernichtend.
+Spurensuche
+Das hat natürlich einen guten Grund: Handelt es sich dabei doch um eine App, die Android-Nutzern beim Umstieg auf ein iPhone oder iPad helfen soll. ""Move to iOS"" heißt die App, die verspricht SMS, Lesezeichen, Google-Konto, Fotos und mehr nahtlos auf die Apple-Plattform wandern zu lassen.
+Ablauf
+Um dies zu ermöglichen, baut die App eine WLAN-Verbindung zwischen den beiden Geräten auf, infolge muss nur mehr ein zehnstelliger Code bestätigt werden. Der iOS-Einrichtungsdialog hat dazu passend mit iOS 9 neben der Möglichkeit der Wiederherstellung eines iCloud-Backups auch die Android-Umstiegs-Option integriert.
+Ausblick
+Wer auf die erste richtige Apple-App für Android wartet, sollte allerdings auch nicht mehr all zu lange warten müssen. Immerhin hat der Softwarehersteller einen Android-Client für Apple Music versprochen. (red, 17.9.2015) Link
+Move to iOS",0,1,0.4339213141137444,0.33,long,RAID,False Positive,0.0,0.0,0.0,0.0,0.0,0.104166664
+"Abe hat nur das Mindeste getan, um internationalen Erwartungen zu entsprechenEs war ein vielsagender Kontrast: Japans Kaiser Akihito, der sich laut Verfassung nicht politisch äußern darf, fand ungewöhnlich klare Worte zu Japans Verbrechen im Zweiten Weltkrieg. Regierungschef Shinzo Abe, von dem eindeutige Aussagen erwartet wurden, hatte sich zuvor hingegen kunstvoll gewunden. Zwar sprach auch er von ""Reue"", brachte diese aber nicht selbst zum Ausdruck, sondern verwies auf Aussagen von Vorgängern.
+Dass es nach der Rede Abes Proteste aus China und Südkorea geben würde, war unabhängig vom Inhalt zu erwarten – beide Regierungen nutzen die berechtigte Kritik an Tokio auch zu ihrem eigenen populistischen Nutzen. Doch wenn Chinas staatliche Agentur Xinhua von ""sprachlichen Tricks"" schreibt und von Japan mehr Aufrichtigkeit fordert, dann trifft sie tatsächlich einen wunden Punkt.
+Abe hat nur das Mindeste getan, um internationalen Erwartungen zu entsprechen. Ehrliche Reue sieht anders aus. Und sie ist von einen Premier auch kaum zu erwarten, dessen Regierung Kriegsverbrechen aus Schulbüchern streichen lässt und Medien Sprachregelungen zur Zwangsprostitution während der Kolonialzeit vorgeben will. Individuelle Japanerinnen und Japaner sollen sich nicht ewig entschuldigen müssen, hat Abe gefordert. Diesem Wunsch könnte man zustimmen. Aber nur, wenn das offizielle Japan, für das Abe verantwortlich ist, es schaffen würde, einen ehrlichen Umgang mit der Geschichte zu finden. (Manuel Escher, 16.8.2015)",0,1,0.39941776888985286,0.33,long,RAID,False Positive,0.0,0.0,0.0,0.0,0.0,0.014084507
+"Auftritt auf US-Spielemesse wird auf Pressekonferenz und Meetings beschränktEin halbes Jahr vor dem Start der bedeutendsten Spielemesse E3: Electronic Arts, einer der weltweit größten Games-Konzerne und Aussteller, zieht sich weitestgehend von der Messe zurück. Stattdessen startet man eine eigene Veranstaltung mit dem Namen ""EA Play"".
+Die öffentliche Präsenz auf der Electronic Entertainment Expo in Los Angeles wird sich auf Meeting-Räume für Gespräche mit Partnern und Journalisten beschränken. Messestände, auf denen Games vorgeführt werden, wird es nicht geben.
+Fan-Event
+EA Play wiederum ist vom 12. bis zum 14. Juni angesetzt, kollidiert also mit der E3-Eröffnung und steigt ebenfalls in Los Angeles. Ausgewiesen ist der Event als ""Fanveranstaltung"", die Pressekonferenz von EA steigt am ersten Abend und wird live ins Internet gestreamt. Der gewählte Standort, Club Nokia, befindet sich in der uinmittelbaren Nachbarschaft des Convention Centers, wo die E3 beheimatet ist. Weitere Details zur neuen ""Hausmesse"" will EA erst noch bekannt geben.
+foto: ea
+Einen eintägigen Termin gibt es am 12. Juni außerdem in London. Interessenten können sich über die Homepage des Unternehmens registrieren.
+Wähend EA Play öffentlich zugänglich ist, versteht sich die E3 als Fachmesse, die nur für Besucher aus der Branche, Handel und Presse geöffnet ist. Vergangenes Jahr erhielten aber auch erstmals Spielefans Zutritt, ihr Kartenkontingent war allerdings auf 5.000 Stück limitiert. Insgesamt verzeichnete die E3 2015 etwa 50.000 Besucher. (gpi, 5.2.2016) Links
+E3
+EA Play",0,1,0.4140332952945132,0.33,long,RAID,False Positive,0.0,0.0,0.0044247787,0.0,0.0,0.03539823
+"Der Fotograf Aurélien Villette teilt mit den Vertretern der Romantik das Interesse an Ruinen und Fragmentarischem als Bezug zur Gegenwart 
+In seiner 1852 erschienenen Novelle Arria Marcella lädt Théophile Gautier die Leser ein, in den Ruinen Pompeijs den Spuren Octavians zu folgen. In dem Maß, wie juvenile Nostalgiker über die Pflaster und Steinfelder der Ruine wandeln, erwachen die Mauern, Fresken und Inschriften zu neuem Leben. Die Stadt ersteht neu, Männer und Frauen in Tuniken politisieren, diskutieren, leben und bevölkern die Stufen der Amphitheater.
+Der Fotograf Aurélien Villette teilt mit Gautier, Wilhelm Jensen, E. T. A. Hoffmann und anderen Vertretern der Romantik das Interesse an Ruinen und Fragmentarischem als Bezug zur Gegenwart. Architektur als Macht, als Symbol, Synonym für Emotionen und Befindlichkeiten bestimmt den philosophischen, intellektuellen Hintergrund im OEuvre des 1982 in Chesnay bei Paris geborenen Künstlers.
+Villettes Bilder zeigen luzide die Metamorphosen unserer schwankenden Gesellschaft. Er hinterfragt angesichts architektonischer Konstrukte Sinn, Kultur und Wertschätzungen der Vergangenheit. Transkontinental, weltweit. Der Genius Loci der Bewohner bleibt Räumen, auch wenn sie verlassen sind, erhalten. Sichtbar macht dies Aurélien Villette in seinen Serien über Reminiszenz, Verlust, Vergänglichkeit und Unendlichkeit. Auf der Suche nach des Lebens Seele.  (Gregor Auenhammer, Album, 8.9.2015) Aurélien Villette, ""Spirit of Place"". € 59,- / 176 Seiten. teNeues-Verlag, Edition Yellow Korner, Kempen/Paris 2015",0,1,0.4321352011639872,0.33,long,RAID,False Positive,0.0,0.0,0.0,0.0,0.0,0.023584906
+Not take away activities.,0,1,0.4695973219563425,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"As well, creativity stems from a sense of individuality.",0,1,0.8904642858332759,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+So thank you in advance.,0,1,0.5553909101656079,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.2,0.0,0.0,0.0
+That a mistake don't stop you of achieve your goals.,0,1,0.44333027871350744,0.42,very_short,SentenceAI,False Positive,0.0,0.1,0.2,0.0,0.0,0.0
+Due to increasing crime rates caused by the U.S. economy.,0,1,0.49503633395438795,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"It's outdated,unfair,and irrational.",0,1,0.8872321986071474,0.42,very_short,SentenceAI,False Positive,0.0,0.33333334,0.0,0.0,0.0,0.0
+"We can go to Europe,Greece,and even Antartica!",0,1,0.47361506464806385,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.14285715,0.0,0.14285715,0.14285715
+There are many tasks you could give out each week.,0,1,0.44067363698378187,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.1,0.0,0.0,0.0
+stewartlawoffices.,0,1,0.5420489526806512,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Learning requires focus.,0,1,0.5576440502002931,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Time management is essential for a successful live.,0,1,0.8981907253368161,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+I don't like math.,0,1,0.8826759851289032,0.42,very_short,SentenceAI,False Positive,0.0,0.25,0.25,0.0,0.0,0.0
+there are many activities.,0,1,0.7403353274912161,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Why can't we?,0,1,0.9624182203714678,0.42,very_short,SentenceAI,False Positive,0.0,0.33333334,0.33333334,0.33333334,0.0,0.0
+Albert Einstein was a dropout and failed 3 grades.,0,1,0.7733372467691998,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Since I was thinking harder, I began to work harder.",0,1,0.6643737855568538,0.42,very_short,SentenceAI,False Positive,0.0,0.0,0.2,0.0,0.0,0.0
+"Limiting car usage has several very influential advantages, such as increasing mental health, reducing air pollution, and eliminating problems associated with traffic.",0,1,0.9708490095476662,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Self-confidence is really important for people to feel good about their own selves.,0,1,0.9776282911771579,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"In the popular vote system, the head of state and or government is elected by the majority of the nation.",0,1,0.6256593869843714,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"In conclusion, student designed projects have many benefits that can help them succeed in life and improve oneself.",0,1,0.8085839536510064,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"For example, when I use to play baseball, I could not hit the ball as far as my friends did.",0,1,0.6255701125190618,0.55,short,SentenceAI,False Positive,0.0,0.0,0.15,0.0,0.0,0.0
+"Another issue is that sometimes in a close election, the popular vote winner could lose the presidency.",0,1,0.7525629283374063,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"The decrease in car commuting may find reason in the recession, and it may become a new habit.",0,1,0.7865529009272166,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"For example, a cook is trying to do new dishes from differents cultures.",0,1,0.5588147855539722,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+But that tradition stopped when he got too old to play and I started to have more frequent basketball practice and training.,0,1,0.5877636776429845,0.55,short,SentenceAI,False Positive,0.0,0.0,0.045454547,0.0,0.0,0.0
+"And while it is near voting times, I believed it's best for me to send you my side on this continuous debate to change your mind on the matter.",0,1,0.707888969441258,0.55,short,SentenceAI,False Positive,0.0,0.03448276,0.1724138,0.0,0.0,0.0
+"In addition, another problem that arises due to the Electoral College is that people may feel disencouraged to vote.",0,1,0.8124356263248227,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Pollution, Economy, and people's health are all a factor to limiting car usuage.",0,1,0.5543168413077348,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+Students must feel as though they are in a calming environment in order to work efficiently.,0,1,0.6732977206312053,0.55,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0
+"Also, if the student maintains a C or lower average, and they're in a tutoring session, I don't think it's fair that they're not allowed to participate in gym or other activities.",0,1,0.8591546072357381,0.62,medium,SentenceAI,False Positive,0.0,0.125,0.03125,0.0,0.0,0.0
+"""It's a good oppurtunity to take away stress and lower air pollution"" said a business man with the name of Carlos Arturo Plaza, as time has gone on other cities including Cali and Valleduar have participated in the event.",0,1,0.6925143088734055,0.62,medium,SentenceAI,False Positive,0.0,0.025641026,0.0,0.0,0.0,0.025641026

@@ -1,0 +1,42 @@
+{
+  "v4_validation_summary": {
+    "accuracy": 0.9026,
+    "balanced_accuracy": 0.6825,
+    "roc_auc": 0.7384,
+    "real_recall": 0.3944,
+    "real_f1": 0.4891,
+    "fake_recall": 0.9707,
+    "fake_f1": 0.9462,
+    "total_errors": 117,
+    "real_as_fake_errors": 86,
+    "fake_as_real_errors": 31,
+    "confusion_matrix": {
+      "TN": 1028,
+      "FP": 31,
+      "FN": 86,
+      "TP": 56
+    },
+    "threshold": 0.32
+  },
+  "face_detection_accuracy": [
+    {
+      "face_detected_frames": 6,
+      "count": 3,
+      "mean": 1.0,
+      "accuracy": 100.0
+    },
+    {
+      "face_detected_frames": 7,
+      "count": 8,
+      "mean": 0.875,
+      "accuracy": 87.5
+    },
+    {
+      "face_detected_frames": 8,
+      "count": 1190,
+      "mean": 0.9025210084033614,
+      "accuracy": 90.25
+    }
+  ],
+  "high_confidence_mistakes_count": 1
+}

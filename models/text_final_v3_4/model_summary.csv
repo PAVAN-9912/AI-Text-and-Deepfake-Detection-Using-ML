@@ -1,0 +1,2 @@
+model,accuracy,precision,recall,f1,roc_auc,thresholds,false_positive,false_negative,fp_rate,fn_rate,training_samples,calibration_samples,validation_samples
+text_final_v3.4,0.8988,0.8898,0.9027,0.8962,0.9563,"{'very_short': 0.49, 'short': 0.53, 'medium': 0.64, 'long': 0.59}",54,47,0.1049,0.0973,8160,907,998

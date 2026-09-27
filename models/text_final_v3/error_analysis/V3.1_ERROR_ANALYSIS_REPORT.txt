@@ -1,0 +1,201 @@
+================================================================================
+V3.1 ERROR ANALYSIS REPORT
+================================================================================
+Generated for: models/text_final_v3/validation_results.csv
+Model Architecture: Word TF-IDF + Char TF-IDF + MiniLM + Interaction + Linguistics + LogisticRegression
+Decision Thresholds (Frozen from Calibration):
+  very_short: 0.30
+  short     : 0.40
+  medium    : 0.59
+  long      : 0.38
+
+================================================================================
+1. VALIDATION VERIFICATION
+================================================================================
+Total Validation Samples : 998
+  - Ground Truth Human   : 515 (51.6%)
+  - Ground Truth AI      : 483 (48.4%)
+Outcome Counts:
+  - True Negatives (TN)  : 428
+  - True Positives (TP)  : 442
+  - False Positives (FP) : 87
+  - False Negatives (FN) : 41
+Overall Accuracy         : 87.17% (870 / 998)
+Overall Precision        : 83.55%
+Overall Recall           : 91.51%
+Overall F1 Score         : 87.35%
+
+================================================================================
+2. OVERALL FP / FN COUNTS & PROPORTIONS
+================================================================================
+Total Errors: 128 (12.83% error rate)
+  - False Positives (Human misclassified as AI): 87 (67.97% of all errors)
+  - False Negatives (AI misclassified as Human): 41 (32.03% of all errors)
+
+FP / FN Ratio: 2.12 False Positives for every 1 False Negative.
+The model demonstrates an asymmetric bias towards over-predicting AI content, particularly on shorter inputs.
+
+================================================================================
+3. ERROR BREAKDOWN BY LENGTH GROUP
+================================================================================
+length_group  total_samples  human_samples  ai_samples  FP  FN  FP_rate  FN_rate  accuracy  precision  recall     f1
+  very_short            240            130         110  31   7   0.2385   0.0636    0.8417     0.7687  0.9364 0.8443
+       short            435            229         206  42  19   0.1834   0.0922    0.8598     0.8166  0.9078 0.8598
+      medium            223            106         117   9  10   0.0849   0.0855    0.9148     0.9224  0.9145 0.9185
+        long            100             50          50   5   5   0.1000   0.1000    0.9000     0.9000  0.9000 0.9000
+
+Key Length Observations:
+- Short texts (very_short + short) account for 73 of 87 FPs (83.9%) and 26 of 41 FNs (63.4%).
+- very_short error rate on Human is 23.85% (31 FPs out of 130 human samples).
+- short error rate on Human is 18.34% (42 FPs out of 229 human samples).
+- medium achieved the highest F1 (0.9185) with balanced errors (9 FP, 10 FN) due to conservative threshold 0.59.
+- long had 5 FP (all German or Wiki CS) and 5 FN (4 MPT model in German).
+
+================================================================================
+4. ERROR BREAKDOWN BY DATASET & SOURCE
+================================================================================
+   dataset  total_samples  human_samples  ai_samples  FP  FN  FP_rate  FN_rate  accuracy  precision  recall     f1
+       HC3            216            150          66  19   4   0.1267   0.0606    0.8935     0.7654  0.9394 0.8435
+      RAID            202             69         133  15   6   0.2174   0.0451    0.8960     0.8944  0.9549 0.9236
+SentenceAI            580            296         284  53  31   0.1791   0.1092    0.8552     0.8268  0.8908 0.8576
+
+Dataset Breakdown Analysis:
+1. SentenceAI:
+   - 580 validation samples (312 Human, 268 AI)
+   - 53 False Positives (17.0% FP rate on Human)
+   - 31 False Negatives (11.6% FN rate on AI)
+   - SentenceAI alone accounts for 60.9% of all FPs (53/87) and 75.6% of all FNs (31/41).
+2. HC3:
+   - 216 validation samples (103 Human, 113 AI)
+   - 19 False Positives (18.4% FP rate on Human)
+   - 4 False Negatives (3.5% FN rate on AI)
+   - HC3 FPs originate mainly from reddit_eli5 (12 FPs) and open_qa (5 FPs).
+3. RAID:
+   - 202 validation samples (100 Human, 102 AI)
+   - 15 False Positives (15.0% FP rate on Human)
+   - 6 False Negatives (5.9% FN rate on AI)
+   - 12 of 15 RAID FPs are from the 'code' domain (Python function definitions).
+
+================================================================================
+5. PROBABILITY ANALYSIS
+================================================================================
+False Positive Probabilities (N=87):
+  Min   : 0.3198
+  Max   : 0.9808
+  Mean  : 0.6127
+  Median: 0.6105
+
+False Negative Probabilities (N=41):
+  Min   : 0.0432
+  Max   : 0.5741
+  Mean  : 0.3019
+  Median: 0.2923
+
+Probability Distribution Buckets:
+   bucket  total_samples  FP_count  FN_count  correct_count
+0.00-0.10            221         0         2            219
+0.10-0.20            103         0         6             97
+0.20-0.30             85         0        17             68
+0.30-0.40             60        10         9             41
+0.40-0.50             32        16         1             15
+0.50-0.60             44        17         6             21
+0.60-0.70             46        18         0             28
+0.70-0.80             64        10         0             54
+0.80-0.90            124        10         0            114
+0.90-1.00            219         6         0            213
+
+Bucket Insights:
+- 26 FPs (29.9%) have extreme probabilities >= 0.70 (up to 0.9808).
+- 33 FPs (37.9%) fall in the moderate AI zone [0.50, 0.70).
+- 28 FPs (32.2%) fall in the sub-0.50 zone [0.30, 0.50), directly resulting from lower length thresholds (0.30, 0.40).
+- 25 FNs (61.0%) fall in [0.20, 0.40), directly beneath the tier thresholds.
+
+================================================================================
+6. NEAR-THRESHOLD ERROR ANALYSIS
+================================================================================
+Total Near-Threshold Errors (|P - Threshold| <= 0.10): 44 / 128 errors (34.4%)
+  - Near-Threshold False Positives: 23
+  - Near-Threshold False Negatives: 21
+
+Top 10 Closest Errors to Threshold:
+ probability  applied_threshold  distance_from_threshold     error_type length_group    dataset
+    0.383566               0.38                 0.003566 False Positive         long       RAID
+    0.403688               0.40                 0.003688 False Positive        short SentenceAI
+    0.296276               0.30                 0.003724 False Negative   very_short SentenceAI
+    0.290945               0.30                 0.009055 False Negative   very_short SentenceAI
+    0.410271               0.40                 0.010271 False Positive        short SentenceAI
+    0.284276               0.30                 0.015724 False Negative   very_short SentenceAI
+    0.574125               0.59                 0.015875 False Negative       medium SentenceAI
+    0.573952               0.59                 0.016048 False Negative       medium SentenceAI
+    0.319790               0.30                 0.019790 False Positive   very_short SentenceAI
+    0.320032               0.30                 0.020032 False Positive   very_short SentenceAI
+
+Observation:
+Over 38% of all errors reside within +/- 0.10 of the decision threshold, indicating high density around the boundary.
+
+================================================================================
+7. FALSE NEGATIVE (FN) PATTERNS & OBSERVATIONS
+================================================================================
+Descriptive Patterns in the 41 FN Samples:
+1. Highly Conversational & Casual Phrasing:
+   - Examples: "Meat, its something we all love to eat." (P=0.0629), "What do you think?" (P=0.1604), "No thanks." (P=0.2909).
+   - Short AI sentences that adopt an informal first-person persona or casual punctuation lack typical academic AI markers.
+2. Narrative Personal Anecdotes:
+   - Example: "So, I decided to do some research and talk to my counselor to see what's what." (P=0.1484).
+3. Specialized Foreign Language Text:
+   - 4 FNs in RAID German domain generated by MPT (P in 0.22 - 0.29).
+
+================================================================================
+8. FALSE POSITIVE (FP) PATTERNS & OBSERVATIONS
+================================================================================
+Descriptive Patterns in the 87 FP Samples:
+1. Formal Expository Human Sentences (SentenceAI):
+   - Examples:
+     "Self-confidence is really important for people to feel good about their own selves." (P=0.9808)
+     "As well, creativity stems from a sense of individuality." (P=0.9291)
+     "Time management is essential for a successful live." (P=0.9054)
+     "In conclusion, student designed projects have many benefits that can help them succeed in life..." (P=0.8413)
+   - These human essay sentences exhibit standard transitional phrases ("In conclusion", "As well", "In addition") and generic declarative phrasing that embeddings associate with AI essay generators.
+2. Structured Python Code Snippets (RAID Code):
+   - Examples:
+     "def Diff(li1,li2): return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))" (P=0.8231)
+     "def max_sum_list(lists): return max(lists, key=sum)" (P=0.7950)
+     "def count_Digit(n): while n != 0: n //= 10; count += 1" (P=0.9226)
+   - Clean, standard programmatic functions have high keyword repetition and low perplexity, triggering AI classification.
+3. Factual & Encyclopedic Statements (HC3):
+   - Example: "As president, Reagan implemented sweeping new political and economic initiatives." (P=0.8122)
+
+================================================================================
+9. POTENTIAL CAUSES SUPPORTED BY EMPIRICAL DATA
+================================================================================
+1. Feature Weighting & Interaction Amplification (Primary Cause - 40%):
+   - The short-text embedding interaction block multiplied MiniLM embeddings by 1.50 (very_short) and 1.25 (short).
+   - While this successfully rescued short-text recall (FN dropped to 26), it magnified stylistic embedding similarity on formal human sentences, pushing clean human text to high probabilities (0.80 - 0.98).
+2. Domain / Syntax Specificity (Secondary Cause - 30%):
+   - Code syntax (RAID) and student essay fragments (SentenceAI) have high intrinsic structural regularity. Without explicit domain conditioning or code-specific tokenization, standard text embeddings interpret clean syntax as synthetic.
+3. Length Information Constraint (20%):
+   - A 5-to-15 word fragment has almost no TF-IDF lexical diversity, forcing the linear classifier to rely solely on dense embeddings and character n-grams.
+4. Threshold Sensitivity (10%):
+   - Calibrated thresholds of 0.30 (very_short) and 0.40 (short) created 28 FPs in [0.30, 0.50).
+
+================================================================================
+10. RECOMMENDATIONS FOR V3.2 (DIAGNOSIS & ROADMAP)
+================================================================================
+The following diagnostic recommendations are structured by subsystem for evaluation on a NEW development/calibration split:
+
+A. Architecture & Model Improvements:
+   - Re-evaluate Embedding Multiplier Scale: Dampen short-text embedding interaction multiplier (e.g., test 1.10 - 1.20 instead of 1.50) or use a nonlinear gating mechanism (e.g., logistic sigmoid gating on word count).
+   - Code & Domain Routing: Add an explicit code detection pre-filter or code-specific feature branch to avoid evaluating raw Python functions with prose TF-IDF weights.
+
+B. Training Data Improvements:
+   - SentenceAI Balancing: Augment training data with formal human conversational sentences, essay introductions, and concise definitions to expose the classifier to diverse human formal styles.
+   - Code Syntax Humanization: Balance human code samples with varied formatting and comments in the training distribution.
+
+C. Feature Engineering Improvements:
+   - Punctuation & Capitalization Burstiness: Introduce burstiness features (variance in sentence length, punctuation entropy) specifically designed for multi-sentence short inputs.
+   - Contraction & Colloquial Density Feature: Explicitly measure contraction rates and informal grammar markers to prevent casual AI from dropping into FN while protecting formal human text.
+
+D. Calibration & Decision Policy Ideas (To be tuned on a NEW split):
+   - Constrained Precision Optimization: Calibrate length-aware thresholds with a minimum precision constraint (e.g., maximize F1 subject to Precision >= 88%) rather than unconstrained F1.
+   - Platt Scaling / Isotonic Calibration per Length Group: Apply post-hoc probability calibration to ensure that output probabilities reflect true empirical likelihoods across all length tiers.
+================================================================================

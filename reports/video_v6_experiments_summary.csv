@@ -1,0 +1,7 @@
+experiment,model_class,pos_weight,best_epoch,threshold,val_auc,val_acc,val_bal_acc,val_rec_real,val_f1_real,val_f1_fake,val_brier,test_auc,test_acc,test_bal_acc,test_prec_real,test_rec_real,test_f1_real,test_prec_fake,test_rec_fake,test_f1_fake,test_brier,TN,FP,FN,TP,total_errors
+V6_CandidateA_V4_Control_BiGRU,TemporalConvBiGRUControl,7.438,4,0.19,0.755,0.8451,0.6957,0.5,0.4329,0.9103,0.08461,0.7756,0.7568,0.6916,0.7167,0.4831,0.5772,0.7688,0.9,0.8293,0.21433,306,34,92,86,126
+V6_CandidateB1_PureTransformer_L2_H4,PureTemporalTransformer,7.438,7,0.18,0.762,0.8651,0.7101,0.507,0.4706,0.9227,0.0812,0.7765,0.7625,0.704,0.7132,0.5169,0.5993,0.7789,0.8912,0.8313,0.20252,303,37,86,92,123
+V6_CandidateB2_PureTransformer_L3_H4,PureTemporalTransformer,7.438,8,0.29,0.778,0.8901,0.6724,0.3873,0.4545,0.9389,0.08305,0.783,0.7587,0.6756,0.7849,0.4101,0.5387,0.7529,0.9412,0.8366,0.20288,320,20,105,73,125
+V6_CandidateC_CNNTemporalTransformer,CNNTemporalTransformer,7.438,10,0.19,0.7537,0.8651,0.6979,0.4789,0.4564,0.923,0.08153,0.7716,0.7703,0.7019,0.7611,0.4831,0.5911,0.7728,0.9206,0.8403,0.19918,313,27,92,86,119
+V6_CandidateD_BiGRUTransformer,BiGRUTransformerModel,7.438,4,0.18,0.7586,0.8468,0.6875,0.4789,0.425,0.9116,0.08354,0.7618,0.7568,0.6929,0.7131,0.4888,0.58,0.7702,0.8971,0.8288,0.20955,305,35,91,87,126
+V6_CandidateE_TemporalDiffTransformer,TemporalDiffTransformer,7.438,9,0.25,0.7571,0.8809,0.6947,0.4507,0.4723,0.9329,0.08352,0.7506,0.7432,0.6679,0.7103,0.427,0.5333,0.7518,0.9088,0.8229,0.21115,309,31,102,76,133

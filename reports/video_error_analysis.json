@@ -1,0 +1,51 @@
+{
+  "validation_metrics": {
+    "samples": 1201,
+    "accuracy": 0.7993,
+    "balanced_accuracy": 0.7002,
+    "roc_auc": 0.7561,
+    "real_metrics": {
+      "precision": 0.3103,
+      "recall": 0.5704,
+      "f1": 0.402
+    },
+    "fake_metrics": {
+      "precision": 0.9351,
+      "recall": 0.83,
+      "f1": 0.8794
+    },
+    "confusion_matrix": {
+      "TN": 879,
+      "FP": 180,
+      "FN": 61,
+      "TP": 81
+    },
+    "brier_score": 0.08553,
+    "threshold": 0.15
+  },
+  "errors_summary": {
+    "total_errors": 241,
+    "false_positives_fake_as_real": 180,
+    "false_negatives_real_as_fake": 61,
+    "by_face_detected_frames": [
+      {
+        "face_detected_frames": 6,
+        "count": 3,
+        "mean": 0.6666666666666666,
+        "accuracy": 66.67
+      },
+      {
+        "face_detected_frames": 7,
+        "count": 8,
+        "mean": 0.625,
+        "accuracy": 62.5
+      },
+      {
+        "face_detected_frames": 8,
+        "count": 1190,
+        "mean": 0.8008403361344538,
+        "accuracy": 80.08
+      }
+    ]
+  }
+}

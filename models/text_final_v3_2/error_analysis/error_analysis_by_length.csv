@@ -1,0 +1,5 @@
+length_group,total_samples,FP,FN,FP_rate,FN_rate
+very_short,240,23,8,0.1769,0.0727
+short,435,30,26,0.131,0.1262
+medium,223,10,9,0.0943,0.0769
+long,100,3,6,0.06,0.12

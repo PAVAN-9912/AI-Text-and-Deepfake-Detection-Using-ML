@@ -1,0 +1,134 @@
+{
+  "overall": {
+    "samples": 998,
+    "accuracy": 0.8948,
+    "precision": 0.8938,
+    "recall": 0.8882,
+    "f1": 0.891,
+    "roc_auc": 0.9563,
+    "confusion_matrix": {
+      "TN": 464,
+      "FP": 51,
+      "FN": 54,
+      "TP": 429
+    }
+  },
+  "by_length_tier": {
+    "very_short": {
+      "count": 240,
+      "threshold": 0.49,
+      "accuracy": 0.8875,
+      "precision": 0.8487,
+      "recall": 0.9182,
+      "f1": 0.8821,
+      "roc_auc": 0.9462,
+      "mean_predicted_ai_prob": 0.4833,
+      "prob_percentiles": {
+        "p25": 0.0696,
+        "median": 0.4796,
+        "p75": 0.8886
+      },
+      "true_negatives": 112,
+      "false_positives": 18,
+      "false_negatives": 9,
+      "true_positives": 101
+    },
+    "short": {
+      "count": 435,
+      "threshold": 0.53,
+      "accuracy": 0.8782,
+      "precision": 0.8806,
+      "recall": 0.8592,
+      "f1": 0.8698,
+      "roc_auc": 0.9401,
+      "mean_predicted_ai_prob": 0.4878,
+      "prob_percentiles": {
+        "p25": 0.0685,
+        "median": 0.449,
+        "p75": 0.9082
+      },
+      "true_negatives": 205,
+      "false_positives": 24,
+      "false_negatives": 29,
+      "true_positives": 177
+    },
+    "medium": {
+      "count": 223,
+      "threshold": 0.64,
+      "accuracy": 0.9193,
+      "precision": 0.9304,
+      "recall": 0.9145,
+      "f1": 0.9224,
+      "roc_auc": 0.9777,
+      "mean_predicted_ai_prob": 0.5336,
+      "prob_percentiles": {
+        "p25": 0.0594,
+        "median": 0.6711,
+        "p75": 0.956
+      },
+      "true_negatives": 98,
+      "false_positives": 8,
+      "false_negatives": 10,
+      "true_positives": 107
+    },
+    "long": {
+      "count": 100,
+      "threshold": 0.59,
+      "accuracy": 0.93,
+      "precision": 0.9778,
+      "recall": 0.88,
+      "f1": 0.9263,
+      "roc_auc": 0.982,
+      "mean_predicted_ai_prob": 0.4897,
+      "prob_percentiles": {
+        "p25": 0.0691,
+        "median": 0.4781,
+        "p75": 0.9652
+      },
+      "true_negatives": 49,
+      "false_positives": 1,
+      "false_negatives": 6,
+      "true_positives": 44
+    }
+  },
+  "false_positives": {
+    "count": 51,
+    "by_length": {
+      "short": 24,
+      "very_short": 18,
+      "medium": 8,
+      "long": 1
+    },
+    "by_dataset": {
+      "SentenceAI": 31,
+      "HC3": 11,
+      "RAID": 9
+    },
+    "mean_predicted_ai_prob": 0.747,
+    "prob_percentiles": {
+      "p25": 0.6412,
+      "median": 0.7272,
+      "p75": 0.854
+    }
+  },
+  "false_negatives": {
+    "count": 54,
+    "by_length": {
+      "short": 29,
+      "medium": 10,
+      "very_short": 9,
+      "long": 6
+    },
+    "by_dataset": {
+      "SentenceAI": 38,
+      "RAID": 12,
+      "HC3": 4
+    },
+    "mean_predicted_ai_prob": 0.3276,
+    "prob_percentiles": {
+      "p25": 0.1839,
+      "median": 0.3302,
+      "p75": 0.4677
+    }
+  }
+}

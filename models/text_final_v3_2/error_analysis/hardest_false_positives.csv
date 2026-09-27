@@ -1,0 +1,138 @@
+text,label,probability,length_group,applied_threshold,dataset,prediction,error_type
+Self-confidence is really important for people to feel good about their own selves.,0,0.9758157781565848,short,0.52,SentenceAI,1,False Positive
+"Limiting car usage has several very influential advantages, such as increasing mental health, reducing air pollution, and eliminating problems associated with traffic.",0,0.970711057666865,short,0.52,SentenceAI,1,False Positive
+"Signal processing is an electrical engineering subfield that focuses on analyzing, modifying and synthesizing signals, such as sound, images, and scientific measurements. Signal processing techniques are used to optimize transmissions, digital storage efficiency, correcting distorted signals, subjective video quality and to also detect or pinpoint components of interest in a measured signal.",0,0.959291627310058,medium,0.6,HC3,1,False Positive
+"def count_Digit(n):
+    count = 0
+    while n != 0:
+        n //= 10
+        count += 1
+    return count",0,0.9014186192747032,short,0.52,RAID,1,False Positive
+"As well, creativity stems from a sense of individuality.",0,0.8974163978619548,very_short,0.37,SentenceAI,1,False Positive
+Time management is essential for a successful live.,0,0.8925661854034375,very_short,0.37,SentenceAI,1,False Positive
+"Cortana is a virtual assistant developed by Microsoft that uses the Bing search engine to perform tasks such as setting reminders and answering questions for the user.
+Cortana is currently available in English, Portuguese, French, German, Italian, Spanish, Chinese, and Japanese language editions, depending on the software platform and region in which it is used.
+Microsoft began reducing the prevalence of Cortana and converting it from an assistant into different software integrations in 2019. It was split from the Windows 10 search bar in April 2019.[10] In January 2020, the Cortana mobile app was removed from certain markets,[11][12] and on March 31, 2021, the Cortana mobile app was shut down globally.[13]",0,0.8769703529643171,long,0.42,HC3,1,False Positive
+Most jewish holidays are more cultural than they are biblical .,0,0.8442677093314335,short,0.52,HC3,1,False Positive
+"Also, if the student maintains a C or lower average, and they're in a tutoring session, I don't think it's fair that they're not allowed to participate in gym or other activities.",0,0.8364209511601152,medium,0.6,SentenceAI,1,False Positive
+"def Diff(li1,li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))",0,0.8282697108871696,very_short,0.37,RAID,1,False Positive
+"In addition, another problem that arises due to the Electoral College is that people may feel disencouraged to vote.",0,0.8140817194499304,short,0.52,SentenceAI,1,False Positive
+"In conclusion, student designed projects have many benefits that can help them succeed in life and improve oneself.",0,0.812124294049024,short,0.52,SentenceAI,1,False Positive
+"Armando Pérez (born January 15, 1981), better known by his stage name Pitbull, is an American rapper, songwriter, and record producer.",0,0.8086723376619332,short,0.52,HC3,1,False Positive
+"def max_sum_list(lists):
+ return max(lists, key=sum)",0,0.8078239734270798,very_short,0.37,RAID,1,False Positive
+"The decrease in car commuting may find reason in the recession, and it may become a new habit.",0,0.7924771011761869,short,0.52,SentenceAI,1,False Positive
+Albert Einstein was a dropout and failed 3 grades.,0,0.7862615918353482,very_short,0.37,SentenceAI,1,False Positive
+"As president, Reagan implemented sweeping new political and economic initiatives.",0,0.7709434187614209,very_short,0.37,HC3,1,False Positive
+"import re
+def find_character(string):
+  uppercase_characters = re.findall(r""[A-Z]"", string) 
+  lowercase_characters = re.findall(r""[a-z]"", string) 
+  numerical_characters = re.findall(r""[0-9]"", string) 
+  special_characters = re.findall(r""[, .!?]"", string) 
+  return uppercase_characters, lowercase_characters, numerical_characters, special_characters",0,0.7674608631934673,short,0.52,RAID,1,False Positive
+"def check_triplet(A, n, sum, count):
+    if count == 3 and sum == 0:
+        return True
+    if count == 3 or n == 0 or sum < 0:
+        return False
+    return check_triplet(A, n - 1, sum - A[n - 1], count + 1) or\
+           check_triplet(A, n - 1, sum, count)",0,0.7588755521085058,medium,0.6,RAID,1,False Positive
+"def previous_palindrome(num):
+    for x in range(num-1,0,-1):
+        if str(x) == str(x)[::-1]:
+            return x",0,0.7378372818917793,short,0.52,RAID,1,False Positive
+"Another issue is that sometimes in a close election, the popular vote winner could lose the presidency.",0,0.7326322992886183,short,0.52,SentenceAI,1,False Positive
+"And while it is near voting times, I believed it's best for me to send you my side on this continuous debate to change your mind on the matter.",0,0.7218888635371191,short,0.52,SentenceAI,1,False Positive
+there are many activities.,0,0.7176201358775723,very_short,0.37,SentenceAI,1,False Positive
+Cut your own typically means that the land has to be maintained and kept up and the trees taken care of and they are fresh . Pre - Cut trees come from out of the area where costs are less and they are more focused on selling quantities and not quality . Plus they are older .,0,0.7078413194786811,medium,0.6,HC3,1,False Positive
+"def decimal_To_Binary(N): 
+    B_Number = 0
+    cnt = 0
+    while (N != 0): 
+        rem = N % 2
+        c = pow(10,cnt)  
+        B_Number += rem*c  
+        N //= 2 
+        cnt += 1
+    return B_Number",0,0.6875562493795567,medium,0.6,RAID,1,False Positive
+"The George Washington University (GW, GWU, or George Washington) is a comprehensive private , coeducational research university located in Washington, D.C. .",0,0.6807497379760208,short,0.52,HC3,1,False Positive
+"import re 
+regex = '''^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+			25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)$'''
+def check_IP(Ip): 
+	if(re.search(regex, Ip)): 
+		return (""Valid IP address"") 
+	else: 
+		return (""Invalid IP address"")",0,0.6790862783400284,short,0.52,RAID,1,False Positive
+"Since I was thinking harder, I began to work harder.",0,0.6773028121158202,very_short,0.37,SentenceAI,1,False Positive
+"No . We can do some pretty cool stuff with technology , and this will no doubt continue to improve in future . But ' real magic ' is not even a * tiny bit * possible according to what we know about science today .",0,0.6718565476226593,medium,0.6,HC3,1,False Positive
+Students must feel as though they are in a calming environment in order to work efficiently.,0,0.6672149511707228,short,0.52,SentenceAI,1,False Positive
+"The Westphalian Treaty 1648 set up the principle that all states should be sovereign within their own right and allowed to set up a system to rule their own state . This system essentially set up for a long peace allowing for the national pride others have mentioned , thus locking us in a system of separate sovereign nations .",0,0.6578506878503657,medium,0.6,HC3,1,False Positive
+"""It's a good oppurtunity to take away stress and lower air pollution"" said a business man with the name of Carlos Arturo Plaza, as time has gone on other cities including Cali and Valleduar have participated in the event.",0,0.6573471991198038,medium,0.6,SentenceAI,1,False Positive
+But that tradition stopped when he got too old to play and I started to have more frequent basketball practice and training.,0,0.6451781496915558,short,0.52,SentenceAI,1,False Positive
+"def remove_empty(tuple1): #L = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+   tuple1 = [t for t in tuple1 if t]
+   return tuple1",0,0.640148150189059,short,0.52,RAID,1,False Positive
+I don't like math.,0,0.6273550027034561,very_short,0.37,SentenceAI,1,False Positive
+"For example, when I use to play baseball, I could not hit the ball as far as my friends did.",0,0.6230892613916875,short,0.52,SentenceAI,1,False Positive
+"def Odd_Length_Sum(arr):
+    Sum = 0
+    l = len(arr)
+    for i in range(l):
+        Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])
+    return Sum",0,0.6228375651122985,short,0.52,RAID,1,False Positive
+A flat tax is more hurtful to lower incomes,0,0.6218619155147418,very_short,0.37,HC3,1,False Positive
+"In the popular vote system, the head of state and or government is elected by the majority of the nation.",0,0.6155011508753699,short,0.52,SentenceAI,1,False Positive
+"def is_subset_sum(set, n, sum):
+	if (sum == 0):
+		return True
+	if (n == 0):
+		return False
+	if (set[n - 1] > sum):
+		return is_subset_sum(set, n - 1, sum)
+	return is_subset_sum(set, n-1, sum) or is_subset_sum(set, n-1, sum-set[n-1])",0,0.6074217463263374,medium,0.6,RAID,1,False Positive
+"While creep - nu is righ , there is another reason - both PIN and RFID chip setups are thorogly compromised and as borne out by real world data do not provide significant added protection . If anything , RFID makes cards more vulnerable to theft without physical contact .",0,0.6043846427984758,medium,0.6,HC3,1,False Positive
+"Beaver Stadium is an outdoor college football stadium in University Park , Pennsylvania , United States , on the campus of The Pennsylvania State University .",0,0.59734174190956,short,0.52,HC3,1,False Positive
+Due to increasing crime rates caused by the U.S. economy.,0,0.5963732474436101,very_short,0.37,SentenceAI,1,False Positive
+So thank you in advance.,0,0.5918683414581418,very_short,0.37,SentenceAI,1,False Positive
+Learning requires focus.,0,0.5898015728244818,very_short,0.37,SentenceAI,1,False Positive
+"The acronym originally stood for Supreme Headquarters, International Espionage, Law-Enforcement Division.",0,0.5806353781503449,short,0.52,HC3,1,False Positive
+"If more places created regulations like these, it may drastically change the environment, for the better.",0,0.5789507636489332,short,0.52,SentenceAI,1,False Positive
+"Pollution, Economy, and people's health are all a factor to limiting car usuage.",0,0.5717499043638636,short,0.52,SentenceAI,1,False Positive
+stewartlawoffices.,0,0.5693560371835356,very_short,0.37,SentenceAI,1,False Positive
+Why can't we?,0,0.5673098075561885,very_short,0.37,SentenceAI,1,False Positive
+"We can go to Europe,Greece,and even Antartica!",0,0.5629929264469195,very_short,0.37,SentenceAI,1,False Positive
+"During training, we are listening to music while we help each other out with the workouts we are supposed to do.",0,0.5508507994073045,short,0.52,SentenceAI,1,False Positive
+"In contrast, it can be argued that no single region can shift a campaign greatly, nonetheless a single voter`s vote.",0,0.5354043516116068,short,0.52,SentenceAI,1,False Positive
+"For example, a cook is trying to do new dishes from differents cultures.",0,0.5336839269525759,short,0.52,SentenceAI,1,False Positive
+Even in rainy weather people participated just to help lower stress and air pollution.,0,0.531662576665567,short,0.52,SentenceAI,1,False Positive
+Technology can encourage students study and to do more to ace that English test they have.,0,0.5316454715191573,short,0.52,SentenceAI,1,False Positive
+"In conclusion, I believe that this technology should not be used in schools or on people for that matter.",0,0.5288725019303991,short,0.52,SentenceAI,1,False Positive
+Not take away activities.,0,0.5125889331188019,very_short,0.37,SentenceAI,1,False Positive
+"Move to iOS im Play Store erhältlich, und wird prompt mit vernichtenden Kritiken bestraftZeit für die Fanfaren – eine echte Premiere steht an. Apple hat parallel zur Freigabe von iOS 9 seine allererste Android-App veröffentlicht. Auf sonderliche viel Gegenliebe scheint diese bei den Android-User bisher aber nicht zu stoßen – mit 1,8 von 5 maximalen Punkten ist die aktuelle Bewertung im Play Store gerade zu vernichtend.
+Spurensuche
+Das hat natürlich einen guten Grund: Handelt es sich dabei doch um eine App, die Android-Nutzern beim Umstieg auf ein iPhone oder iPad helfen soll. ""Move to iOS"" heißt die App, die verspricht SMS, Lesezeichen, Google-Konto, Fotos und mehr nahtlos auf die Apple-Plattform wandern zu lassen.
+Ablauf
+Um dies zu ermöglichen, baut die App eine WLAN-Verbindung zwischen den beiden Geräten auf, infolge muss nur mehr ein zehnstelliger Code bestätigt werden. Der iOS-Einrichtungsdialog hat dazu passend mit iOS 9 neben der Möglichkeit der Wiederherstellung eines iCloud-Backups auch die Android-Umstiegs-Option integriert.
+Ausblick
+Wer auf die erste richtige Apple-App für Android wartet, sollte allerdings auch nicht mehr all zu lange warten müssen. Immerhin hat der Softwarehersteller einen Android-Client für Apple Music versprochen. (red, 17.9.2015) Link
+Move to iOS",0,0.47031969683005015,long,0.42,RAID,1,False Positive
+"Auftritt auf US-Spielemesse wird auf Pressekonferenz und Meetings beschränktEin halbes Jahr vor dem Start der bedeutendsten Spielemesse E3: Electronic Arts, einer der weltweit größten Games-Konzerne und Aussteller, zieht sich weitestgehend von der Messe zurück. Stattdessen startet man eine eigene Veranstaltung mit dem Namen ""EA Play"".
+Die öffentliche Präsenz auf der Electronic Entertainment Expo in Los Angeles wird sich auf Meeting-Räume für Gespräche mit Partnern und Journalisten beschränken. Messestände, auf denen Games vorgeführt werden, wird es nicht geben.
+Fan-Event
+EA Play wiederum ist vom 12. bis zum 14. Juni angesetzt, kollidiert also mit der E3-Eröffnung und steigt ebenfalls in Los Angeles. Ausgewiesen ist der Event als ""Fanveranstaltung"", die Pressekonferenz von EA steigt am ersten Abend und wird live ins Internet gestreamt. Der gewählte Standort, Club Nokia, befindet sich in der uinmittelbaren Nachbarschaft des Convention Centers, wo die E3 beheimatet ist. Weitere Details zur neuen ""Hausmesse"" will EA erst noch bekannt geben.
+foto: ea
+Einen eintägigen Termin gibt es am 12. Juni außerdem in London. Interessenten können sich über die Homepage des Unternehmens registrieren.
+Wähend EA Play öffentlich zugänglich ist, versteht sich die E3 als Fachmesse, die nur für Besucher aus der Branche, Handel und Presse geöffnet ist. Vergangenes Jahr erhielten aber auch erstmals Spielefans Zutritt, ihr Kartenkontingent war allerdings auf 5.000 Stück limitiert. Insgesamt verzeichnete die E3 2015 etwa 50.000 Besucher. (gpi, 5.2.2016) Links
+E3
+EA Play",0,0.4311027117023372,long,0.42,RAID,1,False Positive
+There are many tasks you could give out each week.,0,0.42348910881425,very_short,0.37,SentenceAI,1,False Positive
+This is where kids come in.,0,0.4063181485236893,very_short,0.37,SentenceAI,1,False Positive
+We tend to believe in the 'juicy' filled drama.,0,0.40468639939162515,very_short,0.37,SentenceAI,1,False Positive
+Who knows what can take place for our future.,0,0.4026656123521133,very_short,0.37,SentenceAI,1,False Positive
+"If so, then popular election it is.",0,0.39520671702000054,very_short,0.37,SentenceAI,1,False Positive
+"It's outdated,unfair,and irrational.",0,0.38608837228001863,very_short,0.37,SentenceAI,1,False Positive

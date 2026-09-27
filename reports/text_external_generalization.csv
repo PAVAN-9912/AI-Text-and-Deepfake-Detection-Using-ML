@@ -1,0 +1,9 @@
+model,dataset,samples,accuracy,precision,recall,f1,roc_auc,brier,TN,FP,FN,TP
+V3.4_Baseline,RAID_External,1500,0.9687,0.9838,0.969,0.9763,0.9899,0.03308,484,16,31,969
+V3.4_Baseline,SentenceAI_Test,2000,0.855,0.8761,0.827,0.8508,0.9231,0.10647,883,117,173,827
+V3.4_Baseline,Real_World_Test,26,0.7308,0.625,0.9091,0.7407,0.9455,0.12876,9,6,1,10
+V3.4_Baseline,AIGCodeSet_Test,1000,0.493,0.4941,0.582,0.5344,0.4923,0.35974,202,298,209,291
+Enhanced_V2_Candidate,RAID_External,1500,0.962,0.9547,0.99,0.972,0.989,0.03739,453,47,10,990
+Enhanced_V2_Candidate,SentenceAI_Test,2000,0.853,0.8336,0.882,0.8571,0.9228,0.10666,824,176,118,882
+Enhanced_V2_Candidate,Real_World_Test,26,0.7308,0.625,0.9091,0.7407,0.9515,0.12424,9,6,1,10
+Enhanced_V2_Candidate,AIGCodeSet_Test,1000,0.489,0.4925,0.72,0.5849,0.4829,0.35912,129,371,140,360

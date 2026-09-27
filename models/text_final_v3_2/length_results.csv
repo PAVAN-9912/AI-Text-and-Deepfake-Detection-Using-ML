@@ -1,0 +1,5 @@
+length_group,samples,threshold,accuracy,precision,recall,f1,false_positive,false_negative
+very_short,240,0.37,0.8708,0.816,0.9273,0.8681,23,8
+short,435,0.52,0.8713,0.8571,0.8738,0.8654,30,26
+medium,223,0.6,0.9148,0.9153,0.9231,0.9191,10,9
+long,100,0.42,0.91,0.9362,0.88,0.9072,3,6

@@ -1,0 +1,43 @@
+================================================================================
+V3.2 ERROR ANALYSIS & EXPERIMENT REPORT
+================================================================================
+Model Version: text_final_v3.2
+Selected Winning Strategy: Strat2_Exp_a0.75_C2.0 (Strat 2 Continuous Decay: alpha=0.75, C=2.0)
+Decision Thresholds (Frozen from Calibration):
+  very_short: 0.37
+  short     : 0.52
+  medium    : 0.60
+  long      : 0.42
+
+================================================================================
+1. HELD-OUT VALIDATION RESULTS (UNTOUCHED 998 SAMPLES)
+================================================================================
+Accuracy : 0.8848
+Precision: 0.8680
+Recall   : 0.8986
+F1 Score : 0.8830
+ROC-AUC  : 0.9530
+Confusion Matrix:
+  TN: 449 | FP: 66
+  FN: 49 | TP: 434
+
+================================================================================
+2. PERFORMANCE BY LENGTH GROUP
+================================================================================
+length_group  samples  threshold  accuracy  precision  recall     f1  false_positive  false_negative
+  very_short      240       0.37    0.8708     0.8160  0.9273 0.8681              23               8
+       short      435       0.52    0.8713     0.8571  0.8738 0.8654              30              26
+      medium      223       0.60    0.9148     0.9153  0.9231 0.9191              10               9
+        long      100       0.42    0.9100     0.9362  0.8800 0.9072               3               6
+
+================================================================================
+3. COMPARISON WITH V3.1 BASELINE
+================================================================================
+              metric    V3.1    V3.2     diff
+            Accuracy  0.8717  0.8848   0.0131
+           Precision  0.8355  0.8680   0.0325
+              Recall  0.9151  0.8986  -0.0165
+            F1 Score  0.8735  0.8830   0.0095
+             ROC-AUC  0.9521  0.9530   0.0009
+False Positives (FP) 87.0000 66.0000 -21.0000
+False Negatives (FN) 41.0000 49.0000   8.0000

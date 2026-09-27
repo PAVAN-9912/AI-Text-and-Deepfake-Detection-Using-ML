@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Text-and-Deepfake-Detection-Using-ML</title>
-    <meta name="description" content="AI-powered detection of synthetic text and deepfake video content using machine learning models.">
+    <title>AI Text and Deepfake Detection Using ML</title>
+    <meta name="application-name" content="AI-Text-and-Deepfake-Detection-Using-ML">
+    <meta name="description" content="AI-powered forensic detection platform for identifying synthetic text and deepfake video manipulation using machine learning models.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="app-background"></div>
+    <div class="grid-overlay"></div>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="brand">
-                <span class="brand-shield">🛡️</span>
-                <div class="brand-text">
-                    <h1 class="brand-title">AI-Text-and-Deepfake-Detection-Using-ML</h1>
-                    <span class="brand-subtitle">AI-powered detection of synthetic text and deepfake video content</span>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="brand" onclick="switchTab('home')">
+                    <div class="brand-icon-wrapper">
+                        <span class="brand-icon">🛡️</span>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">AI Text and Deepfake Detection Using ML</h1>
+                        <span class="brand-subtitle">AI-powered detection of synthetic text and deepfake video content</span>
+                    </div>
                 </div>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active" data-tab="home"><span class="nav-icon">⚡</span> Home</a></li>
+                    <li><a href="#text" class="nav-link" data-tab="text"><span class="nav-icon">📝</span> Text Detection</a></li>
+                    <li><a href="#video" class="nav-link" data-tab="video"><span class="nav-icon">🎥</span> Video Detection</a></li>
+                    <li><a href="#history" class="nav-link" data-tab="history"><span class="nav-icon">📊</span> History</a></li>
+                    <li><a href="#architecture" class="nav-link" data-tab="architecture"><span class="nav-icon">⚙️</span> Architecture</a></li>
+                    <li><a href="#about" class="nav-link" data-tab="about"><span class="nav-icon">ℹ️</span> About</a></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active" data-tab="home">Home</a></li>
-                <li><a href="#text" class="nav-link" data-tab="text">Text Detection</a></li>
-                <li><a href="#video" class="nav-link" data-tab="video">Video Detection</a></li>
-                <li><a href="#history" class="nav-link" data-tab="history">History</a></li>
-                <li><a href="#architecture" class="nav-link" data-tab="architecture">Architecture</a></li>
-                <li><a href="#about" class="nav-link" data-tab="about">About</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- MAIN CONTAINER -->
     <main class="main-content">
@@ -41,39 +49,86 @@
         <!-- TAB: HOME / HERO -->
         <section id="home" class="tab-pane active">
             <div class="hero">
-                <div class="hero-badge">AI Forensics & Content Verification Platform</div>
-                <h1 class="hero-title">Detect AI-Generated Content with Machine Learning</h1>
-                <p class="hero-subtitle">Analyze written content and video media using dedicated machine-learning detection pipelines trained on benchmark research datasets.</p>
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    <span>AI FORENSICS &amp; CONTENT VERIFICATION</span>
+                </div>
+                <h1 class="hero-title">AI Text and Deepfake Detection Using ML</h1>
+                <p class="hero-subtitle">Analyze written content and video media using machine-learning based forensic detection pipelines.</p>
 
                 <div class="hero-cards">
-                    <div class="card hero-card" onclick="switchTab('text')">
-                        <div class="card-icon">📝</div>
-                        <h3>TEXT DETECTION</h3>
-                        <p>Analyze written content for signs of AI-generated text using MiniLM, TF-IDF, and linguistic feature fusion.</p>
-                        <button class="btn btn-primary card-btn">Analyze Text &rarr;</button>
+                    <!-- CARD 1: TEXT DETECTION -->
+                    <div class="card hero-card text-card" onclick="switchTab('text')">
+                        <div class="card-glow-indicator text-glow"></div>
+                        <div class="hero-card-header">
+                            <div class="card-icon text-icon">
+                                <span>📄</span>
+                            </div>
+                            <span class="card-tag">NLP FORENSICS</span>
+                        </div>
+                        <div class="card-body-content">
+                            <h3 class="card-title">AI Text Detection</h3>
+                            <p class="card-desc">Analyze written content using linguistic, TF-IDF and semantic features to identify AI-generated patterns.</p>
+                            <div class="card-features-mini">
+                                <span>TF-IDF n-grams</span>
+                                <span>MiniLM embeddings</span>
+                                <span>Linguistic features</span>
+                            </div>
+                        </div>
+                        <div class="card-footer-action">
+                            <button class="btn btn-primary card-btn" onclick="event.stopPropagation(); switchTab('text');">Analyze Text &rarr;</button>
+                        </div>
                     </div>
 
-                    <div class="card hero-card" onclick="switchTab('video')">
-                        <div class="card-icon">🎥</div>
-                        <h3>VIDEO DEEPFAKE DETECTION</h3>
-                        <p>Analyze video media for temporal and spatial signs of synthetic deepfake manipulation using ResNet-18 & BiLSTM Attention.</p>
-                        <button class="btn btn-secondary card-btn">Analyze Video &rarr;</button>
+                    <!-- CARD 2: VIDEO DETECTION -->
+                    <div class="card hero-card video-card" onclick="switchTab('video')">
+                        <div class="card-glow-indicator video-glow"></div>
+                        <div class="hero-card-header">
+                            <div class="card-icon video-icon">
+                                <span>🎥</span>
+                            </div>
+                            <span class="card-tag">VISION &amp; TEMPORAL FORENSICS</span>
+                        </div>
+                        <div class="card-body-content">
+                            <h3 class="card-title">Deepfake Video Detection</h3>
+                            <p class="card-desc">Analyze facial video frames using spatial and temporal features to identify deepfake content.</p>
+                            <div class="card-features-mini">
+                                <span>YuNet Face Detection</span>
+                                <span>ResNet-18</span>
+                                <span>Temporal Conv1D</span>
+                                <span>2-layer BiGRU</span>
+                                <span>Multi-Head Attention</span>
+                            </div>
+                        </div>
+                        <div class="card-footer-action">
+                            <button class="btn btn-primary card-btn video-btn" onclick="event.stopPropagation(); switchTab('video');">Analyze Video &rarr;</button>
+                        </div>
                     </div>
                 </div>
 
+                <!-- COMPACT TECHNOLOGY HIGHLIGHT BAR -->
                 <div class="system-status-bar card">
                     <div class="status-item">
-                        <span class="status-dot green" id="status-dot"></span>
-                        <span class="status-label">Engine Health:</span>
-                        <span class="status-value" id="status-text">Checking system...</span>
+                        <span class="status-label">TEXT MODEL</span>
+                        <span class="status-value highlight" id="status-features">194K+ FEATURES</span>
                     </div>
+                    <div class="status-divider"></div>
                     <div class="status-item">
-                        <span class="status-label">Text Model Features:</span>
-                        <span class="status-value" id="status-features">194,545</span>
+                        <span class="status-label">VIDEO MODEL</span>
+                        <span class="status-value highlight">ResNet-18 + BiGRU Attention</span>
                     </div>
+                    <div class="status-divider"></div>
                     <div class="status-item">
-                        <span class="status-label">Video Spatial Extractor:</span>
-                        <span class="status-value">ResNet-18 (512-dim)</span>
+                        <span class="status-label">ANALYSIS</span>
+                        <span class="status-value">TEXT + VIDEO</span>
+                    </div>
+                    <div class="status-divider"></div>
+                    <div class="status-item">
+                        <div class="engine-health-wrap">
+                            <span class="status-dot green" id="status-dot"></span>
+                            <span class="status-label">SYSTEM</span>
+                        </div>
+                        <span class="status-value ready" id="status-text">READY</span>
                     </div>
                 </div>
             </div>
@@ -83,92 +138,129 @@
         <!-- TAB: TEXT DETECTION -->
         <section id="text" class="tab-pane">
             <div class="section-header">
+                <div class="header-pre-title">NLP FORENSICS</div>
                 <h2>Text Detection Workspace</h2>
-                <p>Paste or type text below to evaluate whether it was authored by a human or generated by an AI model.</p>
+                <p>Analyze written content using linguistic, TF-IDF, and semantic features to identify AI-generated patterns.</p>
             </div>
 
             <div class="workspace-grid">
                 <!-- INPUT CARD -->
                 <div class="card editor-card">
                     <div class="editor-toolbar">
-                        <div class="toolbar-title">Input Workspace</div>
+                        <div class="toolbar-title-wrap">
+                            <span class="toolbar-dot"></span>
+                            <div class="toolbar-heading-group">
+                                <span class="toolbar-category">NLP FORENSICS</span>
+                                <h3 class="toolbar-title">Analyze Written Content</h3>
+                            </div>
+                        </div>
                         <div class="sample-presets">
                             <span class="preset-label">Presets:</span>
-                            <button class="btn btn-sm btn-outline" id="preset-human">Human Example</button>
-                            <button class="btn btn-sm btn-outline" id="preset-ai">AI Example</button>
-                            <button class="btn btn-sm btn-ghost" id="btn-clear-text">Clear</button>
+                            <button class="btn btn-sm btn-outline" id="preset-human" type="button">Human Example</button>
+                            <button class="btn btn-sm btn-outline" id="preset-ai" type="button">AI Example</button>
+                            <button class="btn btn-sm btn-ghost" id="btn-clear-text" type="button">Clear</button>
                         </div>
                     </div>
 
-                    <textarea id="text-input" placeholder="Type or paste content here for analysis..." rows="12"></textarea>
+                    <p class="editor-desc">Enter text below to evaluate linguistic and semantic patterns associated with AI-generated content.</p>
+
+                    <div class="textarea-wrapper">
+                        <textarea id="text-input" placeholder="Paste or type content here for multi-feature forensic analysis (minimum 3 words for complete evaluation)..." rows="12"></textarea>
+                    </div>
 
                     <div class="editor-footer">
                         <div class="text-counts">
-                            <span id="word-count-badge">0 words</span>
-                            <span class="dot-separator">•</span>
-                            <span id="char-count-badge">0 characters</span>
+                            <div class="stat-pill">
+                                <span class="stat-label">WORDS</span>
+                                <span class="stat-val" id="word-count-badge">0 words</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-pill">
+                                <span class="stat-label">CHARACTERS</span>
+                                <span class="stat-val" id="char-count-badge">0 characters</span>
+                            </div>
                         </div>
                         <div class="action-buttons">
-                            <button class="btn btn-outline" id="btn-paste-text">📋 Paste</button>
-                            <button class="btn btn-primary" id="btn-analyze-text">🚀 Analyze Text</button>
+                            <button class="btn btn-outline" id="btn-paste-text" type="button">📋 Paste</button>
+                            <button class="btn btn-primary" id="btn-analyze-text" type="button">Analyze Text &rarr;</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- RESULT CARD -->
                 <div class="card result-card" id="text-result-card">
+                    <!-- EMPTY STATE -->
                     <div class="placeholder-state" id="text-placeholder">
-                        <div class="placeholder-icon">🔍</div>
-                        <h3>Awaiting Text Input</h3>
-                        <p>Submit text in the editor to view classification results, probability breakdown, and linguistic feature metrics.</p>
+                        <div class="placeholder-icon-wrap">
+                            <div class="placeholder-icon">📄</div>
+                        </div>
+                        <h3 class="placeholder-title">READY FOR ANALYSIS</h3>
+                        <p class="placeholder-desc">Enter text to begin analysis.</p>
+                        <div class="quick-hint">Evaluates TF-IDF n-grams, MiniLM embeddings &amp; 5 linguistic dimensions</div>
                     </div>
 
                     <!-- LOADING STATE -->
                     <div class="loading-state hidden" id="text-loading">
-                        <div class="spinner"></div>
-                        <h4 id="text-loading-stage">Preparing Text...</h4>
-                        <p class="loading-desc">Extracting TF-IDF, MiniLM Embeddings & Linguistic Features</p>
+                        <div class="cyber-spinner">
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-core"></div>
+                        </div>
+                        <h4 id="text-loading-stage">ANALYZING TEXT...</h4>
+                        <p class="loading-desc">Extracting TF-IDF, MiniLM Embeddings &amp; Linguistic Features</p>
+                    </div>
+
+                    <!-- ERROR STATE -->
+                    <div class="error-state hidden" id="text-error-state">
+                        <div class="error-icon-wrap">
+                            <div class="error-icon">⚠️</div>
+                        </div>
+                        <h3 id="text-error-title">ANALYSIS ERROR</h3>
+                        <p id="text-error-msg">Unable to analyze this text. Please try again.</p>
+                        <button class="btn btn-sm btn-outline" onclick="resetTextResultUI()" type="button">Dismiss</button>
                     </div>
 
                     <!-- RESULT STATE -->
                     <div class="result-content hidden" id="text-result-content">
-                        <!-- Short Text Banner -->
+                        <!-- Short Text Alert Banner -->
                         <div class="alert alert-info hidden" id="short-text-alert">
-                            <div class="alert-icon">ℹ️</div>
+                            <div class="alert-icon" id="short-text-icon">ℹ️</div>
                             <div class="alert-text">
-                                <strong>Rule-based short-text handling</strong>
+                                <strong id="short-text-title">Context Notice</strong>
                                 <p id="short-text-reason">The text is too short for reliable AI-generated text classification.</p>
                             </div>
                         </div>
 
                         <!-- Result Badge Header -->
-                        <div class="result-header">
-                            <span class="badge" id="text-result-badge">HUMAN-WRITTEN</span>
+                        <div class="verdict-banner">
+                            <div class="verdict-main">
+                                <span class="verdict-caption">Classification Result</span>
+                                <span class="badge" id="text-result-badge">HUMAN-WRITTEN</span>
+                            </div>
                             <div class="confidence-display">
-                                <span class="confidence-label">Confidence:</span>
+                                <span class="confidence-label">Confidence</span>
                                 <span class="confidence-value" id="text-confidence-val">--</span>
                             </div>
                         </div>
 
-                        <!-- Probability Bars (Hidden for short text) -->
+                        <!-- Probability Bars -->
                         <div class="probability-container" id="text-prob-container">
                             <div class="prob-row">
                                 <div class="prob-info">
-                                    <span>AI Probability</span>
-                                    <strong id="prob-ai-text">0.0%</strong>
+                                    <span class="prob-name"><span class="legend-dot human-dot"></span> HUMAN PROBABILITY</span>
+                                    <strong class="prob-pct" id="prob-human-text">0.0%</strong>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill ai-fill" id="bar-ai-text" style="width: 0%;"></div>
+                                    <div class="progress-fill human-fill" id="bar-human-text" style="width: 0%;"></div>
                                 </div>
                             </div>
 
                             <div class="prob-row">
                                 <div class="prob-info">
-                                    <span>Human Probability</span>
-                                    <strong id="prob-human-text">0.0%</strong>
+                                    <span class="prob-name"><span class="legend-dot ai-dot"></span> AI PROBABILITY</span>
+                                    <strong class="prob-pct" id="prob-ai-text">0.0%</strong>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill human-fill" id="bar-human-text" style="width: 0%;"></div>
+                                    <div class="progress-fill ai-fill" id="bar-ai-text" style="width: 0%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -188,49 +280,49 @@
                                 <span class="summary-value" id="res-threshold">0.41</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Classification Method</span>
-                                <span class="summary-value" id="res-method">ML V2 Improved</span>
+                                <span class="summary-label">Model Pipeline</span>
+                                <span class="summary-value" id="res-method">TextDetector_V3.4 (194K)</span>
                             </div>
                         </div>
 
-                        <!-- Expandable Detection Details Accordion -->
+                        <!-- Expandable Detection Details Accordion / Feature Inspector -->
                         <div class="accordion" id="text-details-accordion">
-                            <button class="accordion-header" id="accordion-toggle">
-                                <span>Detection Details & Calculated Features</span>
+                            <button class="accordion-header" id="accordion-toggle" type="button">
+                                <span><span class="acc-icon">🔬</span> LINGUISTIC FEATURE INSPECTOR</span>
                                 <span class="accordion-icon">▼</span>
                             </button>
                             <div class="accordion-body hidden" id="accordion-body">
                                 <div class="details-grid">
                                     <div class="detail-item">
-                                        <span class="detail-name">Log Word Count:</span>
+                                        <span class="detail-name">log_word_count</span>
                                         <span class="detail-val" id="det-log-word">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Sentence Count:</span>
+                                        <span class="detail-name">sentence_count</span>
                                         <span class="detail-val" id="det-sentences">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Avg Sentence Length:</span>
+                                        <span class="detail-name">avg_sentence_length</span>
                                         <span class="detail-val" id="det-avg-sentence">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Vocabulary Diversity:</span>
+                                        <span class="detail-name">vocabulary_diversity</span>
                                         <span class="detail-val" id="det-diversity">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Length Bucket:</span>
+                                        <span class="detail-name">length_bucket</span>
                                         <span class="detail-val" id="det-bucket">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Model Version:</span>
-                                        <span class="detail-val">text_final_v2_improved</span>
+                                        <span class="detail-name">Model Artifact</span>
+                                        <span class="detail-val">TextDetector_V3.4</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Disclaimer -->
-                        <p class="disclaimer">⚠️ <em>AI detection is probabilistic. Results should be interpreted as an indication rather than absolute proof of authorship.</em></p>
+                        <p class="disclaimer">⚠️ <em>AI detection is probabilistic. Results indicate algorithmic likelihood based on trained statistical and semantic distributions.</em></p>
                     </div>
                 </div>
             </div>
@@ -240,60 +332,105 @@
         <!-- TAB: VIDEO DETECTION -->
         <section id="video" class="tab-pane">
             <div class="section-header">
-                <h2>Video Deepfake Detection Workspace</h2>
-                <p>Upload video files to extract temporal frames and evaluate whether the video is authentic (REAL) or synthetically manipulated (FAKE / DEEPFAKE).</p>
+                <div class="header-pre-title">VISION &amp; TEMPORAL FORENSICS</div>
+                <h2>VIDEO FORENSIC ANALYSIS</h2>
+                <p>Upload a video for frame-level deepfake analysis.</p>
             </div>
 
             <div class="workspace-grid">
                 <!-- UPLOAD CARD -->
                 <div class="card upload-card">
+                    <div class="editor-toolbar">
+                        <div class="toolbar-title-wrap">
+                            <span class="toolbar-dot video-dot"></span>
+                            <div class="toolbar-heading-group">
+                                <span class="toolbar-category">VISION FORENSICS</span>
+                                <h3 class="toolbar-title">Upload Video Media</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="editor-desc">Upload facial video clips to evaluate temporal consistency, spatial artifacts, and neural synthesis patterns.</p>
+
                     <div class="dropzone" id="video-dropzone">
                         <input type="file" id="video-file-input" accept=".mp4,.mov,.avi,.mkv,.webm" class="hidden-input">
                         <div class="dropzone-content" id="dropzone-prompt">
-                            <div class="dropzone-icon">📹</div>
-                            <h3>Drag & Drop Video Here</h3>
-                            <p>or click to browse files on your computer</p>
-                            <span class="supported-formats">Supported formats: MP4, MOV, AVI, MKV, WEBM (Max 100MB)</span>
+                            <div class="dropzone-icon-wrap">
+                                <div class="dropzone-icon">📹</div>
+                            </div>
+                            <h3>Drop your video here</h3>
+                            <p class="dropzone-sub">or browse from your device</p>
+                            <div class="supported-formats-pill">
+                                <span>Supported formats: MP4 · MOV · AVI · MKV · WEBM</span>
+                                <span class="size-pill">Max 100 MB</span>
+                            </div>
                         </div>
 
                         <!-- PREVIEW CONTAINER -->
                         <div class="video-preview-container hidden" id="video-preview-box">
-                            <video id="video-player" controls preload="metadata"></video>
+                            <div class="video-player-frame">
+                                <video id="video-player" controls preload="metadata"></video>
+                            </div>
                             <div class="video-file-details">
-                                <span class="file-name" id="file-name-txt">video.mp4</span>
-                                <span class="file-size" id="file-size-txt">0.0 MB</span>
-                                <button class="btn btn-sm btn-ghost" id="btn-remove-video">Remove File</button>
+                                <div class="file-meta">
+                                    <span class="file-icon">🎬</span>
+                                    <div class="file-meta-text">
+                                        <span class="file-name" id="file-name-txt">video.mp4</span>
+                                        <span class="file-size" id="file-size-txt">0.0 MB</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-ghost" id="btn-remove-video" type="button">Remove File</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="upload-footer">
-                        <button class="btn btn-secondary btn-block" id="btn-analyze-video" disabled>🎥 Analyze Video</button>
+                        <button class="btn btn-primary card-btn video-btn btn-block" id="btn-analyze-video" disabled type="button">Analyze Video &rarr;</button>
                     </div>
                 </div>
 
                 <!-- VIDEO RESULT CARD -->
                 <div class="card result-card" id="video-result-card">
+                    <!-- EMPTY STATE -->
                     <div class="placeholder-state" id="video-placeholder">
-                        <div class="placeholder-icon">🎬</div>
-                        <h3>Awaiting Video File</h3>
-                        <p>Upload a video file to view deepfake classification, spatial-temporal feature analysis, and confidence rating.</p>
+                        <div class="placeholder-icon-wrap">
+                            <div class="placeholder-icon">🎬</div>
+                        </div>
+                        <h3 class="placeholder-title">READY FOR ANALYSIS</h3>
+                        <p class="placeholder-desc">Upload a video to begin analysis.</p>
+                        <div class="quick-hint">Evaluates 8 uniform temporal frames, YuNet face detection &amp; BiGRU attention</div>
                     </div>
 
                     <!-- LOADING STATE -->
                     <div class="loading-state hidden" id="video-loading">
-                        <div class="spinner"></div>
-                        <h4 id="video-loading-stage">Processing Video...</h4>
-                        <p class="loading-desc">ResNet-18 Frame Extraction & BiLSTM Temporal Attention</p>
+                        <div class="cyber-spinner">
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-core video-core"></div>
+                        </div>
+                        <h4 id="video-loading-stage">ANALYZING VIDEO...</h4>
+                        <p class="loading-desc">ResNet-18 Frame Extraction &amp; Temporal Conv1D BiGRU Multi-Head Attention</p>
+                    </div>
+
+                    <!-- ERROR STATE -->
+                    <div class="error-state hidden" id="video-error-state">
+                        <div class="error-icon-wrap">
+                            <div class="error-icon">⚠️</div>
+                        </div>
+                        <h3 id="video-error-title">ANALYSIS ERROR</h3>
+                        <p id="video-error-msg">Unable to analyze this video. Please check the file and try again.</p>
+                        <button class="btn btn-sm btn-outline" onclick="resetVideoResultUI()" type="button">Dismiss</button>
                     </div>
 
                     <!-- RESULT STATE -->
                     <div class="result-content hidden" id="video-result-content">
                         <!-- Result Badge Header -->
-                        <div class="result-header">
-                            <span class="badge" id="video-result-badge">REAL</span>
+                        <div class="verdict-banner">
+                            <div class="verdict-main">
+                                <span class="verdict-caption">Classification Result</span>
+                                <span class="badge" id="video-result-badge">--</span>
+                            </div>
                             <div class="confidence-display">
-                                <span class="confidence-label">Confidence:</span>
+                                <span class="confidence-label">CONFIDENCE</span>
                                 <span class="confidence-value" id="video-confidence-val">--</span>
                             </div>
                         </div>
@@ -302,8 +439,8 @@
                         <div class="probability-container">
                             <div class="prob-row">
                                 <div class="prob-info">
-                                    <span>Real Probability</span>
-                                    <strong id="prob-real-video">0.0%</strong>
+                                    <span class="prob-name"><span class="legend-dot human-dot"></span> REAL PROBABILITY</span>
+                                    <strong class="prob-pct" id="prob-real-video">0.0%</strong>
                                 </div>
                                 <div class="progress-bar">
                                     <div class="progress-fill real-fill" id="bar-real-video" style="width: 0%;"></div>
@@ -312,8 +449,8 @@
 
                             <div class="prob-row">
                                 <div class="prob-info">
-                                    <span>Fake / Deepfake Probability</span>
-                                    <strong id="prob-fake-video">0.0%</strong>
+                                    <span class="prob-name"><span class="legend-dot ai-dot"></span> FAKE / DEEPFAKE PROBABILITY</span>
+                                    <strong class="prob-pct" id="prob-fake-video">0.0%</strong>
                                 </div>
                                 <div class="progress-bar">
                                     <div class="progress-fill fake-fill" id="bar-fake-video" style="width: 0%;"></div>
@@ -321,28 +458,49 @@
                             </div>
                         </div>
 
-                        <!-- Summary Grid -->
+                        <!-- Dynamic Calibrated Decision Explanation Banner -->
+                        <div class="alert alert-info" id="video-decision-alert">
+                            <div class="alert-icon" id="video-decision-icon">ℹ️</div>
+                            <div class="alert-text">
+                                <strong id="video-decision-title">Calibrated Decision</strong>
+                                <p id="video-decision-reason">V4 Decision: Evaluation against calibrated real threshold.</p>
+                            </div>
+                        </div>
+
+                        <!-- Summary Grid / Forensic Summary -->
                         <div class="summary-grid">
                             <div class="summary-item">
-                                <span class="summary-label">Frames Analyzed</span>
+                                <span class="summary-label">FRAMES ANALYZED</span>
                                 <span class="summary-value" id="res-video-frames">8 Frames</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Spatial Extractor</span>
+                                <span class="summary-label">SPATIAL EXTRACTOR</span>
                                 <span class="summary-value">ResNet-18 (512-dim)</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Temporal Model</span>
-                                <span class="summary-value">2-layer BiLSTM + Attention</span>
+                                <span class="summary-label">DECISION THRESHOLD</span>
+                                <span class="summary-value" id="res-video-threshold">32.00%</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">Class Mapping</span>
+                                <span class="summary-label">MODEL CALIBRATION</span>
+                                <span class="summary-value">Platt Scaling</span>
+                            </div>
+                            <div class="summary-item full-width">
+                                <span class="summary-label">CLASS MAPPING</span>
                                 <span class="summary-value">0: Fake | 1: Real</span>
+                            </div>
+                            <div class="summary-item full-width">
+                                <span class="summary-label">DECISION RULE</span>
+                                <span class="summary-value">Real if P(Real) &gt;= Calibrated Threshold</span>
+                            </div>
+                            <div class="summary-item full-width">
+                                <span class="summary-label">TEMPORAL MODEL</span>
+                                <span class="summary-value">Temporal Conv1D + 2-layer BiGRU + Multi-Head Attention</span>
                             </div>
                         </div>
 
                         <!-- Disclaimer -->
-                        <p class="disclaimer">⚠️ <em>Deepfake detection is probabilistic and may produce false positives or false negatives.</em></p>
+                        <p class="disclaimer">⚠️ <em>Deepfake detection is probabilistic and evaluates temporal facial dynamics against calibrated benchmarks.</em></p>
                     </div>
                 </div>
             </div>
@@ -351,10 +509,13 @@
 
         <!-- TAB: HISTORY -->
         <section id="history" class="tab-pane">
-            <div class="section-header">
-                <h2>Analysis Session History</h2>
-                <p>Track your recent text and video scans stored locally in browser session storage.</p>
-                <button class="btn btn-sm btn-outline" id="btn-clear-history" style="margin-top: 10px;">🗑️ Clear History</button>
+            <div class="section-header history-header-flex">
+                <div>
+                    <div class="header-pre-title">SESSION LOGS</div>
+                    <h2>ANALYSIS HISTORY</h2>
+                    <p>Review previous text and video analysis sessions.</p>
+                </div>
+                <button class="btn btn-sm btn-outline" id="btn-clear-history" type="button">🗑️ Clear History</button>
             </div>
 
             <div class="card history-card">
@@ -362,16 +523,16 @@
                     <table class="history-table">
                         <thead>
                             <tr>
-                                <th>Time</th>
+                                <th>Timestamp</th>
                                 <th>Media Type</th>
                                 <th>Input Details</th>
-                                <th>Result</th>
+                                <th>Classification Result</th>
                                 <th>Confidence</th>
                             </tr>
                         </thead>
                         <tbody id="history-table-body">
                             <tr>
-                                <td colspan="5" class="empty-history">No analysis history recorded yet.</td>
+                                <td colspan="5" class="empty-history">No analysis history recorded yet in this session.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -383,46 +544,62 @@
         <!-- TAB: ARCHITECTURE -->
         <section id="architecture" class="tab-pane">
             <div class="section-header">
-                <h2>System Architecture & ML Pipelines</h2>
-                <p>Verifiable multi-stage architecture powering the AI-Text-and-Deepfake-Detection-Using-ML framework.</p>
+                <div class="header-pre-title">PIPELINE SPECIFICATIONS</div>
+                <h2>MODEL ARCHITECTURE</h2>
+                <p>Production inference pipelines used for text and video content analysis.</p>
             </div>
 
             <div class="architecture-grid">
                 <!-- TEXT PIPELINE CARD -->
                 <div class="card arch-card">
-                    <h3>📝 Text Detection Pipeline (V2 Improved)</h3>
+                    <div class="arch-card-header">
+                        <div class="arch-icon text-icon">📄</div>
+                        <div>
+                            <h3>TEXT DETECTION PIPELINE</h3>
+                            <span class="arch-sub">Sparse TF-IDF + Dense MiniLM Semantic Fusion (194K+ Features)</span>
+                        </div>
+                    </div>
                     <div class="pipeline-flow">
                         <div class="flow-step">
                             <span class="step-num">1</span>
                             <div class="step-details">
-                                <strong>Text Input Preprocessing</strong>
-                                <p>Standardizes text, computes word/character counts, extracts basic sentence statistics.</p>
+                                <strong>Input Text Preprocessing</strong>
+                                <p>Standardizes encoding, sanitizes tokens, extracts word and character telemetry.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">2</span>
                             <div class="step-details">
-                                <strong>Multi-Feature Generation</strong>
-                                <ul>
-                                    <li>Word TF-IDF (150,000 features)</li>
-                                    <li>Character TF-IDF (150,000 features)</li>
-                                    <li>MiniLM L6 v2 Embeddings (384-dim)</li>
-                                    <li>Scaled Linguistic Features (5-dim)</li>
-                                </ul>
+                                <strong>Multi-Scale TF-IDF Feature Extraction</strong>
+                                <p>Generates Word n-grams (1–3), Char n-grams (3–5), and Subword n-grams (2–6).</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">3</span>
                             <div class="step-details">
-                                <strong>Sparse Feature Fusion</strong>
-                                <p>Combines sparse & dense representations into a unified feature vector of <strong>194,545 dimensions</strong>.</p>
+                                <strong>MiniLM Embeddings &amp; Linguistic Dimensions</strong>
+                                <p>Extracts 384-D dense semantic representations alongside 5 scaled stylistic &amp; length metrics.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">4</span>
                             <div class="step-details">
-                                <strong>Logistic Regression Classification</strong>
-                                <p>Evaluates prediction probability against saved decision threshold (<strong>0.41</strong>) to output HUMAN-WRITTEN or AI-GENERATED verdict.</p>
+                                <strong>Sparse + Dense Fusion (194,897 Features)</strong>
+                                <p>Unifies sparse n-gram spaces and dense semantic embeddings into a single feature vector.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-num">5</span>
+                            <div class="step-details">
+                                <strong>Calibrated Classifier &amp; Adaptive Thresholds</strong>
+                                <p>Evaluates prediction probabilities using Platt calibration against length-bucketed thresholds.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step final-step">
+                            <span class="step-num verdict-num">✓</span>
+                            <div class="step-details">
+                                <strong>Human / AI Verdict</strong>
+                                <p>Outputs calibrated probability distribution and final categorical verdict.</p>
                             </div>
                         </div>
                     </div>
@@ -430,34 +607,54 @@
 
                 <!-- VIDEO PIPELINE CARD -->
                 <div class="card arch-card">
-                    <h3>🎥 Video Deepfake Pipeline</h3>
+                    <div class="arch-card-header">
+                        <div class="arch-icon video-icon">🎥</div>
+                        <div>
+                            <h3>VIDEO DEEPFAKE PIPELINE</h3>
+                            <span class="arch-sub">Spatial ResNet-18 + Temporal Conv1D + BiGRU Multi-Head Attention</span>
+                        </div>
+                    </div>
                     <div class="pipeline-flow">
                         <div class="flow-step">
                             <span class="step-num">1</span>
                             <div class="step-details">
-                                <strong>OpenCV Uniform Frame Extraction</strong>
-                                <p>Extracts 8 uniform frames across video duration, resizes to 224×224 RGB tensors.</p>
+                                <strong>Video Input &amp; 8 Temporal Frames</strong>
+                                <p>Uniformly samples 8 temporal frames across the video duration using OpenCV.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">2</span>
                             <div class="step-details">
-                                <strong>Spatial Feature Extraction (ResNet-18)</strong>
-                                <p>Pretrained ResNet-18 extracts 512-dimensional spatial feature representations per frame.</p>
+                                <strong>YuNet Face Detection &amp; Alignment</strong>
+                                <p>Extracts facial regions using the YuNet ONNX detector and normalizes to 224×224 tensors.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">3</span>
                             <div class="step-details">
-                                <strong>Temporal Attention Network</strong>
-                                <p>2-layer Bidirectional LSTM models temporal frame-to-frame transitions while a soft attention head weights critical temporal frames.</p>
+                                <strong>ResNet-18 Spatial Features (512-dim)</strong>
+                                <p>Extracts 512-dimensional spatial representations per facial crop via deep convolutional backbone.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">4</span>
                             <div class="step-details">
-                                <strong>Deepfake Classification</strong>
-                                <p>Linear classifier head outputs real probability (Threshold: <strong>0.50</strong>). Mapping: <code>0 = Fake</code>, <code>1 = Real</code>.</p>
+                                <strong>Temporal Conv1D &amp; 2-layer BiGRU</strong>
+                                <p>Models local inter-frame transitions and bidirectional temporal dynamics across time steps.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-num">5</span>
+                            <div class="step-details">
+                                <strong>Multi-Head Attention &amp; Platt Calibration</strong>
+                                <p>Self-attention weights suspicious facial micro-manipulations; calibrated against decision threshold.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step final-step">
+                            <span class="step-num verdict-num">✓</span>
+                            <div class="step-details">
+                                <strong>Real / Fake Verdict</strong>
+                                <p>Mapping: <code>0 = Fake</code>, <code>1 = Real</code>. Decision: Real if P(Real) &ge; Calibrated Threshold.</p>
                             </div>
                         </div>
                     </div>
@@ -469,30 +666,70 @@
         <!-- TAB: ABOUT / METRICS -->
         <section id="about" class="tab-pane">
             <div class="section-header">
-                <h2>About the Project & Evaluation Performance</h2>
-                <p>Evaluation performance metrics dynamically retrieved from trained model configuration files.</p>
+                <div class="header-pre-title">SYSTEM OVERVIEW</div>
+                <h2>ABOUT THE SYSTEM</h2>
+                <p>AI Text and Deepfake Detection Using ML is a machine-learning based content verification system designed to analyze written content and video media.</p>
+            </div>
+
+            <!-- COMPACT CAPABILITY CARDS -->
+            <div class="system-capabilities-grid">
+                <div class="card cap-card">
+                    <div class="cap-icon">📄</div>
+                    <h4>TEXT DETECTION</h4>
+                    <ul class="cap-list">
+                        <li>TF-IDF n-grams (Word, Char, Subword)</li>
+                        <li>MiniLM embeddings (384-dim dense)</li>
+                        <li>Linguistic features (5 stylistic dimensions)</li>
+                        <li>Calibrated classification &amp; adaptive thresholding</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">🎥</div>
+                    <h4>VIDEO DETECTION</h4>
+                    <ul class="cap-list">
+                        <li>YuNet face detection &amp; alignment</li>
+                        <li>ResNet-18 spatial features (512-dim)</li>
+                        <li>Temporal Conv1D &amp; 2-layer BiGRU</li>
+                        <li>Multi-Head Attention &amp; calibrated decision</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">⚙️</div>
+                    <h4>SYSTEM</h4>
+                    <ul class="cap-list">
+                        <li>Text + Video multi-modal analysis</li>
+                        <li>8-frame uniform temporal sampling</li>
+                        <li>API-based inference &amp; sub-400ms latency</li>
+                        <li>Responsive web interface &amp; local session audit</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="metrics-grid">
                 <!-- TEXT METRICS CARD -->
                 <div class="card metric-card">
-                    <h3>📝 Text Detection Model Metrics</h3>
-                    <span class="metric-subtitle">Evaluated on HC3, RAID & SentenceAI Validation Subsets</span>
+                    <div class="metric-card-header">
+                        <div class="arch-icon text-icon">📄</div>
+                        <div>
+                            <h3>Text Detection Model Metrics</h3>
+                            <span class="metric-subtitle">Evaluated on HC3, RAID &amp; SentenceAI Validation Subsets</span>
+                        </div>
+                    </div>
                     <div class="metrics-values">
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-text-acc">89.26%</span>
+                            <span class="metric-val" id="metric-text-acc">89.88%</span>
                             <span class="metric-name">Accuracy</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-text-f1">88.43%</span>
+                            <span class="metric-val" id="metric-text-f1">89.62%</span>
                             <span class="metric-name">F1-Score</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-text-auc">96.14%</span>
+                            <span class="metric-val" id="metric-text-auc">95.63%</span>
                             <span class="metric-name">ROC-AUC</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-text-prec">86.46%</span>
+                            <span class="metric-val" id="metric-text-prec">88.98%</span>
                             <span class="metric-name">Precision</span>
                         </div>
                     </div>
@@ -500,23 +737,28 @@
 
                 <!-- VIDEO METRICS CARD -->
                 <div class="card metric-card">
-                    <h3>🎥 Video Deepfake Model Metrics</h3>
-                    <span class="metric-subtitle">Evaluated on Celeb-DF v2 Benchmark Dataset</span>
+                    <div class="metric-card-header">
+                        <div class="arch-icon video-icon">🎥</div>
+                        <div>
+                            <h3>Video Deepfake Model Metrics</h3>
+                            <span class="metric-subtitle">Evaluated on Celeb-DF v2 Benchmark Dataset</span>
+                        </div>
+                    </div>
                     <div class="metrics-values" id="video-metrics-box">
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-acc">67.37%</span>
+                            <span class="metric-val" id="metric-video-acc">77.03%</span>
                             <span class="metric-name">Accuracy</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-f1">51.58%</span>
+                            <span class="metric-val" id="metric-video-f1">84.28%</span>
                             <span class="metric-name">F1-Score</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-auc">65.10%</span>
+                            <span class="metric-val" id="metric-video-auc">78.33%</span>
                             <span class="metric-name">ROC-AUC</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-prec">52.63%</span>
+                            <span class="metric-val" id="metric-video-prec">76.50%</span>
                             <span class="metric-name">Precision</span>
                         </div>
                     </div>
@@ -524,12 +766,33 @@
             </div>
 
             <div class="card about-info-card">
-                <h3>Final Year Major Project Details</h3>
-                <p><strong>Project Title:</strong> AI-Text-and-Deepfake-Detection-Using-ML</p>
-                <p><strong>Institution:</strong> Department of Information Science & Engineering, Sri Krishna Institute of Technology, Bengaluru</p>
-                <p><strong>Team Members:</strong> PAVAN S (1KT23IS034), DEEKSHITH S D (1KT23IS020), RISHI G P (1KT23IS045), SANTHOSH R (1KT23IS049)</p>
-                <p><strong>Supervisor:</strong> Mrs. Ragini Krishna</p>
-                <p class="disclaimer-text"><em>Performance metrics are based on the project's evaluation datasets and do not guarantee real-world detection accuracy.</em></p>
+                <div class="about-card-header">
+                    <span class="badge-inst">🎓 Engineering Major Project</span>
+                    <h3>Final Year Major Project Demonstration</h3>
+                </div>
+                <div class="project-details-grid">
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Project Title</span>
+                        <span class="detail-value">AI Text and Deepfake Detection Using ML</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Institution</span>
+                        <span class="detail-value">Department of Information Science &amp; Engineering, Sri Krishna Institute of Technology, Bengaluru</span>
+                    </div>
+                    <div class="proj-detail-item full">
+                        <span class="detail-label">Project Team</span>
+                        <span class="detail-value">PAVAN S (1KT23IS034) • DEEKSHITH S D (1KT23IS020) • RISHI G P (1KT23IS045) • SANTHOSH R (1KT23IS049)</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Project Supervisor</span>
+                        <span class="detail-value">Mrs. Ragini Krishna</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Core Technologies</span>
+                        <span class="detail-value">PyTorch • ResNet-18 • Conv1D + BiGRU Attention • TF-IDF • MiniLM • Flask • OpenCV YuNet</span>
+                    </div>
+                </div>
+                <p class="disclaimer-text"><em>Performance metrics are based on the project's official evaluation datasets and do not guarantee 100% real-world detection accuracy.</em></p>
             </div>
         </section>
 
@@ -538,7 +801,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
-            <p>AI-Text-and-Deepfake-Detection-Using-ML &copy; 2026 | Final Year Major Project Demonstration</p>
+            <p><strong>AI Text and Deepfake Detection Using ML</strong> &copy; 2026 | Final Year Major Project Demonstration</p>
         </div>
     </footer>
 

@@ -8,8 +8,10 @@ datasets/video/frames/
 datasets/video/audio/
 
 # Large generated feature files
+datasets/video/*.csv
 datasets/video/resnet_features.csv
 datasets/video/temporal_resnet_features.csv
+datasets/video/face_temporal_features.csv
 
 # Keep text datasets only if they are small
 # datasets/text/
@@ -38,7 +40,7 @@ env/
 
 # ============================================================
 # MACHINE LEARNING OUTPUTS
-# (Except active models in models/text_final_v2_improved & models/video)
+# (Except active models in models/text_final, models/video_final_v4 & models/face_detector)
 # ============================================================
 
 *.pth
@@ -48,6 +50,10 @@ env/
 *.h5
 *.hdf5
 
+!models/text_final/*
+!models/text_final/**/*
+!models/video_final_v4/*
+!models/face_detector/*
 !models/text_final_v2_improved/*.pkl
 !models/video/*.pth
 !models/video/*.pkl

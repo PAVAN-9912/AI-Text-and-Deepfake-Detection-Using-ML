@@ -1,0 +1,100 @@
+text,label,prediction,probability,applied_threshold,length_group,dataset,error_type,code_likelihood,contraction_density,pronoun_density,transition_ratio,token_entropy,non_ascii_ratio,is_german_indicator
+"As president, Reagan implemented sweeping new political and economic initiatives.",0,1,0.8107260950733812,0.49,very_short,HC3,False Positive,0.0,0.0,0.0,0.0,2.9219282,0.0,0.0
+it is cliché . also the song is bad .,0,1,0.6769242704329715,0.49,very_short,HC3,False Positive,0.0,0.0,0.0,0.0,2.2464395,0.027027028,0.0
+A flat tax is more hurtful to lower incomes,0,1,0.6278582049081001,0.49,very_short,HC3,False Positive,0.0,0.0,0.0,0.0,2.5032582,0.0,0.0
+"The acronym originally stood for Supreme Headquarters, International Espionage, Law-Enforcement Division.",0,1,0.8296262243510781,0.53,short,HC3,False Positive,0.0,0.0,0.0,0.0,2.732159,0.0,0.0
+"Armando Pérez (born January 15, 1981), better known by his stage name Pitbull, is an American rapper, songwriter, and record producer.",0,1,0.9740439197144978,0.53,short,HC3,False Positive,0.0,0.0,0.0,0.0,3.0104342,0.0074626864,0.0
+Most jewish holidays are more cultural than they are biblical .,0,1,0.6347871222571089,0.53,short,HC3,False Positive,0.0,0.0,0.09090909,0.0,2.1180782,0.0,0.0
+"Signal processing is an electrical engineering subfield that focuses on analyzing, modifying and synthesizing signals, such as sound, images, and scientific measurements. Signal processing techniques are used to optimize transmissions, digital storage efficiency, correcting distorted signals, subjective video quality and to also detect or pinpoint components of interest in a measured signal.",0,1,0.9923885009280919,0.64,medium,HC3,False Positive,0.0,0.0,0.0,0.0,3.3885183,0.0,0.0
+Cut your own typically means that the land has to be maintained and kept up and the trees taken care of and they are fresh . Pre - Cut trees come from out of the area where costs are less and they are more focused on selling quantities and not quality . Plus they are older .,0,1,0.70742528888477,0.64,medium,HC3,False Positive,0.0,0.0,0.07017544,0.0,2.5297627,0.0,0.0
+There's a whole industry devoted to this.  Professionals use Bloomberg terminals. High Frequency Traders have computers read news feeds for them. Amateurs use trading consoles (like Thinkorswim) to get headlines quickly on stocks.,0,1,0.6525610144053858,0.64,medium,HC3,False Positive,0.0,0.030303031,0.030303031,0.0,3.207146,0.0,0.0
+"While creep - nu is righ , there is another reason - both PIN and RFID chip setups are thorogly compromised and as borne out by real world data do not provide significant added protection . If anything , RFID makes cards more vulnerable to theft without physical contact .",0,1,0.6562655768366282,0.64,medium,HC3,False Positive,0.0,0.0,0.0,0.0,3.117781,0.0,0.0
+"The Westphalian Treaty 1648 set up the principle that all states should be sovereign within their own right and allowed to set up a system to rule their own state . This system essentially set up for a long peace allowing for the national pride others have mentioned , thus locking us in a system of separate sovereign nations .",0,1,0.6649172838845213,0.64,medium,HC3,False Positive,0.0,0.0,0.05,0.016666668,3.1447291,0.0,0.0
+"Cortana is a virtual assistant developed by Microsoft that uses the Bing search engine to perform tasks such as setting reminders and answering questions for the user.
+Cortana is currently available in English, Portuguese, French, German, Italian, Spanish, Chinese, and Japanese language editions, depending on the software platform and region in which it is used.
+Microsoft began reducing the prevalence of Cortana and converting it from an assistant into different software integrations in 2019. It was split from the Windows 10 search bar in April 2019.[10] In January 2020, the Cortana mobile app was removed from certain markets,[11][12] and on March 31, 2021, the Cortana mobile app was shut down globally.[13]",0,1,0.9513194894303922,0.59,long,HC3,False Positive,0.0,0.0,0.0,0.0,3.2290356,0.0,0.0
+"def Diff(li1,li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))",0,1,0.713066018146926,0.49,very_short,RAID,False Positive,1.0,0.0,0.0,0.0,2.5849626,0.0,0.0
+"def max_sum_list(lists):
+ return max(lists, key=sum)",0,1,0.7820021401639905,0.49,very_short,RAID,False Positive,1.0,0.0,0.0,0.0,2.321928,0.0,0.0
+"def previous_palindrome(num):
+    for x in range(num-1,0,-1):
+        if str(x) == str(x)[::-1]:
+            return x",0,1,0.7092883511916378,0.53,short,RAID,False Positive,1.0,0.0,0.0,0.0,2.688722,0.0,0.0
+"def Odd_Length_Sum(arr):
+    Sum = 0
+    l = len(arr)
+    for i in range(l):
+        Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])
+    return Sum",0,1,0.5397555099116674,0.53,short,RAID,False Positive,1.0,0.0,0.14285715,0.0,2.5326912,0.0,0.0
+"def remove_empty(tuple1): #L = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+   tuple1 = [t for t in tuple1 if t]
+   return tuple1",0,1,0.6202051672283563,0.53,short,RAID,False Positive,1.0,0.0,0.0,0.0,2.6420796,0.0,0.0
+"def count_Digit(n):
+    count = 0
+    while n != 0:
+        n //= 10
+        count += 1
+    return count",0,1,0.9497328123502378,0.53,short,RAID,False Positive,1.0,0.0,0.0,0.0,2.3457193,0.0,0.0
+"def pos_count(list):
+  pos_count= 0
+  for num in list: 
+    if num >= 0: 
+      pos_count += 1
+  return pos_count",0,1,0.581596747670049,0.53,short,RAID,False Positive,1.0,0.0,0.0,0.0,2.6986604,0.0,0.0
+"import re
+def find_character(string):
+  uppercase_characters = re.findall(r""[A-Z]"", string) 
+  lowercase_characters = re.findall(r""[a-z]"", string) 
+  numerical_characters = re.findall(r""[0-9]"", string) 
+  special_characters = re.findall(r""[, .!?]"", string) 
+  return uppercase_characters, lowercase_characters, numerical_characters, special_characters",0,1,0.6543350416961421,0.53,short,RAID,False Positive,1.0,0.0,0.0,0.0,3.0458417,0.0,0.0
+"def decimal_To_Binary(N): 
+    B_Number = 0
+    cnt = 0
+    while (N != 0): 
+        rem = N % 2
+        c = pow(10,cnt)  
+        B_Number += rem*c  
+        N //= 2 
+        cnt += 1
+    return B_Number",0,1,0.6652247936798542,0.64,medium,RAID,False Positive,1.0,0.0,0.0,0.0,2.4261196,0.0,0.0
+"def check_triplet(A, n, sum, count):
+    if count == 3 and sum == 0:
+        return True
+    if count == 3 or n == 0 or sum < 0:
+        return False
+    return check_triplet(A, n - 1, sum - A[n - 1], count + 1) or\
+           check_triplet(A, n - 1, sum, count)",0,1,0.8315432510803594,0.64,medium,RAID,False Positive,1.0,0.0,0.0,0.0,2.6385405,0.0,0.0
+Not take away activities.,0,1,0.5051488318008068,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,1.5,0.0,0.0
+"It's restricting, especially when it pops into place so suddenly.",0,1,0.499864258802972,0.49,very_short,SentenceAI,False Positive,0.0,0.1,0.0,0.0,2.321928,0.0,0.0
+"As well, creativity stems from a sense of individuality.",0,1,0.8979466763220793,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.4193819,0.0,0.0
+Due to increasing crime rates caused by the U.S. economy.,0,1,0.5476580143445353,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.7219281,0.0,0.0
+"Cars, the pride and joy of many people.",0,1,0.5870728103236031,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.1556392,0.0,0.0
+"It's outdated,unfair,and irrational.",0,1,0.8626319551126759,0.49,very_short,SentenceAI,False Positive,0.0,0.33333334,0.0,0.0,1.5849625,0.0,0.0
+stewartlawoffices.,0,1,0.5943818968689923,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+We tend to believe in the 'juicy' filled drama.,0,1,0.6266509832581739,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.11111111,0.0,2.1971598,0.0,0.0
+Time management is essential for a successful live.,0,1,0.9437196323542071,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.75,0.0,0.0
+I don't like math.,0,1,0.8892018830466991,0.49,very_short,SentenceAI,False Positive,0.0,0.25,0.25,0.0,1.5,0.0,0.0
+there are many activities.,0,1,0.7438031951420176,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.0,0.0,0.0
+Why can't we?,0,1,0.912120834610416,0.49,very_short,SentenceAI,False Positive,0.0,0.33333334,0.33333334,0.0,0.91829586,0.0,0.0
+Albert Einstein was a dropout and failed 3 grades.,0,1,0.8620184468517912,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.2810361,0.0,0.0
+"Since I was thinking harder, I began to work harder.",0,1,0.7325151970048546,0.49,very_short,SentenceAI,False Positive,0.0,0.0,0.2,0.0,2.7219281,0.0,0.0
+"Limiting car usage has several very influential advantages, such as increasing mental health, reducing air pollution, and eliminating problems associated with traffic.",0,1,0.9865428066180983,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.992856,0.0,0.0
+Self-confidence is really important for people to feel good about their own selves.,0,1,0.9887095003981874,0.53,short,SentenceAI,False Positive,0.3,0.0,0.07692308,0.0,2.9312088,0.0,0.0
+"In the popular vote system, the head of state and or government is elected by the majority of the nation.",0,1,0.7986462000712933,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.4659574,0.0,0.0
+Even in rainy weather people participated just to help lower stress and air pollution.,0,1,0.5684730048785279,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.8962915,0.0,0.0
+"In conclusion, student designed projects have many benefits that can help them succeed in life and improve oneself.",0,1,0.784301567564301,0.53,short,SentenceAI,False Positive,0.0,0.0,0.055555556,0.055555556,2.3774438,0.0,0.0
+"For example, when I use to play baseball, I could not hit the ball as far as my friends did.",0,1,0.7839422601805951,0.53,short,SentenceAI,False Positive,0.0,0.0,0.15,0.0,2.6464393,0.0,0.0
+Both of them said that they liked the blue tie and that it looked good on him.,0,1,0.5580059879541095,0.53,short,SentenceAI,False Positive,0.0,0.0,0.11764706,0.0,1.8498688,0.0,0.0
+"During training, we are listening to music while we help each other out with the workouts we are supposed to do.",0,1,0.7189937411304974,0.53,short,SentenceAI,False Positive,0.0,0.0,0.14285715,0.0,2.6433148,0.008928572,0.0
+"Another issue is that sometimes in a close election, the popular vote winner could lose the presidency.",0,1,0.8210821456202897,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,3.057476,0.0,0.0
+"The decrease in car commuting may find reason in the recession, and it may become a new habit.",0,1,0.7864617414900749,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.549855,0.0,0.0
+"For example, a cook is trying to do new dishes from differents cultures.",0,1,0.6549078827980392,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.8731406,0.0,0.0
+But that tradition stopped when he got too old to play and I started to have more frequent basketball practice and training.,0,1,0.8219701521165674,0.53,short,SentenceAI,False Positive,0.0,0.0,0.045454547,0.0,2.7378724,0.0,0.0
+"And while it is near voting times, I believed it's best for me to send you my side on this continuous debate to change your mind on the matter.",0,1,0.7393728851061425,0.53,short,SentenceAI,False Positive,0.0,0.03448276,0.1724138,0.0,2.6510844,0.0,0.0
+"In addition, another problem that arises due to the Electoral College is that people may feel disencouraged to vote.",0,1,0.9186937483246135,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.05263158,2.8655767,0.0,0.0
+"Pollution, Economy, and people's health are all a factor to limiting car usuage.",0,1,0.6334842807976637,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0,0.0,2.5654483,0.0,0.0
+Students must feel as though they are in a calming environment in order to work efficiently.,0,1,0.679180676568158,0.53,short,SentenceAI,False Positive,0.0,0.0,0.0625,0.0,3.0,0.0,0.0
+"Also, if the student maintains a C or lower average, and they're in a tutoring session, I don't think it's fair that they're not allowed to participate in gym or other activities.",0,1,0.9321078065684107,0.64,medium,SentenceAI,False Positive,0.0,0.125,0.09375,0.0,3.0428379,0.0,0.0
+"""It's a good oppurtunity to take away stress and lower air pollution"" said a business man with the name of Carlos Arturo Plaza, as time has gone on other cities including Cali and Valleduar have participated in the event.",0,1,0.7079376310707042,0.64,medium,SentenceAI,False Positive,0.0,0.025641026,0.0,0.0,3.0098877,0.0,0.0

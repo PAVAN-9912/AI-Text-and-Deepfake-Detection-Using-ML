@@ -1,0 +1,2 @@
+model,strategy,C,accuracy,precision,recall,f1,roc_auc,thresholds,false_positive,false_negative,training_samples,calibration_samples,validation_samples
+text_final_v3.2,strat2_exp_decay,2.0,0.8848,0.868,0.8986,0.883,0.953,"{'very_short': 0.37, 'short': 0.52, 'medium': 0.6, 'long': 0.42}",66,49,8160,907,998

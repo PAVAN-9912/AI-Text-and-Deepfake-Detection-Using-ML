@@ -1,0 +1,12 @@
+{
+  "checkpoint": "vit_deepfake_best.pth",
+  "sha256": "89df4bdb6689290d2638c6d6dafae19916b01ce451c49df7436d534be3c8631e",
+  "epoch": 3,
+  "val_auc": 0.8330953125,
+  "val_accuracy": 0.72875,
+  "val_balanced_accuracy": 0.72875,
+  "backbone": "google/vit-base-patch16-224",
+  "device": "cpu",
+  "train_samples_per_epoch": 5000,
+  "val_samples": 1600
+}

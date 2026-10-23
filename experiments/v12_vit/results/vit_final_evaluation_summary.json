@@ -1,0 +1,24 @@
+{
+  "model": "Vision Transformer (google/vit-base-patch16-224)",
+  "threshold": 0.475,
+  "test_set": "Official Celeb-DF v2 (518 videos)",
+  "n_videos": 518,
+  "n_real": 178,
+  "n_fake": 340,
+  "accuracy": 0.787645,
+  "balanced_accuracy": 0.786038,
+  "roc_auc": 0.871836,
+  "real_recall": 0.780899,
+  "fake_recall": 0.791176,
+  "real_precision": 0.661905,
+  "fake_precision": 0.873377,
+  "f1_real": 0.716495,
+  "f1_fake": 0.830247,
+  "confusion_matrix": {
+    "TP": 139,
+    "FP": 71,
+    "FN": 39,
+    "TN": 269
+  },
+  "n_insufficient_evidence": 0
+}

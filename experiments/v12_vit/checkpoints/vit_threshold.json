@@ -1,0 +1,12 @@
+{
+  "threshold": 0.475,
+  "balanced_accuracy": 0.815,
+  "accuracy": 0.7438,
+  "real_recall": 0.9024,
+  "fake_recall": 0.7275,
+  "tn": 291,
+  "fp": 109,
+  "fn": 4,
+  "tp": 37,
+  "auc": 0.8702
+}

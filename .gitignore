@@ -2,10 +2,14 @@
 # DATASETS
 # ============================================================
 
-datasets/video/celebdf_raw/
-datasets/video/prepared/
-datasets/video/frames/
-datasets/video/audio/
+datasets/video/
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+scratch/
+experiments/*/transformed_videos/
 
 # Large generated feature files
 datasets/video/*.csv

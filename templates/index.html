@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Text and Deepfake Detection Using ML</title>
-    <meta name="application-name" content="AI-Text-and-Deepfake-Detection-Using-ML">
-    <meta name="description" content="AI-powered forensic detection platform for identifying synthetic text and deepfake video manipulation using machine learning models.">
+    <title>AI Content Detection Platform</title>
+    <meta name="application-name" content="AI-Content-Detection-Platform">
+    <meta name="description" content="AI-powered forensic detection platform for identifying synthetic text and deepfake video manipulation using Vision Transformers (ViT) and multi-feature NLP.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
                         <span class="brand-icon">🛡️</span>
                     </div>
                     <div class="brand-text">
-                        <h1 class="brand-title">AI Text and Deepfake Detection Using ML</h1>
-                        <span class="brand-subtitle">AI-powered detection of synthetic text and deepfake video content</span>
+                        <h1 class="brand-title">AI Content Detection Platform</h1>
+                        <span class="brand-subtitle">Multimodal Verification of Machine-Generated Text &amp; Deepfake Video</span>
                     </div>
                 </div>
 
@@ -35,9 +35,11 @@
                     <li><a href="#home" class="nav-link active" data-tab="home"><span class="nav-icon">⚡</span> Home</a></li>
                     <li><a href="#text" class="nav-link" data-tab="text"><span class="nav-icon">📝</span> Text Detection</a></li>
                     <li><a href="#video" class="nav-link" data-tab="video"><span class="nav-icon">🎥</span> Video Detection</a></li>
-                    <li><a href="#history" class="nav-link" data-tab="history"><span class="nav-icon">📊</span> History</a></li>
                     <li><a href="#architecture" class="nav-link" data-tab="architecture"><span class="nav-icon">⚙️</span> Architecture</a></li>
+                    <li><a href="#techstack" class="nav-link" data-tab="techstack"><span class="nav-icon">💻</span> Tech Stack</a></li>
+                    <li><a href="#limitations" class="nav-link" data-tab="limitations"><span class="nav-icon">⚠️</span> Limitations</a></li>
                     <li><a href="#about" class="nav-link" data-tab="about"><span class="nav-icon">ℹ️</span> About</a></li>
+                    <li><a href="#history" class="nav-link" data-tab="history"><span class="nav-icon">📊</span> History</a></li>
                 </ul>
             </div>
         </nav>
@@ -51,10 +53,10 @@
             <div class="hero">
                 <div class="hero-badge">
                     <span class="badge-pulse"></span>
-                    <span>AI FORENSICS &amp; CONTENT VERIFICATION</span>
+                    <span>AI FORENSICS &amp; MULTIMODAL CONTENT VERIFICATION</span>
                 </div>
-                <h1 class="hero-title">AI Text and Deepfake Detection Using ML</h1>
-                <p class="hero-subtitle">Analyze written content and video media using machine-learning based forensic detection pipelines.</p>
+                <h1 class="hero-title">AI Content Detection Platform</h1>
+                <p class="hero-subtitle">High-precision forensic platform for detecting AI-generated text and deepfake video manipulation using Vision Transformers (ViT), dense semantic embeddings, and multi-expert routing.</p>
 
                 <div class="hero-cards">
                     <!-- CARD 1: TEXT DETECTION -->
@@ -68,11 +70,12 @@
                         </div>
                         <div class="card-body-content">
                             <h3 class="card-title">AI Text Detection</h3>
-                            <p class="card-desc">Analyze written content using linguistic, TF-IDF and semantic features to identify AI-generated patterns.</p>
+                            <p class="card-desc">Analyze written passages across stylistic, n-gram, and dense semantic dimensions to detect LLM-generated syntax.</p>
                             <div class="card-features-mini">
-                                <span>TF-IDF n-grams</span>
-                                <span>MiniLM embeddings</span>
-                                <span>Linguistic features</span>
+                                <span>TF-IDF n-grams (194K)</span>
+                                <span>MiniLM Embeddings</span>
+                                <span>5 Stylistic Dimensions</span>
+                                <span>Length-Adapted Calibration</span>
                             </div>
                         </div>
                         <div class="card-footer-action">
@@ -87,17 +90,16 @@
                             <div class="card-icon video-icon">
                                 <span>🎥</span>
                             </div>
-                            <span class="card-tag">VISION &amp; TEMPORAL FORENSICS</span>
+                            <span class="card-tag">COMPUTER VISION FORENSICS</span>
                         </div>
                         <div class="card-body-content">
                             <h3 class="card-title">Deepfake Video Detection</h3>
-                            <p class="card-desc">Analyze facial video frames using spatial and temporal features to identify deepfake content.</p>
+                            <p class="card-desc">Evaluate facial video sequences using Vision Transformer (ViT-Base Patch16-224) multi-head self-attention and deep forensic features.</p>
                             <div class="card-features-mini">
-                                <span>YuNet Face Detection</span>
-                                <span>ResNet-18</span>
-                                <span>Temporal Conv1D</span>
-                                <span>2-layer BiGRU</span>
-                                <span>Multi-Head Attention</span>
+                                <span>OpenCV YuNet Face Alignment</span>
+                                <span>Vision Transformer (ViT-Base)</span>
+                                <span>8-Frame Temporal Pooling</span>
+                                <span>Multi-Expert Shadow Routing</span>
                             </div>
                         </div>
                         <div class="card-footer-action">
@@ -109,26 +111,26 @@
                 <!-- COMPACT TECHNOLOGY HIGHLIGHT BAR -->
                 <div class="system-status-bar card">
                     <div class="status-item">
-                        <span class="status-label">TEXT MODEL</span>
-                        <span class="status-value highlight" id="status-features">194K+ FEATURES</span>
+                        <span class="status-label">TEXT DETECTOR</span>
+                        <span class="status-value highlight" id="status-features">194K+ FEATURES (MiniLM + TF-IDF)</span>
                     </div>
                     <div class="status-divider"></div>
                     <div class="status-item">
-                        <span class="status-label">VIDEO MODEL</span>
-                        <span class="status-value highlight">ResNet-18 + BiGRU Attention</span>
+                        <span class="status-label">ACTIVE VIDEO MODEL</span>
+                        <span class="status-value highlight">ViT-Base Patch16-224 (Calibrated 47.50%)</span>
                     </div>
                     <div class="status-divider"></div>
                     <div class="status-item">
-                        <span class="status-label">ANALYSIS</span>
-                        <span class="status-value">TEXT + VIDEO</span>
+                        <span class="status-label">MULTI-EXPERT ROUTING</span>
+                        <span class="status-value">Stacking LR Shadow Mode</span>
                     </div>
                     <div class="status-divider"></div>
                     <div class="status-item">
                         <div class="engine-health-wrap">
                             <span class="status-dot green" id="status-dot"></span>
-                            <span class="status-label">SYSTEM</span>
+                            <span class="status-label">PLATFORM STATUS</span>
                         </div>
-                        <span class="status-value ready" id="status-text">READY</span>
+                        <span class="status-value ready" id="status-text">OPERATIONAL</span>
                     </div>
                 </div>
             </div>
@@ -138,9 +140,9 @@
         <!-- TAB: TEXT DETECTION -->
         <section id="text" class="tab-pane">
             <div class="section-header">
-                <div class="header-pre-title">NLP FORENSICS</div>
+                <div class="header-pre-title">NATURAL LANGUAGE PROCESSING FORENSICS</div>
                 <h2>Text Detection Workspace</h2>
-                <p>Analyze written content using linguistic, TF-IDF, and semantic features to identify AI-generated patterns.</p>
+                <p>Analyze written content using multi-scale TF-IDF n-grams, dense MiniLM semantic embeddings, and linguistic style indicators.</p>
             </div>
 
             <div class="workspace-grid">
@@ -162,10 +164,10 @@
                         </div>
                     </div>
 
-                    <p class="editor-desc">Enter text below to evaluate linguistic and semantic patterns associated with AI-generated content.</p>
+                    <p class="editor-desc">Enter text below to evaluate linguistic, semantic, and stylistic patterns associated with machine-generated prose.</p>
 
                     <div class="textarea-wrapper">
-                        <textarea id="text-input" placeholder="Paste or type content here for multi-feature forensic analysis (minimum 3 words for complete evaluation)..." rows="12"></textarea>
+                        <textarea id="text-input" placeholder="Paste or type content here for forensic analysis (minimum 3 words for full evaluation)..." rows="12"></textarea>
                     </div>
 
                     <div class="editor-footer">
@@ -194,9 +196,9 @@
                         <div class="placeholder-icon-wrap">
                             <div class="placeholder-icon">📄</div>
                         </div>
-                        <h3 class="placeholder-title">READY FOR ANALYSIS</h3>
-                        <p class="placeholder-desc">Enter text to begin analysis.</p>
-                        <div class="quick-hint">Evaluates TF-IDF n-grams, MiniLM embeddings &amp; 5 linguistic dimensions</div>
+                        <h3 class="placeholder-title">READY FOR TEXT ANALYSIS</h3>
+                        <p class="placeholder-desc">Enter or paste text to begin multi-feature forensic evaluation.</p>
+                        <div class="quick-hint">Evaluates 194,897 sparse + dense features with length-bucketed calibration</div>
                     </div>
 
                     <!-- LOADING STATE -->
@@ -206,7 +208,7 @@
                             <div class="spinner-core"></div>
                         </div>
                         <h4 id="text-loading-stage">ANALYZING TEXT...</h4>
-                        <p class="loading-desc">Extracting TF-IDF, MiniLM Embeddings &amp; Linguistic Features</p>
+                        <p class="loading-desc">Extracting TF-IDF n-grams, MiniLM dense embeddings, and stylistic metrics...</p>
                     </div>
 
                     <!-- ERROR STATE -->
@@ -214,7 +216,7 @@
                         <div class="error-icon-wrap">
                             <div class="error-icon">⚠️</div>
                         </div>
-                        <h3 id="text-error-title">ANALYSIS ERROR</h3>
+                        <h3 id="text-error-title">ANALYSIS NOTICE</h3>
                         <p id="text-error-msg">Unable to analyze this text. Please try again.</p>
                         <button class="btn btn-sm btn-outline" onclick="resetTextResultUI()" type="button">Dismiss</button>
                     </div>
@@ -226,7 +228,7 @@
                             <div class="alert-icon" id="short-text-icon">ℹ️</div>
                             <div class="alert-text">
                                 <strong id="short-text-title">Context Notice</strong>
-                                <p id="short-text-reason">The text is too short for reliable AI-generated text classification.</p>
+                                <p id="short-text-reason">The text is too short for reliable classification.</p>
                             </div>
                         </div>
 
@@ -314,15 +316,15 @@
                                         <span class="detail-val" id="det-bucket">--</span>
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-name">Model Artifact</span>
-                                        <span class="detail-val">TextDetector_V3.4</span>
+                                        <span class="detail-name">Model Pipeline</span>
+                                        <span class="detail-val">TextDetector V3.4 (Sparse + Dense)</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Disclaimer -->
-                        <p class="disclaimer">⚠️ <em>AI detection is probabilistic. Results indicate algorithmic likelihood based on trained statistical and semantic distributions.</em></p>
+                        <p class="disclaimer">⚠️ <em>AI detection is probabilistic and reflects algorithmic alignment with statistical distributions. Short texts have limited context.</em></p>
                     </div>
                 </div>
             </div>
@@ -332,9 +334,9 @@
         <!-- TAB: VIDEO DETECTION -->
         <section id="video" class="tab-pane">
             <div class="section-header">
-                <div class="header-pre-title">VISION &amp; TEMPORAL FORENSICS</div>
-                <h2>VIDEO FORENSIC ANALYSIS</h2>
-                <p>Upload a video for frame-level deepfake analysis.</p>
+                <div class="header-pre-title">COMPUTER VISION FORENSICS</div>
+                <h2>Video Forensic Analysis Workspace</h2>
+                <p>Upload a video clip to perform multi-frame deepfake analysis using Vision Transformer (ViT-Base Patch16-224) and facial self-attention.</p>
             </div>
 
             <div class="workspace-grid">
@@ -350,7 +352,7 @@
                         </div>
                     </div>
 
-                    <p class="editor-desc">Upload facial video clips to evaluate temporal consistency, spatial artifacts, and neural synthesis patterns.</p>
+                    <p class="editor-desc">Upload facial video clips to evaluate facial boundary artifacts, texture warping, and spatial-temporal neural synthesis patterns.</p>
 
                     <div class="dropzone" id="video-dropzone">
                         <input type="file" id="video-file-input" accept=".mp4,.mov,.avi,.mkv,.webm" class="hidden-input">
@@ -359,10 +361,10 @@
                                 <div class="dropzone-icon">📹</div>
                             </div>
                             <h3>Drop your video here</h3>
-                            <p class="dropzone-sub">or browse from your device</p>
+                            <p class="dropzone-sub">or click to browse from your device</p>
                             <div class="supported-formats-pill">
-                                <span>Supported formats: MP4 · MOV · AVI · MKV · WEBM</span>
-                                <span class="size-pill">Max 100 MB</span>
+                                <span>Supported: MP4 · MOV · AVI · MKV · WEBM</span>
+                                <span class="size-pill">Max 50 MB</span>
                             </div>
                         </div>
 
@@ -396,9 +398,9 @@
                         <div class="placeholder-icon-wrap">
                             <div class="placeholder-icon">🎬</div>
                         </div>
-                        <h3 class="placeholder-title">READY FOR ANALYSIS</h3>
-                        <p class="placeholder-desc">Upload a video to begin analysis.</p>
-                        <div class="quick-hint">Evaluates 8 uniform temporal frames, YuNet face detection &amp; BiGRU attention</div>
+                        <h3 class="placeholder-title">READY FOR VIDEO ANALYSIS</h3>
+                        <p class="placeholder-desc">Upload a video to begin forensic deepfake evaluation.</p>
+                        <div class="quick-hint">Uniformly samples temporal frames, aligns facial crops with YuNet, and evaluates ViT patch self-attention</div>
                     </div>
 
                     <!-- LOADING STATE -->
@@ -408,7 +410,7 @@
                             <div class="spinner-core video-core"></div>
                         </div>
                         <h4 id="video-loading-stage">ANALYZING VIDEO...</h4>
-                        <p class="loading-desc">ResNet-18 Frame Extraction &amp; Temporal Conv1D BiGRU Multi-Head Attention</p>
+                        <p class="loading-desc">Decoding frames, detecting facial regions with YuNet, and evaluating Vision Transformer patch attention...</p>
                     </div>
 
                     <!-- ERROR STATE -->
@@ -416,8 +418,8 @@
                         <div class="error-icon-wrap">
                             <div class="error-icon">⚠️</div>
                         </div>
-                        <h3 id="video-error-title">ANALYSIS ERROR</h3>
-                        <p id="video-error-msg">Unable to analyze this video. Please check the file and try again.</p>
+                        <h3 id="video-error-title">ANALYSIS NOTICE</h3>
+                        <p id="video-error-msg">Unable to analyze this video. Please verify the file is valid and playable.</p>
                         <button class="btn btn-sm btn-outline" onclick="resetVideoResultUI()" type="button">Dismiss</button>
                     </div>
 
@@ -436,7 +438,7 @@
                         </div>
 
                         <!-- Probability Bars -->
-                        <div class="probability-container">
+                        <div class="probability-container" id="video-prob-container">
                             <div class="prob-row">
                                 <div class="prob-info">
                                     <span class="prob-name"><span class="legend-dot human-dot"></span> REAL PROBABILITY</span>
@@ -458,12 +460,35 @@
                             </div>
                         </div>
 
-                        <!-- Dynamic Calibrated Decision Explanation Banner -->
+                        <!-- Specialist Expert Breakdown Bars (Policy C Fusion) -->
+                        <div class="probability-container" id="video-experts-breakdown" style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(56, 189, 248, 0.15);">
+                            <div class="prob-row">
+                                <div class="prob-info">
+                                    <span class="prob-name"><span class="legend-dot ai-dot"></span> ST-SEQNET (FULL-FRAME TEMPORAL AI)</span>
+                                    <strong class="prob-pct" id="prob-stseqnet-video">--%</strong>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill fake-fill" id="bar-stseqnet-video" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="prob-row">
+                                <div class="prob-info">
+                                    <span class="prob-name"><span class="legend-dot ai-dot"></span> FACEVIT (LOCALIZED FACIAL AI)</span>
+                                    <strong class="prob-pct" id="prob-facevit-video">--%</strong>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill fake-fill" id="bar-facevit-video" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Decision Explanation Banner -->
                         <div class="alert alert-info" id="video-decision-alert">
                             <div class="alert-icon" id="video-decision-icon">ℹ️</div>
                             <div class="alert-text">
-                                <strong id="video-decision-title">Calibrated Decision</strong>
-                                <p id="video-decision-reason">V4 Decision: Evaluation against calibrated real threshold.</p>
+                                <strong id="video-decision-title">Forensic Decision</strong>
+                                <p id="video-decision-reason">Evaluation against calibrated decision threshold.</p>
                             </div>
                         </div>
 
@@ -474,68 +499,66 @@
                                 <span class="summary-value" id="res-video-frames">8 Frames</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">SPATIAL EXTRACTOR</span>
-                                <span class="summary-value">ResNet-18 (512-dim)</span>
+                                <span class="summary-label">FACE DETECTION STATUS</span>
+                                <span class="summary-value" id="res-video-face-status">--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">PRIMARY MODEL</span>
+                                <span class="summary-value" id="res-video-pipeline">Vision Transformer (ViT-Base Patch16-224)</span>
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">DECISION THRESHOLD</span>
-                                <span class="summary-value" id="res-video-threshold">32.00%</span>
+                                <span class="summary-value" id="res-video-threshold">47.50%</span>
                             </div>
                             <div class="summary-item">
-                                <span class="summary-label">MODEL CALIBRATION</span>
-                                <span class="summary-value">Platt Scaling</span>
+                                <span class="summary-label">PROCESSING TIME</span>
+                                <span class="summary-value" id="res-video-latency">-- ms</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">CALIBRATION PROTOCOL</span>
+                                <span class="summary-value" id="res-video-calibration">Platt/Empirical Calibration on Celeb-DF v2</span>
                             </div>
                             <div class="summary-item full-width">
-                                <span class="summary-label">CLASS MAPPING</span>
-                                <span class="summary-value">0: Fake | 1: Real</span>
+                                <span class="summary-label">CLASS MAPPING &amp; DECISION RULE</span>
+                                <span class="summary-value">0: Deepfake | 1: Authentic Real (Decision: Real if P(Real) &ge; 47.50%)</span>
                             </div>
-                            <div class="summary-item full-width">
-                                <span class="summary-label">DECISION RULE</span>
-                                <span class="summary-value">Real if P(Real) &gt;= Calibrated Threshold</span>
-                            </div>
-                            <div class="summary-item full-width">
-                                <span class="summary-label">TEMPORAL MODEL</span>
-                                <span class="summary-value">Temporal Conv1D + 2-layer BiGRU + Multi-Head Attention</span>
+                        </div>
+
+                        <!-- Multi-Expert Diagnostic Accordion -->
+                        <div class="accordion" id="video-details-accordion">
+                            <button class="accordion-header" id="video-accordion-toggle" type="button">
+                                <span><span class="acc-icon">🔬</span> EXPERT FORENSIC BREAKDOWN (SHADOW / ENSEMBLE DIAGNOSTICS)</span>
+                                <span class="accordion-icon">▼</span>
+                            </button>
+                            <div class="accordion-body hidden" id="video-accordion-body">
+                                <div class="details-grid">
+                                    <div class="detail-item">
+                                        <span class="detail-name">Face ViT Expert</span>
+                                        <span class="detail-val" id="exp-vit-val">Active Primary (Face Manipulation Specialist)</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-name">Full-Frame Swin Expert</span>
+                                        <span class="detail-val" id="exp-swin-val">Shadow Mode (Spatial Diffusion Textures)</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-name">Temporal ReStraV Expert</span>
+                                        <span class="detail-val" id="exp-restrav-val">Shadow Mode (DINOv2 Perceptual Trajectory)</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-name">Stacking Logistic Router</span>
+                                        <span class="detail-val" id="exp-stacking-val">Validation-Trained (ENABLE_ENSEMBLE_ROUTER=0)</span>
+                                    </div>
+                                    <div class="detail-item full-width">
+                                        <span class="detail-name">Shadow Diagnostics Note</span>
+                                        <span class="detail-val">Production verdict is anchored on Vision Transformer (ViT-Base Patch16-224). Multi-expert ensemble operates concurrently in shadow mode to prevent unvalidated routing regressions.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Disclaimer -->
-                        <p class="disclaimer">⚠️ <em>Deepfake detection is probabilistic and evaluates temporal facial dynamics against calibrated benchmarks.</em></p>
+                        <p class="disclaimer">⚠️ <em>Deepfake detection is probabilistic. The primary ViT model requires visible facial crops; faceless videos return Insufficient Evidence to prevent false positives.</em></p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- TAB: HISTORY -->
-        <section id="history" class="tab-pane">
-            <div class="section-header history-header-flex">
-                <div>
-                    <div class="header-pre-title">SESSION LOGS</div>
-                    <h2>ANALYSIS HISTORY</h2>
-                    <p>Review previous text and video analysis sessions.</p>
-                </div>
-                <button class="btn btn-sm btn-outline" id="btn-clear-history" type="button">🗑️ Clear History</button>
-            </div>
-
-            <div class="card history-card">
-                <div class="table-responsive">
-                    <table class="history-table">
-                        <thead>
-                            <tr>
-                                <th>Timestamp</th>
-                                <th>Media Type</th>
-                                <th>Input Details</th>
-                                <th>Classification Result</th>
-                                <th>Confidence</th>
-                            </tr>
-                        </thead>
-                        <tbody id="history-table-body">
-                            <tr>
-                                <td colspan="5" class="empty-history">No analysis history recorded yet in this session.</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
@@ -546,7 +569,7 @@
             <div class="section-header">
                 <div class="header-pre-title">PIPELINE SPECIFICATIONS</div>
                 <h2>MODEL ARCHITECTURE</h2>
-                <p>Production inference pipelines used for text and video content analysis.</p>
+                <p>Detailed architecture and forensic inference pipelines powering the platform.</p>
             </div>
 
             <div class="architecture-grid">
@@ -555,51 +578,44 @@
                     <div class="arch-card-header">
                         <div class="arch-icon text-icon">📄</div>
                         <div>
-                            <h3>TEXT DETECTION PIPELINE</h3>
-                            <span class="arch-sub">Sparse TF-IDF + Dense MiniLM Semantic Fusion (194K+ Features)</span>
+                            <h3>TEXT DETECTION PIPELINE (FROZEN V3.4)</h3>
+                            <span class="arch-sub">Sparse TF-IDF + Dense MiniLM Semantic Fusion (194,897 Total Dimensions)</span>
                         </div>
                     </div>
                     <div class="pipeline-flow">
                         <div class="flow-step">
                             <span class="step-num">1</span>
                             <div class="step-details">
-                                <strong>Input Text Preprocessing</strong>
-                                <p>Standardizes encoding, sanitizes tokens, extracts word and character telemetry.</p>
+                                <strong>Input Preprocessing &amp; Length Gating</strong>
+                                <p>Sanitizes UTF-8 tokens, computes word/character telemetry. Gating rule: 1–2 words classified as INSUFFICIENT_EVIDENCE.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">2</span>
                             <div class="step-details">
                                 <strong>Multi-Scale TF-IDF Feature Extraction</strong>
-                                <p>Generates Word n-grams (1–3), Char n-grams (3–5), and Subword n-grams (2–6).</p>
+                                <p>Generates Word n-grams (1–3), Char n-grams (3–5), and Subword n-grams (2–6), extracting over 194,500 sparse dimensions.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">3</span>
                             <div class="step-details">
-                                <strong>MiniLM Embeddings &amp; Linguistic Dimensions</strong>
-                                <p>Extracts 384-D dense semantic representations alongside 5 scaled stylistic &amp; length metrics.</p>
+                                <strong>Dense MiniLM Embeddings &amp; Stylistics</strong>
+                                <p>Extracts 384-dimensional dense semantic representations via MiniLM-L6-v2 plus 5 scaled stylistic dimensions (entropy, sentence length, vocabulary diversity).</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">4</span>
                             <div class="step-details">
-                                <strong>Sparse + Dense Fusion (194,897 Features)</strong>
-                                <p>Unifies sparse n-gram spaces and dense semantic embeddings into a single feature vector.</p>
-                            </div>
-                        </div>
-                        <div class="flow-step">
-                            <span class="step-num">5</span>
-                            <div class="step-details">
-                                <strong>Calibrated Classifier &amp; Adaptive Thresholds</strong>
-                                <p>Evaluates prediction probabilities using Platt calibration against length-bucketed thresholds.</p>
+                                <strong>Calibrated Classifier with Adaptive Thresholds</strong>
+                                <p>Evaluates fused representations using Platt-calibrated probabilities evaluated against length-bucketed decision boundaries.</p>
                             </div>
                         </div>
                         <div class="flow-step final-step">
                             <span class="step-num verdict-num">✓</span>
                             <div class="step-details">
-                                <strong>Human / AI Verdict</strong>
-                                <p>Outputs calibrated probability distribution and final categorical verdict.</p>
+                                <strong>Human / AI Classification Verdict</strong>
+                                <p>Outputs calibrated probabilities and categorical verdict (Accuracy: 89.88%, ROC-AUC: 95.63%).</p>
                             </div>
                         </div>
                     </div>
@@ -610,54 +626,209 @@
                     <div class="arch-card-header">
                         <div class="arch-icon video-icon">🎥</div>
                         <div>
-                            <h3>VIDEO DEEPFAKE PIPELINE</h3>
-                            <span class="arch-sub">Spatial ResNet-18 + Temporal Conv1D + BiGRU Multi-Head Attention</span>
+                            <h3>ACTIVE VIDEO PIPELINE: VISION TRANSFORMER (ViT-BASE)</h3>
+                            <span class="arch-sub">OpenCV YuNet Landmark Alignment + ViT-Base Patch16-224 Multi-Head Attention</span>
                         </div>
                     </div>
                     <div class="pipeline-flow">
                         <div class="flow-step">
                             <span class="step-num">1</span>
                             <div class="step-details">
-                                <strong>Video Input &amp; 8 Temporal Frames</strong>
-                                <p>Uniformly samples 8 temporal frames across the video duration using OpenCV.</p>
+                                <strong>Temporal Sampling with Safe Seek Bounds</strong>
+                                <p>Samples 8 uniform temporal frames across video duration with EOF protection and aspect-ratio validation.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">2</span>
                             <div class="step-details">
-                                <strong>YuNet Face Detection &amp; Alignment</strong>
-                                <p>Extracts facial regions using the YuNet ONNX detector and normalizes to 224×224 tensors.</p>
+                                <strong>YuNet Facial Landmark Detection &amp; Alignment</strong>
+                                <p>Extracts facial regions using OpenCV YuNet ONNX detector (score threshold: 0.55, margin: 25%), cropping 224x224 RGB crops.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">3</span>
                             <div class="step-details">
-                                <strong>ResNet-18 Spatial Features (512-dim)</strong>
-                                <p>Extracts 512-dimensional spatial representations per facial crop via deep convolutional backbone.</p>
+                                <strong>Vision Transformer Patch Multi-Head Attention (12 Heads)</strong>
+                                <p>Fine-tuned ViT-Base Patch16-224 divides facial crops into 16x16 non-overlapping patches, computing Multi-Head Attention across blending boundaries.</p>
                             </div>
                         </div>
                         <div class="flow-step">
                             <span class="step-num">4</span>
                             <div class="step-details">
-                                <strong>Temporal Conv1D &amp; 2-layer BiGRU</strong>
-                                <p>Models local inter-frame transitions and bidirectional temporal dynamics across time steps.</p>
-                            </div>
-                        </div>
-                        <div class="flow-step">
-                            <span class="step-num">5</span>
-                            <div class="step-details">
-                                <strong>Multi-Head Attention &amp; Platt Calibration</strong>
-                                <p>Self-attention weights suspicious facial micro-manipulations; calibrated against decision threshold.</p>
+                                <strong>Multi-Crop Temporal Aggregation &amp; Fallbacks</strong>
+                                <p>Aggregates frame probabilities. Preserves active fallbacks to V11 EfficientNet-B0, V10 ResNet-18, and V4 Temporal Conv1D with BiGRU attention.</p>
                             </div>
                         </div>
                         <div class="flow-step final-step">
                             <span class="step-num verdict-num">✓</span>
                             <div class="step-details">
-                                <strong>Real / Fake Verdict</strong>
-                                <p>Mapping: <code>0 = Fake</code>, <code>1 = Real</code>. Decision: Real if P(Real) &ge; Calibrated Threshold.</p>
+                                <strong>Calibrated Real / Deepfake Verdict</strong>
+                                <p>Rule: <code>Real if P(Real) &ge; 47.50%; otherwise Deepfake</code>. Evaluated on Celeb-DF v2 (518 videos, ROC-AUC: 87.18%).</p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- MULTI-EXPERT ENSEMBLE ARCHITECTURE CARD -->
+            <div class="card arch-card" style="margin-top: 1.5rem;">
+                <div class="arch-card-header">
+                    <div class="arch-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">🧠</div>
+                    <div>
+                        <h3>MULTI-EXPERT ENSEMBLE &amp; SHADOW ROUTING (PHASE 4 ADVANCED PIPELINE)</h3>
+                        <span class="arch-sub">Selective Domain Routing combining Face ViT + Full-Frame Swin + Temporal ReStraV (DINOv2)</span>
+                    </div>
+                </div>
+                <div class="pipeline-flow">
+                    <div class="flow-step">
+                        <span class="step-num">E1</span>
+                        <div class="step-details">
+                            <strong>Face ViT Expert (Localized Facial Manipulation)</strong>
+                            <p>Specialized in boundary seams, eye/mouth blending artifacts, and warping (active production baseline).</p>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-num">E2</span>
+                        <div class="step-details">
+                            <strong>Full-Frame Swin Expert (Spatial Generative Cues)</strong>
+                            <p>Evaluates entire RGB frames for diffusion and GAN texture artifacts across faceless and wide-angle scenes.</p>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-num">E3</span>
+                        <div class="step-details">
+                            <strong>Temporal ReStraV Expert (Perceptual Straightening Dynamics)</strong>
+                            <p>Extracts 21-D temporal curvature features from DINOv2 latent space to detect abnormal diffusion trajectory smoothing.</p>
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <span class="step-num">E4</span>
+                        <div class="step-details">
+                            <strong>Validation-Trained Stacking Logistic Regression</strong>
+                            <p>Trained strictly on independent 80-video validation data (logit = -4.357 + 3.271·vit + 0.614·face - 0.427·swin + 2.569·restrav).</p>
+                        </div>
+                    </div>
+                    <div class="flow-step final-step">
+                        <span class="step-num verdict-num">✓</span>
+                        <div class="step-details">
+                            <strong>Shadow-Mode Deployment Contract</strong>
+                            <p>Runs concurrently in shadow mode behind <code>ENABLE_ENSEMBLE_ROUTER=0</code>, providing diagnostic transparency without production regressions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TAB: TECHNOLOGY STACK -->
+        <section id="techstack" class="tab-pane">
+            <div class="section-header">
+                <div class="header-pre-title">SYSTEM IMPLEMENTATION</div>
+                <h2>TECHNOLOGY STACK</h2>
+                <p>Frameworks, neural architectures, and software engineering tools utilized across the platform.</p>
+            </div>
+
+            <div class="system-capabilities-grid">
+                <div class="card cap-card">
+                    <div class="cap-icon">🧠</div>
+                    <h4>DEEP LEARNING &amp; MODELS</h4>
+                    <ul class="cap-list">
+                        <li><strong>PyTorch 2.6+</strong>: Core tensor computation &amp; backpropagation</li>
+                        <li><strong>HuggingFace Transformers</strong>: ViT-Base &amp; Swin-T architectures</li>
+                        <li><strong>Sentence-Transformers</strong>: MiniLM-L6-v2 dense embeddings</li>
+                        <li><strong>DINOv2 (Meta AI)</strong>: Self-supervised vision representation for ReStraV</li>
+                        <li><strong>Scikit-learn</strong>: Platt calibration, TF-IDF vectorization &amp; Stacking LR</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">👁️</div>
+                    <h4>COMPUTER VISION &amp; NLP</h4>
+                    <ul class="cap-list">
+                        <li><strong>OpenCV 4.10+</strong>: Video frame decoding, FPS &amp; EOF management</li>
+                        <li><strong>YuNet ONNX</strong>: High-speed 5-point facial landmark detector</li>
+                        <li><strong>Torchvision</strong>: 224x224 RGB normalization &amp; bicubic transforms</li>
+                        <li><strong>NLTK &amp; Regex</strong>: Tokenization, contractions &amp; stylistic entropy</li>
+                        <li><strong>Pillow (PIL)</strong>: High-fidelity image manipulation &amp; crop bounds</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">⚡</div>
+                    <h4>BACKEND &amp; DEPLOYMENT</h4>
+                    <ul class="cap-list">
+                        <li><strong>Python 3.11 (64-bit)</strong>: Execution runtime &amp; virtual environment</li>
+                        <li><strong>Flask 3.0+</strong>: RESTful JSON API endpoints &amp; CORS routing</li>
+                        <li><strong>Tempfile OS Handler</strong>: Deterministic upload isolation &amp; cleanup</li>
+                        <li><strong>Hashlib SHA-256</strong>: Model integrity &amp; weight verification</li>
+                        <li><strong>Feature Flag Architecture</strong>: Safe shadow-mode expert dispatch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card about-info-card" style="margin-top: 1.5rem;">
+                <div class="about-card-header">
+                    <span class="badge-inst">💻 Client Architecture</span>
+                    <h3>Frontend Engineering &amp; User Experience</h3>
+                </div>
+                <div class="project-details-grid">
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Client Language</span>
+                        <span class="detail-value">Vanilla JavaScript (ES6+) with Async/Await Fetch API</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Styling Framework</span>
+                        <span class="detail-value">Custom Modular CSS3 (Glassmorphism, CSS Grid, Cyber-Forensics Palette)</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Typography</span>
+                        <span class="detail-value">Plus Jakarta Sans (UI) &amp; JetBrains Mono (Forensic Telemetry)</span>
+                    </div>
+                    <div class="proj-detail-item">
+                        <span class="detail-label">Client Security</span>
+                        <span class="detail-value">Zero External CDN Execution, Path Sanitization, Local Session Storage</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TAB: LIMITATIONS & DISCLAIMERS -->
+        <section id="limitations" class="tab-pane">
+            <div class="section-header">
+                <div class="header-pre-title">SAFETY &amp; BOUNDARIES</div>
+                <h2>SYSTEM LIMITATIONS &amp; DISCLAIMER</h2>
+                <p>Documented forensic boundaries, error bounds, and responsible use policies.</p>
+            </div>
+
+            <div class="system-capabilities-grid">
+                <div class="card cap-card">
+                    <div class="cap-icon">📄</div>
+                    <h4>TEXT DETECTION BOUNDARIES</h4>
+                    <ul class="cap-list">
+                        <li><strong>Short Input Ambiguity</strong>: Texts under 3 words have insufficient statistical entropy and are classified as Insufficient Evidence.</li>
+                        <li><strong>Stylistic Overlap</strong>: Formal human technical writing can exhibit low perplexity similar to LLM outputs.</li>
+                        <li><strong>Prompt Engineering Shift</strong>: Adversarial prompting (burstiness injection) can reduce detection confidence.</li>
+                        <li><strong>Language Scope</strong>: Primary calibration is optimized for English language corpora.</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">🎥</div>
+                    <h4>VIDEO DETECTION BOUNDARIES</h4>
+                    <ul class="cap-list">
+                        <li><strong>Face Detection Requirement</strong>: Active ViT requires detectable facial crops. Faceless clips return Insufficient Evidence in production mode.</li>
+                        <li><strong>Compression Degradation</strong>: Heavy H.264 macroblocking (e.g. 144p mobile rips) can trigger false positives on whole-frame models.</li>
+                        <li><strong>Generator Domain Shift</strong>: Models trained on face-swap datasets (Celeb-DF) exhibit reduced recall on unseen diffusion engines (Pika).</li>
+                        <li><strong>Motion Blur</strong>: Rapid camera panning can degrade facial crop resolution below the YuNet threshold.</li>
+                    </ul>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-icon">🛡️</div>
+                    <h4>RESPONSIBLE USE POLICY</h4>
+                    <ul class="cap-list">
+                        <li><strong>Probabilistic Nature</strong>: Detection outputs represent algorithmic likelihoods, not infallible ground-truth certitude.</li>
+                        <li><strong>Human-in-the-Loop</strong>: Results should assist editorial review and digital forensics, never serve as sole punitive evidence.</li>
+                        <li><strong>Safe Shadow Mode</strong>: Experimental ensemble models remain gated behind feature flags to prevent unvalidated rollouts.</li>
+                        <li><strong>Continuous Auditing</strong>: All benchmarks are audited for training overlap to prevent data contamination.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -666,43 +837,9 @@
         <!-- TAB: ABOUT / METRICS -->
         <section id="about" class="tab-pane">
             <div class="section-header">
-                <div class="header-pre-title">SYSTEM OVERVIEW</div>
+                <div class="header-pre-title">ACADEMIC &amp; BENCHMARK OVERVIEW</div>
                 <h2>ABOUT THE SYSTEM</h2>
-                <p>AI Text and Deepfake Detection Using ML is a machine-learning based content verification system designed to analyze written content and video media.</p>
-            </div>
-
-            <!-- COMPACT CAPABILITY CARDS -->
-            <div class="system-capabilities-grid">
-                <div class="card cap-card">
-                    <div class="cap-icon">📄</div>
-                    <h4>TEXT DETECTION</h4>
-                    <ul class="cap-list">
-                        <li>TF-IDF n-grams (Word, Char, Subword)</li>
-                        <li>MiniLM embeddings (384-dim dense)</li>
-                        <li>Linguistic features (5 stylistic dimensions)</li>
-                        <li>Calibrated classification &amp; adaptive thresholding</li>
-                    </ul>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-icon">🎥</div>
-                    <h4>VIDEO DETECTION</h4>
-                    <ul class="cap-list">
-                        <li>YuNet face detection &amp; alignment</li>
-                        <li>ResNet-18 spatial features (512-dim)</li>
-                        <li>Temporal Conv1D &amp; 2-layer BiGRU</li>
-                        <li>Multi-Head Attention &amp; calibrated decision</li>
-                    </ul>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-icon">⚙️</div>
-                    <h4>SYSTEM</h4>
-                    <ul class="cap-list">
-                        <li>Text + Video multi-modal analysis</li>
-                        <li>8-frame uniform temporal sampling</li>
-                        <li>API-based inference &amp; sub-400ms latency</li>
-                        <li>Responsive web interface &amp; local session audit</li>
-                    </ul>
-                </div>
+                <p>AI Content Detection Platform is a final-year major engineering project designed to address the proliferation of generative AI misinformation.</p>
             </div>
 
             <div class="metrics-grid">
@@ -711,8 +848,8 @@
                     <div class="metric-card-header">
                         <div class="arch-icon text-icon">📄</div>
                         <div>
-                            <h3>Text Detection Model Metrics</h3>
-                            <span class="metric-subtitle">Evaluated on HC3, RAID &amp; SentenceAI Validation Subsets</span>
+                            <h3>Text Detection Model Benchmark</h3>
+                            <span class="metric-subtitle">Evaluated on HC3, RAID &amp; SentenceAI Validation Corpora</span>
                         </div>
                     </div>
                     <div class="metrics-values">
@@ -740,59 +877,92 @@
                     <div class="metric-card-header">
                         <div class="arch-icon video-icon">🎥</div>
                         <div>
-                            <h3>Video Deepfake Model Metrics</h3>
-                            <span class="metric-subtitle">Evaluated on Celeb-DF v2 Benchmark Dataset</span>
+                            <h3>Active Vision Transformer (ViT) Benchmark</h3>
+                            <span class="metric-subtitle">Evaluated on Official Celeb-DF v2 Benchmark (518 Videos)</span>
                         </div>
                     </div>
                     <div class="metrics-values" id="video-metrics-box">
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-acc">77.03%</span>
+                            <span class="metric-val" id="metric-video-acc">78.76%</span>
                             <span class="metric-name">Accuracy</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-f1">84.28%</span>
-                            <span class="metric-name">F1-Score</span>
+                            <span class="metric-val" id="metric-video-f1">83.02%</span>
+                            <span class="metric-name">Fake F1-Score</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-auc">78.33%</span>
+                            <span class="metric-val" id="metric-video-auc">87.18%</span>
                             <span class="metric-name">ROC-AUC</span>
                         </div>
                         <div class="metric-box">
-                            <span class="metric-val" id="metric-video-prec">76.50%</span>
-                            <span class="metric-name">Precision</span>
+                            <span class="metric-val" id="metric-video-prec">87.34%</span>
+                            <span class="metric-name">Fake Precision</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="card about-info-card">
+            <div class="card about-info-card" style="margin-top: 1.5rem;">
                 <div class="about-card-header">
                     <span class="badge-inst">🎓 Engineering Major Project</span>
-                    <h3>Final Year Major Project Demonstration</h3>
+                    <h3>Final Year Project Demonstration Details</h3>
                 </div>
                 <div class="project-details-grid">
                     <div class="proj-detail-item">
                         <span class="detail-label">Project Title</span>
-                        <span class="detail-value">AI Text and Deepfake Detection Using ML</span>
+                        <span class="detail-value">AI Content Detection Platform</span>
                     </div>
                     <div class="proj-detail-item">
                         <span class="detail-label">Institution</span>
                         <span class="detail-value">Department of Information Science &amp; Engineering, Sri Krishna Institute of Technology, Bengaluru</span>
                     </div>
                     <div class="proj-detail-item full">
-                        <span class="detail-label">Project Team</span>
+                        <span class="detail-label">Project Team Members</span>
                         <span class="detail-value">PAVAN S (1KT23IS034) • DEEKSHITH S D (1KT23IS020) • RISHI G P (1KT23IS045) • SANTHOSH R (1KT23IS049)</span>
                     </div>
                     <div class="proj-detail-item">
-                        <span class="detail-label">Project Supervisor</span>
-                        <span class="detail-value">Mrs. Ragini Krishna</span>
+                        <span class="detail-label">Project Guide / Supervisor</span>
+                        <span class="detail-value">Mrs. Ragini Krishna, Assistant Professor</span>
                     </div>
                     <div class="proj-detail-item">
-                        <span class="detail-label">Core Technologies</span>
-                        <span class="detail-value">PyTorch • ResNet-18 • Conv1D + BiGRU Attention • TF-IDF • MiniLM • Flask • OpenCV YuNet</span>
+                        <span class="detail-label">Evaluated Checkpoints</span>
+                        <span class="detail-value">ViT-Base Patch16-224 (Active) • TextDetector V3.4 (Frozen) • ReStraV DINOv2 (Shadow)</span>
                     </div>
                 </div>
-                <p class="disclaimer-text"><em>Performance metrics are based on the project's official evaluation datasets and do not guarantee 100% real-world detection accuracy.</em></p>
+            </div>
+        </section>
+
+
+        <!-- TAB: HISTORY -->
+        <section id="history" class="tab-pane">
+            <div class="section-header history-header-flex">
+                <div>
+                    <div class="header-pre-title">SESSION AUDIT LOG</div>
+                    <h2>ANALYSIS HISTORY</h2>
+                    <p>Review real-time predictions recorded during the current browser session.</p>
+                </div>
+                <button class="btn btn-sm btn-outline" id="btn-clear-history" type="button">🗑️ Clear History</button>
+            </div>
+
+            <div class="card history-card">
+                <div class="table-responsive">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Media Type</th>
+                                <th>Input Details</th>
+                                <th>Classification Result</th>
+                                <th>Confidence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table-body">
+                            <tr>
+                                <td colspan="5" class="empty-history">No analysis history recorded yet in this session.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -801,7 +971,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
-            <p><strong>AI Text and Deepfake Detection Using ML</strong> &copy; 2026 | Final Year Major Project Demonstration</p>
+            <p><strong>AI Content Detection Platform</strong> &copy; 2026 | Department of Information Science &amp; Engineering, Sri Krishna Institute of Technology</p>
         </div>
     </footer>
 

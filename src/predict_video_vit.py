@@ -22,6 +22,7 @@ import sys
 import json
 import logging
 import hashlib
+import threading
 from pathlib import Path
 from typing import Dict, Any, Optional, Tuple, List
 
@@ -59,6 +60,7 @@ DEFAULT_THRESHOLD = 0.50
 # ── Cached singletons ─────────────────────────────────────────────────────────
 _model: Optional[nn.Module] = None
 _face_detector = None
+_FACE_DETECTOR_LOCK = threading.Lock()
 _loaded: bool = False
 _threshold: float = DEFAULT_THRESHOLD
 
@@ -104,14 +106,24 @@ def load_vit_artifacts(checkpoint_path: Optional[Path] = None) -> None:
         except Exception as e:
             logger.warning(f"Could not verify checkpoint metadata: {e}")
 
-    # Initialize ViT architecture
-    model = ViTForImageClassification.from_pretrained(
-        "google/vit-base-patch16-224",
-        num_labels=2,
-        id2label={0: "FAKE", 1: "REAL"},
-        label2id={"FAKE": 0, "REAL": 1},
-        ignore_mismatched_sizes=True,
-    )
+    # Initialize ViT architecture (prefer local cache for fast offline startup)
+    try:
+        model = ViTForImageClassification.from_pretrained(
+            "google/vit-base-patch16-224",
+            num_labels=2,
+            id2label={0: "FAKE", 1: "REAL"},
+            label2id={"FAKE": 0, "REAL": 1},
+            ignore_mismatched_sizes=True,
+            local_files_only=True,
+        )
+    except Exception:
+        model = ViTForImageClassification.from_pretrained(
+            "google/vit-base-patch16-224",
+            num_labels=2,
+            id2label={0: "FAKE", 1: "REAL"},
+            label2id={"FAKE": 0, "REAL": 1},
+            ignore_mismatched_sizes=True,
+        )
 
     state = torch.load(str(target_ckpt), map_location=DEVICE)
     if "model_state_dict" in state:
@@ -167,8 +179,9 @@ def _extract_face_crop_vit(frame_bgr: np.ndarray) -> Tuple[Optional[np.ndarray],
         return None, False
 
     h, w = frame_bgr.shape[:2]
-    _face_detector.setInputSize((w, h))
-    _, faces = _face_detector.detect(frame_bgr)
+    with _FACE_DETECTOR_LOCK:
+        _face_detector.setInputSize((w, h))
+        _, faces = _face_detector.detect(frame_bgr)
 
     if faces is None or len(faces) == 0:
         return None, False

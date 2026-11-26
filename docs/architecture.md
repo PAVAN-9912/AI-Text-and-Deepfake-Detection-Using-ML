@@ -68,48 +68,24 @@ The text detection subsystem fuses four distinct feature spaces:
 
 ---
 
-## 3. Video Deepfake Detection Architecture
+## 3. Video Deepfake & Specialist Fusion Architecture (`PolicyC_STSeqNet_FaceViT`)
 
-### 3.1 Spatial-Temporal Extraction Pipeline
-1. **Frame Sampling**:
-   - Uniformly samples $T=8$ frames across the entire duration of the uploaded video using OpenCV (`cv2.VideoCapture`).
+### 3.1 Dual-Expert Pipeline
+1. **ST-SeqNet (Full-Frame Temporal Expert, Epoch 8)**:
+   - Uniformly samples $T=16$ full frames ($224 \times 224$ RGB, ImageNet normalization) using `StandardVideoPreprocessor`.
+   - Extracts $1280$-d spatial embeddings via **EfficientNet-B0**, computes consecutive temporal differences $\Delta f_t = f_t - f_{t-1}$, and projects $[f_t, \Delta f_t] \in \mathbb{R}^{2560} \to \mathbb{R}^{256}$.
+   - Processes sequence dynamics with a **Bidirectional GRU** ($hidden=128$, output $256$) and **Temporal Self-Attention** to produce per-frame attention weights $\alpha_t$ and calibrated AI probability (threshold **0.50**).
+2. **FaceViT (Localized Facial Expert)**:
+   - Samples $T=8$ frames, extracts facial regions via OpenCV YuNet ONNX (`face_detection_yunet.onnx`), and classifies cropped faces with **ViT-Base Patch16-224** (threshold **0.475**). Returns `INSUFFICIENT_EVIDENCE` on faceless media.
+3. **Policy C Evidence-Gated Specialist Fusion (`StagingFusionRouter`)**:
+   - **Faceless Media**: Delegates authority to ST-SeqNet (`C1_FACELESS_*`).
+   - **Decisive Facial Manipulation**: Flags `FAKE` when FaceViT detects strong facial manipulation (`C2_DECISIVE_FACIAL_MANIPULATION`).
+   - **Domain Conflict Protection**: Abstains with `INCONCLUSIVE` (`C3_STRONG_DOMAIN_CONFLICT`) when FaceViT reports authentic facial evidence and ST-SeqNet reports strong full-frame AI probability.
 
-2. **Face Localization**:
-   - Employs OpenCV YuNet ONNX face detector (`models/face_detector/face_detection_yunet.onnx`) with dynamic input resizing and score threshold of $0.5$.
-   - Falls back to center-crop if no face is detected with sufficient confidence.
-
-3. **Spatial Feature Extraction (ResNet-18)**:
-   - Pretrained ResNet-18 backbone (ImageNet weights) with final fully-connected classification layer replaced by `nn.Identity()`.
-   - Produces a 512-dimensional spatial descriptor per frame ($T \times 512 = 8 \times 512$).
-
-4. **Temporal Feature Standardization**:
-   - Scaled using `video_scaler.pkl` containing pre-computed feature mean and standard deviation.
-
-### 3.2 Deep Sequence Model (`TemporalConvBiGRUModel`)
-- **Temporal Convolutional Layer (Conv1D)**:
-  - `nn.Conv1d(512, 256, kernel_size=3, padding=1)` captures local frame-to-frame transitional anomalies (e.g., blending boundaries, flickering).
-  - Followed by `nn.BatchNorm1d(256)` and `nn.GELU()`.
-
-- **Bidirectional GRU Sequence Processor**:
-  - `nn.GRU(input_size=256, hidden_size=128, num_layers=2, batch_first=True, bidirectional=True, dropout=0.25)`.
-  - Captures bidirectional long-term temporal dependencies across all sampled frames, outputting $256$-dimensional representations per step.
-
-- **Multi-Head Self-Attention**:
-  - `nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True, dropout=0.20)`.
-  - Enables the model to dynamically weight the most forensically critical frames across the sequence.
-  - Residual connection with `nn.LayerNorm(256)`.
-
-- **Temporal Pooling & Classifier Head**:
-  - Dual pooling: Concatenates global average pooling and global maximum pooling ($256 + 256 = 512$).
-  - Dense feed-forward layers: `Linear(512, 128)` $\to$ `GELU()` $\to$ `Dropout(0.35)` $\to$ `Linear(128, 1)`.
-
-### 3.3 Calibration & Decision Mapping
-- **Calibrator**: Isotonic Regression calibrator (`video_calibrator.pkl`).
-- **Optimal Decision Threshold**: **0.32**.
-- **Class Mapping**:
-  - `Class 0`: Fake / Deepfake
-  - `Class 1`: Real
-- **Decision Logic**: If Calibrated Real Probability $\ge 0.32 \implies$ **REAL**, else **FAKE**.
+### 3.2 Verified Independent Benchmarks (Phase 7F.5 & 7F.6)
+- **ST-SeqNet (Epoch 8)** on sealed $N=200$: **82.00% accuracy**, **0.8603 ROC-AUC**, **90.00% AI recall**.
+- **Policy C Fusion** on sealed $N=200$ (Decided $N=172$): **83.14% decided accuracy**, **91.30% specificity**, **88.06% precision**.
+- **Codec Robustness (Phase 7F.6)**: $0/40$ new false-positive flips across modern H.264 (CRF 18–38), VP9, AV1, 15 fps, and 2nd-gen transcode; $90.0\%$ genuine invariance across 10 conditions.
 
 ---
 

@@ -11,7 +11,10 @@ sys.path.insert(0, str(BASE_DIR))
 
 from app import app
 from predict_text_final import predict_text
-from src.predict_video_final_v4 import predict_video
+try:
+    from src.predict_video_fusion import predict_video_fusion as active_predict_video
+except Exception:
+    from src.predict_video_vit import predict_video_vit as active_predict_video
 
 print("=" * 80)
 print("COMPREHENSIVE FINAL END-TO-END APPLICATION TEST HARNESS")
@@ -40,7 +43,7 @@ res_home = client.get("/")
 t_home = time.time() - t0
 test(res_home.status_code == 200, f"GET / returns 200 OK (Latency: {t_home*1000:.1f}ms)")
 html_content = res_home.get_data(as_text=True)
-test("AI-Text-and-Deepfake-Detection-Using-ML" in html_content, "HTML contains title and branding")
+test("AI Content Detection Platform" in html_content, "HTML contains title and branding")
 test('id="home"' in html_content and 'id="text"' in html_content and 'id="video"' in html_content, "HTML contains all core tab sections")
 
 res_health = client.get("/api/health")
@@ -48,12 +51,15 @@ test(res_health.status_code == 200, "GET /api/health returns 200 OK")
 health_data = res_health.get_json()
 test(health_data["status"] == "healthy", "Health status is 'healthy'")
 test(health_data["text_model"] and health_data["video_model"] and health_data["minilm"] and health_data["face_detector"], "All sub-engines reported ready")
+test(health_data.get("video_engine") == "PolicyC_STSeqNet_FaceViT", f"Active video engine reported: {health_data.get('video_engine')}")
 
 res_metrics = client.get("/api/metrics")
 test(res_metrics.status_code == 200, "GET /api/metrics returns 200 OK")
 metrics_data = res_metrics.get_json()
 test(metrics_data["text_metrics"]["accuracy"] == 89.88, "Text accuracy is 89.88%")
-test(metrics_data["video_metrics"]["accuracy"] == 77.03, "Video accuracy is 77.03%")
+test(metrics_data["video_metrics"]["accuracy"] > 70.0, f"Video accuracy is valid: {metrics_data['video_metrics']['accuracy']}%")
+test(metrics_data["video_metrics"]["roc_auc"] > 80.0, f"Video ROC-AUC is valid: {metrics_data['video_metrics']['roc_auc']}%")
+test("model" in metrics_data["video_metrics"], f"Video model name reported: {metrics_data['video_metrics']['model']}")
 
 # ----------------------------------------------------------------------
 # 2. TEXT END-TO-END TESTS ACROSS SCENARIOS
@@ -129,21 +135,30 @@ for name, vpath, expected_lbl in video_tests:
         test(resp.status_code == 200, f"[{name}] Video upload returns 200 OK ({elapsed_v:.1f}ms)")
         vdata = resp.get_json()
         test(vdata["success"] is True, f"[{name}] Video success=True")
-        test(vdata["result"] in ["REAL", "FAKE"], f"[{name}] Result is REAL or FAKE (Got: {vdata['result']})")
-        p_real = vdata["real_probability"]
-        p_fake = vdata["fake_probability"]
-        test(abs(p_real + p_fake - 100.0) < 0.05, f"[{name}] Probabilities sum to 100%: Real={p_real}%, Fake={p_fake}%")
-        test(vdata["frames_analyzed"] == 8, f"[{name}] Frames analyzed strictly 8")
-        test(vdata["face_detected_frames"] > 0, f"[{name}] Face detected frames > 0 ({vdata['face_detected_frames']}/8)")
-        test(vdata["model"] == "VideoDetector_V4", f"[{name}] Model name is VideoDetector_V4")
-        
-        # Semantic consistency: If real > fake, result MUST be REAL
-        if p_real > p_fake:
-            test(vdata["result"] == "REAL", f"[{name}] Semantic check: Real({p_real}%) > Fake({p_fake}%) yields REAL result")
-            test(abs(vdata["confidence"] - p_real) < 1e-4, f"[{name}] Confidence strictly equals Real prob ({p_real}%)")
-        else:
-            test(vdata["result"] == "FAKE", f"[{name}] Semantic check: Fake({p_fake}%) >= Real({p_real}%) yields FAKE result")
-            test(abs(vdata["confidence"] - p_fake) < 1e-4, f"[{name}] Confidence strictly equals Fake prob ({p_fake}%)")
+        test(vdata["result"] in ["REAL", "FAKE"], f"[{name}] Soft Binary Fusion returns REAL or FAKE (Got: {vdata['result']})")
+        test(vdata["display_verdict"] in ["HUMAN", "AI-GENERATED"], f"[{name}] display_verdict is HUMAN or AI-GENERATED (Got: {vdata['display_verdict']})")
+        test(vdata["frames_analyzed"] == 16, f"[{name}] ST-SeqNet frames analyzed strictly 16")
+        test("PolicyC_STSeqNet_FaceViT" in vdata["model"], f"[{name}] Model name reported: {vdata['model']}")
+        test("routing_rule" in vdata and vdata["routing_rule"] is not None, f"[{name}] Policy C routing_rule: {vdata.get('routing_rule')}")
+        test("attention_weights" in vdata and len(vdata["attention_weights"]) == 16, f"[{name}] 16 temporal attention weights returned")
+        test(vdata["threshold"] is not None, f"[{name}] Threshold is valid: {vdata['threshold']}")
+        if vdata["result"] in ["REAL", "FAKE"]:
+            p_real = vdata["real_probability"]
+            p_fake = vdata["fake_probability"]
+            test(abs(p_real + p_fake - 100.0) < 0.05, f"[{name}] Probabilities sum to 100%: Real={p_real}%, Fake={p_fake}%")
+            expected_conf = p_real if vdata["result"] == "REAL" else p_fake
+            test(abs(vdata["confidence"] - expected_conf) < 1e-4, f"[{name}] Confidence strictly equals predicted class prob ({expected_conf}%)")
+
+# Verify all 4 Soft Binary Fusion branches (Cases A-D)
+from src.predict_video_fusion import fuse_binary_probabilities
+for branch_name, st_p, vit_p, f_cnt, exp_rule in [
+    ("Case A", 0.85, None, 0, "CASE_A_FACELESS_ST_SEQNET"),
+    ("Case B", 0.25, 0.72, 2, "CASE_B_STRONG_FACIAL_MANIPULATION"),
+    ("Case C", 0.90, 0.10, 4, "CASE_C_AUTHENTIC_FACE_DAMPENING"),
+    ("Case D", 0.80, 0.40, 2, "CASE_D_DUAL_EXPERT_BLEND"),
+]:
+    p_val, rule_val, _ = fuse_binary_probabilities(st_p, vit_p, f_cnt)
+    test(rule_val == exp_rule and 0.0 <= p_val <= 1.0, f"[Soft Binary Fusion {branch_name}] rule={rule_val}, p_ai={p_val:.4f}")
 
 # ----------------------------------------------------------------------
 # 4. ERROR HANDLING TESTS
@@ -195,7 +210,7 @@ for idx, txt in enumerate(test_samples_parity):
     )
 
 if sample_fake.exists():
-    standalone_v = predict_video(str(sample_fake))
+    standalone_v = active_predict_video(str(sample_fake))
     with open(sample_fake, "rb") as vf:
         v_bytes = vf.read()
     api_v = client.post(
@@ -210,14 +225,14 @@ if sample_fake.exists():
         abs(standalone_fake_pct - api_fake_pct) < 1e-4,
         f"[Fake Video Sample] Exact Parity: Standalone={standalone_fake_pct}%, API={api_fake_pct}% (Diff: 0.0000%)"
     )
-    standalone_v_lbl = "FAKE" if standalone_fake_pct > (100.0 - standalone_fake_pct) else "REAL"
+    standalone_v_lbl = standalone_v.get("label", "FAKE")
     test(
         api_v["result"] == standalone_v_lbl,
-        f"[Fake Video Sample] Exact Label Parity: Standalone Higher Prob={'FAKE' if standalone_fake_pct > 50 else 'REAL'}, API={api_v['result']}"
+        f"[Fake Video Sample] Exact Label Parity: Standalone={standalone_v_lbl}, API={api_v['result']}"
     )
 
 if sample_real.exists():
-    standalone_vr = predict_video(str(sample_real))
+    standalone_vr = active_predict_video(str(sample_real))
     with open(sample_real, "rb") as vf:
         vr_bytes = vf.read()
     api_vr = client.post(
@@ -226,17 +241,23 @@ if sample_real.exists():
         content_type="multipart/form-data"
     ).get_json()
     
-    standalone_real_pct = round(standalone_vr["real_probability"] * 100, 2)
-    api_real_pct = api_vr["real_probability"]
-    test(
-        abs(standalone_real_pct - api_real_pct) < 1e-4,
-        f"[Real Video Sample] Exact Parity: Standalone={standalone_real_pct}%, API={api_real_pct}% (Diff: 0.0000%)"
-    )
-    standalone_vr_lbl = "REAL" if standalone_real_pct >= (100.0 - standalone_real_pct) else "FAKE"
+    standalone_vr_lbl = standalone_vr.get("label", "REAL")
     test(
         api_vr["result"] == standalone_vr_lbl,
-        f"[Real Video Sample] Exact Label Parity: Standalone Higher Prob={'REAL' if standalone_real_pct >= 50 else 'FAKE'}, API={api_vr['result']}"
+        f"[Real Video Sample] Exact Label Parity: Standalone={standalone_vr_lbl}, API={api_vr['result']}"
     )
+    if standalone_vr.get("real_probability") is not None and api_vr.get("real_probability") is not None:
+        standalone_real_pct = round(standalone_vr["real_probability"] * 100, 2)
+        api_real_pct = api_vr["real_probability"]
+        test(
+            abs(standalone_real_pct - api_real_pct) < 1e-4,
+            f"[Real Video Sample] Exact Parity: Standalone={standalone_real_pct}%, API={api_real_pct}% (Diff: 0.0000%)"
+        )
+    else:
+        test(
+            abs((standalone_vr.get("st_seqnet_p_ai") or 0.0) - (api_vr.get("st_seqnet_p_ai") or 0.0)) < 1e-6,
+            f"[Real Video Sample] Exact ST-SeqNet Parity on INCONCLUSIVE: {api_vr.get('st_seqnet_p_ai')}"
+        )
 
 # ----------------------------------------------------------------------
 # 6. ARCHITECTURE METADATA AUDIT

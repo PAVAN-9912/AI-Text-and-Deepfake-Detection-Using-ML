@@ -7,6 +7,26 @@ import numpy as np
 from scipy.sparse import hstack, csr_matrix
 from sentence_transformers import SentenceTransformer
 
+# Forensics and unified detection engine
+try:
+    from src.detection_engine import (
+        DetectionVerdict,
+        EvidenceQualityTier,
+        ForensicSignal,
+        build_text_detection_result,
+        format_percentage,
+    )
+    from src.text_forensics import extract_text_forensic_signals
+except ImportError:
+    from detection_engine import (
+        DetectionVerdict,
+        EvidenceQualityTier,
+        ForensicSignal,
+        build_text_detection_result,
+        format_percentage,
+    )
+    from text_forensics import extract_text_forensic_signals
+
 # Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "models", "text_final")
@@ -186,6 +206,13 @@ def extract_features_single(text):
 def predict_text(text):
     text = str(text).strip()
     if not text:
+        empty_res = build_text_detection_result(
+            raw_ai_prob=None,
+            word_count=0,
+            linguistic_signals=[],
+            length_group="very_short",
+            threshold=length_thresholds.get("very_short", 0.50),
+        )
         return {
             "label": "Human Written",
             "ai_probability": 0.0,
@@ -194,7 +221,10 @@ def predict_text(text):
             "length_group": "very_short",
             "threshold": length_thresholds.get("very_short", 0.50),
             "code_likelihood": 0.0,
-            "is_german": 0.0
+            "is_german": 0.0,
+            "unified_result": empty_res.to_dict(),
+            "forensic_signals": [],
+            "evidence_quality": empty_res.evidence_quality.value,
         }
 
     lg = get_length_group(text)
@@ -225,6 +255,18 @@ def predict_text(text):
     label = "AI Generated" if is_ai else "Human Written"
     confidence = ai_prob if is_ai else human_prob
 
+    # Multi-signal forensic analysis
+    forensic_signals = extract_text_forensic_signals(text)
+    unified_res = build_text_detection_result(
+        raw_ai_prob=ai_prob,
+        word_count=word_count,
+        linguistic_signals=forensic_signals,
+        length_group=lg,
+        threshold=threshold,
+        is_code=(code_likelihood >= 0.40),
+        is_multilingual=(is_german >= 0.50),
+    )
+
     return {
         "label": label,
         "ai_probability": round(ai_prob, 4),
@@ -233,7 +275,10 @@ def predict_text(text):
         "length_group": lg,
         "threshold": round(threshold, 2),
         "code_likelihood": round(code_likelihood, 4),
-        "is_german": round(is_german, 1)
+        "is_german": round(is_german, 1),
+        "unified_result": unified_res.to_dict(),
+        "forensic_signals": [s.__dict__ if hasattr(s, "__dict__") else s for s in forensic_signals],
+        "evidence_quality": unified_res.evidence_quality.value,
     }
 
 if __name__ == "__main__":

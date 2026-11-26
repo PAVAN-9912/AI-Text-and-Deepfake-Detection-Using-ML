@@ -35,7 +35,7 @@ The explosive rise of generative AI models (Large Language Models such as ChatGP
 
 **AI Text and Deepfake Detection Using ML** provides a unified forensic platform designed to analyze digital media in real-time:
 1. **Text Forensics**: Distinguishes **HUMAN-WRITTEN** vs **AI-GENERATED** text by fusing statistical n-grams, transformer sentence embeddings, and stylometric characteristics into a 194,545-dimensional feature space.
-2. **Video Deepfake Forensics**: Detects synthetic facial manipulation across video sequences using an OpenCV YuNet face localization pipeline, ResNet-18 spatial feature extraction, and a deep temporal sequence architecture composed of **Temporal Conv1D + 2-layer BiGRU + Multi-Head Attention**.
+2. **Video Deepfake & Synthetic Generation Forensics (`PolicyC_STSeqNet_FaceViT`)**: Combines **ST-SeqNet** (Epoch 8, EfficientNet-B0 + temporal feature differences + BiGRU + temporal attention over 16 full-frame samples) with **FaceViT** (ViT-Base Patch16-224 over OpenCV YuNet face crops) via audited **Policy C** (Evidence-Gated Specialist Fusion), returning calibrated `REAL`, `FAKE`, or `INCONCLUSIVE` (Domain Conflict) verdicts.
 
 ---
 
@@ -135,30 +135,25 @@ Video Input (8 Frames)
 | **Classifier** | Logistic Regression with $L_2$ regularization ($C=1.0$) + Platt Calibration |
 | **Decision Threshold** | **0.41** ($\ge 0.41 \implies$ AI-Generated) |
 
-### Video Deepfake Detection Pipeline
+### Video Deepfake & Fusion Detection Pipeline (`PolicyC_STSeqNet_FaceViT`)
 | Parameter | Configuration |
 |:---|:---|
-| **Sampling Rate** | 8 frames sampled uniformly across the video timeline |
-| **Face Localization** | OpenCV YuNet ONNX (`face_detection_yunet.onnx`) |
-| **Spatial Backbone** | Pretrained ResNet-18 ($512$ feature outputs) |
-| **Temporal Convolution** | 1D Conv ($C_{in}=512, C_{out}=256, k=3, p=1$), BatchNorm, GELU |
-| **Recurrent Layer** | 2-Layer Bidirectional GRU ($hidden=128$, bidirectional output $= 256$) |
-| **Attention Layer** | Multi-Head Attention ($embed\_dim=256$, $heads=4$, dropout $= 0.20$) |
-| **Pooling** | Dual Mean-Pooling + Max-Pooling ($512$ concatenated dimensions) |
-| **Classifier Head** | Linear($512 \to 128$) $\to$ GELU $\to$ Dropout($0.35$) $\to$ Linear($128 \to 1$) |
-| **Calibration** | Isotonic Regression Calibrator |
-| **Decision Threshold** | **0.32** ($\ge 0.32$ Real Probability $\implies$ REAL, else FAKE) |
+| **Full-Frame Expert (`ST-SeqNet` E8)** | EfficientNet-B0 ($1280$-d) + Temporal Feature Differences ($2560 \to 256$) + BiGRU ($256$) + Temporal Self-Attention ($16$ frames @ $224 \times 224$), threshold **0.50** |
+| **Facial Specialist (`FaceViT`)** | OpenCV YuNet ONNX face localization + ViT-Base Patch16-224 ($8$ frames), threshold **0.475** |
+| **Fusion Router (`Policy C`)** | Evidence-Gated Specialist Fusion: delegates faceless clips to ST-SeqNet, flags decisive FaceViT manipulation, and abstains (`INCONCLUSIVE`) on strong domain conflict |
+| **Codec Robustness (Phase 7F.6)** | $0/40$ new false-positive flips across modern H.264 (CRF 18–38), VP9, AV1, 15 fps, and 2nd-gen transcode; $90.0\%$ genuine invariance across 10 conditions |
 
 ---
 
 ## 📊 Performance & Benchmark Metrics
 
-The models have been benchmarked on standard research datasets:
+The models have been benchmarked on standard and sealed independent evaluation cohorts:
 
-| Detection Module | Benchmark Dataset | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+| Detection Module | Benchmark Dataset | Accuracy | Precision / Spec | Recall | F1-Score | ROC-AUC |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
 | **Text Classifier** | HC3 + RAID + SentenceAI | **89.26%** | 86.46% | 90.49% | **88.43%** | **96.14%** |
-| **Video Deepfake Detector** | Celeb-DF v2 Benchmark | **67.37%** | 52.63% | 50.56% | **51.58%** | **65.10%** |
+| **ST-SeqNet (Epoch 8)** | Sealed Phase 7F.5 ($N=200$) | **82.00%** | — | **90.00%** | — | **86.03%** |
+| **Policy C Specialist Fusion** | Sealed Phase 7F.5 ($N=200$, Decided $N=172$) | **83.14%** | **88.06%** Prec / **91.30%** Spec | 73.75% | **80.27%** | **86.03%** |
 
 ---
 

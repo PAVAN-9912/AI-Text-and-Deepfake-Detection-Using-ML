@@ -584,10 +584,10 @@ async function analyzeVideo() {
 
     const stages = [
         "Analyzing video...",
-        "Extracting 8 uniform temporal frames...",
+        "Extracting uniform temporal frames...",
         "Detecting facial landmarks with YuNet...",
-        "Extracting ResNet-18 spatial features...",
-        "Evaluating Temporal Conv1D + BiGRU Attention..."
+        "Extracting EfficientNet-B0 multi-generator forensic features...",
+        "Evaluating facial authenticity against benchmark..."
     ];
 
     let stageIdx = 0;
@@ -672,55 +672,123 @@ function renderVideoResult(data) {
     if (errorState) errorState.classList.add("hidden");
     resultContent.classList.remove("hidden");
 
-    // Standardize result check directly from the API result field
+    // Standardize binary result directly from the API result field
     const rawResult = String(data.result || "").toUpperCase().trim();
-    const isReal = (rawResult === "REAL" || rawResult === "REAL (AUTHENTIC)" || rawResult === "REAL / HUMAN");
+    const isReal = (rawResult === "REAL" || rawResult === "HUMAN" || rawResult === "REAL (AUTHENTIC)" || rawResult === "REAL / HUMAN");
 
-    const realProb = Number(data.real_probability);
-    const fakeProb = Number(data.fake_probability);
-    const confidence = Number(data.confidence);
+    const realProb = data.real_probability != null ? Number(data.real_probability) : null;
+    const fakeProb = data.fake_probability != null ? Number(data.fake_probability) : null;
+    const confidence = data.confidence != null ? Number(data.confidence) : null;
 
     // Dynamic threshold extraction
-    const rawThresh = data.threshold != null ? Number(data.threshold) : 0.32;
+    const rawThresh = data.threshold != null ? Number(data.threshold) : 0.50;
     const threshPct = rawThresh <= 1.0 ? (rawThresh * 100).toFixed(2) : rawThresh.toFixed(2);
+    const modelTag = data.model || "SoftBinaryFusion_STSeqNet_FaceViT";
 
     if (isReal) {
-        badge.textContent = "REAL (AUTHENTIC)";
+        badge.textContent = "HUMAN (AUTHENTIC)";
         badge.className = "badge real";
         if (decisionAlert) {
             decisionAlert.className = "alert alert-info";
             decisionAlert.classList.remove("hidden");
             if (decisionIcon) decisionIcon.textContent = "ℹ️";
-            if (decisionTitle) decisionTitle.textContent = "Calibrated Decision (Authentic)";
+            if (decisionTitle) decisionTitle.textContent = data.routing_rule ? `Decision (Human — ${data.routing_rule})` : "Decision (Human)";
+            let reasonText = data.reason || `${modelTag} Decision: Human probability (${realProb != null ? realProb.toFixed(2) : '--'}%) exceeds threshold.`;
             if (decisionReason) {
-                decisionReason.textContent = `V4 Decision: Real probability (${realProb.toFixed(2)}%) meets or exceeds the calibrated real threshold (${threshPct}%).`;
+                decisionReason.textContent = reasonText;
             }
         }
     } else {
-        badge.textContent = "FAKE / DEEPFAKE";
+        badge.textContent = "AI-GENERATED (DEEPFAKE)";
         badge.className = "badge fake";
         if (decisionAlert) {
             decisionAlert.className = "alert alert-warning";
             decisionAlert.classList.remove("hidden");
             if (decisionIcon) decisionIcon.textContent = "⚠️";
-            if (decisionTitle) decisionTitle.textContent = "Calibrated Decision (Deepfake)";
+            if (decisionTitle) decisionTitle.textContent = data.routing_rule ? `Decision (AI-Generated — ${data.routing_rule})` : "Decision (AI-Generated)";
+            let reasonText = data.reason || `${modelTag} Decision: AI probability (${fakeProb != null ? fakeProb.toFixed(2) : '--'}%) meets or exceeds threshold (${threshPct}%).`;
             if (decisionReason) {
-                decisionReason.textContent = `V4 Decision: Real probability (${realProb.toFixed(2)}%) is below the calibrated real threshold (${threshPct}%).`;
+                decisionReason.textContent = reasonText;
             }
         }
     }
 
+    // Update Specialist Expert Breakdown Bars (ST-SeqNet & FaceViT)
+    const probSt = document.getElementById("prob-stseqnet-video");
+    const barSt = document.getElementById("bar-stseqnet-video");
+    const probVit = document.getElementById("prob-facevit-video");
+    const barVit = document.getElementById("bar-facevit-video");
+
+    const stPct = data.st_seqnet_p_ai != null ? Number(data.st_seqnet_p_ai) * 100 : null;
+    const vitPct = data.vit_p_fake != null ? Number(data.vit_p_fake) * 100 : null;
+
+    if (probSt) probSt.textContent = (stPct != null && !isNaN(stPct)) ? `${stPct.toFixed(2)}% AI` : "--%";
+    if (barSt) barSt.style.width = (stPct != null && !isNaN(stPct)) ? `${Math.min(Math.max(stPct, 0), 100)}%` : "0%";
+    if (probVit) probVit.textContent = (vitPct != null && !isNaN(vitPct)) ? `${vitPct.toFixed(2)}% AI` : "No Face (N/A)";
+    if (barVit) barVit.style.width = (vitPct != null && !isNaN(vitPct)) ? `${Math.min(Math.max(vitPct, 0), 100)}%` : "0%";
+
     if (confidenceVal) {
-        confidenceVal.textContent = (!isNaN(confidence) ? confidence.toFixed(2) : "--") + "%";
+        confidenceVal.textContent = (confidence != null && !isNaN(confidence)) ? `${confidence.toFixed(2)}%` : "Inconclusive";
     }
 
-    if (probReal) probReal.textContent = (!isNaN(realProb) ? realProb.toFixed(2) : "--") + "%";
-    if (probFake) probFake.textContent = (!isNaN(fakeProb) ? fakeProb.toFixed(2) : "--") + "%";
-    if (barReal) barReal.style.width = Math.min(Math.max(!isNaN(realProb) ? realProb : 0, 0), 100) + "%";
-    if (barFake) barFake.style.width = Math.min(Math.max(!isNaN(fakeProb) ? fakeProb : 0, 0), 100) + "%";
+    if (probReal) probReal.textContent = (realProb != null && !isNaN(realProb)) ? `${realProb.toFixed(2)}%` : "--%";
+    if (probFake) probFake.textContent = (fakeProb != null && !isNaN(fakeProb)) ? `${fakeProb.toFixed(2)}%` : "--%";
+    if (barReal) barReal.style.width = (realProb != null && !isNaN(realProb)) ? `${Math.min(Math.max(realProb, 0), 100)}%` : "0%";
+    if (barFake) barFake.style.width = (fakeProb != null && !isNaN(fakeProb)) ? `${Math.min(Math.max(fakeProb, 0), 100)}%` : "0%";
 
-    if (resFrames) resFrames.textContent = `${data.frames_analyzed || 8} Frames`;
+    if (resFrames) {
+        let frameText = `${data.frames_analyzed || 8} Frames`;
+        if (data.face_detected_frames != null) {
+            frameText += ` (${data.face_detected_frames} Faces`;
+            if (data.reliability && data.reliability !== "NONE") {
+                frameText += `, ${data.reliability} Rel`;
+            }
+            frameText += `)`;
+        }
+        resFrames.textContent = frameText;
+    }
     if (resThreshold) resThreshold.textContent = `${threshPct}%`;
+
+    const resLatency = document.getElementById("res-video-latency");
+    const resFaceStatus = document.getElementById("res-video-face-status");
+    const resPipeline = document.getElementById("res-video-pipeline");
+
+    if (resLatency) {
+        resLatency.textContent = data.processing_time_ms != null ? `${data.processing_time_ms} ms` : "--";
+    }
+    if (resFaceStatus) {
+        resFaceStatus.textContent = data.face_detection_status || (data.face_detected_frames > 0 ? `${data.face_detected_frames} Faces Detected` : "No Faces Detected");
+    }
+    if (resPipeline) {
+        resPipeline.textContent = data.model || "Vision Transformer (ViT-Base Patch16-224)";
+    }
+
+    // Populate Multi-Expert diagnostic fields if shadow mode payload is present
+    const expVit = document.getElementById("exp-vit-val");
+    const expSwin = document.getElementById("exp-swin-val");
+    const expRestrav = document.getElementById("exp-restrav-val");
+    const expStacking = document.getElementById("exp-stacking-val");
+
+    if (data.shadow_mode && data.shadow_mode.experts) {
+        const experts = data.shadow_mode.experts;
+        if (expVit && experts.face_vit) {
+            expVit.textContent = experts.face_vit.evidence_valid ? `${experts.face_vit.label} (P_Real: ${(experts.face_vit.p_real * 100).toFixed(1)}%)` : "INSUFFICIENT EVIDENCE (0 Faces)";
+        }
+        if (expSwin && experts.fullframe_swin) {
+            expSwin.textContent = experts.fullframe_swin.evidence_valid ? `${experts.fullframe_swin.label} (P_Real: ${(experts.fullframe_swin.p_real * 100).toFixed(1)}%)` : "UNAVAILABLE";
+        }
+        if (expRestrav && experts.temporal_restrav) {
+            expRestrav.textContent = experts.temporal_restrav.evidence_valid ? `${experts.temporal_restrav.label} (P_Real: ${(experts.temporal_restrav.p_real * 100).toFixed(1)}%)` : "UNAVAILABLE";
+        }
+        if (expStacking) {
+            expStacking.textContent = `Candidate: ${data.shadow_mode.candidate_verdict || '--'} (${data.shadow_mode.candidate_strategy || 'Stacking LR'})`;
+        }
+    } else {
+        if (expVit) expVit.textContent = "Active Primary (ViT Patch16-224)";
+        if (expSwin) expSwin.textContent = "Shadow Mode (Spatial Swin-T)";
+        if (expRestrav) expRestrav.textContent = "Shadow Mode (DINOv2 Straightening)";
+        if (expStacking) expStacking.textContent = "Gated (ENABLE_ENSEMBLE_ROUTER=0)";
+    }
 }
 
 function resetVideoResultUI() {
@@ -747,14 +815,25 @@ window.resetVideoResultUI = resetVideoResultUI;
 // ============================================================
 
 function initAccordion() {
-    const toggleBtn = document.getElementById("accordion-toggle");
-    const body = document.getElementById("accordion-body");
+    const textToggle = document.getElementById("accordion-toggle");
+    const textBody = document.getElementById("accordion-body");
 
-    if (toggleBtn && body) {
-        toggleBtn.addEventListener("click", () => {
-            body.classList.toggle("hidden");
-            const icon = toggleBtn.querySelector(".accordion-icon");
-            if (icon) icon.textContent = body.classList.contains("hidden") ? "▼" : "▲";
+    if (textToggle && textBody) {
+        textToggle.addEventListener("click", () => {
+            textBody.classList.toggle("hidden");
+            const icon = textToggle.querySelector(".accordion-icon");
+            if (icon) icon.textContent = textBody.classList.contains("hidden") ? "▼" : "▲";
+        });
+    }
+
+    const videoToggle = document.getElementById("video-accordion-toggle");
+    const videoBody = document.getElementById("video-accordion-body");
+
+    if (videoToggle && videoBody) {
+        videoToggle.addEventListener("click", () => {
+            videoBody.classList.toggle("hidden");
+            const icon = videoToggle.querySelector(".accordion-icon");
+            if (icon) icon.textContent = videoBody.classList.contains("hidden") ? "▼" : "▲";
         });
     }
 }

@@ -1,109 +1,56 @@
 # Setup & Installation Guide
 
-This guide provides step-by-step instructions to configure, install, and run **AI Text and Deepfake Detection Using ML** across Windows, macOS, and Linux environments.
+Instructions to configure, verify, and run the **AI Content Detection Platform**.
 
 ---
 
 ## 1. System Requirements
-
-- **Operating System**: Windows 10/11, Ubuntu 20.04+, or macOS 12+
-- **Python Version**: Python 3.9, 3.10, 3.11, or 3.14
-- **RAM**: Minimum 8 GB recommended (16 GB for optimal speed)
-- **Disk Space**: ~2 GB free disk space (for virtual environment and dependencies)
-- **GPU (Optional)**: NVIDIA GPU with CUDA support for accelerated inference
+- **OS:** Windows 10/11, Ubuntu 20.04+, or macOS 12+
+- **Python:** Python 3.11 (tested on `3.11.9`)
+- **RAM:** 8 GB minimum, 16 GB recommended (~1.0–1.3 GB RSS during CPU inference)
+- **PyTorch:** `torch 2.13.0+cpu` / `torchvision 0.28.0+cpu` (or CUDA build if GPU available)
 
 ---
 
 ## 2. Environment Setup
 
-### 2.1 Clone Repository
-```bash
+```powershell
 git clone https://github.com/PAVAN-9912/AI-Text-and-Deepfake-Detection-Using-ML.git
 cd AI-Text-and-Deepfake-Detection-Using-ML
-```
-
-### 2.2 Create Virtual Environment
-
-#### On Windows (Command Prompt / PowerShell):
-```powershell
 python -m venv venv
 .\venv\Scripts\activate
-```
-
-#### On Linux / macOS:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
-
-## 3. Install Dependencies
-
-Install all required Python packages using `pip`:
-```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 ---
 
-## 4. Verify Model Artifacts
+## 3. Required Frozen Model Artifacts
 
-Ensure the following pretrained model files are present:
-```
-models/
-├── face_detector/
-│   └── face_detection_yunet.onnx
-├── text_final/
-│   ├── char_tfidf_vectorizer.pkl
-│   ├── platt_calibrator.pkl
-│   ├── text_classifier.pkl
-│   ├── text_scaler.pkl
-│   └── word_tfidf_vectorizer.pkl
-└── video_final_v4/
-    ├── temporal_attention_model.pth
-    ├── video_calibrator.pkl
-    ├── video_metrics.pkl
-    └── video_scaler.pkl
-```
+- **Text Forensics (`text_final_v3.4`, 194,897 features):**
+  - `models/text_final/text_classifier.pkl`
+  - `models/text_final/text_config.pkl`
+  - `models/text_final/text_scaler.pkl`
+  - `models/text_final/word_tfidf_vectorizer.pkl`
+  - `models/text_final/char_tfidf_vectorizer.pkl`
+  - `models/text_final/platt_calibrator.pkl`
+- **Video Forensics (`PolicyC_STSeqNet_FaceViT`):**
+  - `experiments/phase7f_4/checkpoints/st_seqnet_best_checkpoint.pth` (`ST-SeqNet` Epoch 8)
+  - `experiments/v12_vit/checkpoints/vit_deepfake_best.pth` (`FaceViT` v12)
+  - `models/face_detector/face_detection_yunet.onnx` (`YuNet` 5-point face detector)
 
 ---
 
-## 5. Running the Application
+## 4. Running & Verifying the Application
 
-### Start the Flask Server
-```bash
-python app.py
+### Start Server
+```powershell
+.\venv\Scripts\python.exe app.py
 ```
+Open `http://127.0.0.1:5000` in your browser.
 
-### Accessing the Web Application
-Open your web browser and navigate to:
-```
-http://localhost:5000
-```
-or
-```
-http://127.0.0.1:5000
-```
-
----
-
-## 6. Troubleshooting
-
-### Issue: OpenCV `cv2` Import Error or Missing Video Codecs
-**Resolution**: Ensure `opencv-python` is installed:
-```bash
-pip install opencv-python
-```
-On headless Linux servers:
-```bash
-sudo apt-get update && sudo apt-get install -y libgl1-mesa-glx libglib2.0-0
-pip install opencv-python-headless
-```
-
-### Issue: Torch CUDA Not Available
-**Resolution**: The application automatically falls back to CPU inference. If you have an NVIDIA GPU and want CUDA acceleration, install PyTorch with CUDA support from [pytorch.org](https://pytorch.org):
-```bash
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+### Run Automated Verification Suites
+```powershell
+.\venv\Scripts\python.exe src\test_api_integration.py
+.\venv\Scripts\python.exe src\test_end_to_end.py
 ```

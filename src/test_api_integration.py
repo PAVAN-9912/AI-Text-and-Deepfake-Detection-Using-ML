@@ -162,56 +162,38 @@ if sample_video_fake.exists():
     check(res.status_code == 200, "POST /api/predict/video (valid fake video) returns HTTP 200")
     vdata = res.get_json()
     check(vdata.get("success") is True, "Video analysis success is True")
-    check(vdata.get("result") in ["REAL", "FAKE"], f"Soft Binary Fusion always returns REAL or FAKE (Got: {vdata.get('result')})")
-    check(vdata.get("display_verdict") in ["HUMAN", "AI-GENERATED"], f"display_verdict is HUMAN or AI-GENERATED (Got: {vdata.get('display_verdict')})")
-    check("PolicyC_STSeqNet_FaceViT" in vdata.get("model", ""), f"Model name is PolicyC_STSeqNet_FaceViT (Got: {vdata.get('model')})")
+    check(vdata.get("result") == "FAKE", f"Policy C classifies Celeb-synthesis fake video as FAKE (Got: {vdata.get('result')})")
+    check(vdata.get("display_verdict") == "AI-GENERATED", f"display_verdict is AI-GENERATED (Got: {vdata.get('display_verdict')})")
+    check(vdata.get("model") == "PolicyC_STSeqNet_FaceViT", f"Model name is PolicyC_STSeqNet_FaceViT (Got: {vdata.get('model')})")
     check(vdata.get("frames_analyzed") == 16, f"ST-SeqNet frames analyzed strictly 16 (Got: {vdata.get('frames_analyzed')})")
     check("st_seqnet_p_ai" in vdata and vdata.get("st_seqnet_p_ai") is not None, "st_seqnet_p_ai present in response")
-    check("routing_rule" in vdata and vdata.get("routing_rule") is not None, f"routing_rule present: {vdata.get('routing_rule')}")
+    check(vdata.get("routing_rule") == "C2_DECISIVE_FACIAL_MANIPULATION", f"Policy C routing_rule is C2_DECISIVE_FACIAL_MANIPULATION (Got: {vdata.get('routing_rule')})")
     check("attention_weights" in vdata and len(vdata.get("attention_weights", [])) == 16, "16 temporal attention_weights present")
     check("probabilities" in vdata, "probabilities dict present in response")
-    if vdata.get("result") in ["REAL", "FAKE"]:
-        check(vdata.get("real_probability") is not None and vdata.get("fake_probability") is not None, "Real & Fake probabilities present")
-        v_prob_sum = vdata.get("real_probability") + vdata.get("fake_probability")
-        check(abs(v_prob_sum - 100.0) < 0.05, f"Video Real + Fake probabilities sum to 100.0% (Sum: {v_prob_sum}%)")
-        expected_conf = vdata["real_probability"] if vdata["result"] == "REAL" else vdata["fake_probability"]
-        check(abs(vdata["confidence"] - expected_conf) < 1e-4, f"Confidence strictly matches predicted class: {vdata['confidence']}%")
+    check(vdata.get("real_probability") is not None and vdata.get("fake_probability") is not None, "Real & Fake probabilities present")
+    v_prob_sum = vdata.get("real_probability") + vdata.get("fake_probability")
+    check(abs(v_prob_sum - 100.0) < 0.05, f"Video Real + Fake probabilities sum to 100.0% (Sum: {v_prob_sum}%)")
+    expected_conf = vdata["fake_probability"]
+    check(abs(vdata["confidence"] - expected_conf) < 1e-4, f"Confidence strictly matches predicted class: {vdata['confidence']}%")
     check(vdata.get("video_filename") == "test_fake_video.mp4", "Video filename preserved in response")
 
-# 4.1b Verify all 4 Soft Binary Fusion branches (Cases A-D)
-from src.predict_video_fusion import fuse_binary_probabilities
-
-p_a, rule_a, _ = fuse_binary_probabilities(0.82, None, 0)
-check(abs(p_a - 0.82) < 1e-6 and rule_a == "CASE_A_FACELESS_ST_SEQNET", f"Case A (No Faces): p_ai={p_a}, rule={rule_a}")
-
-p_b, rule_b, _ = fuse_binary_probabilities(0.30, 0.70, 3)
-check(abs(p_b - 0.70) < 1e-6 and rule_b == "CASE_B_STRONG_FACIAL_MANIPULATION", f"Case B (Strong FaceSwap): p_ai={p_b}, rule={rule_b}")
-
-p_c, rule_c, _ = fuse_binary_probabilities(0.90, 0.10, 4)
-expected_c = 0.35 * 0.90 + 0.65 * 0.10  # 0.38 < 0.50 -> REAL (HUMAN)!
-check(abs(p_c - expected_c) < 1e-6 and p_c < 0.50 and rule_c == "CASE_C_AUTHENTIC_FACE_DAMPENING", f"Case C (Authentic Face Dampening): p_ai={p_c:.4f} (<0.50), rule={rule_c}")
-
-p_d, rule_d, _ = fuse_binary_probabilities(0.80, 0.40, 2)
-expected_d = 0.65 * 0.80 + 0.35 * 0.40  # 0.66 >= 0.50 -> FAKE (AI-GENERATED)!
-check(abs(p_d - expected_d) < 1e-6 and p_d >= 0.50 and rule_d == "CASE_D_DUAL_EXPERT_BLEND", f"Case D (Dual-Expert Blend): p_ai={p_d:.4f} (>=0.50), rule={rule_d}")
-
-# 4.1c Pillarbox 9:16 Border Cropping Verification
-with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as tf_pb:
-    temp_pb = tf_pb.name
-try:
-    fourcc_pb = cv2.VideoWriter_fourcc(*"mp4v")
-    out_pb = cv2.VideoWriter(temp_pb, fourcc_pb, 10, (320, 240))
-    for _ in range(16):
-        frame_pb = np.zeros((240, 320, 3), dtype=np.uint8)
-        frame_pb[:, 100:220, :] = 180
-        out_pb.write(frame_pb)
-    out_pb.release()
-    pb_res = active_predict_video(temp_pb)
-    check(pb_res.get("border_cropped") is True, "Pillarbox black bars (>15% area) stripped via border_cropped=True")
-    check(pb_res.get("label") in ("REAL", "FAKE"), f"Pillarbox video produces binary verdict: {pb_res.get('label')}")
-finally:
-    if os.path.exists(temp_pb):
-        os.remove(temp_pb)
+# 4.1b Real Frozen Policy C INCONCLUSIVE (Domain Conflict on YouTube-real)
+yt_real = BASE_DIR / "datasets" / "video" / "celebdf_raw" / "YouTube-real" / "00000.mp4"
+if yt_real.exists():
+    with open(yt_real, "rb") as vf:
+        yt_bytes = vf.read()
+    res_inc = client.post(
+        "/api/predict/video",
+        data={"file": (io.BytesIO(yt_bytes), "yt_conflict.mp4")},
+        content_type="multipart/form-data",
+    )
+    check(res_inc.status_code == 200, "POST /api/predict/video (real YouTube-real domain conflict) returns HTTP 200")
+    inc_data = res_inc.get_json()
+    check(inc_data.get("result") == "REAL", f"Decisive mode resolves domain conflict to REAL (Got: {inc_data.get('result')})")
+    check(inc_data.get("domain_conflict") is True, "domain_conflict flag is True")
+    check(inc_data.get("routing_rule") == "C3_STRONG_DOMAIN_CONFLICT_RESOLVED_DECISIVE", f"routing_rule is C3_STRONG_DOMAIN_CONFLICT_RESOLVED_DECISIVE (Got: {inc_data.get('routing_rule')})")
+    check(inc_data.get("real_probability") is not None and inc_data.get("fake_probability") is not None, "Decisive mode provides calibrated real/fake probabilities")
+    check(inc_data.get("st_seqnet_p_ai") is not None and inc_data.get("vit_p_fake") is not None, "Individual expert scores preserved on INCONCLUSIVE")
 
 # 4.2 Video Inference (Real Video Sample)
 sample_video_real = BASE_DIR / "datasets" / "video" / "celebdf_raw" / "YouTube-real" / "00000.mp4"
@@ -259,8 +241,8 @@ try:
     res_nf = client.post("/api/analyze/video", data={"file": (io.BytesIO(noface_bytes), "noface.mp4")}, content_type="multipart/form-data")
     check(res_nf.status_code == 200, "POST /api/analyze/video (zero-face video) returns HTTP 200")
     nf_data = res_nf.get_json()
-    check(nf_data.get("result") in ("REAL", "FAKE"), f"Zero-face video delegated via Policy C to ST-SeqNet (Got: {nf_data.get('result')})")
-    check(nf_data.get("routing_rule") == "CASE_A_FACELESS_ST_SEQNET", f"Zero-face routing rule is CASE_A_FACELESS_ST_SEQNET (Got: {nf_data.get('routing_rule')})")
+    check(nf_data.get("result") == "REAL", f"Zero-face video delegated via Policy C to ST-SeqNet (Got: {nf_data.get('result')})")
+    check(nf_data.get("routing_rule") == "C1_FACELESS_GENUINE_AUTHORITY", f"Zero-face routing rule is C1_FACELESS_GENUINE_AUTHORITY (Got: {nf_data.get('routing_rule')})")
     check(nf_data.get("face_detected_frames") == 0, "Zero-face video reports face_detected_frames == 0")
     check(nf_data.get("accepted_crops") == 0, "Zero-face video reports accepted_crops == 0")
     check(nf_data.get("reliability") == "FULL_FRAME", f"Zero-face video reports reliability == 'FULL_FRAME' (Got: {nf_data.get('reliability')})")

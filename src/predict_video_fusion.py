@@ -1,7 +1,7 @@
 """
-Production Video Fusion Engine (Phase 8)
-======================================
-Promotes frozen ST-SeqNet (Epoch 8) + frozen FaceViT + audited Policy C
+Production Video Fusion Engine (Phase 8.2 — Restored Frozen Policy C)
+====================================================================
+Promotes frozen ST-SeqNet (Epoch 8) + frozen FaceViT + audited frozen Policy C
 (Evidence-Gated Specialist Fusion) into production inference.
 
 Strict Invariants:
@@ -11,22 +11,26 @@ Strict Invariants:
 - FaceViT checkpoint: experiments/v12_vit/checkpoints/vit_deepfake_best.pth
 - FaceViT threshold: 0.475
 - Policy C router: src/experimental/phase6_4_staging/staging_fusion_router.py (unchanged)
+- Standard preprocessing: src/experimental/phase7f/preprocessing.py (unchanged)
 """
 
-import os
 import time
 import hashlib
 import threading
 from pathlib import Path
-from typing import Dict, Any, Optional, List, Tuple
+from typing import Dict, Any, Optional, List
 
-import cv2
-import numpy as np
 import torch
 
 from src.experimental.phase7f.models import STSeqNet
 from src.experimental.phase7f.preprocessing import StandardVideoPreprocessor
 from src.predict_video_vit import predict_video_vit, load_vit_artifacts
+from src.experimental.phase6_4_staging.staging_result_schema import (
+    ExpertInferenceResult,
+    ExpertStatus,
+    FusionVerdict,
+)
+from src.experimental.phase6_4_staging.staging_fusion_router import StagingFusionRouter
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,7 +84,6 @@ def load_fusion_artifacts(
                 f"ST-SeqNet checkpoint SHA-256 mismatch! Expected {EXPECTED_ST_SEQNET_SHA256}, got {actual_sha}"
             )
 
-        # Load ST-SeqNet on CPU/CUDA cleanly
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = STSeqNet(pretrained_backbone=False)
         ckpt_data = torch.load(st_ckpt, map_location=device)
@@ -97,166 +100,32 @@ def load_fusion_artifacts(
         _loaded = True
 
 
-def _decode_frames_with_border_crop(
-    video_path: str, preprocessor: StandardVideoPreprocessor
-) -> Tuple[Optional[np.ndarray], Dict[str, Any]]:
+def predict_video_fusion(video_path: str, mode: str = "decisive") -> Dict[str, Any]:
     """
-    Decodes 16 uniformly sampled frames via StandardVideoPreprocessor sampling indices,
-    stripping solid black pillarbox/letterbox bars before 224x224 resizing when
-    padding exceeds 15% of frame area (so vertical 9:16 Reels/Shorts are not diluted).
-    """
-    status: Dict[str, Any] = {
-        "success": False,
-        "total_frames_reported": 0,
-        "frames_decoded": 0,
-        "border_cropped": False,
-        "error_msg": None,
-    }
-    if not os.path.exists(video_path):
-        status["error_msg"] = f"File not found: {video_path}"
-        return None, status
+    Runs frozen ST-SeqNet (Full-Frame Temporal, 16 frames) + frozen FaceViT
+    (Localized Facial, 8 frames) and evaluates both signals through the frozen
+    Policy C router (StagingFusionRouter.evaluate(..., policy="POLICY_C")).
 
-    cap = cv2.VideoCapture(video_path)
-    if not cap.isOpened():
-        status["error_msg"] = f"Failed to open video stream: {video_path}"
-        return None, status
-
-    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    if total_frames <= 0:
-        count = 0
-        while cap.grab():
-            count += 1
-            if count > 5000:
-                break
-        total_frames = count
-    status["total_frames_reported"] = total_frames
-    if total_frames == 0:
-        cap.release()
-        status["error_msg"] = "Zero frames readable from video stream"
-        return None, status
-
-    target_indices = preprocessor.sample_frame_indices(total_frames)
-    selected_raw: List[Optional[np.ndarray]] = []
-    last_valid = None
-    for idx in target_indices:
-        cap.set(cv2.CAP_PROP_POS_FRAMES, int(idx))
-        ret, frame = cap.read()
-        if ret and frame is not None:
-            selected_raw.append(frame)
-            last_valid = frame
-        elif last_valid is not None:
-            selected_raw.append(last_valid)
-        else:
-            selected_raw.append(None)
-    cap.release()
-
-    first_valid = next((f for f in selected_raw if f is not None), None)
-    if first_valid is None:
-        status["error_msg"] = "All decoded target frames were null"
-        return None, status
-    valid_frames = [f if f is not None else first_valid for f in selected_raw]
-
-    # Detect solid black pillarbox/letterbox bars (> 15% of frame area)
-    h0, w0 = valid_frames[0].shape[:2]
-    crop_box: Optional[Tuple[int, int, int, int]] = None
-    if h0 >= 64 and w0 >= 64:
-        sample_stack = np.max(np.stack(valid_frames[::4], axis=0), axis=(0, 3))  # [H, W]
-        non_black = sample_stack >= 18
-        rows = np.any(non_black, axis=1)
-        cols = np.any(non_black, axis=0)
-        if np.any(rows) and np.any(cols):
-            r_min, r_max = int(np.where(rows)[0][0]), int(np.where(rows)[0][-1]) + 1
-            c_min, c_max = int(np.where(cols)[0][0]), int(np.where(cols)[0][-1]) + 1
-            cropped_area = (r_max - r_min) * (c_max - c_min)
-            orig_area = h0 * w0
-            if (cropped_area / float(orig_area)) <= 0.85 and (r_max - r_min) >= 64 and (c_max - c_min) >= 64:
-                crop_box = (r_min, r_max, c_min, c_max)
-                status["border_cropped"] = True
-
-    processed = []
-    for frame in valid_frames:
-        if crop_box is not None:
-            r_min, r_max, c_min, c_max = crop_box
-            frame = frame[r_min:r_max, c_min:c_max]
-        resized = cv2.resize(
-            frame,
-            (preprocessor.config.target_width, preprocessor.config.target_height),
-            interpolation=cv2.INTER_LINEAR,
-        )
-        processed.append(cv2.cvtColor(resized, cv2.COLOR_BGR2RGB))
-
-    status["frames_decoded"] = len(processed)
-    status["success"] = True
-    return np.stack(processed, axis=0), status
-
-
-def fuse_binary_probabilities(
-    st_seqnet_p_ai: float,
-    vit_p_fake: Optional[float],
-    face_count: int,
-) -> Tuple[float, str, str]:
-    """
-    Deterministic Soft Binary Fusion (threshold = 0.50, 0% abstention):
-    - Case A (face_count == 0 or vit_p_fake is None): p_ai = st_seqnet_p_ai
-    - Case B (face_count > 0 and vit_p_fake >= 0.55): p_ai = max(vit_p_fake, 0.5 * st + 0.5 * vit)
-    - Case C (face_count > 0 and vit_p_fake <= 0.25 and st >= 0.70): p_ai = 0.35 * st + 0.65 * vit
-    - Case D (all other face_count > 0): p_ai = 0.65 * st + 0.35 * vit
-    """
-    st_p = float(np.clip(st_seqnet_p_ai, 0.0, 1.0))
-    if face_count <= 0 or vit_p_fake is None:
-        return (
-            st_p,
-            "CASE_A_FACELESS_ST_SEQNET",
-            f"Case A (Faceless): 100% ST-SeqNet full-frame temporal routing (P_ai={st_p:.4f}).",
-        )
-
-    vit_p = float(np.clip(vit_p_fake, 0.0, 1.0))
-    if vit_p >= 0.55:
-        p_ai = max(vit_p, 0.5 * st_p + 0.5 * vit_p)
-        return (
-            float(np.clip(p_ai, 0.0, 1.0)),
-            "CASE_B_STRONG_FACIAL_MANIPULATION",
-            f"Case B (Strong Facial Manipulation): FaceViT={vit_p:.4f} >= 0.55, ST-SeqNet={st_p:.4f} -> P_ai={p_ai:.4f}.",
-        )
-
-    if vit_p <= 0.25 and st_p >= 0.70:
-        p_ai = 0.35 * st_p + 0.65 * vit_p
-        return (
-            float(np.clip(p_ai, 0.0, 1.0)),
-            "CASE_C_AUTHENTIC_FACE_DAMPENING",
-            f"Case C (Authentic Face Dampening): FaceViT={vit_p:.4f} <= 0.25 dampens ST-SeqNet={st_p:.4f} -> P_ai={p_ai:.4f}.",
-        )
-
-    p_ai = 0.65 * st_p + 0.35 * vit_p
-    return (
-        float(np.clip(p_ai, 0.0, 1.0)),
-        "CASE_D_DUAL_EXPERT_BLEND",
-        f"Case D (Dual-Expert Blend): 0.65*ST-SeqNet({st_p:.4f}) + 0.35*FaceViT({vit_p:.4f}) -> P_ai={p_ai:.4f}.",
-    )
-
-
-def predict_video_fusion(video_path: str) -> Dict[str, Any]:
-    """
-    Runs ST-SeqNet (Full-Frame Temporal) + FaceViT (Localized Facial) and applies
-    deterministic Soft Binary Fusion (threshold=0.50), always returning FAKE or REAL.
+    In mode="decisive" (default), Policy C INCONCLUSIVE domain conflicts are
+    resolved into a decisive REAL (Human-Generated) or FAKE (AI-Generated)
+    verdict using calibrated expert weighting. Pass mode="policy_c" for raw
+    frozen Policy C abstention behavior.
     """
     if not _loaded:
         load_fusion_artifacts()
 
     t_total_start = time.time()
 
-    # 1. ST-SeqNet Inference (Full-Frame Temporal, 16 frames with non-zero border crop)
+    # 1. ST-SeqNet Inference (Full-Frame Temporal, 16 frames via StandardVideoPreprocessor)
     t_st0 = time.time()
     st_p_ai: Optional[float] = None
     st_label = "ERROR"
     st_status = "UNKNOWN"
     st_err: Optional[str] = None
-    border_cropped = False
     attention_weights: List[float] = []
 
     try:
-        frames, status = _decode_frames_with_border_crop(video_path, _preprocessor)
-        border_cropped = bool(status.get("border_cropped", False))
+        frames, status = _preprocessor.decode_video(video_path)
         if not status["success"] or frames is None:
             st_status = "DECODING_ERROR"
             st_err = status.get("error_msg", "Decoding failed")
@@ -285,7 +154,6 @@ def predict_video_fusion(video_path: str) -> Dict[str, Any]:
     vit_err: Optional[str] = None
     vit_frames_analyzed = 8
     vit_frame_probs: List[float] = []
-    vit_raw: Dict[str, Any] = {}
 
     try:
         vit_raw = predict_video_vit(video_path)
@@ -311,63 +179,147 @@ def predict_video_fusion(video_path: str) -> Dict[str, Any]:
         vit_err = str(e)
     vit_lat_ms = (time.time() - t_vit0) * 1000.0
 
-    # Handle complete decode failure cleanly (or ST-SeqNet failure in decisive mode)
-    if st_status != "SUCCESS" or st_p_ai is None:
+    # Handle complete decode failure cleanly
+    if st_status != "SUCCESS" and vit_status == "ERROR":
         return {
             "label": "ERROR",
             "verdict": "ERROR",
             "error": st_err or vit_err or "Failed to decode video.",
-            "model": "SoftBinaryFusion_STSeqNet_FaceViT",
+            "model": "PolicyC_STSeqNet_FaceViT",
         }
 
-    v_has_face = vit_status == "SUCCESS" and vit_label != "INSUFFICIENT_EVIDENCE" and vit_faces > 0
-    effective_face_count = vit_faces if v_has_face else 0
+    # 3. Build ExpertInferenceResult payloads for frozen Policy C router
+    if vit_status == "ERROR":
+        exp_vit_stat = ExpertStatus.ERROR
+        v_has_face = False
+        v_prob = None
+    elif vit_label == "INSUFFICIENT_EVIDENCE" or vit_faces == 0:
+        exp_vit_stat = ExpertStatus.INSUFFICIENT_EVIDENCE
+        v_has_face = False
+        v_prob = None
+    else:
+        exp_vit_stat = ExpertStatus.SUCCESS
+        v_has_face = True
+        v_prob = vit_p_fake
 
-    # 3. Deterministic Soft Binary Fusion (Cases A-D, threshold=0.50)
-    p_ai, routing_rule, reason = fuse_binary_probabilities(
-        st_seqnet_p_ai=st_p_ai,
-        vit_p_fake=vit_p_fake if v_has_face else None,
-        face_count=effective_face_count,
+    expert_vit = ExpertInferenceResult(
+        expert_id="face_vit",
+        expert_name="FaceViT_Base",
+        status=exp_vit_stat,
+        raw_prediction=1 if vit_label == "AI_GENERATED" else (0 if vit_label == "GENUINE" else -1),
+        probability=v_prob,
+        confidence=abs(v_prob - 0.5) * 2.0 if v_prob is not None else 0.0,
+        face_detected=v_has_face,
+        evidence_status=vit_label,
+        execution_time_ms=vit_lat_ms,
+        metadata={"face_count": vit_faces},
     )
 
-    verdict = "FAKE" if p_ai >= ST_SEQNET_THRESHOLD else "REAL"
-    display_verdict = "AI-GENERATED" if verdict == "FAKE" else "HUMAN"
-    fake_prob = p_ai
-    real_prob = 1.0 - fake_prob
+    expert_st = ExpertInferenceResult(
+        expert_id="st_seqnet",
+        expert_name="STSeqNet_FullFrame",
+        status=ExpertStatus.SUCCESS if st_status == "SUCCESS" else ExpertStatus.ERROR,
+        raw_prediction=1 if st_label == "AI_GENERATED" else (0 if st_label == "GENUINE" else -1),
+        probability=st_p_ai,
+        confidence=abs(st_p_ai - 0.5) * 2.0 if st_p_ai is not None else 0.0,
+        face_detected=False,
+        evidence_status=st_label,
+        execution_time_ms=st_lat_ms,
+        metadata={"attention_weights": attention_weights},
+    )
+
+    # Direct invocation of the frozen Policy C router
+    fus_res = StagingFusionRouter.evaluate(
+        face_vit_result=expert_vit,
+        exp_d_result=expert_st,
+        policy="POLICY_C",
+        total_latency_ms=st_lat_ms + vit_lat_ms,
+        peak_ram_mb=0.0,
+        input_video_path=video_path,
+    )
+
     total_latency_ms = round((time.time() - t_total_start) * 1000.0, 1)
+
+    routing_rule = fus_res.decision_rule
+    explanation = fus_res.explanation
+    is_abstained = bool(fus_res.is_abstained)
+
+    if fus_res.verdict == FusionVerdict.AI_GENERATED:
+        verdict = "FAKE"
+        display_verdict = "AI-GENERATED"
+        fake_prob = float(fus_res.calibrated_score) if fus_res.calibrated_score is not None else float(st_p_ai or 0.5)
+        real_prob = 1.0 - fake_prob
+    elif fus_res.verdict == FusionVerdict.LIKELY_HUMAN:
+        verdict = "REAL"
+        display_verdict = "HUMAN"
+        fake_prob = float(fus_res.calibrated_score) if fus_res.calibrated_score is not None else float(st_p_ai or 0.5)
+        real_prob = 1.0 - fake_prob
+    elif mode == "decisive" and (st_p_ai is not None or vit_p_fake is not None):
+        if st_p_ai is not None and vit_p_fake is not None:
+            if vit_p_fake <= 0.20 and st_p_ai >= 0.80:
+                fake_prob = 0.35 * st_p_ai + 0.65 * vit_p_fake
+            else:
+                fake_prob = 0.50 * st_p_ai + 0.50 * vit_p_fake
+            verdict = "FAKE" if fake_prob >= 0.50 else "REAL"
+        elif vit_p_fake is not None:
+            fake_prob = float(vit_p_fake)
+            verdict = "FAKE" if fake_prob >= VIT_THRESHOLD else "REAL"
+        else:
+            fake_prob = float(st_p_ai)
+            verdict = "FAKE" if fake_prob >= ST_SEQNET_THRESHOLD else "REAL"
+        real_prob = 1.0 - fake_prob
+        display_verdict = "AI-GENERATED" if verdict == "FAKE" else "HUMAN"
+        routing_rule = f"{fus_res.decision_rule}_RESOLVED_DECISIVE"
+        is_abstained = False
+        explanation = (
+            f"Decisive resolution of {fus_res.decision_rule}: "
+            f"FaceViT={(vit_p_fake or 0.0):.4f}, "
+            f"ST-SeqNet={(st_p_ai or 0.0):.4f} -> {display_verdict}."
+        )
+    else:
+        verdict = "INCONCLUSIVE"
+        display_verdict = "INCONCLUSIVE"
+        fake_prob = None
+        real_prob = None
+
+    active_threshold = ST_SEQNET_THRESHOLD if not v_has_face else VIT_THRESHOLD
 
     return {
         "label": verdict,
         "verdict": verdict,
         "display_verdict": display_verdict,
         "probabilities": {
-            "fake": round(fake_prob, 4),
-            "real": round(real_prob, 4),
+            "fake": round(fake_prob, 4) if fake_prob is not None else None,
+            "real": round(real_prob, 4) if real_prob is not None else None,
         },
         "fake_probability": fake_prob,
         "real_probability": real_prob,
-        "st_seqnet_p_ai": round(st_p_ai, 6),
+        "st_seqnet_p_ai": round(st_p_ai, 6) if st_p_ai is not None else None,
         "vit_p_fake": round(vit_p_fake, 6) if vit_p_fake is not None else None,
-        "face_count": effective_face_count,
-        "face_detected_frames": effective_face_count,
+        "face_count": vit_faces,
+        "face_detected_frames": vit_faces,
         "frames_analyzed": 16,
         "vit_frames_analyzed": vit_frames_analyzed,
         "routing_rule": routing_rule,
-        "domain_conflict": False,
-        "is_abstained": False,
-        "border_cropped": border_cropped,
-        "reason": reason,
+        "domain_conflict": bool(fus_res.domain_conflict),
+        "is_abstained": is_abstained,
+        "reason": explanation,
         "attention_weights": attention_weights,
         "frame_probabilities": vit_frame_probs,
-        "threshold": ST_SEQNET_THRESHOLD,
+        "threshold": active_threshold,
         "model": "PolicyC_STSeqNet_FaceViT",
-        "primary_expert": "SoftBinaryFusion_STSeqNet_FaceViT",
-        "routing_reason": reason,
+        "primary_expert": "PolicyC_STSeqNet_FaceViT",
+        "routing_reason": explanation,
         "active_experts": ["STSeqNet_Epoch8", "FaceViT_Base"],
-        "reliability": "HIGH" if v_has_face else "FULL_FRAME",
+        "reliability": "INCONCLUSIVE" if verdict == "INCONCLUSIVE" else ("HIGH" if v_has_face else "FULL_FRAME"),
         "reliability_note": (
-            "Faceless media routed 100% via ST-SeqNet full-frame temporal analysis."
-            if not v_has_face else ""
+            "Domain Conflict resolved via decisive expert weighting."
+            if (fus_res.domain_conflict and not is_abstained)
+            else (
+                "Domain Conflict: ST-SeqNet and FaceViT produced contradictory signals."
+                if fus_res.domain_conflict
+                else ("Faceless media routed via ST-SeqNet full-frame temporal analysis." if not v_has_face else "")
+            )
         ),
         "processing_time_ms": total_latency_ms,
     }

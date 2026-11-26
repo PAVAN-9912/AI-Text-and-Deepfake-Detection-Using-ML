@@ -34,7 +34,7 @@ A Final Year Major Project developed at the **Department of Information Science 
 The explosive rise of generative AI models (Large Language Models such as ChatGPT, Claude, and LLaMA, alongside deep generative video models such as FaceSwap, DeepFaceLab, and Diffusion models) presents significant challenges for content integrity, academic authenticity, and digital security.
 
 **AI Text and Deepfake Detection Using ML** provides a unified forensic platform designed to analyze digital media in real-time:
-1. **Text Forensics**: Distinguishes **HUMAN-WRITTEN** vs **AI-GENERATED** text by fusing statistical n-grams, transformer sentence embeddings, and stylometric characteristics into a 194,545-dimensional feature space.
+1. **Text Forensics**: Distinguishes **HUMAN-WRITTEN** vs **AI-GENERATED** text by fusing statistical n-grams, transformer sentence embeddings, and stylometric characteristics into a **194,897-dimensional** feature space (`text_final_v3.4`).
 2. **Video Deepfake & Synthetic Generation Forensics (`PolicyC_STSeqNet_FaceViT`)**: Combines **ST-SeqNet** (Epoch 8, EfficientNet-B0 + temporal feature differences + BiGRU + temporal attention over 16 full-frame samples) with **FaceViT** (ViT-Base Patch16-224 over OpenCV YuNet face crops) via audited **Policy C** (Evidence-Gated Specialist Fusion), returning calibrated `REAL`, `FAKE`, or `INCONCLUSIVE` (Domain Conflict) verdicts.
 
 ---
@@ -42,7 +42,7 @@ The explosive rise of generative AI models (Large Language Models such as ChatGP
 ## 🌟 Key Features
 
 - **Dual-Modal Analysis Engine**: Unified interface capable of analyzing raw text inputs as well as video files (`.mp4`, `.mov`, `.avi`, `.mkv`, `.webm`).
-- **High-Dimensional Feature Fusion**: 194,545-dimensional text representation combining Word TF-IDF, Character TF-IDF, `all-MiniLM-L6-v2` dense embeddings, and stylometric features.
+- **High-Dimensional Feature Fusion**: **194,897-dimensional** text representation (`text_final_v3.4`, `text_classifier.n_features_in_ = 194,897`) combining Word TF-IDF, Character TF-IDF, multi-character TF-IDF, `all-MiniLM-L6-v2` dense embeddings, and 26 stylometric/code/multilingual features.
 - **Deep Spatial-Temporal Video Modeling**: ResNet-18 spatial feature extraction paired with 1D Temporal Convolutions, 2-layer Bidirectional Gated Recurrent Units (BiGRU), and 4-head Multi-Head Self-Attention.
 - **Calibrated Probabilities**: Platt scaling and Isotonic Regression ensure accurate, unskewed confidence scores.
 - **Short-Text Safety Guard**: Automated short-text heuristic ($\le 5$ words) alerts users to statistical ambiguity on insufficient sample lengths.
@@ -131,7 +131,7 @@ Video Input (8 Frames)
 | **Character N-grams** | $(2, 6)$ n-grams, sublinear TF scaling, max features $= 100,000$ |
 | **Dense Embeddings** | `all-MiniLM-L6-v2` transformer (384 dimensions) |
 | **Linguistic Stats** | Word length, sentence length, punctuation density, digit ratio, uppercase ratio |
-| **Total Features** | **194,545 fused dimensions** |
+| **Total Features** | **194,897 fused dimensions** (`text_final_v3.4`; prior `v2_improved` used 194,545) |
 | **Classifier** | Logistic Regression with $L_2$ regularization ($C=1.0$) + Platt Calibration |
 | **Decision Threshold** | **0.41** ($\ge 0.41 \implies$ AI-Generated) |
 

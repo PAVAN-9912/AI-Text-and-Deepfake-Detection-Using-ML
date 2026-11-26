@@ -1,177 +1,85 @@
 # API Documentation
 
-This document describes the REST API endpoints exposed by the Flask backend of **AI Text and Deepfake Detection Using ML**.
+REST API reference for the Flask backend (`app.py`) of the **AI Content Detection Platform**.
 
 ---
 
 ## Base URL
-```
-http://localhost:5000/api
+```text
+http://127.0.0.1:5000/api
 ```
 
 ---
 
 ## 1. System Health Check
 
-Returns runtime status, loaded model indicators, and active device information.
-
-- **Endpoint**: `/health`
-- **Method**: `GET`
-- **Response Format**: `JSON`
-
-### Example Response:
+- **Endpoint:** `GET /api/health`
+- **Response (`200 OK`):**
 ```json
 {
-  "status": "healthy",
-  "text_model_loaded": true,
-  "video_model_loaded": true,
+  "active_video_engine": "PolicyC_STSeqNet_FaceViT",
   "device": "cpu",
-  "version": "1.0.0"
+  "face_detector": true,
+  "feature_count": 194897,
+  "fusion_ready": true,
+  "minilm": true,
+  "status": "healthy",
+  "text_model": true,
+  "video_engine": "PolicyC_STSeqNet_FaceViT",
+  "video_model": true,
+  "vit_ready": true
 }
 ```
 
 ---
 
-## 2. Text Detection Endpoint
+## 2. Benchmark Metrics
 
-Classifies natural language text as either Human-Written or AI-Generated.
-
-- **Endpoint**: `/predict/text`
-- **Method**: `POST`
-- **Content-Type**: `application/json`
-
-### Request Body:
-```json
-{
-  "text": "Artificial intelligence has rapidly evolved over the past decade, revolutionizing industries and reshaping modern society."
-}
-```
-
-### Response Body:
-```json
-{
-  "status": "success",
-  "result": "AI-GENERATED",
-  "confidence": 94.25,
-  "confidence_level": "High",
-  "probabilities": {
-    "ai": 94.25,
-    "human": 5.75
-  },
-  "raw_probabilities": {
-    "ai": 0.9425,
-    "human": 0.0575
-  },
-  "metrics": {
-    "word_count": 16,
-    "char_count": 122,
-    "sentence_count": 1,
-    "avg_word_length": 6.69
-  },
-  "threshold_used": 0.41,
-  "is_short_text": false,
-  "model_version": "v1.0"
-}
-```
-
-### Error Responses:
-- `400 Bad Request`: When `text` field is empty or missing.
-```json
-{
-  "status": "error",
-  "message": "No text provided for analysis."
-}
-```
+- **Endpoint:** `GET /api/metrics`
+- **Response (`200 OK`):** Returns validation/evaluation metrics for `text_metrics` and `video_metrics` (`PolicyC_STSeqNet_FaceViT`).
 
 ---
 
-## 3. Video Deepfake Detection Endpoint
+## 3. Text Detection Endpoint
 
-Analyzes an uploaded video file to detect facial manipulation and deepfake artifacts.
+- **Endpoint:** `POST /api/analyze/text`
+- **Content-Type:** `application/json`
 
-- **Endpoint**: `/predict/video`
-- **Method**: `POST`
-- **Content-Type**: `multipart/form-data`
-
-### Form Parameters:
-| Parameter | Type | Required | Description |
-|:---|:---|:---:|:---|
-| `video` | File (`.mp4`, `.mov`, `.avi`, `.mkv`, `.webm`) | Yes | The video file to be analyzed. |
-
-### Response Body:
+### Request Body
 ```json
 {
-  "status": "success",
-  "result": "FAKE",
-  "confidence": 96.62,
-  "confidence_level": "High",
-  "probabilities": {
-    "fake": 96.62,
-    "real": 3.38
-  },
-  "raw_probabilities": {
-    "fake": 0.9662,
-    "real": 0.0338
-  },
-  "video_metadata": {
-    "filename": "sample_video.mp4",
-    "frames_analyzed": 8,
-    "face_detected": true,
-    "duration_seconds": 4.5,
-    "resolution": "1920x1080"
-  },
-  "threshold_used": 0.32,
-  "model_version": "VideoDetector_V4"
+  "text": "Your input text here..."
 }
 ```
 
-### Error Responses:
-- `400 Bad Request`: When no video file is uploaded or file format is unsupported.
-```json
-{
-  "status": "error",
-  "message": "No valid video file uploaded."
-}
-```
-- `500 Internal Server Error`: If video decoding fails or model execution encounters an error.
-```json
-{
-  "status": "error",
-  "message": "Failed to decode video frames."
-}
-```
+### Response (`200 OK`)
+- **`result`:** `"HUMAN-WRITTEN"`, `"AI-GENERATED"`, or `"INSUFFICIENT_EVIDENCE"` (for `< 3` words)
+- **`verdict`:** Unified verdict (`"LIKELY_HUMAN"`, `"AI_GENERATED"`, `"INCONCLUSIVE"`)
+- **`ai_probability` / `human_probability` / `confidence`:** Percentages (`0–100`) or `null` when insufficient evidence
+- **`word_count`**, **`length_group`** (`very_short`, `short`, `medium`, `long`), **`threshold`**, **`linguistic_features`**
+
+### Errors
+- `400 Bad Request`: Missing `"text"` key or empty text.
+- `503 Service Unavailable`: Text engine not loaded.
 
 ---
 
-## 4. Evaluation Metrics Endpoint
+## 4. Video Deepfake Detection Endpoint
 
-Retrieves cross-validation performance metrics and dataset evaluation scores for both models.
+- **Endpoints:** `POST /api/analyze/video` (primary) and `POST /api/predict/video` (alias)
+- **Content-Type:** `multipart/form-data`
+- **Form Field:** `file` (allowed extensions: `.mp4`, `.mov`, `.avi`, `.mkv`, `.webm`; max size: `50 MB`)
 
-- **Endpoint**: `/metrics`
-- **Method**: `GET`
-- **Response Format**: `JSON`
+### Response (`200 OK`)
+- **`result` / `verdict`:** `"REAL"`, `"FAKE"`, `"INCONCLUSIVE"`, or `"INSUFFICIENT_EVIDENCE"`
+- **`routing_rule`:** Policy C rule (e.g., `C1_FACELESS_AI_AUTHORITY`, `C2_DECISIVE_FACIAL_MANIPULATION`, `C3_STRONG_DOMAIN_CONFLICT`, `C4_EQUIVOCAL_VIT_RESOLVED_BY_EXPD_AI`)
+- **`st_seqnet_p_ai`:** Full-frame ST-SeqNet probability (`0.0–1.0`)
+- **`vit_p_fake`:** FaceViT facial manipulation probability (`0.0–1.0` or `null` if `face_count == 0`)
+- **`face_count`:** Number of detected aligned faces
+- **`probabilities`:** `{ "real": <float|null>, "fake": <float|null> }`
+- **`processing_time_ms`:** Server inference duration in milliseconds
 
-### Example Response:
-```json
-{
-  "status": "success",
-  "text": {
-    "accuracy": 89.26,
-    "precision": 86.46,
-    "recall": 90.49,
-    "f1_score": 88.43,
-    "roc_auc": 96.14,
-    "dataset": "HC3 + RAID + SentenceAI",
-    "threshold": 0.41
-  },
-  "video": {
-    "accuracy": 67.37,
-    "precision": 52.63,
-    "recall": 50.56,
-    "f1_score": 51.58,
-    "roc_auc": 65.10,
-    "dataset": "Celeb-DF v2",
-    "threshold": 0.32
-  }
-}
-```
+### Errors
+- `400 Bad Request`: Missing `file`, empty filename, unsupported extension, `0`-byte file, or corrupt/unreadable video.
+- `413 Request Entity Too Large`: Upload exceeds `50 MB`.
+- `503 Service Unavailable`: Video engine not loaded.

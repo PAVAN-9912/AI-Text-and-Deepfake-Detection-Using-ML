@@ -39,8 +39,8 @@ Both pipelines are integrated into a single-page Flask web application with asyn
 
 ## 2. Text Detection Architecture
 
-### 2.1 Feature Engineering & Fusion (194,545 Dimensions)
-The text detection subsystem fuses four distinct feature spaces:
+### 2.1 Feature Engineering & Fusion (194,897 Dimensions, `text_final_v3.4`)
+The text detection subsystem fuses five feature spaces into **194,897** dimensions (verified via `text_classifier.n_features_in_`; the earlier `v2_improved` model used 194,545):
 
 1. **Word-Level N-grams (TF-IDF)**:
    - Captures vocabulary choice, topic distribution, and lexical diversity.

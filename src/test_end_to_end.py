@@ -135,8 +135,8 @@ for name, vpath, expected_lbl in video_tests:
         test(resp.status_code == 200, f"[{name}] Video upload returns 200 OK ({elapsed_v:.1f}ms)")
         vdata = resp.get_json()
         test(vdata["success"] is True, f"[{name}] Video success=True")
-        test(vdata["result"] in ["REAL", "FAKE"], f"[{name}] Soft Binary Fusion returns REAL or FAKE (Got: {vdata['result']})")
-        test(vdata["display_verdict"] in ["HUMAN", "AI-GENERATED"], f"[{name}] display_verdict is HUMAN or AI-GENERATED (Got: {vdata['display_verdict']})")
+        test(vdata["result"] in ["REAL", "FAKE", "INCONCLUSIVE"], f"[{name}] Policy C returns REAL, FAKE, or INCONCLUSIVE (Got: {vdata['result']})")
+        test("routing_rule" in vdata and vdata["routing_rule"] is not None, f"[{name}] Policy C routing_rule: {vdata.get('routing_rule')}")
         test(vdata["frames_analyzed"] == 16, f"[{name}] ST-SeqNet frames analyzed strictly 16")
         test("PolicyC_STSeqNet_FaceViT" in vdata["model"], f"[{name}] Model name reported: {vdata['model']}")
         test("routing_rule" in vdata and vdata["routing_rule"] is not None, f"[{name}] Policy C routing_rule: {vdata.get('routing_rule')}")
@@ -149,16 +149,22 @@ for name, vpath, expected_lbl in video_tests:
             expected_conf = p_real if vdata["result"] == "REAL" else p_fake
             test(abs(vdata["confidence"] - expected_conf) < 1e-4, f"[{name}] Confidence strictly equals predicted class prob ({expected_conf}%)")
 
-# Verify all 4 Soft Binary Fusion branches (Cases A-D)
-from src.predict_video_fusion import fuse_binary_probabilities
-for branch_name, st_p, vit_p, f_cnt, exp_rule in [
-    ("Case A", 0.85, None, 0, "CASE_A_FACELESS_ST_SEQNET"),
-    ("Case B", 0.25, 0.72, 2, "CASE_B_STRONG_FACIAL_MANIPULATION"),
-    ("Case C", 0.90, 0.10, 4, "CASE_C_AUTHENTIC_FACE_DAMPENING"),
-    ("Case D", 0.80, 0.40, 2, "CASE_D_DUAL_EXPERT_BLEND"),
-]:
-    p_val, rule_val, _ = fuse_binary_probabilities(st_p, vit_p, f_cnt)
-    test(rule_val == exp_rule and 0.0 <= p_val <= 1.0, f"[Soft Binary Fusion {branch_name}] rule={rule_val}, p_ai={p_val:.4f}")
+# Verify zero-face video delegates via frozen Policy C (C1_FACELESS_*)
+import cv2, tempfile
+with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as tf_nf:
+    temp_nf = tf_nf.name
+try:
+    out_nf = cv2.VideoWriter(temp_nf, cv2.VideoWriter_fourcc(*"mp4v"), 10, (224, 224))
+    for _ in range(16):
+        out_nf.write(np.zeros((224, 224, 3), dtype=np.uint8))
+    out_nf.release()
+    with open(temp_nf, "rb") as vf_nf:
+        nf_resp = client.post("/api/analyze/video", data={"file": (io.BytesIO(vf_nf.read()), "zeroface.mp4")}, content_type="multipart/form-data")
+    nf_json = nf_resp.get_json()
+    test(nf_json.get("result") in ("REAL", "FAKE") and str(nf_json.get("routing_rule", "")).startswith("C1_FACELESS_"), f"[Policy C Zero-Face] Delegated to ST-SeqNet: {nf_json.get('result')} ({nf_json.get('routing_rule')})")
+finally:
+    if os.path.exists(temp_nf):
+        os.remove(temp_nf)
 
 # ----------------------------------------------------------------------
 # 4. ERROR HANDLING TESTS

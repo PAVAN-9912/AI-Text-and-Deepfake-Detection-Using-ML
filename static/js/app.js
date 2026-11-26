@@ -617,10 +617,18 @@ async function analyzeVideo() {
         }
 
         renderVideoResult(data);
+        const verdictKey = String(data.result || data.verdict || "").toUpperCase();
+        const isUnavailableVerdict = verdictKey === "INCONCLUSIVE" || verdictKey === "INSUFFICIENT_EVIDENCE";
+        const hasValidConf =
+            !isUnavailableVerdict &&
+            data.confidence !== null &&
+            data.confidence !== undefined &&
+            data.confidence !== "" &&
+            !Number.isNaN(Number(data.confidence));
         saveHistoryEntry({
             media_type: "VIDEO",
             result: data.result,
-            confidence: `${data.confidence}%`,
+            confidence: hasValidConf ? `${data.confidence}%` : "N/A",
             details: selectedVideoFile.name
         });
 
@@ -672,9 +680,11 @@ function renderVideoResult(data) {
     if (errorState) errorState.classList.add("hidden");
     resultContent.classList.remove("hidden");
 
-    // Standardize binary result directly from the API result field
+    // Explicit rendering for REAL, FAKE, INCONCLUSIVE, and INSUFFICIENT_EVIDENCE
     const rawResult = String(data.result || "").toUpperCase().trim();
-    const isReal = (rawResult === "REAL" || rawResult === "HUMAN" || rawResult === "REAL (AUTHENTIC)" || rawResult === "REAL / HUMAN");
+    const isInconclusive = (rawResult === "INCONCLUSIVE");
+    const isInsufficient = (rawResult === "INSUFFICIENT_EVIDENCE" || rawResult === "NO_FACES_DETECTED");
+    const isReal = (!isInconclusive && !isInsufficient && (rawResult === "REAL" || rawResult === "HUMAN" || rawResult === "REAL (AUTHENTIC)" || rawResult === "REAL / HUMAN"));
 
     const realProb = data.real_probability != null ? Number(data.real_probability) : null;
     const fakeProb = data.fake_probability != null ? Number(data.fake_probability) : null;
@@ -683,17 +693,41 @@ function renderVideoResult(data) {
     // Dynamic threshold extraction
     const rawThresh = data.threshold != null ? Number(data.threshold) : 0.50;
     const threshPct = rawThresh <= 1.0 ? (rawThresh * 100).toFixed(2) : rawThresh.toFixed(2);
-    const modelTag = data.model || "SoftBinaryFusion_STSeqNet_FaceViT";
+    const modelTag = data.model || "PolicyC_STSeqNet_FaceViT";
 
-    if (isReal) {
-        badge.textContent = "HUMAN (AUTHENTIC)";
+    if (isInconclusive) {
+        badge.textContent = "INCONCLUSIVE (DOMAIN CONFLICT)";
+        badge.className = "badge uncertain";
+        if (decisionAlert) {
+            decisionAlert.className = "alert alert-warning";
+            decisionAlert.classList.remove("hidden");
+            if (decisionIcon) decisionIcon.textContent = "⚠️";
+            if (decisionTitle) decisionTitle.textContent = `Policy C Abstention — ${data.routing_rule || "Domain Conflict"}`;
+            if (decisionReason) {
+                decisionReason.textContent = data.reason || "Contradictory signals between ST-SeqNet (Full-Frame) and FaceViT (Facial). Verdict abstained to prevent false positives.";
+            }
+        }
+    } else if (isInsufficient) {
+        badge.textContent = "INSUFFICIENT EVIDENCE";
+        badge.className = "badge uncertain";
+        if (decisionAlert) {
+            decisionAlert.className = "alert alert-warning";
+            decisionAlert.classList.remove("hidden");
+            if (decisionIcon) decisionIcon.textContent = "⚠️";
+            if (decisionTitle) decisionTitle.textContent = "Insufficient Forensic Evidence";
+            if (decisionReason) {
+                decisionReason.textContent = data.reason || "Insufficient evidence to produce a reliable AI vs Human verdict.";
+            }
+        }
+    } else if (isReal) {
+        badge.textContent = "HUMAN-GENERATED (AUTHENTIC)";
         badge.className = "badge real";
         if (decisionAlert) {
             decisionAlert.className = "alert alert-info";
             decisionAlert.classList.remove("hidden");
             if (decisionIcon) decisionIcon.textContent = "ℹ️";
-            if (decisionTitle) decisionTitle.textContent = data.routing_rule ? `Decision (Human — ${data.routing_rule})` : "Decision (Human)";
-            let reasonText = data.reason || `${modelTag} Decision: Human probability (${realProb != null ? realProb.toFixed(2) : '--'}%) exceeds threshold.`;
+            if (decisionTitle) decisionTitle.textContent = data.routing_rule ? `Decision (Human-Generated — ${data.routing_rule})` : "Decision (Human-Generated)";
+            let reasonText = data.reason || `${modelTag} Decision: Real probability (${realProb != null ? realProb.toFixed(2) : '--'}%) exceeds threshold.`;
             if (decisionReason) {
                 decisionReason.textContent = reasonText;
             }
@@ -904,9 +938,19 @@ function renderHistoryTable() {
             badgeClass += " human";
         } else if (res === "AI-GENERATED" || res === "FAKE" || res === "FAKE / DEEPFAKE") {
             badgeClass += " ai";
+        } else if (res === "INCONCLUSIVE" || res === "INSUFFICIENT_EVIDENCE") {
+            badgeClass += " insufficient";
         } else {
             badgeClass += " insufficient";
         }
+
+        const rawConf = item.confidence;
+        const confStr = rawConf === null || rawConf === undefined ? "" : String(rawConf).trim();
+        const isInvalidConf =
+            !confStr ||
+            /^(null|nan|undefined)%?$/i.test(confStr) ||
+            ((res === "INCONCLUSIVE" || res === "INSUFFICIENT_EVIDENCE") && /^0(\.0+)?%?$/.test(confStr));
+        const displayConfidence = isInvalidConf ? "N/A" : confStr;
 
         return `
             <tr>
@@ -914,7 +958,7 @@ function renderHistoryTable() {
                 <td><strong>${item.media_type}</strong></td>
                 <td>${item.details || '--'}</td>
                 <td><span class="${badgeClass}">${item.result}</span></td>
-                <td><strong>${item.confidence}</strong></td>
+                <td><strong>${displayConfidence}</strong></td>
             </tr>
         `;
     }).join("");
